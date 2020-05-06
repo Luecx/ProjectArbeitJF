@@ -1,0 +1,434 @@
+% !TeX document-id = {84b599f9-72a4-4c88-a294-14afbd68e805}
+%% Vorlage fuer Studentische Arbeiten - Institut fuer Leichtbau - RWTH
+%% Erstellt von: Johanna Schlupkothen (schlupkothen@ilb.rwth-aachen.de)
+%% 			und: Ulrike Schlauch (schlauch@ilb.rwth-aachen.de) 
+%% Basierend auf der KOMA Script Klasse scrbook
+%% Erste Version: v01-1 Stand Oktober 2013
+%_______________________________________________________________________________________
+% Updates:		Author 			Date			Changes
+%---------------------------------------------------------------------------------------
+% v01-2			SCHLUPKOTHEN	24.09.2014		- Header changed to Prof. Schroeder
+% v01-3 		SCHLUPKOTHEN 	27.08.2015 		- Offizielles Institutslogo
+%	 
+%
+%---------------------------------------------------------------------------------------
+%
+%---------------------------------------------------------------------------------------
+%------                               --------------------------------------------------
+%		!!!!!   R E A D   M E   !!!!!
+%------                               --------------------------------------------------
+%---------------------------------------------------------------------------------------
+%
+% !!!!! BEVOR IHR FRAGT, WEIL IRGENDETWAS " NICHT FUNKTIONIERT ": SCHAUT IN DIE  
+% KOMMENTIERUNG DES ZUGEHOERIGEN PACKAGES IN DIESER PRAEAMBEL!!!!!!
+%
+% Hinweise zur Kompilierung:
+% Empfohlener Editor:			TeXstudio
+%
+%  	Standardcompiler: 			PdfLaTeX
+%  	Standardbibliographie: 		Biber
+% 	Verarbeitung mit Glossar:	pdflatex % 
+%								makeindex -s %.ist -t %.alg  -o %.acr  %.acn
+%								makeindex -s %.ist -t %.slg1 -o %.syi1 %.syg1
+%								makeindex -s %.ist -t %.slg2 -o %.syi2 %.syg2 
+%								pdflatex %
+% 	Definition eines eigenen Befehls fuer das Kompilieren des Glossars in TeXstudio bzw. TeXmakerX:
+%	___________________________________________________________________________________________
+%	->Optionen-> TeXstudio konfigurieren...->Erzeugen->Benutzerbefehle(siehe Feld unten):
+%								Hinzufügen eines neuen Benutzerbefehls, bspw. user0:
+%								Eintrag im 2. Feld:
+%								txs:///pdflatex | txs:///makeindex -s %.ist -t %.alg -o %.acr %.acn| txs:///makeindex -s %.ist -t 	.slg1 -o %.syi1 %.syg1| txs:///makeindex -s %.ist -t %.slg2 -o %.syi2 %.syg2 | txs:///pdflatex
+%	___________________________________________________________________________________________
+%	->Options-> TeXstudio konfigurieren...->Befehle-> Makeindindex:
+% 								Ensure that is written only: makenindex.exe
+%								WITHOUT any argument like "%.idx" behind it
+%
+% 
+%---------------------------------------------------------------------------------------
+%--> Ablauf bei vollständiger Verarbeitung:
+% 								pdflatex | pdflatex |biber | pdflatex | user0
+%
+%
+%_______________________________________________________________________________________
+%Steuerbefehle fuer TexShop fuer Mac (Gibt TS an, mit welchen Programmen gearbeitet werden soll)
+%
+% !TEX TS-program = pdflatex
+% !BIB TS-program = biber
+%---------------------------------------------------------------------------------------
+\documentclass[	a4paper,		%
+				12pt,			%
+				titlepage,		%
+				twoside,		%
+				smallheadings,	%
+				DIV				= 14,			%
+				BCOR			= 6mm,			%
+				parskip			= half,			%
+				numbers 		= noenddot, 	%
+				headings 		= small,		%
+				cleardoublepage = empty]{scrbook}
+%
+%---------------------------------------------------------------------------------------
+%			 LADEN DER P A C K A G E S
+%---------------------------------------------------------------------------------------
+%
+\usepackage{ae}               	% almost european, virtueller T1-Font
+\usepackage{array}          	% fuer aufwändigere Tabellen
+\usepackage{colortbl}       	% farbige Tabellen (v. D. Carlisle)
+\usepackage{longtable}      	% seitenübergreifende Tabellen
+%\usepackage{ltablex}			% Kombiniert longtable mit tabularx
+\usepackage{tabularx} 			% automatische Spaltenbreite
+			\renewcommand{\arraystretch}{1.3}
+\usepackage{color}    			% Farbiger/grauer Text
+\usepackage[utf8]{inputenc}
+\usepackage[british,ngerman]{babel}
+\usepackage{amsfonts}
+\usepackage{amsmath,amssymb}
+\usepackage[sc]{mathpazo}	% Palatino Schrift
+			\linespread{1.05}
+\usepackage[T1]{fontenc}
+\renewcommand*\familydefault{\rmdefault}
+\usepackage[automark,nouppercase,headsepline]{scrlayer-scrpage}
+\usepackage{pdfpages}
+\usepackage[T1,hyphens]{url} 	% much like \verb allow line breaks for paths and URLs
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[absolute]{textpos}
+\usepackage{lscape}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{tocbasic}
+\usepackage{paralist}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{rotating}
+\usepackage{mathtools}
+\usepackage{mdwlist}
+\usepackage{anysize}
+\usepackage{pslatex} 
+\usepackage{wrapfig}
+\usepackage{scrhack}
+\usepackage{csquotes}
+\usepackage{xkeyval}
+\usepackage{xfor}
+\usepackage{amsgen}
+\usepackage{xfrac}
+\usepackage[cmyk,dvipsnames]{xcolor}
+\allowdisplaybreaks[1]
+\usepackage{tikz}				% fuer Grafiken, Baeume und Graphen
+	\usetikzlibrary{decorations.pathmorphing}
+	\usetikzlibrary{shapes}
+	\usetikzlibrary{backgrounds} 
+\usepackage{subfig}				
+\usepackage[format		= hang,	%
+ 			margin		= 10pt,	%
+ 			font		= small]%
+ 			{caption}			% captions (Bildunterschriften) formatieren
+	\captionsetup[figure]{		%
+	  		name 		= Abb.} %
+\usepackage{epstopdf} 			% Konvertiert eps zu pdf, wenn erkannt
+\usepackage{fixmath}  			% 
+\usepackage{dcolumn}  			% Ausrichtung an Komma oder Punkt
+\usepackage{cancel}
+\usepackage[
+			   bottom,     		% Footnotes appear always on bottom. This is necessary
+			               		% especially when floats are used
+			   stable,      	% Make footnotes stable in section titles
+			   perpage,     	% Reset on each page
+			   %para,       	% Place footnotes side by side of in one paragraph.
+			   %side,       	% Place footnotes in the margin
+			   %ragged,      	% Use RaggedRight
+			   %norule,   	  	% suppress rule above footnotes
+			   multiple,  	  	% rearrange multiple footnotes intelligent in the text.
+			   %symbol,     	% use symbols instead of numbers
+			]{footmisc}
+\usepackage{varioref} 			% Intelligente Querverweise
+%
+%---------------------------------------------------------------------------------------
+% 			UMGEBUNG   K E Y W O R D S / S C H L A G W O R T E
+%---------------------------------------------------------------------------------------
+\newenvironment{keywords}%
+   {\begin{trivlist}\item[]{\bfseries \iflanguage{ngerman}{Schlagwörter:}{Keywords:}}\ }% oder "Keywords:"
+   {\end{trivlist}}
+%
+%
+%---------------------------------------------------------------------------------------
+%             NEW   C O M M A N D S
+%---------------------------------------------------------------------------------------
+%
+% 
+%
+%---------------------------------------------------------------------------------------
+% 			EINSTELLUNGEN   S E I T E N L A Y O U T
+%---------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------
+% 				K O P F Z E I L E   UND   F U SS Z E I L E
+%---------------------------------------------------------------------------------------
+% scrpage2 package
+\clearscrheadfoot
+\setkomafont{pageheadfoot}{\normalfont\normalcolor}
+\setkomafont{pagenumber}{\normalfont}
+\automark[section]{chapter}													% scrheadings mit Kapitel bzw. section und Seitenzahl oben
+\ofoot[]{}																	% scrplain ohne alles
+\setheadsepline{.4pt}
+\ohead[]{\normalfont\pagemark}
+\ihead[]{\normalfont\headmark}
+% Appendix Seitenlayout
+\defpagestyle{app}{{\headmark\hfill}{\headmark\hfill}{\headmark\hfill}}{ 	%
+				   {\pagemark\hfill}{\hfill\pagemark}{\hfill\pagemark\hfill}}
+%
+%---------------------------------------------------------------------------------------
+% 				STIL   Ü B E R S C H R I F T E N
+%---------------------------------------------------------------------------------------
+\setkomafont{sectioning}{\rmfamily\bfseries}
+%
+%---------------------------------------------------------------------------------------
+% 				STIL   U N T E R S C H R I F T E N
+%---------------------------------------------------------------------------------------
+\addtokomafont{caption}{\small\normalfont}
+%
+
+%---------------------------------------------------------------------------------------
+% 			ENDE   S E I T E N L A Y O U T
+%---------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------
+%
+%---------------------------------------------------------------------------------------
+% 			EINFUEGEN VON  M A T L A B   C O D E
+%---------------------------------------------------------------------------------------
+%
+\usepackage[final]{listings}
+\lstloadlanguages{Matlab}
+\lstset{	basicstyle 			= \small, 									% print whole listing small
+			keywordstyle 		=\color{Blue},								% für s/w:\color{black!80} keywords
+			identifierstyle 	=, 											% nothing happens
+			commentstyle 		= \color{Green},							% für s/w: \color{black!60} comments 
+			stringstyle 		= \color{Plum},								% für s/w: black!40 typewriter strings
+			showstringspaces	= false, 									% no special string spaces
+			emph 				= {for, if, then, else, end},				%
+			emphstyle 			= \color{Blue},								% für s/w: \color{black!80}
+			%numbers 			= left, 									%  show number_line
+			%numberstyle 		= \tiny, 									% style of number_line
+			%firstnumber		= 1,										%
+			%stepnumber 		= 5, 										% one number_line after stepnumber
+			%numbersep 			= 5pt,										%
+			language 			= {Matlab}, 								% 
+			extendedchars 		= true,  									%
+			breaklines 			= true,										%
+			breakindent 		= 30pt,										%
+			inputencoding		= latin1,									% für Umlaute im Source code
+			breakautoindent		= true}
+%
+%
+%---------------------------------------------------------------------------------------
+% 			INITIALISIERUNG   B I B L A T E X
+%---------------------------------------------------------------------------------------
+%
+\usepackage[style				= numeric,									%
+			subentry,														%
+			sorting 			= none,										%
+			backend 			= biber]
+								  {biblatex}								%
+			\renewcommand{\mkbibnamelast}[1]{\textsc{#1}}
+			\renewcommand{\bibname}{Bibliography}
+			\DeclareFieldFormat{title}{#1\isdot}
+			\DeclareFieldFormat{journaltitle}{#1\isdot}
+			\DeclareFieldFormat{booktitle}{#1\isdot}
+			\DeclareFieldFormat{issuetitle}{#1\isdot}
+			\DeclareFieldFormat{maintitle}{#1\isdot}
+			\DeclareFieldFormat{thesistitle}{#1\isdot}
+			\DeclareFieldFormat[article]{title}{#1}
+			\DeclareFieldFormat[inbook]{title}{#1}
+			\DeclareFieldFormat[incollection]{title}{#1}
+			\DeclareFieldFormat[patent]{title}{#1}
+			\DeclareFieldFormat[thesis]{title}{#1}
+%
+%
+%---------------------------------------------------------------------------------------
+% 			P D F   S E T T I N G S   HYPERREF
+%---------------------------------------------------------------------------------------
+%
+\usepackage{hyperref}
+\hypersetup{pdfpagelayout 		= {TwoColumnLeft},							%
+			pdftitle 			= {MA-Nummer-Jahr-ilb},						%
+			pdfsubject 			= {Arbeitstitel-Kurzform},					%
+			pdfcreator 			= {PDFLaTeX},								%
+			pdfauthor 			= {Name Matrikelnummer},					%
+			plainpages 			= false,									%
+			linkcolor 			= blue,										%
+			citecolor 			= purple,									%
+			filecolor 			= green,									%
+			urlcolor 			= blue,										%
+			pdfborder 			= {0 0 0.5},								%
+			raiselinks 			= true,										%
+		bookmarksopenlevel		= 1,										%
+			bookmarksopen		= true,										%
+		bookmarksnumbered		= true,										%
+			colorlinks 			= true,										%
+			draft 				= false}									% draft = true fuer Druckversion
+																			% draft = false fuer Displayversion (mit Hyperlinks)%
+%
+%---------------------------------------------------------------------------------------
+% 			INITIALISIERUNG + EINSTELLUNGEN   G L O S S A R I E S
+%---------------------------------------------------------------------------------------
+%
+\usepackage[nomain,acronym,nostyles]{glossaries}
+%
+% Hier werden zwei getrennte Symbolverzeichnisse angelegt: Das erste "Symbolverzeichnis"
+% beinhaltet alle Lateinischen und alle Griechischen Schriftzeichen
+% Das zweite Verzeichnis "Indizes" listet alle tiefergestellten Indizes auf
+%
+\newglossary[slg1]{notation}{syi1}{syg1}{Symbolverzeichnis} 				% Neues Vz. "Symbolverzeichnis"
+\newglossary[slg2]{subscripts}{syi2}{syg2}{Indizes} 						% Neues Vz. "Indizes"
+%
+\newglossarystyle{symlongcolgrskip}{\renewenvironment{theglossary}{			% NEUER STIL ("symlongcolgrskip") 
+	\begin{longtable}{@{}p{15mm}p{15mm}p{\dimexpr\linewidth-15mm-15mm-4	 	% FUER VERZEICHNIS "notation" 
+				 \tabcolsep\relax}@{}}}{\end{longtable}}					% mit der Ueberschrift "Symbolverzeichnis"
+	\renewcommand*{\glossaryheader}{ 										% basierend auf der Umgebung: longtable									
+		\iflanguage{ngerman}{ 												%
+			\textbf{Zeichen}&\textbf{Einheit}&\textbf{Beschreibung}}{		% Beschriftung Deutsch
+			\textbf{Symbol}	&\textbf{Unit}	 &\textbf{Description}}\\		% Beschriftung Englisch
+		\midrule\endhead}													% 
+	\renewcommand*{\glsgroupheading}[1]{}									% keine Beschriftung zw. Gruppen 
+	\renewcommand*{\glossaryentryfield}[4]{									% Haupteintraege in einer Zeile:  
+		\glstarget{##1}{##2}&{##4}		 & ##3\\}							% Symbol / Einheit / Beschreibung
+	\renewcommand*{\glsgroupskip}{	&		 &\\}							% nichts zw. Gruppen 
+}
+%
+\newglossarystyle{symlongcol}{\renewenvironment{theglossary}{ 				% NEUER STIL ("symlongcol") 
+	\begin{longtable}{@{}p{15mm}p{15mm}p{\dimexpr\linewidth-15mm-15mm-4 	% FUER VERZEICHNIS "subscripts" 
+				 	 \tabcolsep\relax}@{}}}{\end{longtable}}				% mit der Ueberschrift "Indizes"
+	\renewcommand*{\glossaryheader}{										% basierend auf der Umgebung: longtable
+		\iflanguage{ngerman}{ 												%
+			\textbf{Zeichen}&	 			 &\textbf{Beschreibung}}{		% Beschriftung Deutsch
+			\textbf{Symbol}	&				 &\textbf{Description}}\\		% Beschriftung Englisch
+		\midrule\endhead}													% 
+	\renewcommand*{\glsgroupheading}[1]{}									% keine Ueberschriften zwischen Gruppen  
+	\renewcommand*{\glossaryentryfield}[4]{									% Haupteintraege in einer Zeile:  
+		\glstarget{##1}{##2}& {##4}		& ##3\\}							% Symbol / Einheit / Beschreibung 
+	\renewcommand*{\glsgroupskip}{}											% nichts zw. Gruppen 
+}
+% 
+\newglossarystyle{acrolongcol}{\renewenvironment{theglossary}{				% NEUER STIL ("acrolongcol") für
+	\begin{longtable}{@{}p{30mm}p{\dimexpr\linewidth-30mm-4 				% \acronymtype mit der 
+					 \tabcolsep\relax}@{}}}{\end{longtable}}				% Ueberschrift "Abkürzungsverzeichnis"
+	\renewcommand*{\glossaryheader}{}										% Ohne Beschriftung
+	\renewcommand*{\glsgroupheading}[1]{}									% Ohne Gruppenueberschrift
+	\renewcommand*{\glossaryentryfield}[4]{									% Eintraege:
+		\glsentryitem{##1}\glstarget{##1}{##2}	&##3.\\}					% Kurzform / Langform
+																			% mit numberedlist: ##3. \hspace{2ex}(##5)
+	\renewcommand*{\glsgroupskip}{} 
+}																% Glossar-Befehle anschalten
+%
+%---------------------------------------------------------------------------------------
+% 			INITIALISIERUNG   M A K E I N D E X
+%---------------------------------------------------------------------------------------
+%
+\usepackage{makeidx}														% Index erstellen
+\usepackage{float}															% neue float-Umgebungen definieren, aus 
+																			% Kompatibilitaetsgruenden ganz zum Schluss einbinden
+\makeglossaries
+%
+%---------------------------------------------------------------------------------------
+% 			LADEN   E I N T R A E G E   ABKUERZUNGSVERZEICHNIS + LITERATURVERZEICHNIS
+%---------------------------------------------------------------------------------------
+\loadglsentries{Input_glossaries}											% .tex Dateiname mit Nomenklatur-Eintraegen
+\bibliography{Biblio}														% *.bib Dateiname mit Literatureintraegen
+%
+%
+%---------------------------------------------------------------------------------------
+% 			EINSTELLUNG   O P T I O N E N
+%---------------------------------------------------------------------------------------
+\setcounter{tocdepth}{0}													% nur bis 1.1/1.2/... ins Inhaltsvz.
+\setcounter{secnumdepth}{0}   												% Kapitel-Nummerierung nur bis 1.1.1/ 1.1.2/... 
+\clubpenalty 					= 10000										% Schusterjungen und Hurenkinder verhindern.
+\widowpenalty 					= 10000										% Wen's interessiert: 
+\displaywidowpenalty 			= 10000										% http://de.wikipedia.org/wiki/Hurenkind_und_Schusterjunge
+\interlinepenalty 				= 5000
+\relpenalty						= 5000
+%
+%
+%---------------------------------------------------------------------------------------
+%========  B E G I N N = D O C U M E N T  =============================================%
+%---------------------------------------------------------------------------------------
+\begin{document}
+\deffootnote[1.5em]{1.5em}{1em}{\textsuperscript{\thefootnotemark}}
+%
+% 			TITLEPAGE
+%---------------------------------------------------------------------------------------
+%\includepdf{titelseite.pdf}	\cleardoublepage 							% Einbinden der Deckseite (pdf von Matsen erstellt)
+\frontmatter
+\pagestyle{empty}															% keine Kopf/Fusszeile, keine Seitenzahlen
+	\include{titlepage}			\cleardoublepage 					
+%
+% 			SUBJECT + EIGENSTAENDIGKEIT
+%---------------------------------------------------------------------------------------
+\pagestyle{empty}															% keine Kopf/Fusszeile, keine Seitenzahlen
+ 	\include{subject}			\cleardoublepage							% Aufgabenbeschreibung aus dem Erfassungsbogen
+ 	\selectlanguage{ngerman}												% Erzwungen: Deutsch fuer Eigenstaendigkeitserklaerung
+ 	\include{Eigenstaendigkeit}	\cleardoublepage							% Eigenstaendigkeitserklaerung
+%
+% 			PREFACE + ABSTRACT
+%---------------------------------------------------------------------------------------
+\pagestyle{scrheadings}														% Koma-script Kopf-/Fusszeile , Definition s.o.
+%\pagenumbering{roman}														% Seitennummerierung in kleinen roemischen Zahlen
+	\include{Kurzfassung} 	\cleardoublepage
+	\selectlanguage{british}												% Erzwungen: Englisch fuer Abstract
+	\include{abstract}			\cleardoublepage
+%	\selectlanguage{ngerman}												% Erzwungen: Deutsch fuer Vorwort
+%	\include{preface}			\cleardoublepage							% Vorwort
+%
+% 			LISTINGS
+%---------------------------------------------------------------------------------------
+	\tableofcontents			\cleardoublepage							% Inhaltsverzeichnis
+%	\listoffigures 				\cleardoublepage							% Wollte der Chef streichen
+%	\listoftables				\cleardoublepage							% Wollte der Chef streichen
+	\printglossary[	type 		= \acronymtype,								% 
+					style 		= acrolongcol,								% 
+					title		= Abkürzungsverzeichnis,					% 
+					nonumberlist] \cleardoublepage							%  
+																			% 
+	\printglossary[	type 		= notation,									%
+					style 		= symlongcolgrskip,			 				%
+					nonumberlist] \clearpage
+	\printglossary[	type 		= subscripts,								%
+					style 		= symlongcol, 								%
+					nonumberlist] \cleardoublepage
+
+%
+% 			CONTENT
+%---------------------------------------------------------------------------------------
+\mainmatter
+\pagestyle{scrheadings}														% Koma-script Kopf-/Fusszeile , Definition s.o.
+%\pagenumbering{arabic}														% Seitennummerierung in arabische Zahlen
+	\include{Einleitung}		\cleardoublepage
+	\include{Theorie}			\cleardoublepage
+	\include{Durchfuehrung}		\cleardoublepage
+	\include{Implementierung}	\cleardoublepage
+	\include{Schlussfolgerung} 	\cleardoublepage
+%
+% 			BIBLIOGRAPHY
+%---------------------------------------------------------------------------------------
+\addcontentsline{toc}{chapter}{Literatur}									% Literaturverzeichnis in Inhaltsvz aufnehmen
+\nocite{*} 																	% Alle Literatureintraege ins Vz. aufnehmen
+																			% BITTE AUSKOMMENTIEREN FUER DIE ARBEIT
+																			% NUR ZU ANSCHAUUNGSZWECKEN IN DEM BEISPIEL
+\printbibliography				\cleardoublepage							% Literaturverzeichnis 
+%
+% 			APPENDIX
+%---------------------------------------------------------------------------------------
+\appendix
+\pagestyle{scrheadings}														% Koma-script Kopf-/Fusszeile , Definition s.o.
+	\include{Anhang_Inhalt}			\cleardoublepage
+	\include{Anhang}				\cleardoublepage
+	\include{Matlab_Anhang}			\cleardoublepage
+
+				
+%---------------------------------------------------------------------------------------
+%========  E N D = D O C U M E N T  ===================================================%
+%---------------------------------------------------------------------------------------
+\end{document}
+%
+%
+%
+%% end of file
