@@ -1,5 +1,52 @@
 \chapter{Theorie (Reproduktion)}
 \label{chap:Principles}
+
+Der Stoßvorgang besteht im Wesentlichen aus einer Kugel mit einem vorgeschriebenen Gewicht $m_g$ welche auf eine reckteckige Platte stößt. Hierbei ist die Auftrittsgeschwindigkeit bekannt so wie alle Größen in der nachfolgenden Tabelle
+
+\begin{tabular}[h]{l | l}
+	Formelzeichen & Beschreibung \\
+	$v_0$ & Geschwindigkeit der Kugel vor dem Aufschlag \\
+	$v_1$ & Geschwindigkeit der Kugel nach dem Aufschlag \\
+	$c_1$ & Geschwindigkeit der Platte an der Stelle des Aufschlags nach dem Aufschlag \\
+	$m_g$ & Masse der Kugel \\
+	$m_p$ & Masse der Platte\\
+	$\rho_p$ & Dichte der Platte\\
+	$a$ & Breite der Platte\\
+	$b$ & Länge der Platte\\
+	$h$ & Höhe der Platte \\
+	$E$ & E-Modul der Platte \\
+	$x$ & x-Koordinate auf der Platte wo die Kugel einschlägt \\
+	$y$ & y-Koordinate auf der Platte wo die Kugel einschlägt \\
+\end{tabular}
+
+Es wird angenommen, dass der Stoß völlig elastisch verläuft sowie, dass weder die Masse der Kugel noch die Masse der Platte sich während des Stoßes verändert.
+Zusätzlich wird davon ausgegangen, dass die Geschwindigkeit der Kugel senkrecht zur Platte bzw. parallel zur Normalen ankommt. Im Gegensatz zu vielen wissenschaftlichen Arbeiten wird von einem isotropen Material ausgegangen. Somit gelten die im folgenden beschrieben Ergebnisse nur bedingt für Laminate, Faserverbundstoffe oder ähnliche nicht-isotrope Materialien. Desweiteren wird angenommen, dass der dynamische Biegungspfeil an der Stoßstelle genau so groß ist, wie der statische Biegungspfeil also wenn die Masse $m_g$ genau an jener Stelle auf die Platte gelegt wird.
+
+Die Annahme, dass Schubspannungen vernachlässigt werden können erlaubt eine analytische Lösung des Problems unter der Bedingung, dass die Ränder frei gelagert sind. Somit treten lediglich Biegemomente und keine Schubkräfte auf.
+
+Eine analytische Lösung für ein Balkenelement wurde ausführlich durch Karas[..] gelöst und ist nicht Bestandteil dieser Arbeit.Im folgenden wird eine analytische Lösung basierend auf der Arbeit von Karas[..] geschildert.
+
+Zunächst wird die Masse der Platte in den Aufschlagspunkt reduziert.
+
+Für eine Platte ergibt sich hier:
+
+$$M'=\rho h \int_0^a \int_0^b \dfrac{w^2}{f^2} dx dy$$
+
+An den Rändern gelten die Navierschen Bedingungen:
+
+\begin{equation} 
+\tag{$x$ = 0, a ; \quad  $y=0, b$}w = 0, \qquad \Delta w = \dfrac{\partial^2 w}{\partial x^2} + \dfrac{\partial^2 w}{\partial y^2} = 0
+ \end{equation}
+
+Für die statische Durchbiegung gilt unter Berücksichtigung der Navierschen Bedingungen:
+
+
+\begin{equation} 
+\tag{$m,n = 1, 2, 3, 4, ...$}w = \sum_m \sum_n q_{mn} \cdot sin\left(\dfrac{m \pi x}{a}\right) \cdot sin\left(\dfrac{n \pi y}{b}\right)
+\end{equation} 
+
+
+
 Der Hauptteil der Arbeit gliedert sich in zwei Teile. Im ersten Teil (Theorie) wird die Ausgangssituation erarbeitet. Dabei werden grundlegende Fragen erläutert (Wovon wird ausgegangen? Was ist bekannt? Welche Annahmen werden getroffen? etc.) und die konkrete Zielsetzung erarbeitet. Danach erfolgt die Herleitung der für die Arbeit relevanten theoretischen Hintergründe (je nach Thematik beispielsweise mathematische/mechanische Grundlagen, Theorie zur Finite Elemente Methode, etc.), auf denen die selbstständig erbrachte Leistung aufbaut. Hier gilt die Regel: So wenig wie möglich und so viel wie nötig! 
 
 Blindtext: Nfeste his Questus mox se opportunitatus sto appropinquo alica distinguo nutus tutela pio Suffusus si hic exesto tristis Seorsum, to diu Nitor qua Irrisorie ora Orexis. Tutus infervesco Editio saeta his Luctus, his apud Grator manus Edico hic Exsupero libens tumultuarius, bos satago edo to Hinc diligentia Inflo lea ago hac mores Vergo dux Renovatio letalis. No Declino vir excito utercumque Percut.
