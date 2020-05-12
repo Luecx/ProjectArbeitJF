@@ -24,9 +24,96 @@ Zusätzlich wird davon ausgegangen, dass die Geschwindigkeit der Kugel senkrecht
 
 Die Annahme, dass Schubspannungen vernachlässigt werden können erlaubt eine analytische Lösung des Problems unter der Bedingung, dass die Ränder frei gelagert sind. Somit treten lediglich Biegemomente und keine Schubkräfte auf.
 
-Eine analytische Lösung für ein Balkenelement wurde ausführlich durch Karas[..] gelöst und ist nicht Bestandteil dieser Arbeit.Im folgenden wird eine analytische Lösung basierend auf der Arbeit von Karas[..] geschildert.
+Eine analytische Lösung für ein Balkenelement wurde ausführlich durch Karas[..] gelöst und ist nicht Bestandteil dieser Arbeit.
+Karas[..] wie auch Timoshenko[..] haben gezeigt, dass sich die statische Durchbiegung einer Platte unter einer Kraft durch eine Reihe ausgedrückt werden kann:
 
-Zunächst wird die Masse der Platte in den Aufschlagspunkt reduziert.
+
+Zunächst wird angenommen, dass die wirkende Kraft $q$ auf die Platte bekannt und konstant ist:
+
+$$q = f(x,y)$$
+
+$f(x)$ wird wiederum als trigonemtrische Reihe ausgedrückt
+
+\begin{equation} 
+\tag{$m,n = 1, 2, 3, 4, ...$}f(x,y) = \sum_m \sum_n a_{mn} \cdot \sin\left(\dfrac{m \pi x}{a}\right) \cdot \sin\left(\dfrac{n \pi y}{b}\right)
+\end{equation} 
+
+Die Koeffizienten $a_{m'n'}$ können wie folgt ausgerechnet werden:
+\begin{equation}
+a_{m'n'} = \dfrac{4}{ab} \int_{0}^{a} \int_{0}^{b} f(x,y)\cdot \sin\left(\dfrac{m' \pi x}{a}\right) \cdot \sin\left(\dfrac{n' \pi y}{b}\right)
+\end{equation}
+
+
+
+Für den Fall, dass die Kraft P gleichmäßig an der Stelle $(\xi, \eta)$ angreift auf einer Fläche $(u,v)$, ergibt sich folgender Ausdruck Timoshenko[..]
+
+
+
+\begin{equation}
+a_{mn} = \dfrac{16P}{\pi^2 m n u v} 
+\cdot \sin\left(\dfrac{m \pi \xi}{a}\right) 
+\cdot \sin\left(\dfrac{n \pi \eta}{b}\right) 
+\cdot \sin\left(\dfrac{m \pi u}{2a}\right) 
+\cdot \sin\left(\dfrac{n \pi v}{2b}\right)
+\end{equation}
+
+Für den Fall $(u,v)\rightarrow 0$ vereinfacht sich Gleichung (2.2) zu
+
+\begin{equation}
+a_{mn} = \dfrac{4P}{a b} 
+\cdot \sin\left(\dfrac{m \pi \xi}{a}\right) 
+\cdot \sin\left(\dfrac{n \pi \eta}{b}\right) 
+\end{equation}
+
+was mit der Lösung von Karas [..] übereinstimmt.
+
+
+
+Es ergibt sich als Durchbiegung für die Platte
+\begin{equation}
+\mathlarger{
+w_{st}(x,y) = \dfrac{4P}{\pi^4 a b D} 
+\sum_{m = 1}^{\infty} \sum_{n = 1}^{\infty}
+\dfrac{
+	\sin\left(\dfrac{m \pi \xi}{a}\right) 
+	\cdot \sin\left(\dfrac{n \pi \eta}{b}\right) 
+}{
+	\left( 
+	\dfrac{m^2}{a^2} +
+	\dfrac{n^2}{b^2}
+	\right)^2
+}
+\cdot \sin\left(\dfrac{m \pi x}{a}\right) 
+\cdot \sin\left(\dfrac{n \pi y}{b}\right) 
+}
+\end{equation}
+
+
+
+Für die quadratische Platte ergeben sich hier Abweichungen von Rund $3.5\%$ Timoshenko[..]
+
+
+
+
+$$$$
+
+
+\begin{equation}
+a_{m'n'} = \dfrac{4}{ab} \int_{0}^{a} \int_{0}^{b} f(x,y)\cdot sin\left(\dfrac{m' \pi x}{a}\right) \cdot sin\left(\dfrac{n' \pi y}{b}\right)
+\end{equation}
+	
+
+
+Die statische Durchbiegung ergibt sich somit zu
+
+
+\begin{equation}
+w = \dfrac{1}{\pi^4 D} \int_{0}^{a} \int_{0}^{b} f(x,y)\cdot sin\left(\dfrac{m' \pi x}{a}\right) \cdot sin\left(\dfrac{n' \pi y}{b}\right)
+\end{equation}
+
+ 
+
+
 
 Für eine Platte ergibt sich hier:
 
@@ -41,9 +128,7 @@ An den Rändern gelten die Navierschen Bedingungen:
 Für die statische Durchbiegung gilt unter Berücksichtigung der Navierschen Bedingungen:
 
 
-\begin{equation} 
-\tag{$m,n = 1, 2, 3, 4, ...$}w = \sum_m \sum_n q_{mn} \cdot sin\left(\dfrac{m \pi x}{a}\right) \cdot sin\left(\dfrac{n \pi y}{b}\right)
-\end{equation} 
+
 
 
 
