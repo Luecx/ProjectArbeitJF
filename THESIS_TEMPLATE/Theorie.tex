@@ -28,11 +28,17 @@ Eine analytische Lösung für ein Balkenelement wurde ausführlich durch Karas[.
 Karas[..] wie auch Timoshenko[..] haben gezeigt, dass sich die statische Durchbiegung einer Platte unter einer Kraft durch eine Reihe ausgedrückt werden kann:
 
 
-Zunächst wird angenommen, dass die wirkende Kraft $q$ auf die Platte bekannt und konstant ist:
+Zunächst wird angenommen, dass die wirkende Kraft $Q$ auf die Platte bekannt und konstant ist:
 
-$$q = f(x,y)$$
+$$P = f(x,y)$$
 
-$f(x)$ wird wiederum als trigonemtrische Reihe ausgedrückt
+Unter Berücksichtigung der Randbedingung einer freien Lagerung an den Rändern, welche sich ausdrücken lässt durch:
+
+\begin{equation}
+\tag{x=0,a; \quad y=0,b}w = 0, \qquad \Delta w = \dfrac{\partial^2 w}{\partial x^2} +  \dfrac{\partial^2 w}{\partial y^2} = 0
+\end{equation}
+
+$f(x)$ wird wiederum als trigonemtrische Reihe ausgedrückt welche direkt die Randbedingungen erfüllt.
 
 \begin{equation} 
 \tag{$m,n = 1, 2, 3, 4, ...$}f(x,y) = \sum_m \sum_n a_{mn} \cdot \sin\left(\dfrac{m \pi x}{a}\right) \cdot \sin\left(\dfrac{n \pi y}{b}\right)
@@ -94,38 +100,37 @@ Für die quadratische Platte ergeben sich hier Abweichungen von Rund $3.5\%$ Tim
 
 
 
-
-$$$$
-
+Für die dynamische Durchbiegung wird nach [Karas] der Lagrange-Formulismus genutzt. Zunächst muss die kinetische Energie und potentielle Energie der Platte in Abhängigkeit einer eingeführten generalisierten Koordinate $q_{mn}$ ausgedrückt werden. Somit ergibt sich:
 
 \begin{equation}
-a_{m'n'} = \dfrac{4}{ab} \int_{0}^{a} \int_{0}^{b} f(x,y)\cdot sin\left(\dfrac{m' \pi x}{a}\right) \cdot sin\left(\dfrac{n' \pi y}{b}\right)
+V = \dfrac{1}{8}N a b \pi^2 \sum_m \sum_n q_{mn}^2 \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2 \qquad T = \dfrac{1}{8 }\dfrac{\rho h}{g }\sum_m \sum_n \dot{q}_{mn}^2
 \end{equation}
-	
 
 
-Die statische Durchbiegung ergibt sich somit zu
-
+Unter Einführung der generalisierten Kraft $Q_{mn}$ an $q_{mn}$ ergibt der Lagrange Formulismus für $q_{mn}$ die Gleichung
 
 \begin{equation}
-w = \dfrac{1}{\pi^4 D} \int_{0}^{a} \int_{0}^{b} f(x,y)\cdot sin\left(\dfrac{m' \pi x}{a}\right) \cdot sin\left(\dfrac{n' \pi y}{b}\right)
+\ddot{q}_{mn} + \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right) \pi^4 \overline{a}^2 q_{mn} = \dfrac{4g}{\rho h a b} Q_{mn}
 \end{equation}
 
- 
+$\overline{a}$ ist eine Konstante und wird definiert als 
+\begin{equation}
+\overline{a} = \sqrt{\dfrac{N g}{\rho h}}
+\end{equation} 
+mit der Plattensteifigkeit N 
+\begin{equation}
+N = \dfrac{E h^3}{12 (1-\nu^2)}
+\end{equation} 
 
 
 
-Für eine Platte ergibt sich hier:
 
-$$M'=\rho h \int_0^a \int_0^b \dfrac{w^2}{f^2} dx dy$$
 
-An den Rändern gelten die Navierschen Bedingungen:
+Durch Integration von (2.6) und unter Berücksichtigung der zeitlichen Randbeding $q_{mn} = \dot{q}_{mn} = 0 \text{ für } t = 0$ fallen die Integrationskonstanten weg, so dass $q_{mn}$ wie folgt ausgerechnet werden kann:
 
-\begin{equation} 
-\tag{$x$ = 0, a ; \quad  $y=0, b$}w = 0, \qquad \Delta w = \dfrac{\partial^2 w}{\partial x^2} + \dfrac{\partial^2 w}{\partial y^2} = 0
- \end{equation}
-
-Für die statische Durchbiegung gilt unter Berücksichtigung der Navierschen Bedingungen:
+\begin{equation}
+q_{mn} = \dfrac{1}{\pi^2 \overline{a}  \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right)} \dfrac{4 g }{\rho h a b} \int_0^t	Q_{mn}(\tau) \sin \left[ \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right) \pi^2 \overline{a} (t-\tau)\right] d\tau
+\end{equation}
 
 
 
