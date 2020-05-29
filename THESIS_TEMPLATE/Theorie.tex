@@ -13,11 +13,11 @@ Der Stoßvorgang besteht im Wesentlichen aus einer Kugel mit einem vorgeschriebe
 	$\rho_p$ & Dichte der Platte\\
 	$a$ & Breite der Platte\\
 	$b$ & Länge der Platte\\
-	$h$ & Höhe der Platte \\
+	$h$ & Dicke der Platte \\
 	$E$ & E-Modul der Platte \\
 	$\nu$ & Poissonzahl der Platte \\
-	$x$ & x-Koordinate auf der Platte wo die Kugel einschlägt \\
-	$y$ & y-Koordinate auf der Platte wo die Kugel einschlägt \\
+	$\xi$ & x-Koordinate auf der Platte wo die Kugel einschlägt \\
+	$\eta$ & y-Koordinate auf der Platte wo die Kugel einschlägt \\
 \end{tabular}
 
 Es wird angenommen, dass der Stoß völlig elastisch verläuft sowie, dass weder die Masse der Kugel noch die Masse der Platte sich während des Stoßes verändert.
@@ -105,7 +105,7 @@ Als statische Durchbiegung der Platte unter der Kraft $P$ an der Stelle $(\xi, \
  
 \begin{equation}
  \mathlarger{
- 	w(x,y) = \frac{4P}{\pi^4 a b D} 
+ 	w(x,y,\xi,\eta) = \frac{4P}{\pi^4 a b D} 
  	\sum_{m = 1}^{\infty} \sum_{n = 1}^{\infty}
  	\dfrac{
  		\sin\left(\frac{m \pi \xi}{a}\right) 
@@ -121,6 +121,23 @@ Als statische Durchbiegung der Platte unter der Kraft $P$ an der Stelle $(\xi, \
  }
  \end{equation}
 
+Die Absenkung unter dem Druckpunkt ergibt sich somit zu:
+
+\begin{equation}
+ \mathlarger{
+	w(\xi,\eta) = \frac{4P}{\pi^4 a b D} 
+	\sum_{m = 1}^{\infty} \sum_{n = 1}^{\infty}
+	\dfrac{
+		\sin\left(\frac{m \pi \xi}{a}\right)^2 
+		\cdot 	\sin\left(\frac{n \pi \eta}{b}\right) ^2
+	}{
+		\left( 
+		\frac{m^2}{a^2} +
+		\frac{n^2}{b^2}
+		\right)^2
+	}
+}
+\end{equation}
 
 
 Für die quadratische Platte ergeben sich hier Abweichungen von Rund $3.5\%$ Timoshenko[..]
@@ -128,14 +145,66 @@ Für die quadratische Platte ergeben sich hier Abweichungen von Rund $3.5\%$ Tim
 
 \section{Dynamische Durchbiegung unter strenger Betrachtung}
 
+\subsection{Kinetische Energie der Platte}
+
+Die kinetische Energie ergibt sich durch Verallgemeinerung von $T = \frac{m}{2} v^2$ zu:
+
+\begin{equation}
+T = \dfrac{\rho h}{2} \int_{0}^{a} \int_{0}^{b} \left(\dfrac{d}{dt} w(x)\right)^2 dy \ dx
+\end{equation}
+
+Wenn man (2.3) in (2.12) einsetzt, erhält man direkt:
+
+\begin{align}
+\begin{split}
+T &= \dfrac{\rho h}{2} \int_0^a \int_0^b  \left[\dfrac{d}{dt} \sum_m \sum_n A_{mn} \cdot \sin\left(\dfrac{m \pi x}{a}\right) \cdot \sin\left(\dfrac{n \pi y}{b}\right) \right]^2 dy \ dx  \\
+&= \dfrac{\rho h}{2} \int_0^a \int_0^b  \left[ \sum_m \sum_n \dfrac{d}{dt}\left(A_{mn}\right) \cdot \sin\left(\dfrac{m \pi x}{a}\right) \cdot \sin\left(\dfrac{n \pi y}{b}\right) \right]^2 dy \ dx \\
+&= \dfrac{\rho h}{2} \int_0^a \int_0^b  \left[ \sum_m \sum_n \dot{A}_{mn} \cdot \sin\left(\dfrac{m \pi x}{a}\right) \cdot \sin\left(\dfrac{n \pi y}{b}\right) \right]^2 dy \ dx \\
+\end{split}
+\end{align}
+
+Zum Lösen des Integrals, muss zunächst das Quadrat aufgelöst werden. Zur Vereinfacherung wird einer ganzen Zahl $q$ ein Zahlenpaar $(m,n)$ zugewiesen.
+Somit lässt sich die doppelte Summe wie folgt ausdrücken:
+
+$$\sum_m\sum_n K_{mn}=\sum_q K_q$$
+
+Es folgt leicht, dass:
+
+$$\left(\sum_qA_q\right)^2=\sum_qA^2_q+2\sum_q\sum_{p\neq q}A_qA_p$$
+
+
+Angewendet auf Gleichung (2.13), erhällt man für die quadratischen Terme:
+
+\begin{equation}
+\dfrac{1}{2}\rho h \sum_m\sum_n \dot{A}^2_{mn}\int_0^a\sin^2\left(\dfrac{m\pi x}{a}\right)\int_0^b\sin^2\left(\dfrac{n\pi y}{b}\right) dy \ dx=\dfrac{1}{8}\rho h a b\sum_m\sum_n \dot{A}^2_{mn}
+\end{equation}
+
+Die doppelte Summe über $(p,q)$ wird als vierfache Summe wie folgt ausgedrückt
+
+\begin{equation}
+\dfrac{1}{2}\rho h \sum_m\sum_n\sum_i\sum_j \dot{A}_{mn}\dot{A}_{ij}\int_0^a\sin\left(\dfrac{m\pi x}{a}\right)\sin\left(\dfrac{i\pi x}{a}\right)\int_0^b\sin\left(\dfrac{n\pi y}{b}\right)\sin\left(\dfrac{j\pi y}{b}\right) dy \ dx
+\end{equation}
+
+Unter genauer Betrachtung fällt auf, dass $m\neq i$ oder $n\neq j$ da $q\neq p$. Dies führt dazu, dass stehts mindestens eins der beiden Integrale sich zu null ergibt. Somit folgt für die kinetische Energie:
+
+\begin{equation}
+T = \dfrac{1}{8}\rho h a b\sum_m\sum_n \dot{A}^2_{mn}
+\end{equation}
+
+
+
+%-----------------------------------------------------------------------------------------------------------------------
+% 											V E R Z E R R U N G S E N E R G I E
+%-----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
 \subsection{Verzerrungsenergie durch Dehnung aufgrund von Biegung und Torsion}
 
-
-
-
 Unter der Annahme, dass die Platte nur durch ein Moment $M_y \cdot \Delta y$ um die y-Achse verbogen wird um einen Winkel $\theta$, berechnet sich die Verzerrungsenergie zunächst durch: $\Delta U = \frac{1}{2} (M_y \cdot \Delta y) \cdot \theta$. 
-
-
 
 \begin{center}
 	\begin{overpic}[scale=0.3]{pictures/theory/theory2.eps}
@@ -167,7 +236,7 @@ Die unbekannten Momente können wiederum durch die Plattensteifigkeit und Krümm
 + 2 \nu \dfrac{\partial^2 w}{\partial x^2} \dfrac{\partial^2 w}{\partial y^2}
 + 2(1-\nu) \left(\dfrac{\partial^2 w}{\partial x \partial y}\right)^2
 + \left(\dfrac{\partial^2 w}{\partial y^2}\right)^2 \right] \Delta x \Delta y\\
-        	&=  \dfrac{D}{2}\left[
+&=  \dfrac{D}{2}\left[
 \left(
 \dfrac{\partial^2 w}{\partial x^2} + \dfrac{\partial^2 w}{\partial y^2}\right)^2 
 - 2 (1-\nu) \left( \dfrac{\partial^2 w}{\partial x^2} \dfrac{\partial^2 w}{\partial y^2} - \left( \dfrac{\partial^2 w}{\partial x \partial y} \right)^2\right) \right] \Delta x \Delta y\\
@@ -175,96 +244,71 @@ Die unbekannten Momente können wiederum durch die Plattensteifigkeit und Krümm
 \end{align}
 
 
-
-Die potentielle Energie der Platte ergibt sich nun, wenn Gleichung (2.3) in (2.13) eingesetzt wird und über die gesamte Fläche aufintegriert wird.
+Durch Integration von (2.19) ergibt sich die potentielle Energie der Platte zu:
 
 
 \begin{multline}
-U =  \int_0^a \int_0^b \left\{
-	\frac{D}{2} \sum_{m = 1}^{\infty}\sum_{n = 1}^{\infty} A^2_{mn}
-		\left[
-			\pi^4 \left(\frac{m^2}{a^2} + \frac{n^2}{b^2}\right)^2
-			\sin^2\left(\frac{m\pi x}{a}\right) \sin^2\left(\frac{n\pi y}{b}\right)
-			\right.
-			\right. \\
-			\left.
-			\left.
-			-2(1-\nu) 
-			\frac{m^2n^2\pi^4}{a^2b^2}
-			\left(
-				\sin^2\left(\frac{m\pi x}{a}\right) 
-				\sin^2\left(\frac{n\pi y}{b}\right)
-				- 
-				\cos^2\left(\frac{m\pi x}{a}\right) 
-				\cos^2\left(\frac{n\pi y}{b}\right)
-			\right)
-		\right] 
-	\right\}
+U = \int_0^a \int_0^b \left\{
+\frac{D}{2} \sum_{m = 1}^{\infty}\sum_{n = 1}^{\infty} A^2_{mn}
+\left[
+\pi^4 \left(\frac{m^2}{a^2} + \frac{n^2}{b^2}\right)^2
+\sin^2\left(\frac{m\pi x}{a}\right) \sin^2\left(\frac{n\pi y}{b}\right)
+\right.
+\right. \\
+\left.
+\left.
+-2(1-\nu) 
+\frac{m^2n^2\pi^4}{a^2b^2}
+\left(
+\sin^2\left(\frac{m\pi x}{a}\right) 
+\sin^2\left(\frac{n\pi y}{b}\right)
+- 
+\cos^2\left(\frac{m\pi x}{a}\right) 
+\cos^2\left(\frac{n\pi y}{b}\right)
+\right)
+\right] 
+\right\}
 \end{multline}
 
 Das Ergebnis der Integration lautet:
 
 \begin{equation}
-	\dfrac{D}{2} \sum_{m=1}^{\infty}
-\end{equation}
-
-\subsection{Potentielle Energie der Platte}
-
-Zusätzlich zu der Verzerrungsenergie der Platte kommt das Potential der angreifenden Kräfte hinzu.
-Das Potentiel $V = -W$ ist äquivalent zu der negativen verrichteten Arbeit der angreifenden Kräfte.
-Die Arbeit setzt sich zusammen aus der angreifenden Kraft $q(x,y) \cdot  \cdot \Delta x \Delta y$ und dem zurückgelegten Weg $-w(x,y)$	
-Somit folgt direkt:
-
-\begin{equation}
-\Delta V = q(x,y) \cdot w(x,y) \cdot \Delta x \Delta y 
-\end{equation}
-
-Dann ergibt sich die Änderung des Potentials zu $\Delta \Pi(w) = \Delta U(w) + \Delta V(w,q)$ bzw.:
-
-\begin{equation}
-	\Delta \Pi = \left( \dfrac{D}{2}\left[
-	\left(
-	\dfrac{\partial^2 w}{\partial x^2} + \dfrac{\partial^2 w}{\partial y^2}\right)^2 
-	- 2 (1-\nu) \left( \dfrac{\partial^2 w}{\partial x^2} \dfrac{\partial^2 w}{\partial y^2} - \left( \dfrac{\partial^2 w}{\partial x \partial y} \right)^2\right) \right] + q w \right) \Delta x \Delta y \\
+U = \dfrac{D \cdot a b \cdot \pi^4}{8} \sum_{m=1}^{\infty}  \sum_{n=1}^{\infty} A^2_{mn}  \left( \dfrac{m^2}{a^2} + \dfrac{n^2}{b^2}\right)^2
 \end{equation}
 
 
-
-Für eine strenge Betrachtung werden die kinetische und potentielle Energie der Platte benötigt.
-Unter Berücksichtigung der
-
-Für die dynamische Durchbiegung wird nach [Karas] der Lagrange-Formulismus genutzt. Zunächst muss die kinetische Energie und potentielle Energie der Platte in Abhängigkeit einer eingeführten generalisierten Koordinate $q_{mn}$ ausgedrückt werden. Somit ergibt sich:
+Da in (2.21) nicht die verrichtete Arbeit der angreifenden Kraft $P$ berücksichtigt wurde, ergibt sich in der Lagrangegleichung eine Konstante $Q_{mn}$ welche zu einem späteren Zeitpunkt bestimmt wird.
 
 \begin{equation}
-V = \dfrac{1}{8}N a b \pi^2 \sum_m \sum_n q_{mn}^2 \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2 \qquad T = \dfrac{1}{8 }\dfrac{\rho h}{g }\sum_m \sum_n \dot{q}_{mn}^2
+\dfrac{d}{dt} \dfrac{\partial T}{\partial \dot{A}_{mn}} - \dfrac{\partial T}{\partial A_{mn}} + \dfrac{\partial U}{\partial A_{mn}} = Q_{mn}
+\end{equation}
+
+Es folgt direkt:
+
+\begin{equation}
+\ddot{A}_{mn} + \left(\dfrac{m^2}{a^2} + \dfrac{n^2}{b^2}\right)^2 \pi^4 \overline{a}^2 A_{mn} = \dfrac{4}{\rho h a b} Q_{mn}
 \end{equation}
 
 
-Unter Einführung der generalisierten Kraft $Q_{mn}$ an $q_{mn}$ ergibt der Lagrange Formulismus für $q_{mn}$ die Gleichung
+Durch Integration von (2.23) und unter Berücksichtigung der zeitlichen Randbeding $A_{mn} = \dot{A}_{mn} = 0 \text{ für } t = 0$ fallen die Integrationskonstanten weg, so dass $A_{mn}$ wie folgt ausgerechnet werden kann:
 
 \begin{equation}
-\ddot{q}_{mn} + \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right) \pi^4 \overline{a}^2 q_{mn} = \dfrac{4g}{\rho h a b} Q_{mn}
+A_{mn} = \dfrac{1}{\pi^2 \overline{a}  \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right)} \dfrac{4}{\rho h a b} \int_0^t	Q_{mn}(\tau) \sin \left[ \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right) \pi^2 \overline{a} (t-\tau)\right] d\tau
 \end{equation}
 
-$\overline{a}$ ist eine Konstante und wird definiert als 
+
+Die wirkende Kraft die der Körper auf die Platte ausübt sei nun als $P(\tau)$ bezeichnet. 
+Da angenommen wird, dass die Kraft punktuell an der Stelle $(\xi, \eta)$ angreift, folgt für die virtuelle Arbeit $\delta E$von $P$
+
 \begin{equation}
-\overline{a} = \sqrt{\dfrac{N g}{\rho h}}
-\end{equation} 
-mit der Plattensteifigkeit N 
-\begin{equation}
-N = \dfrac{E h^3}{12 (1-\nu^2)}
+\delta E = P \delta A_{mn} \cdot \sin \left( \dfrac{m \pi \xi}{a} \right) \sin \left( \dfrac{n \pi \eta}{b} \right) = Q_{mn} \cdot \delta A_{mn}
 \end{equation} 
 
-
-
-
-
-Durch Integration von (2.6) und unter Berücksichtigung der zeitlichen Randbeding $q_{mn} = \dot{q}_{mn} = 0 \text{ für } t = 0$ fallen die Integrationskonstanten weg, so dass $q_{mn}$ wie folgt ausgerechnet werden kann:
+es folgt
 
 \begin{equation}
-q_{mn} = \dfrac{1}{\pi^2 \overline{a}  \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right)} \dfrac{4 g }{\rho h a b} \int_0^t	Q_{mn}(\tau) \sin \left[ \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right) \pi^2 \overline{a} (t-\tau)\right] d\tau
+Q_{mn}(t) = P(t) \sin \left( \dfrac{m \pi \xi}{a} \right) \sin \left( \dfrac{n \pi \eta}{b} \right)
 \end{equation}
-
 
 
 
