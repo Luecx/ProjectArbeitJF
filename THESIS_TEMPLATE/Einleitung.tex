@@ -131,11 +131,70 @@ Beide Modelle beinhalten hierbei die Plattendeformation, als auch die des Impact
 
 %grafik!! Einmal EB einmal SM Modell
 
-Auch Olsson befasst sich mit Impact-Versuchen auf Platten. Allerdings erweitert er die bestehende Theorie mit einem analytischen Modell um Schäden in Laminatplatten die von Stößen von großen Massen verursacht werden. In seinem Aufsatz stellt er außerdem ein Massenkriterion für das Massenverhältnis von Impactor zu Platte auf. \\
+Auch Olsson befasst sich mit Impact-Versuchen auf Platten. Allerdings erweitert er die bestehende Theorie mit einem analytischen Modell um Schäden in Laminatplatten, daher anisotropen Platten, die von Stößen von großen Massen verursacht werden. In seinem Aufsatz stellt er außerdem ein Massenkriterion für das Massenverhältnis von Impactor zu Platte auf. [Olsson]\\
+Wichtig ist hier, dass bei sehr kleinen Impactmassen die Platte ballistisch reagiert. Dieses Verhalten wird durch Druckwellen durch die gesamte Platte dominiert. Weiterhin unterscheidet Olsson zwischen small Impact-Mass (kleiner Stoßmasse) und large Impact-Mass (großer Stoßmasse). Das Plattenverhalten bei diesen kleinen Stoßmassen wird vor allem durch Scher- und Biegewellen die nicht in Phase laufen beschrieben. Bei Stoßmassen die wesentlich größer als die Plattenmasse sind, wird ein 'quasi-statisches' Verhalten beobachtet. Hier sind die Spannungen, Verformung und maximalen Belastungen ungefähr in Phase. Auch von Interesse ist, dass Stöße von kleineren Stoßkörpern eher Schäden verursachen als große Stoßkörper mit der gleichen kinetischen Energie.\\
+Das Massenkriterion stellt Olsson wie folgt dar.\\
+Für die kleinen Stoßmassen kombiniert Olsson die Gleichung für die Position der Vorderkante des n-ten Wellenmodus in Polarkoordinaten:
 
-Wichtig ist hier, dass bei sehr kleinen Impactmassen die Platte ballistisch reagiert. Dieses Verhalten wird durch Druckwellen durch die gesamte Platte dominiert. Weiterhin unterscheidet Olsson zwischen small Impact-Mass (kleiner Stoßmasse) und large Impact-Mass (großer Stoßmasse). Das Plattenverhalten bei diesen kleinen Stoßmassen wird vor allem durch Scher- und Biegewellen die nicht in Phase laufen beschrieben. Bei Stoßmassen die wesentlich größer als die Plattenmasse sind, wird ein 'quasi-statisches' Verhalten beobachtet. Hier sind die Spannungen, Verformung und maximalen Belastungen ungefähr in Phase.\\
+\begin{equation}
+	r_{n}(\theta) = \sqrt{\pi}(\frac{2D_{r}(\theta)}{m})^{\frac{1}{4}} (D*l\sqrt{D_{11}D_{22}})^{\frac{1}{4}}\sqrt{nt}
+\end{equation}
 
-%GRAFIK AUS ANALYTICAL PREDICTION OF LARGE MASS IMPACT VON OLSSON Fig. 1 neu aufsetzen und einfügen 
+wobei $D_{r}(\theta)$ die radiale Plattenbiegesteifigkeit in Richtung $\theta$ und $D_{ii}$ die Plattenfestigkeiten darstellen, mit der Gleichung für die Masse der Platte die von dem Stoß beeinflusst wird:
+
+\begin{equation}
+	M_{pWelle} = m \pi r_{1}(0^{\circ}) r_{1}(90^{\circ}) = \pi^{2} t_{imp} \sqrt{2mD^{*}}
+\end{equation}
+
+und die Gleichung für die größte Plattenmasse $M_{pmax}$, die von Grenzen (HIER EINMAL STEPHAN FRAGEN WAS ER MIT GRENZEN MEINT) unbeeinflusst bleibt. Diese findet man, indem man die kleinere der beiden elliptischen Flächen die durch:
+
+\begin{equation}
+	M_{pmax} = m \pi *min\{(\frac{D_{22}}{D_{11}})^{\frac{1}{4}} r_{xmin}^{2} \; , \; (\frac{D_{11}}{D_{22}})^{\frac{1}{4}} r_{ymin}^{2} \}
+\end{equation}		
+		
+beschrieben werden betrachtet. 
+
+\begin{table}[h!]
+	\begin{center}
+		\caption{Variablen}
+		\label{tab:Tabelle 2}
+		\begin{tabular}{l|c}
+			\textbf{Variable} & \textbf{Bedeutung}\\
+			\hline
+			$t_{imp}$ & Zeit am Ende des Stoßvorgangs\\
+			m & Stoßmasse in kg\\
+			$r_{xmin}$ & Distanz vom Stoß bis zur nächsten Grenze in x-Richtung\\
+			$r_{ymin}$ & Distanz vom Stoß bis zur nächsten Grenze in y-Richtung\\
+		\end{tabular}
+	\end{center}
+\end{table}
+
+Ein hinreichendes Kriterium für die wellen-kontrollierte Plattenantwort (kleine Stoßmasse) ist, dass die affektierte Plattenmasse bei $t_{imp}$ nicht größer ist als die Masse die beeinflusst wird, wenn die Grenzen erstmals erreicht werden. Die kombinierten Gleichungen liefern dann: 
+\begin{equation}
+	\frac{M}{M_{pmax}} \leq \frac{M}{M_{pWelle}} \leq 2 \frac{\sqrt{2}}{\pi^{2}} \approx 0.29
+\end{equation}
+
+Bei großen Stoßmassen geht Olsson vor, indem er ein Feder-Masse System modelliert, da die Stoßantwort der Platte, für genügend große Stoßzeiten, quasi-statisch ist. Quasi-statisch bedeutet hier, dass die Last und Auslenkung die gleiche Beziehung wie im statischen Fall haben. Durch zusammenfügen der Stoßzeit $t_{imp}$ und der halben Periodendauer des ersten Vibrationsmodus der Platte ergibt sich: 
+
+\begin{equation}
+	\frac{M}{M_{pmax}} \gg \frac{1}{4}
+\end{equation}
+
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{pictures/einleitung/MassenkriterionOlsson.eps}
+	\caption{Massenkriterion nach Olsson}	
+	\label{fig:Olsson}
+\end{figure}
+
+
+Zuletzt wollen wir noch auf das Kriterion für mittlere Stoßmassen eingehen. Bei einem zentriertem Stoß auf einer quasi-isotropischen Platte ergibt sich:
+
+\begin{equation}
+	\frac{1}{5} < \frac{M}{M_{pmax}} < 2
+\end{equation}
+
+Da dieser jedoch für diese Arbeit nicht von großer Relevanz ist, wird hier nicht näher darauf eingegangen.
+
 
 
 Im Rahmen der Stoßversuche werden in der aktuellen Forschung vor allem
