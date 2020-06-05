@@ -131,7 +131,7 @@ Hierbei leiten sie einmal ein Feder-Masse Modell und ein Energiemodell her. \\
 Das Energiemodell basiert auf der Erhaltung der Energie. In einer einfachen Gleichung wird die kinetische Energie des Stoßkörpers mit der Summe der Kontakt-, Deformations- und Schubspannungsenergien gleichgesetzt. Diese Gleichung wurde dann nach der Stoßkraft aufgelöst und durch die Newton-Raphson Methode gelöst.
 
 \begin{equation}
-	\frac{1}{2} M_{1} V_{0}^{2} = E_{kontakt} + E_{biege} + E_{deform}
+	\frac{1}{2} M_{1} V_{0}^{2} = E_{Kontakt} + E_{Biege} + E_{Deform}
 \end{equation}
 
 Bei dem Feder-Masse Modell leiten die Authoren als Weiterführung des Modells nach Lee auf. Die Stoßmasse $M_{Stoß}$ und die Plattenmasse $M_{Platte}$ werden hier als rigide Massen dargestellt. In früheren Versuchen wurde gezeigt, dass die effektive Plattenmasse ungefähr $\frac{1}{4}$ der Gesamtmasse beträgt. Deshalb wird hier: 
@@ -142,14 +142,35 @@ M_{Platte} = \frac{1}{4} \mbox{Plattenmasse}
 
 angenommen. Die resultierenden Gleichungen, mit zwei Freiheitsgraden setzen sich wie folgt zusammen:
 
+\begin{figure}[h!]
+	\begin{center}
+		\begin{overpic}[scale=2.2]{pictures/einleitung/SpringMassModel.eps}
+			\put(-5,73){$x_{1}$(t)}
+			\put(-5,38){$x_{2}$(t)}
+			\put(20.5,76){$M_{S}$}
+			\put(20.5,41.5){$M_{P}$}
+			\put(30,58){Feder, c}
+			\put(-2,25.5){$K_{Biege}$}
+			\put(-2,10.5){$K_{Feder}$}
+			\put(38,19){$K_{Deform}$}
+			\put(80,73){$M_{I}$$\ddot{x_{1}}$}
+			\put(80,28){$M_{P}$$\ddot{x_{2}}$}
+			\put(97,54){$c\cdot(x_{1}-x_{2})^\frac{3}{2}$}
+			\put(97,6){$K_{B,F}x_{2}+K_{D}\cdot x_{2}^{3}$}
+		\end{overpic}
+		\caption{Feder-Masse Modell mit zwei Freiheitsgraden}
+		\label{fig:SPM}
+	\end{center}
+\end{figure}
+
 \begin{equation}
-	M_{1} \ddot{x_{1}} + \lambda n \cdot \bigl| (x_{1} - x_{2}) \bigl| ^{\frac{3}{2}} = 0
+	M_{S} \ddot{x_{1}} + \lambda c \cdot \bigl| (x_{1} - x_{2}) \bigl| ^{\frac{3}{2}} = 0
 \end{equation}
 
 für die Stoßmasse und
 
 \begin{equation}
-	M_{p} \ddot{x_{2}} + K_{Biege} x_{2} + K_{Deform} x_{2}^{3} - \lambda n \cdot \bigl| (x_{1} - x_{2}) \bigl| ^\frac{3}{2} = 0
+	M_{P} \ddot{x_{2}} + K_{B,F} x_{2} + K_{D} x_{2}^{3} - \lambda c \cdot \bigl| (x_{1} - x_{2}) \bigl| ^\frac{3}{2} = 0
 \end{equation}
 
 für die Platte mit:
@@ -162,12 +183,7 @@ für die Platte mit:
 
 Die beiden Gleichungen werden hier durch das Mehrschrittverfahren gelöst. 
 
-
-
 Beide Modelle beinhalten hierbei die Plattendeformation, als auch die des Impactors. Das Feder-Masse Modell erwies sich hierbei als praktischere Lösung, da sie neben der maximal auftretenden Kraft auch den Kraftverlauf und die Auslenkung wiedergeben kann. \\
-
-%grafik!! Einmal EB einmal SM Modell
-
 Auch Olsson befasst sich mit Impact-Versuchen auf Platten. Allerdings erweitert er die bestehende Theorie mit einem analytischen Modell um Schäden in Laminatplatten, daher anisotropen Platten, die von Stößen von großen Massen verursacht werden. In seinem Aufsatz stellt er außerdem ein Massenkriterion für das Massenverhältnis von Impactor zu Platte auf. [Olsson]\\
 Wichtig ist hier, dass bei sehr kleinen Impactmassen die Platte ballistisch reagiert. Dieses Verhalten wird durch Druckwellen durch die gesamte Platte dominiert. Weiterhin unterscheidet Olsson zwischen small Impact-Mass (kleiner Stoßmasse) und large Impact-Mass (großer Stoßmasse). Das Plattenverhalten bei diesen kleinen Stoßmassen wird vor allem durch Scher- und Biegewellen die nicht in Phase laufen beschrieben. Bei Stoßmassen die wesentlich größer als die Plattenmasse sind, wird ein 'quasi-statisches' Verhalten beobachtet. Hier sind die Spannungen, Verformung und maximalen Belastungen ungefähr in Phase. Auch von Interesse ist, dass Stöße von kleineren Stoßkörpern eher Schäden verursachen als große Stoßkörper mit der gleichen kinetischen Energie.\\
 Das Massenkriterion stellt Olsson wie folgt dar.\\
@@ -180,13 +196,13 @@ Für die kleinen Stoßmassen kombiniert Olsson die Gleichung für die Position d
 wobei $D_{r}(\theta)$ die radiale Plattenbiegesteifigkeit in Richtung $\theta$ und $D_{ii}$ die Plattenfestigkeiten darstellen, mit der Gleichung für die Masse der Platte die von dem Stoß beeinflusst wird:
 
 \begin{equation}
-	M_{pWelle} = m \pi r_{1}(0^{\circ}) r_{1}(90^{\circ}) = \pi^{2} t_{imp} \sqrt{2mD^{*}}
+	M_{p,Welle} = m \pi r_{1}(0^{\circ}) r_{1}(90^{\circ}) = \pi^{2} t_{imp} \sqrt{2mD^{*}}
 \end{equation}
 
 und die Gleichung für die größte Plattenmasse $M_{pmax}$, die von Grenzen (HIER EINMAL STEPHAN FRAGEN WAS ER MIT GRENZEN MEINT) unbeeinflusst bleibt. Diese findet man, indem man die kleinere der beiden elliptischen Flächen die durch:
 
 \begin{equation}
-	M_{pmax} = m \pi \cdot min\{(\frac{D_{22}}{D_{11}})^{\frac{1}{4}} r_{xmin}^{2} \; , \; (\frac{D_{11}}{D_{22}})^{\frac{1}{4}} r_{ymin}^{2} \}
+	M_{p,max} = m \pi \cdot min\{(\frac{D_{22}}{D_{11}})^{\frac{1}{4}} r_{x,min}^{2} \; , \; (\frac{D_{11}}{D_{22}})^{\frac{1}{4}} r_{y,min}^{2} \}
 \end{equation}		
 		
 beschrieben werden betrachtet. 
@@ -200,39 +216,42 @@ beschrieben werden betrachtet.
 			\hline
 			$t_{imp}$ & Zeit am Ende des Stoßvorgangs\\
 			m & Stoßmasse in kg\\
-			$r_{xmin}$ & Distanz vom Stoß bis zur nächsten Grenze in x-Richtung\\
-			$r_{ymin}$ & Distanz vom Stoß bis zur nächsten Grenze in y-Richtung\\
+			$r_{x,min}$ & Distanz vom Stoß bis zur nächsten Grenze in x-Richtung\\
+			$r_{y,min}$ & Distanz vom Stoß bis zur nächsten Grenze in y-Richtung\\
 		\end{tabular}
 	\end{center}
 \end{table}
 
 Ein hinreichendes Kriterium für die wellen-kontrollierte Plattenantwort (kleine Stoßmasse) ist, dass die affektierte Plattenmasse bei $t_{imp}$ nicht größer ist als die Masse die beeinflusst wird, wenn die Grenzen erstmals erreicht werden. Die kombinierten Gleichungen liefern dann: 
 \begin{equation}
-	\frac{M}{M_{pmax}} \leq \frac{M}{M_{pWelle}} \leq 2 \frac{\sqrt{2}}{\pi^{2}} \approx 0.29
+	\frac{M}{M_{p,max}} \leq \frac{M}{M_{p,Welle}} \leq 2 \frac{\sqrt{2}}{\pi^{2}} \approx 0.29
 \end{equation}
 
 Bei großen Stoßmassen geht Olsson vor, indem er ein Feder-Masse System modelliert, da die Stoßantwort der Platte, für genügend große Stoßzeiten, quasi-statisch ist. Quasi-statisch bedeutet hier, dass die Last und Auslenkung die gleiche Beziehung wie im statischen Fall haben. Durch zusammenfügen der Stoßzeit $t_{imp}$ und der halben Periodendauer des ersten Vibrationsmodus der Platte ergibt sich: 
 
 \begin{equation}
-	\frac{M}{M_{pmax}} \gg \frac{1}{4}
+	\frac{M}{M_{p,max}} \gg \frac{1}{4}
 \end{equation}
 
-\begin{figure}[h!]
+Zuletzt wollen wir noch auf das Kriterion für mittlere Stoßmassen eingehen. Bei einem zentriertem Stoß auf einer quasi-isotropischen Platte ergibt sich:
+
+\begin{equation}
+	\frac{1}{5} < \frac{M}{M_{p,max}} < 2
+\end{equation}
+
+Da dieser jedoch für diese Arbeit nicht von großer Relevanz ist, wird an dieser Stelle nicht näher darauf eingegangen.\\
+
+\begin{figure}
 	\begin{center}
-		\includegraphics[width=\linewidth]{pictures/einleitung/MassenkriterionOlsson.eps}
+		\begin{overpic}[width=\linewidth]{pictures/einleitung/MassenkriterionOlsson.eps}
+					
+		\end{overpic}	
 		\caption{Massenkriterion nach Olsson}	
 		\label{fig:Olsson}
 	\end{center}
 \end{figure}
 
 
-Zuletzt wollen wir noch auf das Kriterion für mittlere Stoßmassen eingehen. Bei einem zentriertem Stoß auf einer quasi-isotropischen Platte ergibt sich:
-
-\begin{equation}
-	\frac{1}{5} < \frac{M}{M_{pmax}} < 2
-\end{equation}
-
-Da dieser jedoch für diese Arbeit nicht von großer Relevanz ist, wird an dieser Stelle nicht näher darauf eingegangen.\\
 Im 21. Jahrhundert nahmen dann Kolvik, Onate und Djojodihardjo die Forschung an Platten und Stößen auf.\\
 Djojodihardjo und Mahmud [DJOJO] befassen sich mit der Simulation und Modellerstellung von Stößen auf Platten, vor allem im Rahmen der Raumfahrt. In ihren Überlegungen befassen sie sich mit den Stoßantwortcharakteristika von isotropen und homogenen Platten mit verschiedenen Eigenschaften, die zusammengefügt werden und dann von einem Impactor gestoßen werden. Ausgehend von der Mindlin-Plattentheorie erstellen Djojodihardjo et al. einen Algorithmus, um Platten als generische Strukturen unter Stoßlast zu analysieren. Weiterführend benutzen sie diesen Algorithmus dann für numerische Simulationen, um daraus eine optimale Designkonfiguration für solche Platten zu entwickeln.\\
 Eine weitere Berechnungsmethode wurde unter Annahme der Modelle von Reissner und Mindlin von Onate entworfen [ONATE]. Diese ist auch gütlig, wenn die Kirchoff'sche Plattenbedingung nicht anwendbar ist:
@@ -242,10 +261,10 @@ Eine weitere Berechnungsmethode wurde unter Annahme der Modelle von Reissner und
 \end{equation}
 
 In der sogenannten Reissner-Mindlin Plattentheorie wird angenommen, dass die Plattennormale während Deformation nicht orthogonal zur Plattenmittelebene
-bleibt. Hierdurch eignet sich diese auch zur Berechnung von Schubspannungseffekten. \\
+bleibt. Hierdurch eignet sich diese auch zur Berechnung von Schubspannungseffekten.
 
-\begin{center}
-\begin{figure}[h!]
+\begin{figure}
+	\begin{center}
 	\begin{overpic}[width=\linewidth]{pictures/einleitung/MindlinPlate.eps}
 		\put(5,24) {\parbox{1.5in}{Eigentliche\\ Normalendeformation}}
 		\put(73,6) {\parbox{1.5in}{Angenommene\\ Normalendeformation}}
@@ -253,8 +272,9 @@ bleibt. Hierdurch eignet sich diese auch zur Berechnung von Schubspannungseffekt
 	\end{overpic}
 	\caption{Normalendeformation nach Mindlin}
 	\label{fig:Mindlin}
-\end{figure}
 \end{center}
+\end{figure}
+
 Da die Berechnung nach Reissner-Mindlin das lösen von Differentialgleichungen höherer Ordnung erfordert, stellt sie für diese Arbeit nur einen geringen Anteil
 dar und wird daher bei Bedarf genauer erläutert.\\
 
