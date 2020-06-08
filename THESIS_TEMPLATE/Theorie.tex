@@ -3,7 +3,8 @@
 
 Der Stoßvorgang besteht im Wesentlichen aus einer Kugel mit einem vorgeschriebenen Gewicht $m_g$ welche auf eine reckteckige Platte stößt. Hierbei ist die Auftrittsgeschwindigkeit bekannt so wie alle Größen in der nachfolgenden Tabelle
 
-\begin{tabular}[h]{l | l}
+\begin{center}
+\begin{tabular}[h]{l | l}	
 	Formelzeichen & Beschreibung \\
 	%$w(x,y,t)$ & Durchbiegung der Platte \\
 	%$v(t)$ & Geschwindigkeit der Kugel\\
@@ -18,24 +19,25 @@ Der Stoßvorgang besteht im Wesentlichen aus einer Kugel mit einem vorgeschriebe
 	$\xi$ & x-Koordinate auf der Platte wo die Kugel einschlägt \\
 	$\eta$ & y-Koordinate auf der Platte wo die Kugel einschlägt \\
 \end{tabular}
+\end{center}
 
-Es wird angenommen, dass der Stoß völlig elastisch verläuft sowie, dass weder die Masse der Kugel noch die Masse der Platte sich während des Stoßes verändert.
-Zusätzlich wird davon ausgegangen, dass die Geschwindigkeit der Kugel senkrecht zur Platte bzw. parallel zur Normalen ankommt. Im Gegensatz zu vielen wissenschaftlichen Arbeiten wird von einem isotropen Material ausgegangen. Somit gelten die im folgenden beschrieben Ergebnisse nur bedingt für Laminate, Faserverbundstoffe oder ähnliche nicht-isotrope Materialien. 
+Es wird angenommen, dass der Stoß völlig elastisch verläuft sowie, dass weder die Masse der Kugel, noch die Masse der Platte sich während des Stoßes verändert.
+Zusätzlich wird davon ausgegangen, dass die Geschwindigkeitsvektor der Kugel senkrecht zur Platte bzw. parallel zur Normalen liegt. Im Gegensatz zu vielen wissenschaftlichen Arbeiten wird von einem isotropen Material ausgegangen. Somit gelten die im folgenden beschrieben Ergebnisse nur bedingt für Laminate, Faserverbundstoffe oder ähnliche nicht-isotrope Materialien. 
 
 %Desweiteren wird angenommen, dass der dynamische Biegungspfeil an der Stoßstelle %genau so groß ist, wie der statische Biegungspfeil also wenn die Masse $m_g$ %genau an jener Stelle auf die Platte gelegt wird.
 
 Die Annahme, dass Schubspannungen vernachlässigt werden können erlaubt eine analytische Lösung des Problems unter der Bedingung, dass die Ränder frei gelagert sind. Somit treten lediglich Biegemomente und keine Schubkräfte auf.
 
 Eine analytische Lösung für ein Balkenelement wurde ausführlich durch Karas[..] gelöst und ist nicht Bestandteil dieser Arbeit.
-Karas[..] wie auch Timoshenko[..] haben gezeigt, dass sich die statische Durchbiegung einer Platte unter einer Kraft durch eine Reihe ausgedrückt werden kann.
+Karas[..] wie auch Timoshenko[..] haben gezeigt, dass die statische Durchbiegung einer Platte unter einer Kraft durch eine Reihe ausgedrückt werden kann.
 
 Im folgenden wird die Durchbiegung der Platte als $w(x,y)$ bezeichnet. Die Last $q(x,y)$ wird ebenfalls als ortsabhängige Funktion ausgedrückt. 
-Es gilt die allgemeine Differentialgleichung für die Biegung einer Platte unter einer Last $q$.
+Es gilt die allgemeine Differentialgleichung für die Biegung einer Platte unter einer Last $q$, die im Folgenden als bekannt angenommen wird.
 \begin{equation}
 	D \nabla^4 w = q
 \end{equation}
 
-Die Plattensteifigkeit $D$ errechnet sich aus dem E-Modul $E$ und der Poissonzahl $\nu$ wie folgt:
+Die Plattensteifigkeit $D$ errechnet sich aus dem E-Modul und der Poissonzahl $\nu$ wie folgt:
 \begin{equation}
 D = \dfrac{E h^3}{12 (1-\nu^2)}
 \end{equation}
@@ -51,7 +53,7 @@ Navier hat eine Lösung für Gleichung 2.1. unter speziellen Randbedingungen gez
 Es gilt eine freie Lagerung an den Rändern. Dies bedeutet:
 
 \begin{align}
- \tag{x = 0,a \qquad y = 0,b}w(x,y) = \Delta w(x,y) = 0	
+ \tag{x = 0,a \quad y = 0,b}w(x,y) = \Delta w(x,y) = 0	
 \end{align}
 
 Die Randbedingungen werden direkt durch den folgenden Ansatz für die Durchbiegung erfüllt.
@@ -143,7 +145,7 @@ Die Absenkung unter dem Druckpunkt ergibt sich somit zu:
 \end{equation}
 
 
-Für die quadratische Platte ergeben sich hier Abweichungen von Rund $3.5\%$ Timoshenko[..]
+Für die quadratische Platte ergeben sich hier Abweichungen von Rund $3,5\%$ Timoshenko[..]
 
 
 \section{Dynamische Durchbiegung unter strenger Betrachtung}
@@ -152,19 +154,19 @@ Da der zuvor beschriebene Ansatz keinen Aufschluss über das zeitliche Verhalten
 
 \subsection{Kinetische Energie der Platte}
 
-Die kinetische Energie ergibt sich durch Verallgemeinerung von $T = \frac{m}{2} v^2$ zu:
+Die kinetische Energie ergibt sich durch Verallgemeinerung von $T = \frac{1}{2} mv^2$ zu:
 
 \begin{equation}
 T = \dfrac{\rho h}{2} \int_{0}^{a} \int_{0}^{b} \left(\dfrac{d}{dt} w(x)\right)^2 dy \ dx
 \end{equation}
 
-Wenn man (2.3) in (2.12) einsetzt, erhält man direkt:
+%Wenn man (2.3) in (2.12) unter Voraussetzung des dynamischen Falls, in dem $A_{mn} = f(Zeit)$ gilt, einsetzt, erhält man direkt: 
 
 \begin{align}
 \begin{split}
-T &= \dfrac{\rho h}{2} \int_0^a \int_0^b  \left[\dfrac{d}{dt} \sum_m \sum_n A_{mn} \cdot \sin\left(\dfrac{m \pi x}{a}\right) \cdot \sin\left(\dfrac{n \pi y}{b}\right) \right]^2 dy \ dx  \\
-&= \dfrac{\rho h}{2} \int_0^a \int_0^b  \left[ \sum_m \sum_n \dfrac{d}{dt}\left(A_{mn}\right) \cdot \sin\left(\dfrac{m \pi x}{a}\right) \cdot \sin\left(\dfrac{n \pi y}{b}\right) \right]^2 dy \ dx \\
-&= \dfrac{\rho h}{2} \int_0^a \int_0^b  \left[ \sum_m \sum_n \dot{A}_{mn} \cdot \sin\left(\dfrac{m \pi x}{a}\right) \cdot \sin\left(\dfrac{n \pi y}{b}\right) \right]^2 dy \ dx \\
+T &= \dfrac{1}{2}\rho h \int_0^a \int_0^b  \left[\dfrac{d}{dt} \sum_m \sum_n A_{mn} \cdot \sin\left(\dfrac{m \pi x}{a}\right) \cdot \sin\left(\dfrac{n \pi y}{b}\right) \right]^2 dy \ dx  \\
+&= \dfrac{1}{2} \rho h\int_0^a \int_0^b  \left[ \sum_m \sum_n \dfrac{d}{dt}\left(A_{mn}\right) \cdot \sin\left(\dfrac{m \pi x}{a}\right) \cdot \sin\left(\dfrac{n \pi y}{b}\right) \right]^2 dy \ dx \\
+&= \dfrac{1}{2} \rho h \int_0^a \int_0^b  \left[ \sum_m \sum_n \dot{A}_{mn} \cdot \sin\left(\dfrac{m \pi x}{a}\right) \cdot \sin\left(\dfrac{n \pi y}{b}\right) \right]^2 dy \ dx \\
 \end{split}
 \end{align}
 
@@ -178,7 +180,7 @@ Es folgt leicht, dass:
 $$\left(\sum_qA_q\right)^2=\sum_qA^2_q+2\sum_q\sum_{p\neq q}A_qA_p$$
 
 
-Angewendet auf Gleichung (2.13), erhällt man für die quadratischen Terme:
+Angewendet auf Gleichung (2.13), erhält man für die quadratischen Terme:
 
 \begin{equation}
 \dfrac{1}{2}\rho h \sum_m\sum_n \dot{A}^2_{mn}\int_0^a\sin^2\left(\dfrac{m\pi x}{a}\right)\int_0^b\sin^2\left(\dfrac{n\pi y}{b}\right) dy \ dx=\dfrac{1}{8}\rho h a b\sum_m\sum_n \dot{A}^2_{mn}
@@ -303,7 +305,7 @@ A_{mn} = \dfrac{1}{\pi^2 \overline{a}  \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \
 
 
 Die wirkende Kraft die der Körper auf die Platte ausübt sei nun als $P(\tau)$ bezeichnet. 
-Da angenommen wird, dass die Kraft punktuell an der Stelle $(\xi, \eta)$ angreift, folgt für die virtuelle Arbeit $\delta E$von $P$
+Da angenommen wird, dass die Kraft punktuell an der Stelle $(\xi, \eta)$ angreift, folgt für die virtuelle Arbeit $\delta E$ von $P$
 
 \begin{equation}
 \delta E = P \delta A_{mn} \cdot \sin \left( \dfrac{m \pi \xi}{a} \right) \sin \left( \dfrac{n \pi \eta}{b} \right) = Q_{mn} \cdot \delta A_{mn}
@@ -337,17 +339,17 @@ Umgeschrieben ergibt sich
 \end{equation}
 
 
-Die einzige Unbekannte in der Gleichung ist nun das Stoßkraft $P(\tau)$. Da jedoch in der Regel die Kraft in Abhängigkeit vom Eindringungsweg des stoßendes Körpers in die Platte bekannt ist. Wenn nun der Eindringungsweg als $z$ bezeichnet wird sowie die Position des stoßendes Körper gegen den ruhenden Raum als $u$, ergibt sich direkt:
+Die einzige Unbekannte in der Gleichung ist nun die Stoßkraft $P(\tau)$. Da im Allgemeinen die Stoßkraft in Abhängigkeit von der Zeit nicht gegeben ist, wird im folgenden die Stoßkraft in Abhängigkeit des Eindringunsweges des stoßendes Körpers in die Platte verwendet. Wenn nun der Eindringungsweg als $z$ bezeichnet wird sowie die Position des stoßendes Körper gegen den ruhenden Raum als $u$, ergibt sich direkt:
 
 \begin{equation}
 	u = z + w
 \end{equation}
 
 
-Durch Integration des zweiten Newtonschem Axiom mit der Masse $m_g$ des stoßendes Körpers, ergibt sich für die Geschwindigkeit 
+Durch Integration des zweiten Newton'schen Axioms, mit der Masse $m_g$ des stoßendes Körpers, ergibt sich für die Geschwindigkeit 
 
 \begin{equation}
-	v = v_0 - \frac{1}{m_g} \int_0^t P(t) dt
+	v = v_0 - \frac{1}{m_g} \int_0^t P(\tau) d\tau
 \end{equation}
 
 Durch Integration ergibt sich folglich für den Ort des stoßendes Körpers:
