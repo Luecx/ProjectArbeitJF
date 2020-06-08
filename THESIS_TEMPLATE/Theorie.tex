@@ -5,11 +5,10 @@ Der Stoßvorgang besteht im Wesentlichen aus einer Kugel mit einem vorgeschriebe
 
 \begin{tabular}[h]{l | l}
 	Formelzeichen & Beschreibung \\
-	$v_0$ & Geschwindigkeit der Kugel vor dem Aufschlag \\
-	$v_1$ & Geschwindigkeit der Kugel nach dem Aufschlag \\
-	$c_1$ & Geschwindigkeit der Platte an der Stelle des Aufschlags nach dem Aufschlag \\
+	$w(x,y,t)$ & Durchbiegung der Platte \\
+	$v(t)$ & Geschwindigkeit der Kugel\\
+	$u(t)$ & Ort des stoßendes Körpers \\
 	$m_g$ & Masse der Kugel \\
-	$m_p$ & Masse der Platte\\
 	$\rho_p$ & Dichte der Platte\\
 	$a$ & Breite der Platte\\
 	$b$ & Länge der Platte\\
@@ -312,8 +311,59 @@ Q_{mn}(t) = P(t) \sin \left( \dfrac{m \pi \xi}{a} \right) \sin \left( \dfrac{n \
 
 
 
+Wenn nun schließlich Gleichung (2.26) in Gleichung (2.24) eingesetzt wird, welche wiederum in Gleichung (2.3) eingesetzt wird, ergibt sich die Durchbiegung als Abhängigkeit des Stoßgewichtes $P(\tau)$ und der Zeit.
 
-Die einzige Unbekannte 
+\begin{multline}
+w(x,y,t) = \sum_m \sum_n 
+\dfrac{1}{\pi^2 \overline{a}  \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right)} \dfrac{4}{\rho h a b} \\ \int_0^t
+ P(t) \sin \left( \dfrac{m \pi \xi}{a} \right) \sin \left( \dfrac{n \pi \eta}{b} \right)
+\sin \left[ \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right) \pi^2 \overline{a} (t-\tau)\right] d\tau
+\cdot \sin\left(\dfrac{m \pi x}{a}\right) \cdot \sin\left(\dfrac{n \pi y}{b}\right)
+\end{multline}
+
+Umgeschrieben ergibt sich
+
+\begin{equation}
+	w(x,y,t) = \dfrac{4}{\rho h a b \pi^2 \overline{a}} \cdot \sum_m \sum_n 
+	\dfrac{\sin\left(\dfrac{m \pi x}{a}\right)^2 \cdot \sin\left(\dfrac{n \pi y}{b}\right)^2}{\left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right)} 
+	\int_0^t
+	P(t)\cdot \sin \left[ \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right) \pi^2 \overline{a} (t-\tau)\right] d\tau
+\end{equation}
+
+
+Die einzige Unbekannte in der Gleichung ist nun das Stoßkraft $P(\tau)$. Da jedoch in der Regel die Kraft in Abhängigkeit vom Eindringungsweg des stoßendes Körpers in die Platte bekannt ist. Wenn nun der Eindringungsweg als $z$ bezeichnet wird sowie die Position des stoßendes Körper gegen den ruhenden Raum als $u$, ergibt sich direkt:
+
+\begin{equation}
+	u = z + w
+\end{equation}
+
+
+Durch Integration des zweiten Newtonschem Axiom mit der Masse $m_g$ des stoßendes Körpers, ergibt sich für die Geschwindigkeit 
+
+\begin{equation}
+	v = v_0 - \frac{1}{m_g} \int_0^t P(t) dt
+\end{equation}
+
+Durch Integration ergibt sich folglich für den Ort des stoßendes Körpers:
+
+\begin{equation}
+	u = v_0 \cdot t - \frac{1}{m_g} \int_0^t P(\tau) (t-\tau) d\tau
+\end{equation}
+
+
+Die Idee ist nun, wenn $P(z)$ bekannt ist, die Umkehrfunktion $z(P)$ zu verwenden. in der Regel sind die Stoßgesetze invertierbar wodurch dieser Schritt kein Problem darstellen sollte.
+
+Wenn man nun Gleichung (2.31) mit (2.28) und $z(P)$ zusammenführt, ergibt sich folgender Ausdruck:
+
+
+\begin{multline}
+v_0 \cdot t - \frac{1}{m_g} \int_0^t P(\tau) (t-\tau) d\tau = z(P) + \\ \dfrac{4}{\rho h a b \pi^2 \overline{a}} \cdot \sum_m \sum_n 
+\dfrac{\sin\left(\dfrac{m \pi x}{a}\right)^2 \cdot \sin\left(\dfrac{n \pi y}{b}\right)^2}{\left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right)} 
+\int_0^t
+P(t)\cdot \sin \left[ \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right) \pi^2 \overline{a} (t-\tau)\right] d\tau
+\end{multline}
+
+
 
 
 Der Hauptteil der Arbeit gliedert sich in zwei Teile. Im ersten Teil (Theorie) wird die Ausgangssituation erarbeitet. Dabei werden grundlegende Fragen erläutert (Wovon wird ausgegangen? Was ist bekannt? Welche Annahmen werden getroffen? etc.) und die konkrete Zielsetzung erarbeitet. Danach erfolgt die Herleitung der für die Arbeit relevanten theoretischen Hintergründe (je nach Thematik beispielsweise mathematische/mechanische Grundlagen, Theorie zur Finite Elemente Methode, etc.), auf denen die selbstständig erbrachte Leistung aufbaut. Hier gilt die Regel: So wenig wie möglich und so viel wie nötig! 
