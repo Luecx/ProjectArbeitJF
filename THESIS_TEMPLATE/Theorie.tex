@@ -5,9 +5,9 @@ Der Stoßvorgang besteht im Wesentlichen aus einer Kugel mit einem vorgeschriebe
 
 \begin{tabular}[h]{l | l}
 	Formelzeichen & Beschreibung \\
-	$w(x,y,t)$ & Durchbiegung der Platte \\
-	$v(t)$ & Geschwindigkeit der Kugel\\
-	$u(t)$ & Ort des stoßendes Körpers \\
+	%$w(x,y,t)$ & Durchbiegung der Platte \\
+	%$v(t)$ & Geschwindigkeit der Kugel\\
+	%$u(t)$ & Ort des stoßendes Körpers \\
 	$m_g$ & Masse der Kugel \\
 	$\rho_p$ & Dichte der Platte\\
 	$a$ & Breite der Platte\\
@@ -20,15 +20,17 @@ Der Stoßvorgang besteht im Wesentlichen aus einer Kugel mit einem vorgeschriebe
 \end{tabular}
 
 Es wird angenommen, dass der Stoß völlig elastisch verläuft sowie, dass weder die Masse der Kugel noch die Masse der Platte sich während des Stoßes verändert.
-Zusätzlich wird davon ausgegangen, dass die Geschwindigkeit der Kugel senkrecht zur Platte bzw. parallel zur Normalen ankommt. Im Gegensatz zu vielen wissenschaftlichen Arbeiten wird von einem isotropen Material ausgegangen. Somit gelten die im folgenden beschrieben Ergebnisse nur bedingt für Laminate, Faserverbundstoffe oder ähnliche nicht-isotrope Materialien. Desweiteren wird angenommen, dass der dynamische Biegungspfeil an der Stoßstelle genau so groß ist, wie der statische Biegungspfeil also wenn die Masse $m_g$ genau an jener Stelle auf die Platte gelegt wird.
+Zusätzlich wird davon ausgegangen, dass die Geschwindigkeit der Kugel senkrecht zur Platte bzw. parallel zur Normalen ankommt. Im Gegensatz zu vielen wissenschaftlichen Arbeiten wird von einem isotropen Material ausgegangen. Somit gelten die im folgenden beschrieben Ergebnisse nur bedingt für Laminate, Faserverbundstoffe oder ähnliche nicht-isotrope Materialien. 
+
+%Desweiteren wird angenommen, dass der dynamische Biegungspfeil an der Stoßstelle %genau so groß ist, wie der statische Biegungspfeil also wenn die Masse $m_g$ %genau an jener Stelle auf die Platte gelegt wird.
 
 Die Annahme, dass Schubspannungen vernachlässigt werden können erlaubt eine analytische Lösung des Problems unter der Bedingung, dass die Ränder frei gelagert sind. Somit treten lediglich Biegemomente und keine Schubkräfte auf.
 
 Eine analytische Lösung für ein Balkenelement wurde ausführlich durch Karas[..] gelöst und ist nicht Bestandteil dieser Arbeit.
-Karas[..] wie auch Timoshenko[..] haben gezeigt, dass sich die statische Durchbiegung einer Platte unter einer Kraft durch eine Reihe ausgedrückt werden kann:
+Karas[..] wie auch Timoshenko[..] haben gezeigt, dass sich die statische Durchbiegung einer Platte unter einer Kraft durch eine Reihe ausgedrückt werden kann.
 
 Im folgenden wird die Durchbiegung der Platte als $w(x,y)$ bezeichnet. Die Last $q(x,y)$ wird ebenfalls als ortsabhängige Funktion ausgedrückt. 
-Es ergibt sich die allgemeine Differentialgleichung für eine Platte unter einer Last $q$.
+Es gilt die allgemeine Differentialgleichung für die Biegung einer Platte unter einer Last $q$.
 \begin{equation}
 	D \nabla^4 w = q
 \end{equation}
@@ -45,14 +47,14 @@ D = \dfrac{E h^3}{12 (1-\nu^2)}
 	\includegraphics[scale=0.2]{pictures/theory/theory1.eps}
 \end{center}
 
-Navier hat eine Lösung für Gleichung 2.1. unter bestimmten Randbedingungen gezeigt. 
+Navier hat eine Lösung für Gleichung 2.1. unter speziellen Randbedingungen gezeigt. 
 Es gilt eine freie Lagerung an den Rändern. Dies bedeutet:
 
 \begin{align}
  \tag{x = 0,a \qquad y = 0,b}w(x,y) = \Delta w(x,y) = 0	
 \end{align}
 
-
+Die Randbedingungen werden direkt durch den folgenden Ansatz für die Durchbiegung erfüllt.
 Er drückt hierfür die unbekannte Durchbiegung der Platte $w(x,y)$ so wie die Last $q(x,y)$ als Reihenausdrücke aus mit $m,n = 1,2,3,4...$:
 
 \begin{equation} 
@@ -62,6 +64,8 @@ w(x,y) = \sum_m \sum_n A_{mn} \cdot \sin\left(\dfrac{m \pi x}{a}\right) \cdot \s
 \begin{equation} 
 q(x,y) = \sum_m \sum_n B_{mn} \cdot \sin\left(\dfrac{m \pi x}{a}\right) \cdot \sin\left(\dfrac{n \pi y}{b}\right)
 \end{equation} 
+
+Man sieht leicht, dass für $x=0,a$ und $y=0,b$ die Randbedingungen direkt erfüllt sind.
 
 Um $B_{mn}$ zu bestimmen gibt es mehrere Möglichkeiten welche hier nicht näher erläutert werden. Als Lösung für $B_{mn}$ ergibt sich:
 
@@ -143,6 +147,8 @@ Für die quadratische Platte ergeben sich hier Abweichungen von Rund $3.5\%$ Tim
 
 
 \section{Dynamische Durchbiegung unter strenger Betrachtung}
+
+Da der zuvor beschriebene Ansatz keinen Aufschluss über das zeitliche Verhalten liefert, wird eine strenge Betrachtung der Durchbiegung erläutert. Hierfür werden die potentiellen und kinetischen Energien in die Lagrange-Gleichung 2. Ordnung eingeführt und integriert.
 
 \subsection{Kinetische Energie der Platte}
 
@@ -306,7 +312,7 @@ Da angenommen wird, dass die Kraft punktuell an der Stelle $(\xi, \eta)$ angreif
 es folgt
 
 \begin{equation}
-Q_{mn}(t) = P(t) \sin \left( \dfrac{m \pi \xi}{a} \right) \sin \left( \dfrac{n \pi \eta}{b} \right)
+Q_{mn}(\tau) = P(\tau) \sin \left( \dfrac{m \pi \xi}{a} \right) \sin \left( \dfrac{n \pi \eta}{b} \right)
 \end{equation}
 
 
@@ -351,7 +357,7 @@ Durch Integration ergibt sich folglich für den Ort des stoßendes Körpers:
 \end{equation}
 
 
-Die Idee ist nun, wenn $P(z)$ bekannt ist, die Umkehrfunktion $z(P)$ zu verwenden. in der Regel sind die Stoßgesetze invertierbar wodurch dieser Schritt kein Problem darstellen sollte.
+Die Idee ist nun, wenn $P(z)$ bekannt ist, die Umkehrfunktion $z(P)$ zu verwenden. In der Regel sind die Stoßgesetze invertierbar wodurch dieser Schritt kein Problem darstellen sollte.
 
 Wenn man nun Gleichung (2.31) mit (2.28) und $z(P)$ zusammenführt, ergibt sich folgender Ausdruck:
 
@@ -363,6 +369,13 @@ v_0 \cdot t - \frac{1}{m_g} \int_0^t P(\tau) (t-\tau) d\tau = z(P) + \\ \dfrac{4
 P(t)\cdot \sin \left[ \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right) \pi^2 \overline{a} (t-\tau)\right] d\tau
 \end{multline}
 
+Im Allgemeinen ist Gleichung (2.32) nicht oder nur kaum analytisch lösbar. Hingegen kann das Integral numerisch gelöst werden, in dem man das Intervall $\left[ 0,t \right]$ in Teilintervalle der Länge
+
+ \begin{equation}
+ \dfrac{T}{\kappa}
+ \end{equation}
+ 
+ wodrin $T$ die Schwingungsdauer der Platte beschreibt. $\kappa$ muss groß genug gewählt werden, damit numerische Ungenauigkeiten minimal werden. In der Literatur wurde hier entweder $180$ oder $360$ gewählt. Falls die Teilintervalle klein genug sind, kann 
 
 
 
