@@ -47,7 +47,7 @@ zwischen High-Mass (hoher Masse) und Low-Mass (niedriger Masse) unterschieden.
 \\
 Da die Masse hier eine zentrale Rolle spielt, wollen wir genauer auf die
 Kriterien eingehen: \\
-Laut der Gleichung für kinetische Energie: 
+Laut der Gleichung für die kinetische Energie: 
 \begin{equation}
 E = \frac{1}{2}mv^2
 \end{equation}
@@ -65,24 +65,24 @@ wobei:
 		\end{tabular}
 	\end{center}
 \end{table}\\
-geht die Masse nur mit der ersten Potenz, die Geschwindigkeit andererseits mit
+geht die Masse nur mit der ersten Potenz, die Geschwindigkeit jedoch mit
 der zweiten Potenz in die Energie ein. Hieraus ist leicht zu erkennen, dass die
 Geschwindigkeiten im Low-Velocity Impact Bereich eine gegenüber der Masse
 insignifikante Rolle spielt. \\
 In der durchgeführten Parameterstudie werden unter anderem der Einfluss der
-Stoßstelle, des Gewichts der Stoßmasse und das Material und die Dimensionen der
+Stoßstelle, des Gewichts der Stoßmasse und das Material sowie die Dimensionen der
 Platte untersucht. \\
-Für das Verständnis des Lesers werden im Folgenden zuerst der aktuelle Stand der
+Für das Verständnis wird im Folgenden zuerst der aktuelle Stand der
 Technik ausgeführt, bevor die physikalischen und mathematischen Grundlagen und
 Modelle auf denen das Skript basiert erläutert werden.\\
-(Rest der Einleitung dann wenn die Arbeit soweit steht)
+%(Rest der Einleitung dann wenn die Arbeit soweit steht)
 \\
 \section{Zielsetzung}
 Da in vielen Bereichen des Transportsektors kritische Komponenten von Zeit zu
 Zeit Stößen ausgesetzt werden, liegt ein Bedarf zur Berechnung dieser Stöße und
 deren Folgeschäden vor. \\
 In dieser Arbeit wird anhand der Berechnungsgrundlagen von Karas und eines
-daraus hergeleiteten Skriptes, eine Parameterstudie zur Untersuchung von
+daraus abgeleiteten Python-Skriptes, eine Parameterstudie zur Untersuchung von
 Low-Velocity Stößen auf isotropen Platten durchgeführt. \\
 Das Ziel dieser Studie ist es, Zusammenhänge zwischen Parametern, wie dem Stoßort,
 Stoßmasse und Plattenmaße, und dem Plattenverhalten herauszuarbeiten. Diese
@@ -92,8 +92,8 @@ Austauscharbeiten genutzt werden.\\
 
 \section{Stand der Technik}
 
-Stöße auf Platten haben in der Technik seit langem eine stetig wachsende
-Wichtigkeit. \\
+%Stöße auf Platten haben in der Schadensbeurteilung seit langem eine stetig wachsende
+%Wichtigkeit. \\
 Bereits 1881 stellt Heinrich Hertz mit seiner Thesis über die Berührung fester
 Körper die ersten Grundlagen für die Berechnung von Stößen und deren Folgen vor.
 [HERTZ] \\
@@ -103,11 +103,11 @@ auftritt. In diesem Punkt würde die Spannung ins Unendliche wachsen, denn laut
 der Gleichung für Spannung 
 
 \begin{equation}
-\sigma = \frac{\mbox{Kraft}}{\mbox{Fläche}} \rightarrow \infty \; , \; \; \mbox{für die Fläche} \rightarrow 0
+\sigma = \frac{\mbox{F}}{\mbox{A}} \rightarrow \infty \; , \; \; \mbox{für die Fläche} \rightarrow 0
 \end{equation}
 
 würde die Fläche, wenn keine Verformung stattfindet, gegen 0 gehen. Die Drücke
-und Deformationen in diesem Hertzschen Kontakt im Körper sind gegen die
+und Deformationen in diesem Hertzschen Kontakt sind gegen die
 außerhalb der Kontaktzone undendlich groß. \\
 Zur Vereinfachung der Berechnung stellt Hertz folgende Annahmen auf, die sich in
 vielen späteren Thesen zu diesem Thema wiederfinden: 
@@ -120,26 +120,36 @@ vielen späteren Thesen zu diesem Thema wiederfinden:
 
 In diesem Modell werden die beiden Flächen mathematisch in Berührung gebracht und das verwendete Koordinatensystem in die Fläche die tangential zur Berührungsfläche liegt eingebracht. \\
 
-%Grafik hier
+\begin{figure}[h!]
+	\begin{center}
+		\begin{overpic}[width=\linewidth]{pictures/einleitung/HertzscherKontakt.eps}
+			\put(70,20){\mbox{x}}
+			\put(51,1){\mbox{z}}
+			\put(5,40){\begin{minipage}{\textwidth}Hertz'sche\\Flächenpressung\end{minipage}}
+		\end{overpic}	
+		\caption{Koordinatensystem und Flächenpressung nach Hertz}
+		\label{fig:Hertz}
+	\end{center}
+\end{figure}
 
-Basierend auf den Hertz'schen Berechnungen hat sich dann am Anfang des 20. Jahrhunderts auch Karas [KARAS] mit der Plattentheorie befasst. Auf seinen Berechnungen basiert in großen Teilen diese Arbeit. \\
+Basierend auf den Hertz'schen Berechnungen hat sich am Anfang des 20. Jahrhunderts auch Karas [KARAS] mit der Plattentheorie befasst. Auf seinen Berechnungen basiert in großen Teilen diese Arbeit. \\
 Fast gleichzeitig stellte auch Timoshenko überlegungen zu der Biegung einer gestützten Platte unter Wirkung einer Einzellast an. Basierend auf der Arbeit von Dr. Nadai leitet er anhand unendlich ausgedehnter Platten einen tabellarischen Ansatz zur Lösung des oben genannten Problems her. Auch zeigte sich in seinen Berechnungen, dass die Werte für eine endliche, eingespannte Platte mit stetig größer werdenden Maßen sich denen der unendlich ausgedehnten Platte schnell nähern.\\
-Auch Wang [WANG et al.] stellten Überlegungen zu dünnen Platten auf. In ihrer These NONLINEAR LARGE-DEFLECTION BOUNDARY-VALUE PROBLEMS OF RECTANGULAR PLATES von 1948 beschreiben sie die Auslenkung die solche Platten unter seitlichem Schub oder normalem Druck erfahren. Bei kleinen Auslenkungen unterliegt die Deformation einer einfachen linearen Gleichung. Sobald die Auslenkung groß wird, fällt die Beschreibung unter die sogenannten Von Kármán'schen Differentialgleichungen, die Wang et al. durch Finite Differenzen gelöst werden.\\
+Auch Wang [WANG et al.] stellten Überlegungen zu dünnen Platten auf. In ihrer These NONLINEAR LARGE-DEFLECTION BOUNDARY-VALUE PROBLEMS OF RECTANGULAR PLATES von 1948 beschreiben sie die Auslenkung, die solche Platten unter seitlichem Schub oder normalem Druck erfahren. Bei kleinen Auslenkungen unterliegt die Deformation einer einfachen linearen Gleichung. Sobald die Auslenkung groß wird, fällt die Beschreibung unter die sogenannten Von Kármán'schen Differentialgleichungen, die Wang et al. durch Finite Differenzen lösen.\\
 In der zweiten Hälfte des 20. Jahrhunderts richtet sich der Fokus der Forschung auf Laminatplatten. Shivakumar et al. [SHIV] stellen zwei Modelle zur Bestimmung der Einschlagkraft und Dauer bei Low-Velocity Impactversuchen in zirkularen Laminaten auf. \\
 Hierbei leiten sie einmal ein Feder-Masse Modell und ein Energiemodell her. \\
-Das Energiemodell basiert auf der Erhaltung der Energie. In einer einfachen Gleichung wird die kinetische Energie des Stoßkörpers mit der Summe der Kontakt-, Deformations- und Schubspannungsenergien gleichgesetzt. Diese Gleichung wurde dann nach der Stoßkraft aufgelöst und durch die Newton-Raphson Methode gelöst.
+Das Energiemodell basiert auf der Erhaltung der Energie. In einer einfachen Gleichung wird die kinetische Energie des Stoßkörpers mit der Summe der Kontakt-, Deformations- und Schubspannungsenergien gleichgesetzt. Diese Gleichung wurde dann nach der Stoßkraft umgestellt und durch die Newton-Raphson Methode gelöst.
 
 \begin{equation}
 	\frac{1}{2} m_{g} V_{0}^{2} = E_{Kontakt} + E_{Biege} + E_{Deform}
 \end{equation}
 
-Bei dem Feder-Masse Modell leiten die Authoren als Weiterführung des Modells nach Lee auf. Die Stoßmasse $m_g$ und die Plattenmasse $M_p$ werden hier als rigide Massen dargestellt. In früheren Versuchen wurde gezeigt, dass die effektive Plattenmasse ungefähr $\frac{1}{4}$ der Gesamtmasse beträgt. Deshalb wird hier 
+Das Feder-Masse Modell stellen die Authoren als Weiterführung des Modells nach Lee auf. Die Stoßmasse $m_g$ und die Plattenmasse $m_p$ werden hier als rigide Massen dargestellt. In früheren Versuchen wurde gezeigt, dass die effektive Plattenmasse ungefähr $\frac{1}{4}$ der Gesamtmasse beträgt. Deshalb wird hier 
 
 \begin{equation}
 m_{eff} = \frac{1}{4} m_p
 \end{equation} 
 
-angenommen. Die resultierenden Gleichungen, mit zwei Freiheitsgraden setzen sich wie folgt zusammen:
+angenommen. Die resultierenden Gleichungen, mit zwei Freiheitsgraden, setzen sich wie folgt zusammen:
 
 \begin{figure}[h!]
 	\begin{center}
@@ -172,7 +182,7 @@ für die Stoßmasse und
 	m_{p} \ddot{x_{2}} + K_{B,F} x_{2} + K_{D} x_{2}^{3} - \lambda c \cdot \bigl| (x_{1} - x_{2}) \bigl| ^\frac{3}{2} = 0
 \end{equation}
 
-für die Platte mit:
+für die Platte, mit:
 
 \begin{align}
 		\lambda &= 1 \quad \mbox{für} \quad x_{1} > x_{2} \\
@@ -182,7 +192,7 @@ für die Platte mit:
 
 Die beiden Gleichungen werden hier durch das Mehrschrittverfahren gelöst. 
 
-Beide Modelle beinhalten hierbei die Plattendeformation, als auch die des Impaktors. Das Feder-Masse Modell erwies sich hierbei als praktischere Lösung, da sie neben der maximal auftretenden Kraft auch den Kraftverlauf und die Auslenkung wiedergeben kann. \\
+Beide Modelle beinhalten hierbei die Plattendeformation, als auch die Impaktordeformation. Das Feder-Masse Modell erwies sich allerdings als praktischere Lösung, da sie neben der maximal auftretenden Kraft auch den Kraftverlauf und die Auslenkung der Platte wiedergeben kann. \\
 Auch Olsson befasst sich mit Impact-Versuchen auf Platten. Allerdings erweitert er die bestehende Theorie mit einem analytischen Modell um Schäden in Laminatplatten, daher anisotropen Platten, die von Stößen von großen Massen verursacht werden. In seinem Aufsatz stellt er außerdem ein Massenkriterion für das Massenverhältnis von Impactor zu Platte auf. [Olsson]\\
 Wichtig ist hier, dass bei sehr kleinen Impaktmassen die Platte ballistisch reagiert. Dieses Verhalten wird durch Druckwellen durch die gesamte Platte dominiert. Weiterhin unterscheidet Olsson zwischen small Impact-Mass (kleiner Stoßmasse) und large impact-Mass (großer Stoßmasse). Das Plattenverhalten bei diesen kleinen Stoßmassen wird vor allem durch Scher- und Biegewellen die nicht in Phase laufen beschrieben. Bei Stoßmassen die wesentlich größer als die Plattenmasse sind, wird ein 'quasi-statisches' Verhalten beobachtet. Hier sind die Spannungen, Verformung und maximalen Belastungen ungefähr in Phase. Auch von Interesse ist, dass Stöße von kleineren Stoßkörpern eher Schäden verursachen als große Stoßkörper mit der gleichen kinetischen Energie.\\
 Das Massenkriterion stellt Olsson wie folgt dar.\\
@@ -198,7 +208,7 @@ wobei $D_{r}(\theta)$ die radiale Plattenbiegesteifigkeit in Richtung $\theta$ u
 	m_{p,Welle} = m \pi r_{1}(0^{\circ}) r_{1}(90^{\circ}) = \pi^{2} t_{imp} \sqrt{2mD^{*}}
 \end{equation}
 
-und die Gleichung für die größte Plattenmasse $M_{p,max}$, die von Grenzen (HIER EINMAL STEPHAN FRAGEN WAS ER MIT GRENZEN MEINT) unbeeinflusst bleibt. Diese findet man, indem man die kleinere der beiden elliptischen Flächen die durch:
+und die Gleichung für die größte Plattenmasse $m_{p,max}$, die von den Plattengrenzen unbeeinflusst bleibt. Diese findet man, indem man die kleinere der beiden elliptischen Flächen die durch:
 
 \begin{equation}
 	m_{p,max} = m \pi \cdot min\{(\frac{D_{22}}{D_{11}})^{\frac{1}{4}} r_{x,min}^{2} \; , \; (\frac{D_{11}}{D_{22}})^{\frac{1}{4}} r_{y,min}^{2} \}
@@ -215,13 +225,13 @@ beschrieben werden betrachtet.
 			\hline
 			$t_{imp}$ & Zeit am Ende des Stoßvorgangs\\
 			m & Stoßmasse in kg\\
-			$r_{x,min}$ & Distanz vom Stoß bis zur nächsten Grenze in x-Richtung\\
-			$r_{y,min}$ & Distanz vom Stoß bis zur nächsten Grenze in y-Richtung\\
+			$r_{x,min}$ & Distanz vom Stoß bis zum nächsten Plattenrand in x-Richtung\\
+			$r_{y,min}$ & Distanz vom Stoß bis zum nächsten Plattenrand in y-Richtung\\
 		\end{tabular}
 	\end{center}
 \end{table}
 
-Ein hinreichendes Kriterium für die wellen-kontrollierte Plattenantwort (kleine Stoßmasse) ist, dass die affektierte Plattenmasse bei $t_{imp}$ nicht größer ist als die Masse die beeinflusst wird, wenn die Grenzen erstmals erreicht werden. Die kombinierten Gleichungen liefern dann: 
+Ein hinreichendes Kriterium für die wellen-kontrollierte Plattenantwort (kleine Stoßmasse) ist, dass die affektierte Plattenmasse bei $t_{imp}$ nicht größer ist als die Masse, die beeinflusst wird, wenn die Grenzen erstmals erreicht werden. Die kombinierten Gleichungen liefern dann: 
 \begin{equation}
 	\frac{m}{m_{p,max}} \leq \frac{m}{m_{p,Welle}} \leq 2 \frac{\sqrt{2}}{\pi^{2}} \approx 0.29
 \end{equation}
@@ -240,7 +250,7 @@ Zuletzt wird noch auf das Kriterion für mittlere Stoßmassen eingegangen. Bei e
 
 Da dieser jedoch für diese Arbeit nicht von großer Relevanz ist, wird an dieser Stelle nicht näher darauf eingegangen.\\
 
-\begin{figure}
+\begin{figure}[H]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/einleitung/MassenkriterionOlsson.eps}
 					
@@ -252,15 +262,26 @@ Da dieser jedoch für diese Arbeit nicht von großer Relevanz ist, wird an diese
 
 
 Im 21. Jahrhundert nahmen dann Kolvik, Onate und Djojodihardjo die Forschung an Platten und Stößen auf.\\
-Djojodihardjo und Mahmud [DJOJO] befassen sich mit der Simulation und Modellerstellung von Stößen auf Platten, vor allem im Rahmen der Raumfahrt. In ihren Überlegungen befassen sie sich mit den Stoßantwortcharakteristika von isotropen und homogenen Platten mit verschiedenen Eigenschaften, die zusammengefügt werden und dann von einem Impactor gestoßen werden. Ausgehend von der Mindlin-Plattentheorie erstellen Djojodihardjo et al. einen Algorithmus, um Platten als generische Strukturen unter Stoßlast zu analysieren. Weiterführend benutzen sie diesen Algorithmus dann für numerische Simulationen, um daraus eine optimale Designkonfiguration für solche Platten zu entwickeln.\\
+Djojodihardjo und Mahmud [DJOJO] legen ihren Schwerpunkt auf die Simulation und Modellerstellung von Stößen auf Platten, vor allem im Rahmen der Raumfahrt. In ihren Überlegungen befassen sie sich mit den Stoßantwortcharakteristika von isotropen und homogenen Platten mit verschiedenen Eigenschaften, die zusammengefügt werden und dann von einem Impactor gestoßen werden. Ausgehend von der Mindlin-Plattentheorie erstellen Djojodihardjo et al. einen Algorithmus, um Platten als generische Strukturen unter Stoßlast zu analysieren. Weiterführend benutzen sie diesen Algorithmus dann für numerische Simulationen, um daraus eine optimale Designkonfiguration für solche Platten zu entwickeln.\\
 Eine weitere Berechnungsmethode wurde unter Annahme der Modelle von Reissner und Mindlin von Onate entworfen [ONATE]. Diese ist auch gütlig, wenn die Kirchoff'sche Plattenbedingung nicht anwendbar ist:
 
 \begin{equation}
 \frac{\mbox{Plattendicke}}{\mbox{Seitenlänge}} = \frac{1}{10}
 \end{equation}
 
-In der sogenannten Reissner-Mindlin Plattentheorie wird angenommen, dass die Plattennormale während Deformation nicht orthogonal zur Plattenmittelebene
+In der sogenannten Reissner-Mindlin Plattentheorie wird angenommen, dass die Plattennormale unter Deformation nicht orthogonal zur Plattenmittelebene
 bleibt. Hierdurch eignet sich diese auch zur Berechnung von Schubspannungseffekten.
+
+\begin{figure}[H]
+	\begin{center}
+		\begin{overpic}[width=\linewidth]{pictures/einleitung/MindlinPlate.eps}
+			\put(10,23){\begin{minipage}{\textwidth}Eigentliche\\ Normalendeformation\end{minipage}}
+			\put(73,5){\begin{minipage}{\textwidth}Angenommene\\ Normalendeformation\end{minipage}}
+		\end{overpic}	
+		\caption{Normalendeformation nach Mindlin}
+		\label{fig:mindlin}
+	\end{center}
+\end{figure}
 
 Da die Berechnung nach Reissner-Mindlin das lösen von Differentialgleichungen höherer Ordnung erfordert, stellt sie für diese Arbeit nur einen geringen Anteil
 dar und wird daher bei Bedarf genauer erläutert.\\
