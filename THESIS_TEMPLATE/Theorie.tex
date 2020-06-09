@@ -387,12 +387,48 @@ P(t)\cdot \sin \left[ \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right) \pi^2 \ove
 Im Allgemeinen ist Gleichung (2.32) nicht oder nur kaum analytisch lösbar. Hingegen kann das Integral numerisch gelöst werden, in dem man das Intervall $\left[ 0,t \right]$ in Teilintervalle der Länge
 
  \begin{equation}
- \dfrac{T}{\kappa}
+ 	\tau = \dfrac{\mbox{t}}{\theta}=\dfrac{T}{\kappa}
  \end{equation}
  
- wodrin $T$ die Schwingungsdauer der Platte beschreibt. $\kappa$ muss groß genug gewählt werden, damit numerische Ungenauigkeiten minimal werden. In der Literatur wurde hier entweder $180$ oder $360$ gewählt. Falls die Teilintervalle klein genug sind, kann die ....
+ worin $T$ die Schwingungsdauer der Platte beschreibt. $\kappa$ muss groß genug gewählt werden, damit numerische Ungenauigkeiten minimal werden. In der Literatur wurde hier entweder $180$ oder $360$ gewählt. Falls die Teilintervalle klein genug sind, kann die Kraft $P(t)$ in jedem Intervall $i$ als zeitlich konstant angenähert werden. Im Intervall $(i-1) \rightarrow i$ ist dann $P_{i}$ der konstante Wert von $P(t)$. Weiter kann das Integral des Sinus-Terms in $(2.28)$ als
+ 
+ \begin{equation}
+ 	\frac{1}{\pi^2\overline{a}} \cdot \frac{1}{\frac{m^2}{a^2}+\frac{n^2}{b^2}} \cos \left[ \left( \frac{m^2}{a^2}+\frac{n^2}{b^2} \right) \pi^2\overline{a}(\theta - i)\tau\right]= \frac{1}{\pi^2\overline{a}} \cdot \frac{1}{\frac{m^2}{a^2}+\frac{n^2}{b^2}} \cos(\overline{\theta-i})
+ \end{equation}  
 
+geschrieben werden. Dann folgt
 
+\begin{equation}
+\begin{multlined}
+	w(x,y) = \frac{4}{\rho h a b \pi^4 \overline{a}^2} \cdot \left[ P_{1} \sum_m \sum_n \frac{\sin \left( \dfrac{m \pi x}{a} \right)^2 \cdot \sin \left( \dfrac{n \pi x}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \left( \cos(\overline{\theta-1}) - \cos(\overline{\theta}) \right) + \right. \\ P_{2} \sum_m \sum_n \frac{\sin \left( \dfrac{m \pi x}{a} \right)^2 \cdot \sin \left( \dfrac{n \pi x}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \left( \cos(\overline{\theta-2}) - \cos(\overline{\theta-1}) \right) + . \; . \; .\ \\ \left. + P_{\theta} \sum_m \sum_n \frac{\sin \left( \dfrac{m \pi x}{a} \right)^2 \cdot \sin \left( \dfrac{n \pi x}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \left( 1 - \cos(\overline{1}) \right) \right]
+\end{multlined}
+\end{equation}
+
+In Kurzschreibweise also mit $(i=1,2 ... \theta)$ 
+
+\begin{equation}
+ 	w(x,y) = \frac{4}{\rho h a b \pi^4 \overline{a}^2} \sum_i \sum_m \sum_n P_{i} \frac{\sin \left( \dfrac{m \pi x}{a} \right)^2 \cdot \sin \left( \dfrac{n \pi x}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \left( \cos(\overline{\theta - i}) - \cos(\overline{\theta - (i-1)}) \right)
+\end{equation}
+
+welcher dann statt dem letzten Term in (2.32) eingesetzt wird. $T$ und die Kreisfrequenz $\omega = \frac{2 \pi}{T}$ können direkt aus (2.23) abgelesen werden: 
+
+\begin{equation}
+	T = \frac{2 \pi}{\pi^2 \overline{a} \left( \frac{1}{a^2} + \frac{1}{b^2} \right) }, \qquad \phi=\pi^2 \overline{a} \left( \frac{1}{a^2}+\frac{1}{b^2} \right)
+\end{equation}
+
+Mit einem genügend groß gewähltem $\kappa$, hier $\kappa=180$, kommt man für die Intervalllänge auf
+
+\begin{equation}
+	\tau = \frac{\pi}{90} \cdot \frac{1}{\pi^2 \overline{a} \left( \frac{1}{a^2} + \frac{1}{b^2} \right) }
+\end{equation}
+
+Setzt man $\tau$ in die (2.34) und (2.34) dann in die Doppelsumme aus (2.35) ein, folgt leicht
+
+\begin{equation}
+	\overline{S(k)} = \sum_m \sum_n \frac{\sin \left( \dfrac{m \pi x}{a} \right)^2 \cdot \sin \left( \dfrac{n \pi x}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \cos \left[ \left( \frac{m^2}{a^2}+\frac{n^2}{b^2} \right) \frac{\pi k}{90} \cdot \frac{a^{2}b^{2}}{a^{2}+b^{2}} \cdot (\theta - i)  \right] 
+\end{equation}
+
+Um die Rechenzeit zu verkürzen, wird diese Doppelsumme einmal im Voraus ausgewertet.
 
 Der Hauptteil der Arbeit gliedert sich in zwei Teile. Im ersten Teil (Theorie) wird die Ausgangssituation erarbeitet. Dabei werden grundlegende Fragen erläutert (Wovon wird ausgegangen? Was ist bekannt? Welche Annahmen werden getroffen? etc.) und die konkrete Zielsetzung erarbeitet. Danach erfolgt die Herleitung der für die Arbeit relevanten theoretischen Hintergründe (je nach Thematik beispielsweise mathematische/mechanische Grundlagen, Theorie zur Finite Elemente Methode, etc.), auf denen die selbstständig erbrachte Leistung aufbaut. Hier gilt die Regel: So wenig wie möglich und so viel wie nötig! 
 
