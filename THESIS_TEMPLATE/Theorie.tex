@@ -16,20 +16,20 @@ Der Stoßvorgang besteht im Wesentlichen aus einer Kugel mit einem vorgeschriebe
 	$h$ & Dicke der Platte \\
 	$E$ & E-Modul der Platte \\
 	$\nu$ & Poissonzahl der Platte \\
-	$\xi$ & x-Koordinate auf der Platte wo die Kugel einschlägt \\
-	$\eta$ & y-Koordinate auf der Platte wo die Kugel einschlägt \\
+	$\xi$ & x-Koordinate des Auftreffpunktes der Kugel \\
+	$\eta$ & y-Koordinate des Auftreffpunktes der Kugel \\
 \end{tabular}
 \end{center}
 
 Es wird angenommen, dass der Stoß völlig elastisch verläuft sowie, dass weder die Masse der Kugel, noch die Masse der Platte sich während des Stoßes verändert.
-Zusätzlich wird davon ausgegangen, dass die Geschwindigkeitsvektor der Kugel senkrecht zur Platte bzw. parallel zur Normalen liegt. Im Gegensatz zu vielen wissenschaftlichen Arbeiten wird von einem isotropen Material ausgegangen. Somit gelten die im folgenden beschrieben Ergebnisse nur bedingt für Laminate, Faserverbundstoffe oder ähnliche nicht-isotrope Materialien. 
+Zusätzlich wird davon ausgegangen, dass der Geschwindigkeitsvektor der Kugel senkrecht zur Platte bzw. parallel zur Normalen liegt. Im Gegensatz zu vielen wissenschaftlichen Arbeiten wird von einem isotropen Material ausgegangen. Somit gelten die im folgenden beschrieben Ergebnisse nur bedingt für Laminate, Faserverbundstoffe oder ähnliche nicht-isotrope Materialien. 
 
 %Desweiteren wird angenommen, dass der dynamische Biegungspfeil an der Stoßstelle %genau so groß ist, wie der statische Biegungspfeil also wenn die Masse $m_g$ %genau an jener Stelle auf die Platte gelegt wird.
 
 Die Annahme, dass Schubspannungen vernachlässigt werden können erlaubt eine analytische Lösung des Problems unter der Bedingung, dass die Ränder frei gelagert sind. Somit treten lediglich Biegemomente und keine Schubkräfte auf.
 
 Eine analytische Lösung für ein Balkenelement wurde ausführlich durch Karas[..] gelöst und ist nicht Bestandteil dieser Arbeit.
-Karas[..] wie auch Timoshenko[..] haben gezeigt, dass die statische Durchbiegung einer Platte unter einer Kraft durch eine Reihe ausgedrückt werden kann.
+
 
 Im folgenden wird die Durchbiegung der Platte als $w(x,y)$ bezeichnet. Die Last $q(x,y)$ wird ebenfalls als ortsabhängige Funktion ausgedrückt. 
 Es gilt die allgemeine Differentialgleichung für die Biegung einer Platte unter einer Last $q$, die im Folgenden als bekannt angenommen wird.
@@ -62,14 +62,12 @@ D = \dfrac{E h^3}{12 (1-\nu^2)}
 
 
 
-Navier hat eine Lösung für Gleichung 2.1. unter speziellen Randbedingungen gezeigt. 
-Es gilt eine freie Lagerung an den Rändern. Dies bedeutet:
+Navier hat eine Lösung für Gleichung 2.1. unter der Bedingung einer freien Lagerung an den Rändern gezeigt. Dies bedeutet:
 
 \begin{align}
  \tag{x = 0,a \quad y = 0,b}w(x,y) = \Delta w(x,y) = 0	
 \end{align}
 
-Die Randbedingungen werden direkt durch den folgenden Ansatz für die Durchbiegung erfüllt.
 Er drückt hierfür die unbekannte Durchbiegung der Platte $w(x,y)$ so wie die Last $q(x,y)$ als Reihenausdrücke aus mit $m,n = 1,2,3,4...$:
 
 \begin{equation} 
@@ -82,7 +80,7 @@ q(x,y) = \sum_m \sum_n B_{mn} \cdot \sin\left(\dfrac{m \pi x}{a}\right) \cdot \s
 
 Man sieht leicht, dass für $x=0,a$ und $y=0,b$ die Randbedingungen direkt erfüllt sind.
 
-Um $B_{mn}$ zu bestimmen gibt es mehrere Möglichkeiten welche hier nicht näher erläutert werden. Als Lösung für $B_{mn}$ ergibt sich:
+Um $B_{mn}$ zu bestimmen, kann man Gleichung (2.4) geschickt umformen und erhält als Lösung für $B_{mn}$:
 
 
 \begin{equation}
@@ -90,15 +88,13 @@ B_{mn} = \dfrac{4}{ab} \cdot \left( \int_0^a \int_0^b q(x,y)
 \sin\left(\dfrac{m \pi x}{a}\right) \cdot \sin\left( \dfrac{n \pi y}{b}\right) dy dx\right)
 \end{equation}
 
-$A_{mn}$ ergibt sich anschließend zu:
+$A_{mn}$ ergibt sich durch einsetzen der bekannten Last in Gleichung (2.1) zu:
 
 \begin{equation}
 A_{mn} = \dfrac{4 \cdot B_{mn}}{\pi^4 a b D \left(\dfrac{m^2}{a^2} + \dfrac{n^2}{b^2} \right)^2}
 \end{equation}
 
-Für den Fall, dass die Kraft P gleichmäßig an der Stelle $(\xi, \eta)$ angreift auf einer Fläche $(u,v)$, vereinfachert sich $B_{mn}$ zu:
-
-
+In der Regel wird hier jedoch nicht der Fall betrachtet, dass die Kraft gleichmäßig über die gesamte Fläche angreift, sondern nur in einem kleinem Bereich $(u,v)$ an der Stelle $(\xi, \eta)$. Der Last-Koeffizient $B_{mn}$ vereinfacht sich zu:
 
 \begin{align}
 B_{mn} &= \dfrac{4}{ab} \cdot \left( \int_{\xi-u/2}^{\xi+u/2} \int_{\eta - v/2}^{\eta + v/2} \dfrac{P}{u v}
@@ -110,8 +106,7 @@ B_{mn} &= \dfrac{4}{ab} \cdot \left( \int_{\xi-u/2}^{\xi+u/2} \int_{\eta - v/2}^
 \cdot \sin\left(\dfrac{n \pi v}{2b}\right)
 \end{align}
 
-
-Wenn man $(u,v)$ gegen $0$ laufen lässt, was einer punktuellen Last entspricht, erhält man für $B_{mn}$:
+Da im folgenden lediglich die Verformung unter einer Kraft $P$ an der Stelle $(\xi, \eta)$ relevant ist, wird der Grenzfall betrachtet in welchem die Fläche $(u,v)$ gegen 0 strebt. Es ergibt sich unter einer Grenzwertbetrachtung von (2.8) direkt:
 
 \begin{equation}
 B_{mn} = \dfrac{4P}{a b} 
@@ -119,7 +114,7 @@ B_{mn} = \dfrac{4P}{a b}
 \cdot \sin\left(\dfrac{n \pi \eta}{b}\right) 
 \end{equation}
 
-Als statische Durchbiegung der Platte unter der Kraft $P$ an der Stelle $(\xi, \eta)$ ergibt sich folglich nach :
+Als statische Durchbiegung der Platte unter der Kraft $P$ an der Stelle $(\xi, \eta)$ ergibt sich folglich durch einsetzen von (2.9) in (2.6):
  
 \begin{equation}
  \mathlarger{
@@ -138,7 +133,7 @@ Als statische Durchbiegung der Platte unter der Kraft $P$ an der Stelle $(\xi, \
  	\cdot \sin\left(\frac{n \pi y}{b}\right) 
  }
  \end{equation}
-
+ 
 Die Absenkung unter dem Druckpunkt ergibt sich somit zu:
 
 \begin{equation}
@@ -157,13 +152,12 @@ Die Absenkung unter dem Druckpunkt ergibt sich somit zu:
 }
 \end{equation}
 
-
-Für die quadratische Platte ergeben sich hier Abweichungen von Rund $3,5\%$ Timoshenko[..]
+Für die quadratische Platte ergeben sich laut Timoshenko[..] Abweichungen von rund $3,5\%$.
 
 
 \section{Dynamische Durchbiegung unter strenger Betrachtung}
 
-Da der zuvor beschriebene Ansatz keinen Aufschluss über das zeitliche Verhalten liefert, wird eine strenge Betrachtung der Durchbiegung erläutert. Hierfür werden die potentiellen und kinetischen Energien in die Lagrange-Gleichung 2. Ordnung eingeführt und integriert.
+Da der zuvor beschriebene Ansatz keinen Aufschluss über das zeitliche Verhalten liefert, wird eine strenge Betrachtung der Durchbiegung erläutert. Hierfür werden die potentiellen und kinetischen Energien in die Lagrange-Gleichung 2. Ordnung eingeführt.
 
 \subsection{Kinetische Energie der Platte}
 
@@ -172,6 +166,8 @@ Die kinetische Energie ergibt sich durch Verallgemeinerung von $T = \frac{1}{2} 
 \begin{equation}
 T = \dfrac{\rho h}{2} \int_{0}^{a} \int_{0}^{b} \left(\dfrac{d}{dt} w(x)\right)^2 dy \ dx
 \end{equation}
+
+Da im dynamischen Fall die Durchbiegung der Platte $w(x,y,t)$ eine Zeitabhängigkeit aufweist, wird direkt ersichtlich, dass $A_{mn}$ ebenfalls eine Zeitabhängigkeit aufweisen muss. Somit vereinfachert sich der Differentialausdruck wie folgt:
 
 %Wenn man (2.3) in (2.12) unter Voraussetzung des dynamischen Falls, in dem $A_{mn} = f(Zeit)$ gilt, einsetzt, erhält man direkt: 
 
@@ -224,7 +220,7 @@ T = \dfrac{1}{8}\rho h a b\sum_m\sum_n \dot{A}^2_{mn}
 
 \subsection{Verzerrungsenergie durch Dehnung aufgrund von Biegung und Torsion}
 
-Unter der Annahme, dass die Platte nur durch ein Moment $M_y \cdot \Delta y$ um die y-Achse verbogen wird um einen Winkel $\theta$, berechnet sich die Verzerrungsenergie zunächst durch: $\Delta U = \frac{1}{2} (M_y \cdot \Delta y) \cdot \theta$. 
+Unter der Annahme, dass die Platte nur durch ein Moment $M_y \cdot \Delta y$ um einen Winkel $\theta$ um die y-Achse verbogen wird , berechnet sich die Verzerrungsenergie zunächst durch: $$\Delta U = \frac{1}{2} (M_y \cdot \Delta y) \cdot \theta$$. 
 
 \begin{center}
 	\begin{overpic}[scale=0.3]{pictures/theory/theory2.eps}
@@ -235,7 +231,7 @@ Unter der Annahme, dass die Platte nur durch ein Moment $M_y \cdot \Delta y$ um 
 	
 \end{center}
 
-Der Krümmungsradius $R$ kann wie folgt berechnet werden: $R^{-1} = \frac{\partial^2 w}{\partial x^2}$. Mit $\Delta x = R \cdot \theta$ folgt direkt:
+Der Krümmungsradius $R$ kann wie folgt durch die Durchbiegung ausgedrückt werden: $R^{-1} = \frac{\partial^2 w}{\partial x^2}$. Mit $\Delta x = R \cdot \theta$ folgt direkt:
 
 \begin{equation}
 \Delta U = \dfrac{1}{2}(M_y \Delta y) \dfrac{\partial^2 w}{\partial x^2} \Delta x
@@ -303,7 +299,7 @@ Da in (2.21) nicht die verrichtete Arbeit der angreifenden Kraft $P$ berücksich
 \dfrac{d}{dt} \dfrac{\partial T}{\partial \dot{A}_{mn}} - \dfrac{\partial T}{\partial A_{mn}} + \dfrac{\partial U}{\partial A_{mn}} = Q_{mn}
 \end{equation}
 
-Es folgt direkt:
+Durch einsetzen von (2.21) und (2.16) folgt direkt:
 
 \begin{equation}
 \ddot{A}_{mn} + \left(\dfrac{m^2}{a^2} + \dfrac{n^2}{b^2}\right)^2 \pi^4 \overline{a}^2 A_{mn} = \dfrac{4}{\rho h a b} Q_{mn}
@@ -321,13 +317,13 @@ Die wirkende Kraft die der Körper auf die Platte ausübt sei nun als $P(\tau)$ 
 Da angenommen wird, dass die Kraft punktuell an der Stelle $(\xi, \eta)$ angreift, folgt für die virtuelle Arbeit $\delta E$ von $P$
 
 \begin{equation}
-\delta E = P \delta A_{mn} \cdot \sin \left( \dfrac{m \pi \xi}{a} \right) \sin \left( \dfrac{n \pi \eta}{b} \right) = Q_{mn} \cdot \delta A_{mn}
+\delta E = P \delta A_{mn} \cdot \sin \left( \frac{m \pi \xi}{a} \right) \sin \left( \frac{n \pi \eta}{b} \right) = Q_{mn} \cdot \delta A_{mn}
 \end{equation} 
 
 es folgt
 
 \begin{equation}
-Q_{mn}(\tau) = P(\tau) \sin \left( \dfrac{m \pi \xi}{a} \right) \sin \left( \dfrac{n \pi \eta}{b} \right)
+Q_{mn}(\tau) = P(\tau) \sin \left( \frac{m \pi \xi}{a} \right) \sin \left( \frac{n \pi \eta}{b} \right)
 \end{equation}
 
 
@@ -337,16 +333,16 @@ Wenn nun schließlich Gleichung (2.26) in Gleichung (2.24) eingesetzt wird, welc
 \begin{multline}
 w(x,y,t) = \sum_m \sum_n 
 \dfrac{1}{\pi^2 \overline{a}  \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right)} \dfrac{4}{\rho h a b} \\ \int_0^t
- P(t) \sin \left( \dfrac{m \pi \xi}{a} \right) \sin \left( \dfrac{n \pi \eta}{b} \right)
+ P(t) \sin \left( \frac{m \pi \xi}{a} \right) \sin \left( \frac{n \pi \eta}{b} \right)
 \sin \left[ \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right) \pi^2 \overline{a} (t-\tau)\right] d\tau
-\cdot \sin\left(\dfrac{m \pi x}{a}\right) \cdot \sin\left(\dfrac{n \pi y}{b}\right)
+\cdot \sin\left(\frac{m \pi x}{a}\right) \cdot \sin\left(\frac{n \pi y}{b}\right)
 \end{multline}
 
 Umgeschrieben ergibt sich
 
 \begin{equation}
 	w(x,y,t) = \dfrac{4}{\rho h a b \pi^2 \overline{a}} \cdot \sum_m \sum_n 
-	\dfrac{\sin\left(\dfrac{m \pi x}{a}\right)^2 \cdot \sin\left(\dfrac{n \pi y}{b}\right)^2}{\left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right)} 
+	\dfrac{\sin\left(\frac{m \pi x}{a}\right)^2 \cdot \sin\left(\frac{n \pi y}{b}\right)^2}{\left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right)} 
 	\int_0^t
 	P(t)\cdot \sin \left[ \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right) \pi^2 \overline{a} (t-\tau)\right] d\tau
 \end{equation}
@@ -372,7 +368,7 @@ Durch Integration ergibt sich folglich für den Ort des stoßendes Körpers:
 \end{equation}
 
 
-Die Idee ist nun, wenn $P(z)$ bekannt ist, die Umkehrfunktion $z(P)$ zu verwenden. In der Regel sind die Stoßgesetze invertierbar wodurch dieser Schritt kein Problem darstellen sollte.
+Da jedoch im Allgemeinen die Kraft in Abhängigkeit vom Eindringungsweg und umgekehrt bekannt ist, wird $z(P)$ im folgenden genutzt:
 
 Wenn man nun Gleichung (2.31) mit (2.28) und $z(P)$ zusammenführt, ergibt sich folgender Ausdruck:
 
@@ -390,7 +386,7 @@ Im Allgemeinen ist Gleichung (2.32) nicht oder nur kaum analytisch lösbar. Hing
  	\tau = \dfrac{\mbox{t}}{\theta}=\dfrac{T}{\kappa}
  \end{equation}
  
- worin $T$ die Schwingungsdauer der Platte beschreibt. $\kappa$ muss groß genug gewählt werden, damit numerische Ungenauigkeiten minimal werden. In der Literatur wurde hier entweder $180$ oder $360$ gewählt. Falls die Teilintervalle klein genug sind, kann die Kraft $P(t)$ in jedem Intervall $i$ als zeitlich konstant angenähert werden. Im Intervall $(i-1) \rightarrow i$ ist dann $P_{i}$ der konstante Wert von $P(t)$. Weiter kann das Integral des Sinus-Terms in $(2.28)$ als
+ unterteilt, worin $T$ die Schwingungsdauer der Platte beschreibt. $\kappa$ muss groß genug gewählt werden, damit numerische Ungenauigkeiten minimal werden. In der Literatur wurde hier entweder $180$ oder $360$ gewählt. Falls die Teilintervalle klein genug sind, kann die Kraft $P(t)$ in jedem Intervall $i$ als zeitlich konstant angenähert werden. Im Intervall $(i-1) \rightarrow i$ ist dann $P_{i}$ der konstante Wert von $P(t)$. Weiter kann das Integral des Sinus-Terms in $(2.28)$ als
  
  \begin{equation}
  	\frac{1}{\pi^2\overline{a}} \cdot \frac{1}{\frac{m^2}{a^2}+\frac{n^2}{b^2}} \cos \left[ \left( \frac{m^2}{a^2}+\frac{n^2}{b^2} \right) \pi^2\overline{a}(\theta - i)\tau\right]= \frac{1}{\pi^2\overline{a}} \cdot \frac{1}{\frac{m^2}{a^2}+\frac{n^2}{b^2}} \cos(\overline{\theta-i})
@@ -400,14 +396,14 @@ geschrieben werden. Dann folgt
 
 \begin{equation}
 \begin{multlined}
-	w(x,y) = \frac{4}{\rho h a b \pi^4 \overline{a}^2} \cdot \left[ P_{1} \sum_m \sum_n \frac{\sin \left( \dfrac{m \pi x}{a} \right)^2 \cdot \sin \left( \dfrac{n \pi x}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \left( \cos(\overline{\theta-1}) - \cos(\overline{\theta}) \right) + \right. \\ P_{2} \sum_m \sum_n \frac{\sin \left( \dfrac{m \pi x}{a} \right)^2 \cdot \sin \left( \dfrac{n \pi x}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \left( \cos(\overline{\theta-2}) - \cos(\overline{\theta-1}) \right) + . \; . \; .\ \\ \left. + P_{\theta} \sum_m \sum_n \frac{\sin \left( \dfrac{m \pi x}{a} \right)^2 \cdot \sin \left( \dfrac{n \pi x}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \left( 1 - \cos(\overline{1}) \right) \right]
+	w(x,y) = \frac{4}{\rho h a b \pi^4 \overline{a}^2} \cdot \left[ P_{1} \sum_m \sum_n \frac{\sin \left( \frac{m \pi x}{a} \right)^2 \cdot \sin \left( \frac{n \pi x}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \left( \cos(\overline{\theta-1}) - \cos(\overline{\theta}) \right) + \right. \\ P_{2} \sum_m \sum_n \frac{\sin \left( \frac{m \pi x}{a} \right)^2 \cdot \sin \left( \frac{n \pi x}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \left( \cos(\overline{\theta-2}) - \cos(\overline{\theta-1}) \right) + . \; . \; .\ \\ \left. + P_{\theta} \sum_m \sum_n \frac{\sin \left( \frac{m \pi x}{a} \right)^2 \cdot \sin \left( \frac{n \pi x}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \left( 1 - \cos(\overline{1}) \right) \right]
 \end{multlined}
 \end{equation}
 
-In Kurzschreibweise also mit $(i=1,2 ... \theta)$ 
+beziehungsweise mit $(i=1,2 ... \theta)$ 
 
 \begin{equation}
- 	w(x,y) = \frac{4}{\rho h a b \pi^4 \overline{a}^2} \sum_i \sum_m \sum_n P_{i} \frac{\sin \left( \dfrac{m \pi x}{a} \right)^2 \cdot \sin \left( \dfrac{n \pi x}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \left( \cos(\overline{\theta - i}) - \cos(\overline{\theta - (i-1)}) \right)
+ 	w(x,y) = \frac{4}{\rho h a b \pi^4 \overline{a}^2} \sum_i \sum_m \sum_n P_{i} \frac{\sin \left( \frac{m \pi x}{a} \right)^2 \cdot \sin \left( \frac{n \pi x}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \left( \cos(\overline{\theta - i}) - \cos(\overline{\theta - (i-1)}) \right)
 \end{equation}
 
 welcher dann statt dem letzten Term in (2.32) eingesetzt wird. $T$ und die Kreisfrequenz $\omega = \frac{2 \pi}{T}$ können direkt aus (2.23) abgelesen werden: 
@@ -422,17 +418,11 @@ Mit einem genügend groß gewähltem $\kappa$, hier $\kappa=180$, kommt man für
 	\tau = \frac{\pi}{90} \cdot \frac{1}{\pi^2 \overline{a} \left( \frac{1}{a^2} + \frac{1}{b^2} \right) }
 \end{equation}
 
-Setzt man $\tau$ in die (2.34) und (2.34) dann in die Doppelsumme aus (2.35) ein, folgt leicht
+Setzt man folglich $\tau$ in Gleichung (2.34) und jene wiederum in die Doppelsumme aus (2.35) ein, folgt leicht
 
 \begin{equation}
-	\overline{S(k)} = \sum_m \sum_n \frac{\sin \left( \dfrac{m \pi x}{a} \right)^2 \cdot \sin \left( \dfrac{n \pi x}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \cos \left[ \left( \frac{m^2}{a^2}+\frac{n^2}{b^2} \right) \frac{\pi k}{90} \cdot \frac{a^{2}b^{2}}{a^{2}+b^{2}} \cdot (\theta - i)  \right] 
+	\overline{S(k)} = \sum_m \sum_n \frac{\sin \left( \frac{m \pi x}{a} \right)^2 \cdot \sin \left( \frac{n \pi x}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \cos \left[ \left( \frac{m^2}{a^2}+\frac{n^2}{b^2} \right) \frac{\pi k}{90} \cdot \frac{a^{2}b^{2}}{a^{2}+b^{2}} \cdot (\theta - i)  \right] 
 \end{equation}
 
 Um die Rechenzeit zu verkürzen, wird diese Doppelsumme einmal im Voraus ausgewertet.
 
-Der Hauptteil der Arbeit gliedert sich in zwei Teile. Im ersten Teil (Theorie) wird die Ausgangssituation erarbeitet. Dabei werden grundlegende Fragen erläutert (Wovon wird ausgegangen? Was ist bekannt? Welche Annahmen werden getroffen? etc.) und die konkrete Zielsetzung erarbeitet. Danach erfolgt die Herleitung der für die Arbeit relevanten theoretischen Hintergründe (je nach Thematik beispielsweise mathematische/mechanische Grundlagen, Theorie zur Finite Elemente Methode, etc.), auf denen die selbstständig erbrachte Leistung aufbaut. Hier gilt die Regel: So wenig wie möglich und so viel wie nötig! 
-
-Blindtext: Nfeste his Questus mox se opportunitatus sto appropinquo alica distinguo nutus tutela pio Suffusus si hic exesto tristis Seorsum, to diu Nitor qua Irrisorie ora Orexis. Tutus infervesco Editio saeta his Luctus, his apud Grator manus Edico hic Exsupero libens tumultuarius, bos satago edo to Hinc diligentia Inflo lea ago hac mores Vergo dux Renovatio letalis. No Declino vir excito utercumque Percut.
-\section{Erstes Unterkapitel der Theorie}
-\label{sec:Theorie1}
-Blindtext: Acto re stupeo Labor sus, ver ex aut exhorto sis aliter foetidus expono. Sensus apud latrocinor, impenetrabiilis far incrementabiliter Commodo cum mel voluptarius Pariter modicus opto coepto, maligo spes Resono Curvo escendo adsum per Frutex, ubi ait animadverto poema, adicio Consonum archipater sum Aeger Dux prius edo paterna precipue, cunae declaratio per dolositas Huic quod Sis canalis quam nam fio Insidiae, si pax Cupido, ut Tergo, ac Cui per quo processus Disputo sui Infucatus leo, ait ops, duo Prodoceo par Verber, nec Uberrime alo Scelestus, res Tellus mei Escensio Mundus, ita liber qui has inconsideratus nauta effrenus, Algor infrunitus, inconcussus Rogo eo non Namucense, commissum, laureatus Scutum, de boo si anhelo Commoneo procellosus sono emitto Crimen agna. Si subo Accubo castimonia hic ibi qua lux sto eu Pulcher Sem. Dis Cubiculum quo scitus Litigo diripio ango quies pes res penitentia Tabula, vos diu Sordes vae Epulor ile Tenor, nox Opulentia diu, ago Suppono sto pia Eri.
