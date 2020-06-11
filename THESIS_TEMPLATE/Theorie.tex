@@ -400,20 +400,20 @@ geschrieben werden. Dann folgt
 
 \begin{equation}
 \begin{multlined}
-	w(x,y) = \frac{4}{\rho h a b \pi^4 \overline{a}^2} \cdot \left[ P_{1} \sum_m \sum_n \frac{\sin \left( \frac{m \pi x}{a} \right)^2 \cdot \sin \left( \frac{n \pi x}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \left( \cos(\overline{\theta-1}) - \cos(\overline{\theta}) \right) + \right. \\ P_{2} \sum_m \sum_n \frac{\sin \left( \frac{m \pi x}{a} \right)^2 \cdot \sin \left( \frac{n \pi x}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \left( \cos(\overline{\theta-2}) - \cos(\overline{\theta-1}) \right) + . \; . \; .\ \\ \left. + P_{\theta} \sum_m \sum_n \frac{\sin \left( \frac{m \pi x}{a} \right)^2 \cdot \sin \left( \frac{n \pi x}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \left( 1 - \cos(\overline{1}) \right) \right]
+	w(x,y) = \frac{4}{\rho h a b \pi^4 \overline{a}^2} \cdot \left[ P_{1} \sum_m \sum_n \frac{\sin \left( \frac{m \pi x}{a} \right)^2 \cdot \sin \left( \frac{n \pi y}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \left( \cos(\overline{\theta-1}) - \cos(\overline{\theta}) \right) + \right. \\ P_{2} \sum_m \sum_n \frac{\sin \left( \frac{m \pi x}{a} \right)^2 \cdot \sin \left( \frac{n \pi y}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \left( \cos(\overline{\theta-2}) - \cos(\overline{\theta-1}) \right) + . \; . \; .\ \\ \left. + P_{\theta} \sum_m \sum_n \frac{\sin \left( \frac{m \pi x}{a} \right)^2 \cdot \sin \left( \frac{n \pi y}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \left( 1 - \cos(\overline{1}) \right) \right]
 \end{multlined}
 \end{equation}
 
 beziehungsweise mit $(i=1,2 ... \theta)$ 
 
 \begin{equation}
- 	w(x,y) = \frac{4}{\rho h a b \pi^4 \overline{a}^2} \sum_i \sum_m \sum_n P_{i} \frac{\sin \left( \frac{m \pi x}{a} \right)^2 \cdot \sin \left( \frac{n \pi x}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \left( \cos(\overline{\theta - i}) - \cos(\overline{\theta - (i-1)}) \right)
+ 	w(x,y) = \frac{4}{\rho h a b \pi^4 \overline{a}^2} \sum_i \sum_m \sum_n P_{i} \frac{\sin \left( \frac{m \pi x}{a} \right)^2 \cdot \sin \left( \frac{n \pi y}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \left( \cos(\overline{\theta - i}) - \cos(\overline{\theta - (i-1)}) \right)
 \end{equation}
 
 welcher dann statt dem letzten Term in (2.32) eingesetzt wird. $T$ und die Kreisfrequenz $\omega = \frac{2 \pi}{T}$ können direkt aus (2.23) abgelesen werden: 
 
 \begin{equation}
-	T = \frac{2 \pi}{\pi^2 \overline{a} \left( \frac{1}{a^2} + \frac{1}{b^2} \right) }, \qquad \phi=\pi^2 \overline{a} \left( \frac{1}{a^2}+\frac{1}{b^2} \right)
+	T = \frac{2 \pi}{\pi^2 \overline{a} \left( \frac{1}{a^2} + \frac{1}{b^2} \right) }, \qquad \omega=\pi^2 \overline{a} \left( \frac{1}{a^2}+\frac{1}{b^2} \right)
 \end{equation}
 
 Mit einem genügend groß gewähltem $\kappa$, hier $\kappa=180$, kommt man für die Intervalllänge auf
@@ -422,10 +422,10 @@ Mit einem genügend groß gewähltem $\kappa$, hier $\kappa=180$, kommt man für
 	\tau = \frac{\pi}{90} \cdot \frac{1}{\pi^2 \overline{a} \left( \frac{1}{a^2} + \frac{1}{b^2} \right) }
 \end{equation}
 
-Setzt man folglich $\tau$ in Gleichung (2.34) und jene wiederum in die Doppelsumme aus (2.35) ein, folgt leicht
+Setzt man folglich $\tau$ in Gleichung (2.34) und jene wiederum in die Doppelsumme aus (2.35) ein, folgt:
 
 \begin{equation}
-	\overline{S(k)} = \sum_m \sum_n \frac{\sin \left( \frac{m \pi x}{a} \right)^2 \cdot \sin \left( \frac{n \pi x}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \cos \left[ \left( \frac{m^2}{a^2}+\frac{n^2}{b^2} \right) \frac{\pi k}{90} \cdot \frac{a^{2}b^{2}}{a^{2}+b^{2}} \cdot (\theta - i)  \right] 
+	\overline{S(k)} = \sum_m \sum_n \frac{\sin \left( \frac{m \pi x}{a} \right)^2 \cdot \sin \left( \frac{n \pi y}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \cos \left[ \left( \frac{m^2}{a^2}+\frac{n^2}{b^2} \right) \frac{\pi k}{90} \cdot \frac{a^{2}b^{2}}{a^{2}+b^{2}} \right] 
 \end{equation}
 
 
