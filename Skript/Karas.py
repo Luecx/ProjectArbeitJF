@@ -17,45 +17,62 @@ from sklearn.metrics import r2_score
 # ------------------------------------------------------------------------------
 # V A R I A B L E N D E K L A R A T I O N
 
-#Plattengeometrie
+# Plattengeometrie
 a = 400                 # [mm]
 b = 400                 # [mm]
 h = 8                   # [mm]
 
-#Plattenmaterial
-E = 2.2 * 1e08          # [N/mm^2]
+# Plattenmaterial
+E = 2.2 * 1e08          # [N / mm^2]
 nu = 0.3                # [-]
 rho_p = 0.00000795      # [kg / mm^3]
 
-#Kugeleigenschaft
+# Kugeleigenschaft
 r = 10                  # [mm]
-rho_g = 0.00000795      # [kg / mm^3]
+rho_g = 0.000795      # [kg / mm^3]
+v_0 = 1000              # [mm / sek]
+
+# Erdbeschleunigung
+g = 9810                # [mm / sek^2]
+
+# Impaktpunkt
+xi = 0.5
+eta = 0.5
+
+# Auswertung
+x = xi
+y = eta
 
 
+# ------------------------------------------------------------------------------
+# K O E F F Z I E N T N
 
 
-m_g = (4/3) * np.pi * r ** 3 * rho_g;
+# Kugelmasse
+m_g = (4/3) * np.pi * r ** 3 * rho_g
+
+
+# Koeffizient
 a_quer = np.sqrt((E * h ** 2) / (12 * rho_p * (1 - nu ** 2)))
 
 
 
-tau = 0.5611 * 1e-05  # [sek]
-v_0 = 100  # [cm/sek]
-a = 40  # [cm]
-b = 40  # [cm]
-h = 0.8  # [cm]
-r = 1  # [cm]
-E = 2.2 * 1e06  # [kg/cm^2]
-nue = 0.3  # [-]
-g = 981  # [cm/sek^2]
-gamma = 0.00796  # [kg/cm^3]
-c = 1.6 * 1e06  # [kg/cm^3/2]
+#Koeffizient für Herzsche Pressung
+c = 1.6 * 1e04  # [kg/mm^3/2]
 
-num_inter = 1000  # Anzahl der Intervalle
+# Anzahl der Intervalle
+num_inter = 1000
 
-m_imp = (4 / 3) * np.pi * r ** 3 * gamma
+# Schwingdauer
 Tg = 2 * np.pi / (np.pi ** 2 * a_quer * (1 / a ** 2 + 1 / b ** 2))
-w_pre = 4 * g / ((np.pi ** 4) * (a_quer ** 2) * gamma * h * a * b)
+
+# Zeitkonstante
+tau = Tg / 180  # [sek]
+
+# # Annäherung
+w_pre = 4 / ((np.pi ** 4) * (a_quer ** 2) * h * a * b)
+
+
 
 # ------------------------------------------------------------------------------
 # A N L E G E N   V O N   A R R A Y S
@@ -67,14 +84,19 @@ v = np.ones(num_inter) * v_0
 P_hilf = np.zeros(num_inter)
 time = np.zeros(num_inter)
 
+
+
 # ------------------------------------------------------------------------------
 # A U S R E C H N E N   V O N   C O S
-cos = np.zeros(num_inter + 1)
-for j in range(0, num_inter + 1):
+S = np.zeros(num_inter + 1)
+for k in range(0, num_inter + 1):
     for m in range(1, 45, 2):
         for n in range(1, 45, 2):
-            cos[j] += np.cos(((m ** 2 / a ** 2) + (n ** 2 / b ** 2)) * np.pi ** 2 * a_quer * (j) * tau) / (
-                        m ** 2 / a ** 2 + n ** 2 / b ** 2) ** 2
+            S[k] += \
+                np.sin((m * np.pi * x)/a)**2 * \
+                np.sin((m * np.pi * y)/b)**2 * \
+                np.cos(((m ** 2 / a ** 2) + (n ** 2 / b ** 2)) * np.pi ** 2 * a_quer * k * tau) / \
+                (m ** 2 / a ** 2 + n ** 2 / b ** 2) ** 2
 
 # ------------------------------------------------------------------------------
 # A U S R E C H N E N   V O N   P 1
@@ -84,7 +106,7 @@ z[1] = v_0 * tau
 P[1] = c * z[1] ** (3 / 2)
 P1 = P[1] / 2
 # P1 hier in [kg*cm/sek^2] einsetzen
-u_P1 = v_0 * 1 * tau - (1 / m_imp) * P1 * g * 0.5 * tau ** 2
+u_P1 = v_0 * 1 * tau - (1 / m_g) * P1 * g * 0.5 * tau ** 2
 w_P1 = 0
 # P1 hier in [kg] einsetzen:
 for m in range(1, 45, 2):
@@ -94,16 +116,16 @@ for m in range(1, 45, 2):
                 ((m ** 2 / a ** 2) + (n ** 2 / b ** 2)) * np.pi ** 2 * a_quer * 1 * tau)) / (
                             m ** 2 / a ** 2 + n ** 2 / b ** 2) ** 2
 z[1] = u_P1 - w_P1
-v[1] = v_0 - (P[1] / 2 * g / m_imp) * tau
+v[1] = v_0 - (P[1] / 2 * g / m_g) * tau
 
 # 2. Näherung
 P[1] = c * z[1] ** (3 / 2)
 # P1 hier in [kg*cm/sek^2] einsetzen
-u[1] = v_0 * 1 * tau - (1 / m_imp) * P[1] / 2 * g * 0.5 * tau ** 2
+u[1] = v_0 * 1 * tau - (1 / m_g) * P[1] / 2 * g * 0.5 * tau ** 2
 w[1] = 0
 # P1 hier in [kg] einsetzen:
-for m in range(1, 45, 2):
-    for n in range(1, 45, 2):
+for m in range(1, 45, 1):
+    for n in range(1, 45, 1):
         w[1] += w_pre * P[1] / 2 * (
                     np.cos(((m ** 2 / a ** 2) + (n ** 2 / b ** 2)) * np.pi ** 2 * a_quer * (1 - 1) * tau) - np.cos(
                 ((m ** 2 / a ** 2) + (n ** 2 / b ** 2)) * np.pi ** 2 * a_quer * 1 * tau)) / (
@@ -111,6 +133,9 @@ for m in range(1, 45, 2):
 z[1] = u[1] - w[1]
 P[1] = c * z[1] ** (3 / 2)
 time[1] = tau
+
+
+#exit(-1)
 
 # ------------------------------------------------------------------------------
 # A U S R E C H N E N   V O N   P_i
@@ -121,16 +146,16 @@ for j in range(2, num_inter):
     P_hilf[j - 1] = (P[j - 1] + P[j - 2]) / 2
     P_hilf[j] = P[j - 1]
 
-    u[j] = u[j - 1] + v[j - 1] * tau - (1 / m_imp) * P_hilf[j] * g * 0.5 * tau ** 2
+    u[j] = u[j - 1] + v[j - 1] * tau - (1 / m_g) * P_hilf[j] * g * 0.5 * tau ** 2
     for i in range(1, j + 1):
-        w[j] += w_pre * P_hilf[i] * (cos[j - i] - cos[j - (i - 1)])
+        w[j] += w_pre * P_hilf[i] * (S[j - i] - S[j - (i - 1)])
     z[j] = u[j] - w[j]
     if z[j] < 0:
         z[j] = 0
 
     # 2. Näherung
     P[j] = c * z[j] ** (3 / 2)
-    v[j] = v[j - 1] - (P_hilf[j] * g / m_imp) * tau
+    v[j] = v[j - 1] - (P_hilf[j] * g / m_g) * tau
 
     w[j] = 0
     u[j] = 0
@@ -138,10 +163,10 @@ for j in range(2, num_inter):
 
     P_hilf[j] = (P[j - 1] + P[j]) / 2
 
-    u[j] = u[j - 1] + v[j - 1] * tau - (1 / m_imp) * P_hilf[j] * g * 0.5 * tau ** 2
+    u[j] = u[j - 1] + v[j - 1] * tau - (1 / m_g) * P_hilf[j] * g * 0.5 * tau ** 2
 
     for i in range(1, j + 1):
-        w[j] += w_pre * P_hilf[i] * (cos[j - i] - cos[j - (i - 1)])
+        w[j] += w_pre * P_hilf[i] * (S[j - i] - S[j - (i - 1)])
     z[j] = u[j] - w[j]
 
     if z[j] < 0:
@@ -155,7 +180,7 @@ for j in range(2, num_inter):
 
     # Bestimmung P und v
     P[j] = c * z[j] ** (3 / 2)
-    v[j] = v[j - 1] - (P_hilf[j] * g / m_imp) * tau
+    v[j] = v[j - 1] - (P_hilf[j] * g / m_g) * tau
     time[j] = j * tau
 
     # if np.isnan(z[j]):
@@ -173,6 +198,8 @@ def test_P(x, P0, P1):
 def test_w(x, w0, w1):
     return w0 * np.sin(x * w1)
 
+
+print(time, P)
 
 paramp, paramp_covariance = optimize.curve_fit(test_P, time, P, maxfev=2000)
 paramw, paramw_covariance = optimize.curve_fit(test_w, time, w, maxfev=2000)
