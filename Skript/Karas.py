@@ -32,7 +32,8 @@ def compute(
         h=0.8,  # [cm]
 
         # Kugel
-        r=1,  # [cm]
+        #r=1,  # [cm]
+        m_g = 1, # [kg]
         v_0=100,  # [cm/sek]
 
         # Stoß
@@ -47,7 +48,7 @@ def compute(
 ):
     # Konstanten
     g = 981  # [cm/sek^2]
-    m_g = (4 / 3) * np.pi * r ** 3 * rho
+    #m_g = (4 / 3) * np.pi * r ** 3 * rho
     a_quer = np.sqrt((E * h ** 2 * g) / (12 * rho * (1 - nue ** 2)))
     w_pre = 4 * g / ((np.pi ** 4) * (a_quer ** 2) * rho * h * a * b)
 
