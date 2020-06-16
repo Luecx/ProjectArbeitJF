@@ -42,8 +42,7 @@ Im Bereich der Low-Velocity Impacts, welche in dieser Arbeit untersucht werden,
 sind die äquivalenten Fälle zum Beispiel ein Werkzeug, das während
 Wartungsarbeiten auf den Flügel gefallen ist oder ein Bird-Strike. \\
 Der signifikante Parameter ist die Masse des Stoßobjekts. Hier wird vor allem
-zwischen High-Mass (hoher Masse) und Low-Mass (niedriger Masse) unterschieden.
-(CITATION NEEDED)\\
+zwischen High-Mass (hoher Masse) und Low-Mass (niedriger Masse) unterschieden \cite{Olsson.2000}. \\
 \\
 Da die Masse hier eine zentrale Rolle spielt, wollen wir genauer auf die
 Kriterien eingehen: \\
@@ -79,7 +78,7 @@ Modelle, auf denen das Skript basiert, erläutert werden.\\
 %(Rest der Einleitung dann wenn die Arbeit soweit steht)
 \\
 \section{Zielsetzung}
-Da in vielen Bereichen des Transportsektors kritische Komponenten Stößen ausgesetzt werden, liegt ein Bedarf zur Berechnung dieser Stöße und deren Folgeschäden vor. \\
+%Da in vielen Bereichen des Transportsektors kritische Komponenten Stößen ausgesetzt werden, liegt ein Bedarf zur Berechnung dieser Stöße und deren Folgeschäden vor. \\
 In dieser Arbeit wird anhand der Berechnungsgrundlagen von Karas und eines
 daraus abgeleiteten Python-Skriptes, eine Parameterstudie zur Untersuchung von
 Low-Velocity Stößen auf isotrope Platten durchgeführt. \\
@@ -95,7 +94,7 @@ Austauscharbeiten genutzt werden.\\
 %Wichtigkeit. \\
 Bereits 1881 stellte Heinrich Hertz mit seiner Thesis über die Berührung fester
 Körper die ersten Grundlagen für die Berechnung von Stößen und deren Folgen vor.
-[HERTZ] \\
+\cite{Hertz.1881} \\
 In seinen Überlegungen postuliert er, dass wenn ein gerundeter Körper auf eine
 Platte trifft, sich dieser verformen muss, da sonst ein Unstetigkeitspunkt
 auftritt. In diesem Punkt würde die Spannung ins Unendliche wachsen, denn laut
@@ -112,12 +111,12 @@ außerhalb der Kontaktzone unendlich groß. \\
 Zur Vereinfachung der Berechnung stellt Hertz folgende Annahmen auf, die sich in
 vielen späteren Thesen zu diesem Thema wiederfinden:
 
-\begin{itemize}
+\begin{compactitem}
 	\item Der übertragende Druck zwischen den Körpern ist endlich
 	\item Die Kontaktflächen beider Körper sind ideal glatt
 	\item Die Körper sind beide isotrop und elastisch
 	\item Es stellt sich ein strikt senkrechter Druck zwischen den berührenden Teilen ein
-\end{itemize}
+\end{compactitem}
 
 In diesem Modell werden die beiden Flächen, wie in Abbildunge~\ref{fig:Hertz} dargestellt, mathematisch in Berührung gebracht und das verwendete Koordinatensystem in die Fläche, die tangential zur Berührungsfläche liegt, eingebracht.
 
@@ -133,8 +132,8 @@ In diesem Modell werden die beiden Flächen, wie in Abbildunge~\ref{fig:Hertz} d
 	\end{center}
 \end{figure}
 
-Basierend auf den Hertz'schen Berechnungen hat sich am Anfang des 20. Jahrhunderts auch Karas [KARAS] mit der Plattentheorie befasst. Auf seinen Berechnungen basiert in großen Teilen diese Arbeit. \\
-Fast gleichzeitig stellte auch Timoshenko Überlegungen zu der Biegung einer gestützten Platte unter Wirkung einer Einzellast an. Basierend auf der Arbeit von Dr. Nadai leitet er anhand unendlich ausgedehnter Platten einen tabellarischen Ansatz zur Lösung des oben genannten Problems her. Auch zeigte sich in seinen Berechnungen, dass die Werte für eine endliche, eingespannte Platte mit stetig größer werdenden Maßen, sich denen der unendlich ausgedehnten Platte schnell nähern.\\
+Basierend auf den Hertz'schen Berechnungen hat sich am Anfang des 20. Jahrhunderts auch Karas mit der Plattentheorie befasst. Auf seinen Berechnungen basiert in großen Teilen diese Arbeit \cite{Karas.1939}.\\
+Fast gleichzeitig stellte auch Timoshenko Überlegungen zu der Biegung einer gestützten Platte unter Wirkung einer Einzellast an. Er leitet anhand unendlich ausgedehnter Platten einen tabellarischen Ansatz zur Lösung des oben genannten Problems her. Auch zeigte sich in seinen Berechnungen, dass die Werte für eine endliche, eingespannte Platte mit stetig größer werdenden Maßen, sich denen der unendlich ausgedehnten Platte schnell nähern.\\
 Auch Wang [WANG et al.] stellten Überlegungen zu dünnen Platten auf. In ihrer Arbeit von 1948 beschreiben sie die Auslenkung, die solche Platten unter seitlichem Schub oder normalem Druck erfahren. Bei kleinen Auslenkungen unterliegt die Deformation einer einfachen linearen Gleichung. Sobald die Auslenkung groß wird, fällt die Beschreibung unter die sogenannten Von Kármán'schen Differentialgleichungen, die Wang et al. durch Finite Differenzen lösen.\\
 In der zweiten Hälfte des 20. Jahrhunderts richtet sich der Fokus der Forschung auf Laminatplatten. Shivakumar et al. [SHIV] stellen zwei Modelle zur Bestimmung der Einschlagkraft und Dauer bei Low-Velocity Impactversuchen in zirkularen Laminaten auf. \\
 Hierbei leiten sie ein Feder-Masse Modell und ein Energiemodell her. \\
