@@ -440,20 +440,23 @@ P(\tau)\cdot \sin \left[ \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right) \pi^2 \
 \label{eq:long_solution}
 \end{multline}
 
-Im Allgemeinen ist Gleichung \ref{eq:long_solution} nicht oder nur kaum analytisch lösbar. Hingegen kann das Integral numerisch gelöst werden, in dem man das Intervall $\left[ 0,t \right]$ in Teilintervalle der Länge
+Im Allgemeinen ist Gleichung \ref{eq:long_solution} nicht oder nur kaum analytisch lösbar. Hingegen kann das Integral numerisch gelöst werden, in dem man das Intervall $\left[ 0,t \right]$ in $\theta$Teilintervalle der Länge
 
  \begin{equation}
  	\tau = \dfrac{\mbox{t}}{\theta}=\dfrac{T}{\kappa}
  \end{equation}
  
- unterteilt, worin $T$ die Schwingungsdauer der Platte beschreibt. $\kappa$ muss groß genug gewählt werden, damit numerische Ungenauigkeiten minimal werden. In der Literatur wurde hier entweder $180$ oder $360$ gewählt. Falls die Teilintervalle klein genug sind, kann die Kraft $P(\tau	)$ in jedem Intervall $i$ als zeitlich konstant angenähert werden. Im Intervall $(i-1) \rightarrow i$ ist dann $P_{i}$ der konstante Wert von $P(\tau)$. Weiter kann das Integral des Sinus-Terms in  als
+ unterteilt, worin $T$ die Schwingungsdauer der Platte beschreibt. $\kappa$ muss groß genug gewählt werden, damit numerische Ungenauigkeiten minimal werden. In der Literatur wurde hier entweder $180$ oder $360$ gewählt. Falls die Teilintervalle klein genug sind, kann die Kraft $P(\tau	)$ in jedem Intervall $i$ als zeitlich konstant angenähert werden. Im Intervall $(i-1) \rightarrow i$ ist dann $P_{i}$ der konstante Wert von $P(\tau)$. Desweiteren ergibt sich mit dieser Vereinfacherung das Integral in \ref{eq:long_solution} zu:
  
  \begin{equation}
- 	\frac{1}{\pi^2\overline{a}} \cdot \frac{1}{\frac{m^2}{a^2}+\frac{n^2}{b^2}} \cos \left[ \left( \frac{m^2}{a^2}+\frac{n^2}{b^2} \right) \pi^2\overline{a}(\theta - i)\tau\right]= \frac{1}{\pi^2\overline{a}} \cdot \frac{1}{\frac{m^2}{a^2}+\frac{n^2}{b^2}} \cos(\overline{\theta-i})
- 	\label{eq:easySinus}
+ 	\frac{1}{\pi^2\overline{a}} \cdot \frac{1}{\frac{m^2}{a^2}+\frac{n^2}{b^2}} \cos \left[ \left( \frac{m^2}{a^2}+\frac{n^2}{b^2} \right) \pi^2\overline{a}(\theta - i)\tau\right]
  \end{equation}  
+ 
+Mit:
 
-geschrieben werden. Dann folgt
+$$\cos\left(\overline{\theta - i}\right) \coloneqq \cos \left[ \left( \frac{m^2}{a^2}+\frac{n^2}{b^2} \right) \pi^2\overline{a}(\theta - i)\tau\right] $$
+
+folgt für die Lösung:
 
 \begin{equation}
 \begin{multlined}
@@ -462,11 +465,13 @@ geschrieben werden. Dann folgt
 \end{multlined}
 \end{equation}
 
-beziehungsweise mit $(i=1,2 ... \theta)$ 
 
-\begin{equation}
- 	w(x,y,\xi, \eta) = \frac{4}{\rho h a b \pi^4 \overline{a}^2} \sum_i \sum_m \sum_n P_{i} \frac{\sin\left(\frac{m \pi x}{a}\right) \cdot \sin\left(\frac{n \pi y}{b}\right) \sin\left(\frac{m \pi \xi}{a}\right) \cdot \sin\left(\frac{n \pi \eta}{b}\right)	}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \left( \cos(\overline{\theta - i}) - \cos(\overline{\theta - (i-1)}) \right)
-\end{equation}
+beziehungsweise mit $(i=1,2 ... \theta)$: 
+
+\begin{multline}
+ 	w(x,y,\xi, \eta) = \frac{4}{\rho h a b \pi^4 \overline{a}^2} \sum_i \sum_m \sum_n P_{i} \cdot \\ \frac{\sin\left(\frac{m \pi x}{a}\right) \cdot \sin\left(\frac{n \pi y}{b}\right) \sin\left(\frac{m \pi \xi}{a}\right) \cdot \sin\left(\frac{n \pi \eta}{b}\right)	}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \left( \cos(\overline{\theta - i}) - \cos(\overline{\theta - (i-1)}) \right) 	
+\label{eq:numericalSolution}
+\end{multline}
 
 welcher dann statt dem letzten Term in \ref{eq:wxyxietat} eingesetzt wird. $T$ und die Kreisfrequenz $\omega = \frac{2 \pi}{T}$ können direkt aus \ref{eq:lagrangeDGL} abgelesen werden: 
 
@@ -478,12 +483,26 @@ Mit einem genügend groß gewähltem $\kappa$, hier $\kappa=180$, kommt man für
 
 \begin{equation}
 	\tau = \frac{\pi}{90} \cdot \frac{1}{\pi^2 \overline{a} \left( \frac{1}{a^2} + \frac{1}{b^2} \right) }
+	\label{eq:tau}
 \end{equation}
 
-Setzt man folglich $\tau$ in Gleichung \ref{eq:easySinus} und jene wiederum in die Doppelsumme aus \ref{eq:horror} ein, folgt:
+
+Da in \ref{eq:numericalSolution} die doppelten Summe über $m,n$ häufig vorkommen, kann man um Rechenzeit zu sparen, $\overline{S(k)}$ als den Summenausdruck definieren. Mit \ref{eq:tau} und $k=\theta - i$:
 
 \begin{equation}
-	\overline{S(k)} = \sum_m \sum_n \frac{\sin\left(\frac{m \pi x}{a}\right) \cdot \sin\left(\frac{n \pi y}{b}\right) \sin\left(\frac{m \pi \xi}{a}\right) \cdot \sin\left(\frac{n \pi \eta}{b}\right)	}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \cos \left[ \left( \frac{m^2}{a^2}+\frac{n^2}{b^2} \right) \frac{\pi k}{90} \cdot \frac{a^{2}b^{2}}{a^{2}+b^{2}} \right] 
+\begin{split}
+\overline{S(k)} & = \sum_m \sum_n \frac{\sin\left(\frac{m \pi x}{a}\right) \cdot \sin\left(\frac{n \pi y}{b}\right) \sin\left(\frac{m \pi \xi}{a}\right) \cdot \sin\left(\frac{n \pi \eta}{b}\right)	}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \cos\left(\overline{\theta - i}\right) \\ 
+& = \sum_m \sum_n \frac{\sin\left(\frac{m \pi x}{a}\right) \cdot \sin\left(\frac{n \pi y}{b}\right) \sin\left(\frac{m \pi \xi}{a}\right) \cdot \sin\left(\frac{n \pi \eta}{b}\right)	}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \cos \left[ \left( \frac{m^2}{a^2}+\frac{n^2}{b^2} \right) \pi^2\overline{a}(\theta - i)\tau\right] \\
+&= \sum_m \sum_n \frac{\sin\left(\frac{m \pi x}{a}\right) \cdot \sin\left(\frac{n \pi y}{b}\right) \sin\left(\frac{m \pi \xi}{a}\right) \cdot \sin\left(\frac{n \pi \eta}{b}\right)	}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \cos \left[ \left( \frac{m^2}{a^2}+\frac{n^2}{b^2} \right) \frac{\pi k}{90} \cdot \frac{a^{2}b^{2}}{a^{2}+b^{2}} \right] \\
+\end{split}
 \end{equation}
+
+Anschließend vereinfachert sich \ref{eq:numericalSolution} zu:
+
+\begin{equation}
+w(x,y,\xi, \eta) = \frac{4}{\rho h a b \pi^4 \overline{a}^2} \sum_i P_i \cdot (\overline{S(\theta - i)} - \overline{S(\theta - (i-1))})
+\end{equation}
+
+
 
 
