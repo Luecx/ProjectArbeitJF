@@ -3,66 +3,81 @@
 
 Der Stoßvorgang besteht im Wesentlichen aus einer Kugel mit einem vorgeschriebenen Gewicht $m_g$ welche auf eine reckteckige Platte stößt. Hierbei ist die Auftrittsgeschwindigkeit bekannt so wie alle Größen in der nachfolgenden Tabelle
 
-\begin{center}
-\begin{tabular}[h]{l | l}	
-	Formelzeichen & Beschreibung \\
-	%$w(x,y,t)$ & Durchbiegung der Platte \\
-	%$v(t)$ & Geschwindigkeit der Kugel\\
-	%$u(t)$ & Ort des stoßendes Körpers \\
-	$m_g$ & Masse der Kugel \\
-	$\rho_p$ & Dichte der Platte\\
-	$a$ & Breite der Platte\\
-	$b$ & Länge der Platte\\
-	$h$ & Dicke der Platte \\
-	$E$ & E-Modul der Platte \\
-	$\nu$ & Poissonzahl der Platte \\
-	$\xi$ & x-Koordinate des Auftreffpunktes der Kugel \\
-	$\eta$ & y-Koordinate des Auftreffpunktes der Kugel \\
-\end{tabular}
-\end{center}
+\begin{table}[h!]
+	\begin{center}
+		\caption{Bekannte Größen während des Stoßvorganges}
+		\label{tab:TheorieVariablen}
+		
+		\begin{tabular}[h]{l | l}	
+			Formelzeichen & Beschreibung \\
+			\hline
+			%$w(x,y,t)$ & Durchbiegung der Platte \\
+			%$v(t)$ & Geschwindigkeit der Kugel\\
+			%$u(t)$ & Ort des stoßendes Körpers \\
+			$m_g$ & Masse der Kugel \\
+			$\rho_p$ & Dichte der Platte\\
+			$a$ & Breite der Platte\\
+			$b$ & Länge der Platte\\
+			$h$ & Dicke der Platte \\
+			$E$ & E-Modul der Platte \\
+			$\nu$ & Poissonzahl der Platte \\
+			$\xi$ & x-Koordinate des Auftreffpunktes der Kugel \\
+			$\eta$ & y-Koordinate des Auftreffpunktes der Kugel \\
+		\end{tabular}
+		
+	\end{center}
+\end{table}
+
 
 Es wird angenommen, dass der Stoß völlig elastisch verläuft sowie, dass weder die Masse der Kugel, noch die Masse der Platte sich während des Stoßes verändert.
 Zusätzlich wird davon ausgegangen, dass der Geschwindigkeitsvektor der Kugel senkrecht zur Platte bzw. parallel zur Normalen liegt. Im Gegensatz zu vielen wissenschaftlichen Arbeiten wird von einem isotropen Material ausgegangen. Somit gelten die im folgenden beschrieben Ergebnisse nur bedingt für Laminate, Faserverbundstoffe oder ähnliche nicht-isotrope Materialien. 
 
 %Desweiteren wird angenommen, dass der dynamische Biegungspfeil an der Stoßstelle %genau so groß ist, wie der statische Biegungspfeil also wenn die Masse $m_g$ %genau an jener Stelle auf die Platte gelegt wird.
 
-Die Annahme, dass Schubspannungen vernachlässigt werden können erlaubt eine analytische Lösung des Problems unter der Bedingung, dass die Ränder frei gelagert sind. Somit treten lediglich Biegemomente und keine Schubkräfte auf.
+Die Annahme, dass Schubspannungen vernachlässigt werden können erlaubt eine geschlossene analytische Lösung des Problems unter der Bedingung, dass die Ränder frei gelagert sind. Somit treten lediglich Biegemomente und keine Schubkräfte auf.
 
 Eine analytische Lösung für ein Balkenelement wurde ausführlich durch Karas[..] gelöst und ist nicht Bestandteil dieser Arbeit.
 
 
 Im folgenden wird die Durchbiegung der Platte als $w(x,y)$ bezeichnet. Die Last $q(x,y)$ wird ebenfalls als ortsabhängige Funktion ausgedrückt. 
-Es gilt die allgemeine Differentialgleichung für die Biegung einer Platte unter einer Last $q$, die im Folgenden als bekannt angenommen wird.
+Es gilt die allgemeine Differentialgleichung für die Biegung einer Platte unter einer Last $q$, die im Folgenden als bekannt angenommen wird mit $ \nabla = \left(\frac{\partial}{\partial x} \ \frac{\partial}{\partial y} \right)^T$
 \begin{equation}
 	D \nabla^4 w = q
+\label{eq:dgl}
 \end{equation}
 
 Die Plattensteifigkeit $D$ errechnet sich aus dem E-Modul und der Poissonzahl $\nu$ wie folgt:
 \begin{equation}
 D = \dfrac{E h^3}{12 (1-\nu^2)}
+\label{eq:D}
 \end{equation}
 
 
 \section{Lösung der Differentialgleichung mit dem Ansatz von Navier}
 
-\begin{center}
-	\begin{overpic}[scale=0.5]{pictures/theory/theory1.eps}
-		\put (90,80) {$x$}
-		\put (30,10) {$y$}
-		\put (40,79) {$\xi$}
-		\put (18,60) {$\eta$}
-		\put (50,90) {$a$}
-		\put (5,45)  {$b$}
-		\put (56,27) {$u$}
-		\put (75,45)  {$v$}
-	\end{overpic}
-	
-\end{center}
+\begin{figure}[hbt!]
+\centering
+\begin{overpic}[scale=0.5]{pictures/theory/theory1.eps}
+	\put (90,80) {$x$}
+	\put (30,10) {$y$}
+	\put (40,79) {$\xi$}
+	\put (18,60) {$\eta$}
+	\put (50,90) {$a$}
+	\put (5,45)  {$b$}
+	\put (56,27) {$u$}
+	\put (75,45)  {$v$}
+\end{overpic}
+
+\caption{Stoßfläche auf der Platte}
+\label{fig:platte1}
+\end{figure}
 
 
 
 
-Navier hat eine Lösung für Gleichung 2.1. unter der Bedingung einer freien Lagerung an den Rändern gezeigt. Dies bedeutet:
+
+
+Navier hat eine Lösung für Gleichung \ref{eq:dgl} unter der Bedingung einer freien Lagerung an den Rändern gezeigt. Dies bedeutet:
 
 \begin{align}
  \tag{x = 0,a \quad y = 0,b}w(x,y) = \Delta w(x,y) = 0	
@@ -72,26 +87,54 @@ Er drückt hierfür die unbekannte Durchbiegung der Platte $w(x,y)$ so wie die L
 
 \begin{equation} 
 w(x,y) = \sum_m \sum_n A_{mn} \cdot \sin\left(\dfrac{m \pi x}{a}\right) \cdot \sin\left(\dfrac{n \pi y}{b}\right)
+\label{eq:wxy}
 \end{equation} 
 
 \begin{equation} 
 q(x,y) = \sum_m \sum_n B_{mn} \cdot \sin\left(\dfrac{m \pi x}{a}\right) \cdot \sin\left(\dfrac{n \pi y}{b}\right)
+\label{eq:qxy}
 \end{equation} 
 
 Man sieht leicht, dass für $x=0,a$ und $y=0,b$ die Randbedingungen direkt erfüllt sind.
 
-Um $B_{mn}$ zu bestimmen, kann man Gleichung (2.4) geschickt umformen und erhält als Lösung für $B_{mn}$:
+Um $B_{mn}$ zu bestimmen, wird nach Timoshenko[...] Mingyu[...] Gleichung \ref{eq:qxy} zunächst mit $\sin{\left( \frac{i \pi x}{a}\right)}$ erweitert und anschließend von $0$ bis $a$ integriert. Da:
+
+\begin{equation}
+	\int_0^a \sin{\left( \frac{m \pi x}{a}\right)} \sin{\left( \frac{i \pi x}{a}\right)} dx = 
+	\begin{cases}
+	0,&  m\neq i\\
+	\frac{a}{2},&   m = i 
+	\end{cases}
+\end{equation}
+
+Das Ergebnis lautet anschließend:
+
+\begin{equation}
+	\int_0^a q(x,y) \sin{\left( \frac{i \pi x}{a}\right)} dx = \frac{a}{2} \sum_{n=1}^\infty B_{mn} \sin{\left( \frac{n \pi y}{b}\right)}
+\end{equation}
+
+Wenn ebenfalls mit $\sin{\left( \frac{j \pi y}{b}\right)}$ erweitert wird, ergibt sich:
+
+
+\begin{equation}
+\int_0^a \int_0^b q(x,y) \sin{\left( \frac{i \pi x}{a}\right)} \sin{\left( \frac{j \pi y}{a}\right)} dy dx = \frac{ab}{4}  B_{ij} 
+\end{equation}
+
+
+Da $i$ und $j$ frei gewählt wurden, können Sie durch $m$ und $n$ wieder ersetzt werden, so dass:
 
 
 \begin{equation}
 B_{mn} = \dfrac{4}{ab} \cdot \left( \int_0^a \int_0^b q(x,y) 
 \sin\left(\dfrac{m \pi x}{a}\right) \cdot \sin\left( \dfrac{n \pi y}{b}\right) dy dx\right)
+\label{eq:Bmn_allgemein}
 \end{equation}
 
-$A_{mn}$ ergibt sich durch einsetzen der bekannten Last in Gleichung (2.1) zu:
+$A_{mn}$ ergibt sich durch einsetzen von \ref{eq:wxy} und der bekannten Last in Gleichung \ref{eq:dgl} zu:
 
 \begin{equation}
-A_{mn} = \dfrac{4 \cdot B_{mn}}{\pi^4 a b D \left(\dfrac{m^2}{a^2} + \dfrac{n^2}{b^2} \right)^2}
+A_{mn} = \dfrac{B_{mn}}{\pi^4 D \left(\dfrac{m^2}{a^2} + \dfrac{n^2}{b^2} \right)^2}
+\label{eq:Amn_aus_Bmn}
 \end{equation}
 
 In der Regel wird hier jedoch nicht der Fall betrachtet, dass die Kraft gleichmäßig über die gesamte Fläche angreift, sondern nur in einem kleinem Bereich $(u,v)$ an der Stelle $(\xi, \eta)$. Der Last-Koeffizient $B_{mn}$ vereinfacht sich zu:
@@ -104,23 +147,25 @@ B_{mn} &= \dfrac{4}{ab} \cdot \left( \int_{\xi-u/2}^{\xi+u/2} \int_{\eta - v/2}^
 \cdot \sin\left(\dfrac{n \pi \eta}{b}\right) 
 \cdot \sin\left(\dfrac{m \pi u}{2a}\right) 
 \cdot \sin\left(\dfrac{n \pi v}{2b}\right)
+\label{eq:Bmn_stelle}
 \end{align}
 
-Da im folgenden lediglich die Verformung unter einer Kraft $P$ an der Stelle $(\xi, \eta)$ relevant ist, wird der Grenzfall betrachtet in welchem die Fläche $(u,v)$ gegen 0 strebt. Es ergibt sich unter einer Grenzwertbetrachtung von (2.8) direkt:
+Da im folgenden lediglich die Verformung unter einer Kraft $P$ an der Stelle $(\xi, \eta)$ relevant ist, wird der Grenzfall betrachtet in welchem die Fläche $(u,v)$ gegen 0 strebt. Es ergibt sich unter einer Grenzwertbetrachtung von \ref{eq:Bmn_stelle} direkt:
 
 \begin{equation}
 B_{mn} = \dfrac{4P}{a b} 
 \cdot \sin\left(\dfrac{m \pi \xi}{a}\right) 
 \cdot \sin\left(\dfrac{n \pi \eta}{b}\right) 
+\label{eq:Bmn_singular}
 \end{equation}
 
-Als statische Durchbiegung der Platte unter der Kraft $P$ an der Stelle $(\xi, \eta)$ ergibt sich folglich durch einsetzen von (2.9) in (2.6):
+Als statische Durchbiegung der Platte unter der Kraft $P$ an der Stelle $(\xi, \eta)$ ergibt sich folglich durch einsetzen von \ref{eq:Bmn_singular} in \ref{eq:Amn_aus_Bmn}:
  
 \begin{equation}
  \mathlarger{
  	w(x,y,\xi,\eta) = \frac{4P}{\pi^4 a b D} 
  	\sum_{m = 1}^{\infty} \sum_{n = 1}^{\infty}
- 	\dfrac{
+ 	\frac{
  		\sin\left(\frac{m \pi \xi}{a}\right) 
  		\cdot \sin\left(\frac{n \pi \eta}{b}\right) 
  	}{
@@ -140,7 +185,7 @@ Die Absenkung unter dem Druckpunkt ergibt sich somit zu:
  \mathlarger{
 	w(\xi,\eta) = \frac{4P}{\pi^4 a b D} 
 	\sum_{m = 1}^{\infty} \sum_{n = 1}^{\infty}
-	\dfrac{
+	\frac{
 		\sin\left(\frac{m \pi \xi}{a}\right)^2 
 		\cdot 	\sin\left(\frac{n \pi \eta}{b}\right) ^2
 	}{
@@ -152,7 +197,6 @@ Die Absenkung unter dem Druckpunkt ergibt sich somit zu:
 }
 \end{equation}
 
-Für die quadratische Platte ergeben sich laut Timoshenko[..] Abweichungen von rund $3,5\%$.
 
 
 \section{Dynamische Durchbiegung unter strenger Betrachtung}
@@ -177,6 +221,7 @@ T &= \dfrac{1}{2}\rho h \int_0^a \int_0^b  \left[\dfrac{d}{dt} \sum_m \sum_n A_{
 &= \dfrac{1}{2} \rho h\int_0^a \int_0^b  \left[ \sum_m \sum_n \dfrac{d}{dt}\left(A_{mn}\right) \cdot \sin\left(\dfrac{m \pi x}{a}\right) \cdot \sin\left(\dfrac{n \pi y}{b}\right) \right]^2 dy \ dx \\
 &= \dfrac{1}{2} \rho h \int_0^a \int_0^b  \left[ \sum_m \sum_n \dot{A}_{mn} \cdot \sin\left(\dfrac{m \pi x}{a}\right) \cdot \sin\left(\dfrac{n \pi y}{b}\right) \right]^2 dy \ dx \\
 \end{split}
+\label{eq:T_general}
 \end{align}
 
 Zum Lösen des Integrals, muss zunächst das Quadrat aufgelöst werden. Zur Vereinfacherung wird einer ganzen Zahl $q$ ein Zahlenpaar $(m,n)$ zugewiesen.
@@ -189,7 +234,7 @@ Es folgt leicht, dass:
 $$\left(\sum_qA_q\right)^2=\sum_qA^2_q+2\sum_q\sum_{p\neq q}A_qA_p$$
 
 
-Angewendet auf Gleichung (2.13), erhält man für die quadratischen Terme:
+Angewendet auf Gleichung \ref{eq:T_general}, erhält man für die quadratischen Terme:
 
 \begin{equation}
 \dfrac{1}{2}\rho h \sum_m\sum_n \dot{A}^2_{mn}\int_0^a\sin^2\left(\dfrac{m\pi x}{a}\right)\int_0^b\sin^2\left(\dfrac{n\pi y}{b}\right) dy \ dx=\dfrac{1}{8}\rho h a b\sum_m\sum_n \dot{A}^2_{mn}
@@ -205,6 +250,7 @@ Unter genauer Betrachtung fällt auf, dass $m\neq i$ oder $n\neq j$ da $q\neq p$
 
 \begin{equation}
 T = \dfrac{1}{8}\rho h a b\sum_m\sum_n \dot{A}^2_{mn}
+\label{eq:T}
 \end{equation}
 
 
@@ -235,9 +281,10 @@ Der Krümmungsradius $R$ kann wie folgt durch die Durchbiegung ausgedrückt werd
 
 \begin{equation}
 \Delta U = \dfrac{1}{2}(M_y \Delta y) \dfrac{\partial^2 w}{\partial x^2} \Delta x
+\label{eq:dU_d}
 \end{equation}
 
-Wenn ebenfalls $M_{xy}$ und $M_x$ mit einbezogen werden, ergibt sich Gleichung (2.11) zu:
+Wenn ebenfalls $M_{xy}$ und $M_x$ mit einbezogen werden, ergibt sich Gleichung \ref{eq:dU_d} zu:
 
 \begin{equation}
 \Delta U = \dfrac{1}{2}\left( M_y  \dfrac{\partial^2 w}{\partial x^2} + M_x  \dfrac{\partial^2 w}{\partial y^2} - 2 \cdot M_{xy}\dfrac{\partial^2 w}{\partial x \partial y} \right) \Delta x \Delta y
@@ -257,10 +304,11 @@ Die unbekannten Momente können wiederum durch die Plattensteifigkeit und Krümm
 \dfrac{\partial^2 w}{\partial x^2} + \dfrac{\partial^2 w}{\partial y^2}\right)^2 
 - 2 (1-\nu) \left( \dfrac{\partial^2 w}{\partial x^2} \dfrac{\partial^2 w}{\partial y^2} - \left( \dfrac{\partial^2 w}{\partial x \partial y} \right)^2\right) \right] \Delta x \Delta y\\
 \end{split}
+\label{eq:dU_ddd}
 \end{align}
 
 
-Durch Integration von (2.19) ergibt sich die potentielle Energie der Platte zu:
+Durch Einsetzen von \ref{eq:wxy} in \ref{eq:dU_ddd} und einer anschließenden Integration über die Platte ergibt sich die potentielle Energie zu:
 
 
 \begin{multline}
@@ -290,19 +338,22 @@ Das Ergebnis der Integration lautet:
 
 \begin{equation}
 U = \dfrac{D \cdot a b \cdot \pi^4}{8} \sum_{m=1}^{\infty}  \sum_{n=1}^{\infty} A^2_{mn}  \left( \dfrac{m^2}{a^2} + \dfrac{n^2}{b^2}\right)^2
+\label{eq:U}
 \end{equation}
 
+\subsection{Einsetzen in die Lagrange Gleichung}
 
-Da in (2.21) nicht die verrichtete Arbeit der angreifenden Kraft $P$ berücksichtigt wurde, ergibt sich in der Lagrangegleichung eine Konstante $Q_{mn}$ welche zu einem späteren Zeitpunkt bestimmt wird.
+Da in \ref{eq:U} nicht die verrichtete Arbeit der angreifenden Kraft $P$ berücksichtigt wurde, ergibt sich in der Lagrangegleichung eine Konstante $Q_{mn}$ welche zu einem späteren Zeitpunkt bestimmt wird.
 
 \begin{equation}
 \dfrac{d}{dt} \dfrac{\partial T}{\partial \dot{A}_{mn}} - \dfrac{\partial T}{\partial A_{mn}} + \dfrac{\partial U}{\partial A_{mn}} = Q_{mn}
 \end{equation}
 
-Durch einsetzen von (2.21) und (2.16) folgt direkt:
+Durch einsetzen von \ref{eq:U} und \ref{eq:T} folgt direkt:
 
 \begin{equation}
 \ddot{A}_{mn} + \left(\dfrac{m^2}{a^2} + \dfrac{n^2}{b^2}\right)^2 \pi^4 \overline{a}^2 A_{mn} = \dfrac{4}{\rho h a b} Q_{mn}
+\label{eq:lagrangeDGL}
 \end{equation}
 
 mit 
@@ -310,10 +361,11 @@ mit
 $$\overline{a} = \sqrt{\dfrac{D}{\rho h}} = \sqrt{\dfrac{E h^2}{12 \rho (1-\nu^2)}}$$
 
 
-Durch Integration von (2.23) und unter Berücksichtigung der zeitlichen Randbeding $A_{mn} = \dot{A}_{mn} = 0 \text{ für } t = 0$ fallen die Integrationskonstanten weg, so dass $A_{mn}$ wie folgt ausgerechnet werden kann:
+Durch Integration von \ref{eq:lagrangeDGL} und unter Berücksichtigung der zeitlichen Randbeding $A_{mn} = \dot{A}_{mn} = 0 \text{ für } t = 0$ fallen nach [Karas] die Integrationskonstanten weg, so dass $A_{mn}$ wie folgt ausgerechnet werden kann:
 
 \begin{equation}
 A_{mn} = \dfrac{1}{\pi^2 \overline{a}  \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right)} \dfrac{4}{\rho h a b} \int_0^t	Q_{mn}(\tau) \sin \left[ \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right) \pi^2 \overline{a} (t-\tau)\right] d\tau
+\label{eq:Amn_full}
 \end{equation}
 
 
@@ -328,28 +380,30 @@ es folgt
 
 \begin{equation}
 Q_{mn}(\tau) = P(\tau) \sin \left( \frac{m \pi \xi}{a} \right) \sin \left( \frac{n \pi \eta}{b} \right)
+\label{eq_Qmntau}
 \end{equation}
 
 
 
-Wenn nun schließlich Gleichung (2.26) in Gleichung (2.24) eingesetzt wird, welche wiederum in Gleichung (2.3) eingesetzt wird, ergibt sich die Durchbiegung als Abhängigkeit des Stoßgewichtes $P(\tau)$ und der Zeit.
+Wenn nun schließlich Gleichung \ref{eq_Qmntau} in Gleichung \ref{eq:Amn_full} eingesetzt wird, welche wiederum in Gleichung \ref{eq:wxy} eingesetzt wird, ergibt sich die Durchbiegung als Abhängigkeit des Stoßgewichtes $P(\tau)$ und der Zeit.
 
 \begin{multline}
-w(x,y,t) = \sum_m \sum_n 
+w(x,y,\xi, \eta, t) = \sum_m \sum_n 
 \dfrac{1}{\pi^2 \overline{a}  \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right)} \dfrac{4}{\rho h a b} \\ \int_0^t
- P(t) \sin \left( \frac{m \pi \xi}{a} \right) \sin \left( \frac{n \pi \eta}{b} \right)
+ P(\tau) \sin \left( \frac{m \pi \xi}{a} \right) \sin \left( \frac{n \pi \eta}{b} \right)
 \sin \left[ \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right) \pi^2 \overline{a} (t-\tau)\right] d\tau
 \cdot \sin\left(\frac{m \pi x}{a}\right) \cdot \sin\left(\frac{n \pi y}{b}\right)
 \end{multline}
 
 Umgeschrieben ergibt sich
 
-\begin{equation}
-	w(x,y,t) = \dfrac{4}{\rho h a b \pi^2 \overline{a}} \cdot \sum_m \sum_n 
-	\dfrac{\sin\left(\frac{m \pi x}{a}\right)^2 \cdot \sin\left(\frac{n \pi y}{b}\right)^2}{\left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right)} 
+\begin{multline}
+	w(x,y,\xi, \eta, t) = \dfrac{4}{\rho h a b \pi^2 \overline{a}} \cdot \sum_m \sum_n 
+	\dfrac{\sin\left(\frac{m \pi x}{a}\right) \cdot \sin\left(\frac{n \pi y}{b}\right) \sin\left(\frac{m \pi \xi}{a}\right) \cdot \sin\left(\frac{n \pi \eta}{b}\right)	}{\left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right)}  \\
 	\int_0^t
-	P(t)\cdot \sin \left[ \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right) \pi^2 \overline{a} (t-\tau)\right] d\tau
-\end{equation}
+	P(\tau)\cdot \sin \left[ \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right) \pi^2 \overline{a} (t-\tau)\right] d\tau
+	\label{eq:wxyxietat}
+\end{multline}
 
 
 Die einzige Unbekannte in der Gleichung ist nun die Stoßkraft $P(\tau)$. Da im Allgemeinen die Stoßkraft in Abhängigkeit von der Zeit nicht gegeben ist, wird im folgenden die Stoßkraft in Abhängigkeit des Eindringunsweges des stoßendes Körpers in die Platte verwendet. Wenn nun der Eindringungsweg als $z$ bezeichnet wird sowie die Position des stoßendes Körper gegen den ruhenden Raum als $u$, ergibt sich direkt:
@@ -369,48 +423,52 @@ Durch Integration ergibt sich folglich für den Ort des stoßendes Körpers:
 
 \begin{equation}
 	u = v_0 \cdot t - \frac{1}{m_g} \int_0^t P(\tau) (t-\tau) d\tau
+	\label{eq:mpos}
 \end{equation}
 
 
 Da jedoch im Allgemeinen die Kraft in Abhängigkeit vom Eindringungsweg und umgekehrt bekannt ist, wird $z(P)$ im folgenden genutzt:
 
-Wenn man nun Gleichung (2.31) mit (2.28) und $z(P)$ zusammenführt, ergibt sich folgender Ausdruck:
+Wenn man nun Gleichung \ref{eq:mpos} mit \ref{eq:wxyxietat} und $z(P)$ zusammenführt, ergibt sich folgender Ausdruck:
 
 
 \begin{multline}
-v_0 \cdot t - \frac{1}{m_g} \int_0^t P(\tau) (t-\tau) d\tau = z(P) + \\ \dfrac{4}{\rho h a b \pi^2 \overline{a}} \cdot \sum_m \sum_n 
-\dfrac{\sin\left(\dfrac{m \pi x}{a}\right)^2 \cdot \sin\left(\dfrac{n \pi y}{b}\right)^2}{\left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right)} 
+v_0 \cdot t - \frac{1}{m_g} \int_0^t P(\tau) (t-\tau) d\tau = z(P) + \dfrac{4}{\rho h a b \pi^2 \overline{a}} \cdot  \\  \sum_m \sum_n 
+\dfrac{{\sin\left(\frac{m \pi x}{a}\right) \cdot \sin\left(\frac{n \pi y}{b}\right) \sin\left(\frac{m \pi \xi}{a}\right) \cdot \sin\left(\frac{n \pi \eta}{b}\right)	}}{\left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right)} 
 \int_0^t
-P(t)\cdot \sin \left[ \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right) \pi^2 \overline{a} (t-\tau)\right] d\tau
+P(\tau)\cdot \sin \left[ \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right) \pi^2 \overline{a} (t-\tau)\right] d\tau
+\label{eq:long_solution}
 \end{multline}
 
-Im Allgemeinen ist Gleichung (2.32) nicht oder nur kaum analytisch lösbar. Hingegen kann das Integral numerisch gelöst werden, in dem man das Intervall $\left[ 0,t \right]$ in Teilintervalle der Länge
+Im Allgemeinen ist Gleichung \ref{eq:long_solution} nicht oder nur kaum analytisch lösbar. Hingegen kann das Integral numerisch gelöst werden, in dem man das Intervall $\left[ 0,t \right]$ in Teilintervalle der Länge
 
  \begin{equation}
  	\tau = \dfrac{\mbox{t}}{\theta}=\dfrac{T}{\kappa}
  \end{equation}
  
- unterteilt, worin $T$ die Schwingungsdauer der Platte beschreibt. $\kappa$ muss groß genug gewählt werden, damit numerische Ungenauigkeiten minimal werden. In der Literatur wurde hier entweder $180$ oder $360$ gewählt. Falls die Teilintervalle klein genug sind, kann die Kraft $P(t)$ in jedem Intervall $i$ als zeitlich konstant angenähert werden. Im Intervall $(i-1) \rightarrow i$ ist dann $P_{i}$ der konstante Wert von $P(t)$. Weiter kann das Integral des Sinus-Terms in $(2.28)$ als
+ unterteilt, worin $T$ die Schwingungsdauer der Platte beschreibt. $\kappa$ muss groß genug gewählt werden, damit numerische Ungenauigkeiten minimal werden. In der Literatur wurde hier entweder $180$ oder $360$ gewählt. Falls die Teilintervalle klein genug sind, kann die Kraft $P(\tau	)$ in jedem Intervall $i$ als zeitlich konstant angenähert werden. Im Intervall $(i-1) \rightarrow i$ ist dann $P_{i}$ der konstante Wert von $P(\tau)$. Weiter kann das Integral des Sinus-Terms in  als
  
  \begin{equation}
  	\frac{1}{\pi^2\overline{a}} \cdot \frac{1}{\frac{m^2}{a^2}+\frac{n^2}{b^2}} \cos \left[ \left( \frac{m^2}{a^2}+\frac{n^2}{b^2} \right) \pi^2\overline{a}(\theta - i)\tau\right]= \frac{1}{\pi^2\overline{a}} \cdot \frac{1}{\frac{m^2}{a^2}+\frac{n^2}{b^2}} \cos(\overline{\theta-i})
+ 	\label{eq:easySinus}
  \end{equation}  
 
 geschrieben werden. Dann folgt
 
 \begin{equation}
 \begin{multlined}
-	w(x,y) = \frac{4}{\rho h a b \pi^4 \overline{a}^2} \cdot \left[ P_{1} \sum_m \sum_n \frac{\sin \left( \frac{m \pi x}{a} \right)^2 \cdot \sin \left( \frac{n \pi y}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \left( \cos(\overline{\theta-1}) - \cos(\overline{\theta}) \right) + \right. \\ P_{2} \sum_m \sum_n \frac{\sin \left( \frac{m \pi x}{a} \right)^2 \cdot \sin \left( \frac{n \pi y}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \left( \cos(\overline{\theta-2}) - \cos(\overline{\theta-1}) \right) + . \; . \; .\ \\ \left. + P_{\theta} \sum_m \sum_n \frac{\sin \left( \frac{m \pi x}{a} \right)^2 \cdot \sin \left( \frac{n \pi y}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \left( 1 - \cos(\overline{1}) \right) \right]
+	w(x,y,\xi, \eta) = \frac{4}{\rho h a b \pi^4 \overline{a}^2} \cdot \left[ P_{1} \sum_m \sum_n \frac{\sin\left(\frac{m \pi x}{a}\right) \cdot \sin\left(\frac{n \pi y}{b}\right) \sin\left(\frac{m \pi \xi}{a}\right) \cdot \sin\left(\frac{n \pi \eta}{b}\right)	}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \left( \cos(\overline{\theta-1}) - \cos(\overline{\theta}) \right) + \right. \\ P_{2} \sum_m \sum_n \frac{\sin\left(\frac{m \pi x}{a}\right) \cdot \sin\left(\frac{n \pi y}{b}\right) \sin\left(\frac{m \pi \xi}{a}\right) \cdot \sin\left(\frac{n \pi \eta}{b}\right)	}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \left( \cos(\overline{\theta-2}) - \cos(\overline{\theta-1}) \right) + . \; . \; .\ \\ \left. + P_{\theta} \sum_m \sum_n \frac{\sin\left(\frac{m \pi x}{a}\right) \cdot \sin\left(\frac{n \pi y}{b}\right) \sin\left(\frac{m \pi \xi}{a}\right) \cdot \sin\left(\frac{n \pi \eta}{b}\right)	}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \left( 1 - \cos(\overline{1}) \right) \right]
+	\label{eq:horror}
 \end{multlined}
 \end{equation}
 
 beziehungsweise mit $(i=1,2 ... \theta)$ 
 
 \begin{equation}
- 	w(x,y) = \frac{4}{\rho h a b \pi^4 \overline{a}^2} \sum_i \sum_m \sum_n P_{i} \frac{\sin \left( \frac{m \pi x}{a} \right)^2 \cdot \sin \left( \frac{n \pi y}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \left( \cos(\overline{\theta - i}) - \cos(\overline{\theta - (i-1)}) \right)
+ 	w(x,y,\xi, \eta) = \frac{4}{\rho h a b \pi^4 \overline{a}^2} \sum_i \sum_m \sum_n P_{i} \frac{\sin\left(\frac{m \pi x}{a}\right) \cdot \sin\left(\frac{n \pi y}{b}\right) \sin\left(\frac{m \pi \xi}{a}\right) \cdot \sin\left(\frac{n \pi \eta}{b}\right)	}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \left( \cos(\overline{\theta - i}) - \cos(\overline{\theta - (i-1)}) \right)
 \end{equation}
 
-welcher dann statt dem letzten Term in (2.32) eingesetzt wird. $T$ und die Kreisfrequenz $\omega = \frac{2 \pi}{T}$ können direkt aus (2.23) abgelesen werden: 
+welcher dann statt dem letzten Term in \ref{eq:wxyxietat} eingesetzt wird. $T$ und die Kreisfrequenz $\omega = \frac{2 \pi}{T}$ können direkt aus \ref{eq:lagrangeDGL} abgelesen werden: 
 
 \begin{equation}
 	T = \frac{2 \pi}{\pi^2 \overline{a} \left( \frac{1}{a^2} + \frac{1}{b^2} \right) }, \qquad \omega=\pi^2 \overline{a} \left( \frac{1}{a^2}+\frac{1}{b^2} \right)
@@ -422,10 +480,10 @@ Mit einem genügend groß gewähltem $\kappa$, hier $\kappa=180$, kommt man für
 	\tau = \frac{\pi}{90} \cdot \frac{1}{\pi^2 \overline{a} \left( \frac{1}{a^2} + \frac{1}{b^2} \right) }
 \end{equation}
 
-Setzt man folglich $\tau$ in Gleichung (2.34) und jene wiederum in die Doppelsumme aus (2.35) ein, folgt:
+Setzt man folglich $\tau$ in Gleichung \ref{eq:easySinus} und jene wiederum in die Doppelsumme aus \ref{eq:horror} ein, folgt:
 
 \begin{equation}
-	\overline{S(k)} = \sum_m \sum_n \frac{\sin \left( \frac{m \pi x}{a} \right)^2 \cdot \sin \left( \frac{n \pi y}{b} \right)^2}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \cos \left[ \left( \frac{m^2}{a^2}+\frac{n^2}{b^2} \right) \frac{\pi k}{90} \cdot \frac{a^{2}b^{2}}{a^{2}+b^{2}} \right] 
+	\overline{S(k)} = \sum_m \sum_n \frac{\sin\left(\frac{m \pi x}{a}\right) \cdot \sin\left(\frac{n \pi y}{b}\right) \sin\left(\frac{m \pi \xi}{a}\right) \cdot \sin\left(\frac{n \pi \eta}{b}\right)	}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \cos \left[ \left( \frac{m^2}{a^2}+\frac{n^2}{b^2} \right) \frac{\pi k}{90} \cdot \frac{a^{2}b^{2}}{a^{2}+b^{2}} \right] 
 \end{equation}
 
 

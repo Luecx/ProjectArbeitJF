@@ -22,8 +22,8 @@ from sklearn.metrics import r2_score
 
 def compute(
         # Material
-        rho=0.00796,  # [kg/cm^3]
-        E=2.2 * 1e06,  # [kg/cm^2]
+        gamma=0.00796,  # [kg/cm^3]
+        E=2.2 * 1e06,   # [kg/cm^2]
         nue=0.3,  # [-]
 
         # Platte
@@ -32,8 +32,8 @@ def compute(
         h=0.8,  # [cm]
 
         # Kugel
-        #r=1,  # [cm]
-        m_g = 1, # [kg]
+        r=1,  # [cm]
+        #m_g = 0.1, # [kg]
         v_0=100,  # [cm/sek]
 
         # Stoß
@@ -47,10 +47,10 @@ def compute(
 
 ):
     # Konstanten
-    g = 981  # [cm/sek^2]
-    #m_g = (4 / 3) * np.pi * r ** 3 * rho
-    a_quer = np.sqrt((E * h ** 2 * g) / (12 * rho * (1 - nue ** 2)))
-    w_pre = 4 * g / ((np.pi ** 4) * (a_quer ** 2) * rho * h * a * b)
+    g = 1  # [cm/sek^2]
+    m_g = (4 / 3) * np.pi * r ** 3 * gamma
+    a_quer = np.sqrt((E * h ** 2 * g) / (12 * gamma * (1 - nue ** 2)))
+    w_pre = 4 * g / ((np.pi ** 4) * (a_quer ** 2) * gamma * h * a * b)
 
     # Zeitkonstanten
 
@@ -190,8 +190,8 @@ w_fit = np.zeros(j)
 for i in range(0, j):
     P_fit[i] = test_P(time[i], paramp[0], paramp[1], paramp[2], paramp[3])
     w_fit[i] = test_w(time[i], paramw[0], paramw[1], paramw[2], paramw[3])
-print('R^2 P:  ', r2_score(P, P_fit))
-print('R^2 w:  ', r2_score(w, w_fit))
+# print('R^2 P:  ', r2_score(P, P_fit))
+# print('R^2 w:  ', r2_score(w, w_fit))
 
 # ------------------------------------------------------------------------------
 # P L O T T E N   D E R   E R G E B N I S S E
