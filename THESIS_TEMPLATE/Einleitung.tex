@@ -47,14 +47,18 @@ zwischen High-Mass (hoher Masse) und Low-Mass (niedriger Masse) unterschieden.
 \\
 Da die Masse hier eine zentrale Rolle spielt, wollen wir genauer auf die
 Kriterien eingehen: \\
-Laut der Gleichung für die kinetische Energie 
+Laut der Gleichung für die kinetische Energie, deren Variablen in Tabelle~\ref{tab:Tabelle 1} erläutert werden,
 \begin{equation}
+\label{form:kinEn}
 E = \frac{1}{2}mv^2
 \end{equation}
-,wobei 
+ 
+ geht die Masse nur mit der ersten Potenz, die Geschwindigkeit jedoch mit
+ der zweiten Potenz in die Energie ein. Daher ist nur im Low-Velocity Bereich die Masse der signifikante Parameter. 
+ 
 \begin{table}[h!]
 	\begin{center}
-		\caption{Variablen}
+		\caption{Variablen der Gleichung~\ref{form:kinEn}}
 		\label{tab:Tabelle 1}
 		\begin{tabular}{l|c}
 			\textbf{Variable} & \textbf{Bedeutung}\\
@@ -64,14 +68,11 @@ E = \frac{1}{2}mv^2
 			v & Geschwindigkeit in m/s\\
 		\end{tabular}
 	\end{center}
-\end{table}\\
-,geht die Masse nur mit der ersten Potenz, die Geschwindigkeit jedoch mit
-der zweiten Potenz in die Energie ein. Hieraus ist leicht zu erkennen, dass die
-Geschwindigkeiten im Low-Velocity Impact Bereich eine gegenüber der Masse
-insignifikante Rolle spielt. \\
-In der durchgeführten Parameterstudie werden unter anderem der Einfluss der
+\end{table}
+
+In dieser Arbeit sollen unter anderem der Einfluss der
 Stoßstelle, des Gewichts der Stoßmasse und des Materials sowie der Dimensionen der
-Platte untersucht. \\
+Platte untersucht werden. \\
 Für das Verständnis wird im Folgenden zunächst der aktuelle Stand der
 Technik ausgeführt, bevor die physikalischen und mathematischen Grundlagen und
 Modelle, auf denen das Skript basiert, erläutert werden.\\
@@ -88,7 +89,7 @@ können dann für die Bestimmung von Schäden und Reparatur-, bzw.
 Austauscharbeiten genutzt werden.\\
 %hier noch mehr sobald der Hauptteil steht
 
-\section{Stand der Technik}
+\chapter{Stand der Technik}
 
 %Stöße auf Platten haben in der Schadensbeurteilung seit langem eine stetig wachsende
 %Wichtigkeit. \\
@@ -101,14 +102,16 @@ auftritt. In diesem Punkt würde die Spannung ins Unendliche wachsen, denn laut
 der Gleichung für Spannung 
 
 \begin{equation}
+\label{form:Druck}
 \sigma = \frac{\mbox{F}}{\mbox{A}} \rightarrow \infty \; , \; \; \mbox{für die Fläche} \rightarrow 0
 \end{equation}
 
 würde die Fläche, wenn keine Verformung stattfindet, gegen null gehen. Die Drücke
 und Deformationen in diesem Hertzschen Kontakt sind verglichen zu jenen
-außerhalb der Kontaktzone undendlich groß. \\
+außerhalb der Kontaktzone unendlich groß. \\
 Zur Vereinfachung der Berechnung stellt Hertz folgende Annahmen auf, die sich in
-vielen späteren Thesen zu diesem Thema wiederfinden: 
+vielen späteren Thesen zu diesem Thema wiederfinden:
+
 \begin{itemize}
 	\item Der übertragende Druck zwischen den Körpern ist endlich
 	\item Die Kontaktflächen beider Körper sind ideal glatt
@@ -116,11 +119,11 @@ vielen späteren Thesen zu diesem Thema wiederfinden:
 	\item Es stellt sich ein strikt senkrechter Druck zwischen den berührenden Teilen ein
 \end{itemize}
 
-In diesem Modell werden die beiden Flächen mathematisch in Berührung gebracht und das verwendete Koordinatensystem in die Fläche, die tangential zur Berührungsfläche liegt, eingebracht. \\
+In diesem Modell werden die beiden Flächen, wie in Abbildunge~\ref{fig:Hertz} dargestellt, mathematisch in Berührung gebracht und das verwendete Koordinatensystem in die Fläche, die tangential zur Berührungsfläche liegt, eingebracht.
 
 \begin{figure}[h!]
 	\begin{center}
-		\begin{overpic}[width=\linewidth]{pictures/einleitung/HertzscherKontakt.eps}
+		\begin{overpic}[width=12cm]{pictures/einleitung/HertzscherKontakt.eps}
 			\put(70,20){\mbox{x}}
 			\put(51,1){\mbox{z}}
 			\put(5,40){\begin{minipage}{\textwidth}Hertz'sche\\Flächenpressung\end{minipage}}
@@ -132,24 +135,26 @@ In diesem Modell werden die beiden Flächen mathematisch in Berührung gebracht 
 
 Basierend auf den Hertz'schen Berechnungen hat sich am Anfang des 20. Jahrhunderts auch Karas [KARAS] mit der Plattentheorie befasst. Auf seinen Berechnungen basiert in großen Teilen diese Arbeit. \\
 Fast gleichzeitig stellte auch Timoshenko Überlegungen zu der Biegung einer gestützten Platte unter Wirkung einer Einzellast an. Basierend auf der Arbeit von Dr. Nadai leitet er anhand unendlich ausgedehnter Platten einen tabellarischen Ansatz zur Lösung des oben genannten Problems her. Auch zeigte sich in seinen Berechnungen, dass die Werte für eine endliche, eingespannte Platte mit stetig größer werdenden Maßen, sich denen der unendlich ausgedehnten Platte schnell nähern.\\
-Auch Wang [WANG et al.] stellten Überlegungen zu dünnen Platten auf. In ihrer These NONLINEAR LARGE-DEFLECTION BOUNDARY-VALUE PROBLEMS OF RECTANGULAR PLATES von 1948 beschreiben sie die Auslenkung, die solche Platten unter seitlichem Schub oder normalem Druck erfahren. Bei kleinen Auslenkungen unterliegt die Deformation einer einfachen linearen Gleichung. Sobald die Auslenkung groß wird, fällt die Beschreibung unter die sogenannten Von Kármán'schen Differentialgleichungen, die Wang et al. durch Finite Differenzen lösen.\\
+Auch Wang [WANG et al.] stellten Überlegungen zu dünnen Platten auf. In ihrer Arbeit von 1948 beschreiben sie die Auslenkung, die solche Platten unter seitlichem Schub oder normalem Druck erfahren. Bei kleinen Auslenkungen unterliegt die Deformation einer einfachen linearen Gleichung. Sobald die Auslenkung groß wird, fällt die Beschreibung unter die sogenannten Von Kármán'schen Differentialgleichungen, die Wang et al. durch Finite Differenzen lösen.\\
 In der zweiten Hälfte des 20. Jahrhunderts richtet sich der Fokus der Forschung auf Laminatplatten. Shivakumar et al. [SHIV] stellen zwei Modelle zur Bestimmung der Einschlagkraft und Dauer bei Low-Velocity Impactversuchen in zirkularen Laminaten auf. \\
 Hierbei leiten sie ein Feder-Masse Modell und ein Energiemodell her. \\
-Das Energiemodell basiert auf der Erhaltung der Energie. In einer einfachen Gleichung wird die kinetische Energie des Stoßkörpers mit der Summe der Kontakt-, Deformations- und Schubspannungsenergien gleichgesetzt. Diese Gleichung wurde dann nach der Stoßkraft umgestellt und durch die Newton-Raphson Methode gelöst.
+Das Energiemodell basiert auf der Erhaltung der Energie. In der einfachen Gleichung~\ref{form:EnGleich} setzen Shivakumar et al. die kinetische Energie des Stoßkörpers mit der Summe der Kontakt-, Deformations- und Schubspannungsenergien gleich. Diese Gleichung wird dann nach der Stoßkraft umgestellt und durch die Newton-Raphson Methode gelöst.
 
 \begin{equation}
+	\label{form:EnGleich}
 	\frac{1}{2} m_{g} V_{0}^{2} = E_{Kontakt} + E_{Biege} + E_{Deform}
 \end{equation}
 
-Das Feder-Masse Modell stellen die Autoren als Weiterführung des Modells nach Lee auf. Die Stoßmasse $m_g$ und die Plattenmasse $m_p$ werden hier als rigide Massen dargestellt. In früheren Versuchen wurde gezeigt, dass die effektive Plattenmasse ungefähr $\frac{1}{4}$ der Gesamtmasse beträgt. Deshalb wird hier 
+Das Feder-Masse Modell stellen die Autoren als Weiterführung des Modells nach Lee auf. Die Stoßmasse $m_g$ und die Plattenmasse $m_p$ werden hier als rigide Massen dargestellt. In früheren Versuchen wurde gezeigt, dass die effektive Plattenmasse ungefähr $\frac{1}{4}$ der Gesamtmasse beträgt. Deshalb wird hier die Masse nach Gleichung~\ref{form:MassFrac1} angenommen. 
 
 \begin{equation}
-m_{eff} = \frac{1}{4} m_p
+	\label{form:MassFrac1}
+	m_{eff} = \frac{1}{4} m_p
 \end{equation} 
 
-angenommen. Die resultierenden Gleichungen, mit zwei Freiheitsgraden, setzen sich wie folgt zusammen:
 
-\begin{figure}[h!]
+
+\begin{figure}[H]
 	\begin{center}
 		\begin{overpic}[scale=2.2]{pictures/einleitung/SpringMassModel.eps}
 			\put(-5,73){$x_{1}$(t)}
@@ -169,6 +174,8 @@ angenommen. Die resultierenden Gleichungen, mit zwei Freiheitsgraden, setzen sic
 		\label{fig:SPM}
 	\end{center}
 \end{figure}
+
+Die aus Abbildung~\ref{fig:SPM} resultierenden Gleichungen, mit zwei Freiheitsgraden, setzen sich wie folgt zusammen:
 
 \begin{equation}
 	m_{g} \ddot{x_{1}} + \lambda c \cdot \bigl| (x_{1} - x_{2}) \bigl| ^{\frac{3}{2}} = 0
