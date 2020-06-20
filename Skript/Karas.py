@@ -106,17 +106,18 @@ def compute(
     z[1] = v_0 * tau
     # mit g multiplizieren da sonst kraft in kg gegeben
     P[1] = c * z[1] ** (3 / 2) * g
+
     P1 = P[1] / 2
     # P1 bereits in [kg*cm/sek^2]
     u_P1 = v_0 * 1 * tau - (1 / m_g) * P1 * 0.5 * tau ** 2
     w_P1 = 0
 
     # P1 hier in [kg] einsetzen:
-    for m in range(1, 45, 1):
-        for n in range(1, 45, 1):
-            w_P1 += w_pre * P1 * (cos[1 - 1] - cos[1 - (2 - 1)])
+    w_P1 += w_pre * P1 * (cos[0] - cos[1])
+
     z[1] = u_P1 - w_P1
     v[1] = v_0 - (P[1] / 2 / m_g) * tau
+
 
     # 2. Näherung
     P[1] = c * z[1] ** (3 / 2) * g
@@ -125,13 +126,13 @@ def compute(
 
     w[1] = 0
     # P1 hier in [kg] einsetzen:
-    for m in range(1, 45, 1):
-        for n in range(1, 45, 1):
-            w[1] += w_pre * P[1] / 2 * (cos[1 - 1] - cos[1 - (2 - 1)])
+    w[1] += w_pre * P[1] / 2 * (cos[0]-cos[1])
+
 
     z[1] = u[1] - w[1]
     P[1] = c * z[1] ** (3 / 2) * g
     time[1] = tau
+
 
     # ------------------------------------------------------------------------------
     # A U S R E C H N E N   V O N   P_i
