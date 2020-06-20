@@ -39,6 +39,7 @@ def compute(
         nue_p=0.3,  # [-]
 
         #Kugelmaterial
+        rho_g=0.00796, # [kg/cm^3]
         E_g = 2.2 * 1e06, # [kg/cm^2]
         nue_g = 0.3, # [-]
 
@@ -48,7 +49,7 @@ def compute(
         h=0.8,  # [cm]
 
         # Kugel
-        r=1,  # [cm]
+        #r=1,  # [cm]
         # m_g = 0.1, # [kg]
 
         mass_ratio=0.1,  # [-]
@@ -68,10 +69,10 @@ def compute(
 
 ):
     # Konstanten
-    mat = ( ((1 - nue_g ** 2) / E_g) + ((1 - nue_p ** 2) / E_p)) ** (-1)
-    c = np.sqrt((4 * r) / 9) * mat
-    g = 981  # [cm/sek^2]
     m_g = mass_ratio * a * b * h * rho
+    mat = ( ((1 - nue_g ** 2) / E_g) + ((1 - nue_p ** 2) / E_p)) ** (-1)
+    c = np.sqrt((4 * (((m_g * 3) / (4 * np.pi * rho_g)) ** (1/3))) / 9) * mat
+    g = 981  # [cm/sek^2]
     a_quer = np.sqrt((E_p * h ** 2 * g) / (12 * rho * (1 - nue_p ** 2)))
     w_pre = 4 / ((np.pi ** 4) * (a_quer ** 2) * rho * h * a * b)
 
