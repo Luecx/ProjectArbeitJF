@@ -39,7 +39,7 @@ def compute(
         nue_p=0.3,  # [-]
 
         #Kugelmaterial
-        rho_g=0.00796, # [kg/cm^3]
+        #rho_g=0.00796, # [kg/cm^3]
         E_g = 2.2 * 1e06, # [kg/cm^2]
         nue_g = 0.3, # [-]
 
@@ -52,7 +52,7 @@ def compute(
         r=1,  # [cm]
         # m_g = 0.1, # [kg]
 
-        mass_ratio=0.1,  # [-]
+        mass_ratio=0.5,  # [-]
         v_0=100,  # [cm/sek]
 
         # Stoß
@@ -211,7 +211,7 @@ def test_w(x, w0, w1, w2, w3):
     return w0 * np.sin(x * w1 + w2) + w3
 
 
-time, j, tau, w, P, u = compute(h=0.5, mass_ratio=0.3, stop_computation_after_first_impact=False, iterations=100)
+time, j, tau, w, P, u = compute(h=0.5, mass_ratio=0.014, stop_computation_after_first_impact=False, iterations=1000)
 
 # paramp, paramp_covariance = optimize.curve_fit(test_P, time, P, maxfev=100000, p0=[100, 1/time[j - 1], 0, 20])
 # paramw, paramw_covariance = optimize.curve_fit(test_w, time, w, maxfev=100000)
