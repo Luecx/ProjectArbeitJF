@@ -44,28 +44,30 @@ def compute(
         nue_g = 0.3, # [-]
 
         # Platte
-        a=40,  # [cm]
-        b=40,  # [cm]
-        h=0.8,  # [cm]
+        a=50.0,  # [cm]
+        b=50.0,  # [cm]
+        h=1.0,  # [cm]
 
         # Kugel
-        r=1,  # [cm]
+        r=1.0,  # [cm]
         # m_g = 0.1, # [kg]
 
         mass_ratio=0.5,  # [-]
-        v_0=100,  # [cm/sek]
+        v_0=500.0,  # [cm/sek]
 
         # Stoß
-        xi=20,  # [cm]
-        eta=20,  # [cm]
+        xi=25.0,  # [cm]
+        eta=25.0,  # [cm]
         c=1.6 * 1e06,  # [kg/cm^3/2]
 
         # Auswertung
-        x=20,  # [cm]
-        y=20,  # [cm]
+        x=25.0,  # [cm]
+        y=25.0,  # [cm]
 
         stop_computation_after_first_impact=False,
-        iterations=100
+        iterations=1000,
+        cosPreset = None,
+        printLoadingBar = True
 
 ):
     # Konstanten
@@ -80,7 +82,7 @@ def compute(
 
     num_inter = iterations  # Anzahl der Intervalle
     Tg = 2 * np.pi / (np.pi ** 2 * a_quer * (1 / a ** 2 + 1 / b ** 2))
-    tau = Tg / (2 * 720)  # [sek]
+    tau = Tg / (2 * 180)  # [sek]
 
     # ------------------------------------------------------------------------------
     # A N L E G E N   V O N   A R R A Y S
@@ -95,17 +97,19 @@ def compute(
     # ------------------------------------------------------------------------------
     # A U S R E C H N E N   V O N   C O S
     cos = np.zeros(num_inter + 1)
-    for j in range(0, num_inter + 1):
-
-        printProgressBar(j, num_inter + 1, "generating S(k)")
-        for m in range(1, 45, 1):
-            for n in range(1, 45, 1):
-                cos[j] += \
-                    np.sin(m * np.pi * x / a) * np.sin(n * np.pi * y / b) * \
-                    np.sin(m * np.pi * xi / a) * np.sin(n * np.pi * eta / b) * \
-                    np.cos(((m ** 2 / a ** 2) + (n ** 2 / b ** 2)) * np.pi ** 2 * a_quer * (j) * tau) / \
-                    (m ** 2 / a ** 2 + n ** 2 / b ** 2) ** 2
-
+    if cosPreset is None:
+        for j in range(0, num_inter + 1):
+            if(printLoadingBar):
+                printProgressBar(j, num_inter + 1, "generating S(k)")
+            for m in range(1, 45, 1):
+                for n in range(1, 45, 1):
+                    cos[j] += \
+                        np.sin(m * np.pi * x / a) * np.sin(n * np.pi * y / b) * \
+                        np.sin(m * np.pi * xi / a) * np.sin(n * np.pi * eta / b) * \
+                        np.cos(((m ** 2 / a ** 2) + (n ** 2 / b ** 2)) * np.pi ** 2 * a_quer * (j) * tau) / \
+                        (m ** 2 / a ** 2 + n ** 2 / b ** 2) ** 2
+    else:
+        cos = cosPreset
     # ------------------------------------------------------------------------------
     # A U S R E C H N E N   V O N   P 1
     # j=1, da nur erstes Intervall betrachtet wird
@@ -146,7 +150,8 @@ def compute(
 
     for j in range(2, num_inter):
 
-        printProgressBar(j, num_inter, "simulation")
+        if (printLoadingBar):
+            printProgressBar(j, num_inter, "simulation")
 
         # 1. Näherung
         # P_hilf[j-1]=P[j-1]/2
@@ -198,7 +203,7 @@ def compute(
     #   P[j]=0
 
     P /= 100
-    return time, j, tau, w, P, u
+    return time, j, tau, w, P, u, cos
 
 
 # ------------------------------------------------------------------------------
@@ -211,7 +216,86 @@ def test_w(x, w0, w1, w2, w3):
     return w0 * np.sin(x * w1 + w2) + w3
 
 
-time, j, tau, w, P, u = compute(h=0.5, mass_ratio=0.014, stop_computation_after_first_impact=False, iterations=1000)
+
+def countHits(F):
+    c = 0
+    for i in range(1,len(F)):
+        if F[i] == 0.0 and F[i-1] > 0:
+            c += 1
+    return c
+
+
+
+
+
+
+
+
+
+# mr = 1
+# time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=mr, iterations=600,xi=a/2, eta=b/2)
+# for i in range(40):
+#     time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=mr, iterations=600,xi=a/2, eta=b/2, cosPreset=cosPre)
+#     if(countHits(P) > 2):
+#         mr -= mr/2
+#     else:
+#         mr += mr/2
+#     print(mr, countHits(P))
+
+
+
+
+for sv in np.arange(1,3,0.1):
+
+    f = 2500
+    b = (f / sv) ** 0.5
+    a = f / b
+
+    time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=1, iterations=1000,xi=a/2, eta=b/2,printLoadingBar=False)
+    for mr in np.arange(0.05,1,0.02):
+        time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=mr, iterations=1000,xi=a/2, eta=b/2, cosPreset=cosPre, printLoadingBar=False)
+        print("% 10f % 10f % 10f" % (sv,mr,countHits(P)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # paramp, paramp_covariance = optimize.curve_fit(test_P, time, P, maxfev=100000, p0=[100, 1/time[j - 1], 0, 20])
 # paramw, paramw_covariance = optimize.curve_fit(test_w, time, w, maxfev=100000)
