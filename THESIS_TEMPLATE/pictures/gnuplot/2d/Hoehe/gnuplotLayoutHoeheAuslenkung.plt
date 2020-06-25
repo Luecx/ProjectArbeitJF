@@ -20,18 +20,17 @@ set style line 2 \
     pointtype 6 pointsize 1.5
 
 # -----------------------------------------------------------------------------------------------------
-set output './production/Hoehe_Massenratio.eps'
-set title "Massenverhaeltnis bei variierter Hoehe" 
+set output './production/HoeheAuslenkung.eps'
+set title "Maximale Auslenkung bei gegebenem h und MR" 
 
-set xrange [0.3:1.7]
-set yrange [0.01:0.1]
+set xrange [0.005:2.55]
+set yrange [0.01:1]
 
-set xlabel "Hoehe [cm]" 
-set ylabel "Massenratio [-]" rotate by 90
+set xlabel "MR [cm]" 
+set ylabel "Maximale Auslenkung [cm]" rotate by 90
 
 
-plot "Hoehe.dat" u 1:2 title "Uebergang Einzel- zu Doppelschlag" with linespoints linestyle 1, \
-	"Hoehe.dat" u 1:3 title "Uebergang Doppel- zu Mehrfachschlag" with linespoints linestyle 2  
+plot "HoeheAuslenkung.dat" u 1:2 title "" with linespoints linestyle 1
 	
 # -----------------------------------------------------------------------------------------------------
 

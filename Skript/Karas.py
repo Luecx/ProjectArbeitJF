@@ -224,7 +224,19 @@ def countHits(F):
             c += 1
     return c
 
+def maxW(W):
+    w_max = 0
+    for i in range(1, len(W)):
+        if abs(W[i]) > abs(W[i-1]):
+            w_max = abs(W[i])
+    return w_max
 
+def maxP(Kraft):
+    f_max = 0
+    for i in range(1, len(Kraft)):
+        if Kraft[i] > Kraft[i-1]:
+            f_max = Kraft[i]
+    return f_max
 
 
 
@@ -245,16 +257,20 @@ def countHits(F):
 
 
 
-for sv in np.arange(1,3,0.1):
+for h in np.arange(0.5,2.6,0.1):
 
-    f = 2500
-    b = (f / sv) ** 0.5
-    a = f / b
 
-    time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=1, iterations=1000,xi=a/2, eta=b/2,printLoadingBar=False)
-    for mr in np.arange(0.05,1,0.02):
-        time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=mr, iterations=1000,xi=a/2, eta=b/2, cosPreset=cosPre, printLoadingBar=False)
-        print("% 10f % 10f % 10f" % (sv,mr,countHits(P)))
+
+    time, j, tau, w, P, u, cosPre = compute(h=h, mass_ratio=1, iterations=1000, printLoadingBar=False)
+    for mr in np.arange(0.01,2.51,0.01):
+        time, j, tau, w, P, u, cosPre = compute(h=h, mass_ratio=mr, iterations=1000, cosPreset=cosPre, printLoadingBar=False)
+        with open("Hoehe.txt", "a") as myfile:
+            myfile.write(str.format("%10f %10f %10f \n" % (h,mr,countHits(P))))
+        with open("HoeheAuslenkung.txt", "a") as myfile:
+            myfile.write(str.format("%10f %10f %10f \n" % (h,mr, maxW(w))))
+        with open("HoeheKraft.txt", "a") as myfile:
+            myfile.write(str.format("%10f %10f %10f \n" % (h,mr, maxP(P))))
+        print("%10f %10f %10f" % (h,mr,countHits(P)))
 
 
 
