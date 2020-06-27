@@ -240,6 +240,16 @@ def maxP(Kraft):
 
 
 
+for sv in np.arange(1, 5, 0.05):
+    f = 2500
+    b = (f / sv) ** 0.5
+    a = f / b
+    time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=1, iterations=1000, xi=a / 2, eta=b / 2, printLoadingBar=False)
+    for mr in np.arange(0.01, 2.51, 0.01):
+        time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=mr, iterations=1000, xi=a / 2, eta=b / 2, cosPreset=cosPre, printLoadingBar=False)
+        with open("svmr.txt", "a") as myfile:
+            myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (sv, mr, countHits(P), maxW(w), maxP(P))))
+    print(str((sv-1) / 4 * 100) + "%")
 
 
 
@@ -256,21 +266,52 @@ def maxP(Kraft):
 
 
 
+# mr = 1
+# time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=mr, iterations=600,xi=a/2, eta=b/2)
+# for i in range(40):
+#     time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=mr, iterations=600,xi=a/2, eta=b/2, cosPreset=cosPre)
+#     if(countHits(P) > 2):
+#         mr -= mr/2
+#     else:
+#         mr += mr/2
+#     print(mr, countHits(P))
 
-for r in np.arange(0.5,10.1,0.1):
 
 
+# for xi_rel in np.arange(0.5,1,0.01):
+#     for eta_rel in np.arange(0.5,xi_rel, 0.01):
+#         time, j, tau, w, P, u, cosPre = compute(xi=xi_rel * 50, eta=eta_rel * 50, iterations=1000,
+#                                                 printLoadingBar=False)
+#         with open("xieta.txt", "a") as myfile:
+#             myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (xi_rel, eta_rel, countHits(P), maxW(w), maxP(P))))
+#             myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (eta_rel, xi_rel, countHits(P), maxW(w), maxP(P))))
+#
+#         print("%10f %10f %10f %10f %10f \n" % (xi_rel, eta_rel, countHits(P), maxW(w), maxP(P)))
+#
+#
+#     eta_rel = xi_rel
+#     time, j, tau, w, P, u, cosPre = compute(xi=xi_rel * 50, eta=eta_rel * 50, iterations=1000,
+#                                             printLoadingBar=False)
+#     with open("xieta.txt", "a") as myfile:
+#         myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (xi_rel, eta_rel, countHits(P), maxW(w), maxP(P))))
+#
+#     print("%10f %10f %10f %10f %10f \n" % (xi_rel, eta_rel, countHits(P), maxW(w), maxP(P)))
 
-    time, j, tau, w, P, u, cosPre = compute(r=r, mass_ratio=1, iterations=1000, printLoadingBar=False)
-    for mr in np.arange(0.01,2.51,0.01):
-        time, j, tau, w, P, u, cosPre = compute(r=r, mass_ratio=mr, iterations=1000, cosPreset=cosPre, printLoadingBar=False)
-        with open("Radius.txt", "a") as myfile:
-            myfile.write(str.format("%10f %10f %10f \n" % (r,mr,countHits(P))))
-        with open("RadiusAuslenkung.txt", "a") as myfile:
-            myfile.write(str.format("%10f %10f %10f \n" % (r,mr, maxW(w))))
-        with open("RadiusKraft.txt", "a") as myfile:
-            myfile.write(str.format("%10f %10f %10f \n" % (r,mr, maxP(P))))
-        print("%10f %10f %10f" % (r,mr,countHits(P)))
+
+# for h in np.arange(0.5,2.6,0.1):
+#
+#
+#
+#     time, j, tau, w, P, u, cosPre = compute(h=h, mass_ratio=1, iterations=1000, printLoadingBar=False)
+#     for mr in np.arange(0.01,2.51,0.01):
+#         time, j, tau, w, P, u, cosPre = compute(h=h, mass_ratio=mr, iterations=1000, cosPreset=cosPre, printLoadingBar=False)
+#         with open("Hoehe.txt", "a") as myfile:
+#             myfile.write(str.format("%10f %10f %10f \n" % (h,mr,countHits(P))))
+#         with open("HoeheAuslenkung.txt", "a") as myfile:
+#             myfile.write(str.format("%10f %10f %10f \n" % (h,mr, maxW(w))))
+#         with open("HoeheKraft.txt", "a") as myfile:
+#             myfile.write(str.format("%10f %10f %10f \n" % (h,mr, maxP(P))))
+#         print("%10f %10f %10f" % (h,mr,countHits(P)))
 
 
 
