@@ -7,13 +7,13 @@ set terminal postscript eps enhanced color font 'Helvetica,10'
 # ---------------------------------------------------------------------------------------
 set output './production/Speed.eps'
 
-set title "Geschwindigkeit" 
+set title "" 
 
 set xrange [1:10]
 set yrange [0.01:2.5]
 
-set xlabel "Geschwindigkeit [cm/s]" 
-set ylabel "MR [-]" rotate by 90
+set xlabel "" 
+set ylabel "" rotate by 90
 
 # ---------------------------------------------------------------------------------------
 

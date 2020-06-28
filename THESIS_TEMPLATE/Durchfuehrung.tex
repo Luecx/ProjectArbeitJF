@@ -137,13 +137,96 @@ Die Stoffparameter sind im Rahmen der Studie konstant und in Tabelle~\ref{tab:St
 
 \subsection{Höhe der Platte}
 
-Als erster Parameter wird die Höhe variiert. Ausgehend vom A
+Als erster Parameter wird die Höhe nach Gleichung~\ref{form:DeltaH} variiert.
 
-\begin{figure}
+\begin{equation}
+	\label{form:DeltaH}
+	0.5 [cm] \leq h \leq 2.5 [cm], \; \; \mbox{Schrittweite:} \; \Delta h = 0.1 [cm]
+\end{equation}
+
+Wenn man die Höhe, das Massenverhältnis und die Anzahl der Schläge aufträgt, ergibt sich Abbildung~\ref{fig:Hoehe}. 
+
+\begin{figure}[h!]
 	\begin{center}
-		\includegraphics[width=\linewidth,angle=0]{pictures/gnuplot/3d/Hoehe/production/HoeheKraft.eps}
-	\end{center}	
+		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Hoehe/production/Hoehe.eps}
+			\put(45,4){Höhe [cm]}
+			\put(18,30){\rotatebox{90}{Mr [-]}}
+			\put(83,60){Aufschläge [-]}
+		\end{overpic}
+	\label{fig:Hoehe}
+	\caption{Höhe, MR und Anzahl der Aufschläge}
+	\end{center}
 \end{figure}
+
+Man kann direkt ablesen, dass mehrere Aufschläge vermehrt im unteren Höhenbereich auftreten. Dies ist direkt auf die Steifigkeit der Platte zurückzuführen. Bei größerer Plattendicke ist die Steifigkeit der Platte größer und die Kugel prallt ab, ohne vermehrt aufzutreffen.
+
+\begin{figure}[h!]
+	\begin{center}
+		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Hoehe/production/HoeheAuslenkung.eps}
+			\put(72,11){Höhe [cm]}
+			\put(16,11){MR [-]}
+			\put(1,55){Auslenkung [cm]}
+		\end{overpic}
+	\label{fig:HoeheAuslenkung}
+	\caption{Höhe, MR und Auslenkung}
+	\end{center}
+\end{figure}
+
+\begin{figure}[h!]
+	\begin{center}
+		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Hoehe/production/HoeheKraft.eps}
+			\put(82,15){Höhe [cm]}
+			\put(40,9){MR [-]}
+			\put(9,50){Kraft [N]}
+		\end{overpic}
+	\label{fig:HoeheKraft}
+	\caption{Höhe, MR und Kraft}
+	\end{center}
+\end{figure}
+
+\subsection{Geschwindigkeit des Impaktors}
+
+\begin{figure}[h!]
+	\begin{center}
+		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Speed/production/Speed.eps}
+			\put(40,4){Geschwindigkeit [cm/s]}
+			\put(18,30){\rotatebox{90}{Mr [-]}}
+			\put(83,60){Aufschläge [-]}
+		\end{overpic}
+		\label{fig:Speed}
+		\caption{Geschwindigkeit, MR und Anzahl der Aufschläge}
+	\end{center}
+\end{figure}
+
+\begin{figure}[h!]
+	\begin{center}
+		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Speed/production/SpeedAuslenkung.eps}
+			\put(57,8){Geschwindigkeit [cm/s]}
+			\put(16,12){MR [-]}
+			\put(1,56){Auslenkung [cm]}
+		\end{overpic}
+		\label{fig:SpeedAuslenkung}
+		\caption{Geschwindigkeit, MR und Auslenkung}
+	\end{center}
+\end{figure}
+
+\begin{figure}[h!]
+	\begin{center}
+		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Speed/production/SpeedKraft.eps}
+			\put(3,12){\begin{minipage}{\textwidth}Geschwindigkeit\\ in [cm/s]\end{minipage}}
+			\put(58,8){MR [-]}
+			\put(9,58){Kraft [N]}
+		\end{overpic}
+		\label{fig:SpeedKraft}
+		\caption{Geschwindigkeit, MR und Kraft}
+	\end{center}
+\end{figure}
+
+%\begin{figure}
+%	\begin{center}
+%		\includegraphics[width=\linewidth,angle=0]{pictures/gnuplot/3d/Hoehe/production/HoeheKraft.eps}
+%	\end{center}	
+%\end{figure}
 	
 	
  
