@@ -2,18 +2,18 @@
 ### interpolate data with highlighted datapoints
 reset session
 
-#set terminal postscript eps enhanced color font 'Helvetica,10'
+set terminal postscript eps enhanced color font 'Helvetica,10'
 
 # ---------------------------------------------------------------------------------------
-#set output './production/image1.eps'
+set output './production/XiEta.eps'
 
 set title "Titel" 
 
 set xrange [0.5:1]
 set yrange [0.5:1]
 
-set xlabel "x-Achse [Einheit]" 
-set ylabel "y-Achse [Einheit]" rotate by 90
+set xlabel "x-Achse [cm]" 
+set ylabel "y-Achse [cm]" rotate by 90
 
 # ---------------------------------------------------------------------------------------
 

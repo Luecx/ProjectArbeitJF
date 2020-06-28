@@ -24,7 +24,7 @@ set size square
 set view map
 set pm3d at b
 set pm3d interpolate 2,2
-set dgrid3d 50,50,2
+set dgrid3d 100,100,2
 
 set table $DataInterpolated
     splot "Speed.dat" u 1:2:3 
@@ -37,6 +37,6 @@ set format x "%.1f"
 
 
 splot $DataInterpolated u 1:2:3 w pm3d palette notitle, \
-      "Speed.dat" u 1:2:3 w p pt 1 lw 2 lc rgb "black" notitle
+   #   "Speed.dat" u 1:2:3 w p pt 1 lw 2 lc rgb "black" notitle
 
 ### end of code
