@@ -84,6 +84,8 @@ def compute(
     Tg = 2 * np.pi / (np.pi ** 2 * a_quer * (1 / a ** 2 + 1 / b ** 2))
     tau = Tg / (2 * 180)  # [sek]
 
+
+
     # ------------------------------------------------------------------------------
     # A N L E G E N   V O N   A R R A Y S
     P = np.zeros(num_inter)
@@ -225,32 +227,42 @@ def countHits(F):
     return c
 
 def maxW(W):
-    w_max = 0
-    for i in range(1, len(W)):
-        if abs(W[i]) > abs(W[i-1]):
-            w_max = abs(W[i])
-    return w_max
+    return max(W)
 
 def maxP(Kraft):
-    f_max = 0
-    for i in range(1, len(Kraft)):
-        if Kraft[i] > Kraft[i-1]:
-            f_max = Kraft[i]
-    return f_max
+
+    return max(Kraft)
 
 
 
-for sv in np.arange(1, 5, 0.05):
-    f = 2500
-    b = (f / sv) ** 0.5
-    a = f / b
-    time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=1, iterations=1000, xi=a / 2, eta=b / 2, printLoadingBar=False)
-    for mr in np.arange(0.01, 2.51, 0.01):
-        time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=mr, iterations=1000, xi=a / 2, eta=b / 2, cosPreset=cosPre, printLoadingBar=False)
-        with open("svmr.txt", "a") as myfile:
-            myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (sv, mr, countHits(P), maxW(w), maxP(P))))
-    print(str((sv-1) / 4 * 100) + "%")
 
+# for sv in np.arange(2.3, 2.31, 0.05):
+#
+#     time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=1, iterations=1000, xi=a / 2, eta=b / 2, printLoadingBar=True)
+#     for mr in np.arange(2.5, 2.51, 0.01):
+#         time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=mr, iterations=1000, xi=a / 2, eta=b / 2, cosPreset=cosPre, printLoadingBar=True)
+#         # with open("svmr.txt", "a") as myfile:
+#         #     myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (sv, mr, countHits(P), maxW(w), maxP(P))))
+#     print(str((sv-1) / 4 * 100) + "%")
+
+# sv = 2.3
+# f = 2500
+# b = (f / sv) ** 0.5
+# a = f / b
+#
+# time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=2.7, iterations=1000, xi=a / 2, eta=b / 2, printLoadingBar=True)
+
+
+
+# mr = 1
+# time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=mr, iterations=600,xi=a/2, eta=b/2)
+# for i in range(40):
+#     time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=mr, iterations=600,xi=a/2, eta=b/2, cosPreset=cosPre)
+#     if(countHits(P) > 2):
+#         mr -= mr/2
+#     else:
+#         mr += mr/2
+#     print(mr, countHits(P))
 
 
 
@@ -266,17 +278,9 @@ for sv in np.arange(1, 5, 0.05):
 
 
 
-# mr = 1
-# time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=mr, iterations=600,xi=a/2, eta=b/2)
-# for i in range(40):
-#     time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=mr, iterations=600,xi=a/2, eta=b/2, cosPreset=cosPre)
-#     if(countHits(P) > 2):
-#         mr -= mr/2
-#     else:
-#         mr += mr/2
-#     print(mr, countHits(P))
+time, j, tau, w, P, u, cosPre = compute(xi=0.58 * 50, eta=0.58 * 50, iterations=1000)
 
-
+print(maxP(P))
 
 # for xi_rel in np.arange(0.5,1,0.01):
 #     for eta_rel in np.arange(0.5,xi_rel, 0.01):
@@ -382,7 +386,7 @@ l3, = ax2.plot(time, w, 'b.', label='w')
 # ax2.plot(time,z,color='tab:cyan',label='z')
 ax2.tick_params(axis='y', colors='b')
 
-#l4, = ax2.plot(time, u, "g.", label="u")
+l4, = ax2.plot(time, u, "g.", label="u")
 
 
 # lines = [l1, l2, l3, l4]

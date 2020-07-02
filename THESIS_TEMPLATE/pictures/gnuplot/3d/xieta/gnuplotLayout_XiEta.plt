@@ -9,8 +9,8 @@ set output './production/XiEta.eps'
 
 set title "" 
 
-set xrange [0.5:0.99]
-set yrange [0.5:0.99]
+set xrange [0.5:1]
+set yrange [0.5:1]
 
 set xlabel "" 
 set ylabel "" rotate by 90
@@ -31,8 +31,8 @@ set table $DataInterpolated
 unset table
 unset dgrid3d
 
-set format y "%.1f"
-set format x "%.1f"
+set format y "%.2f"
+set format x "%.2f"
 
 
 

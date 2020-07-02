@@ -1,15 +1,19 @@
-[0] Config.pm:302> INFO - This is Biber 2.11
-[1] Config.pm:305> INFO - Logfile is 'Preambel_main_vorlage.blg'
-[59] biber-MSWIN64:313> INFO - === 
-[138] Biber.pm:371> INFO - Reading 'Preambel_main_vorlage.bcf'
-[292] Biber.pm:854> INFO - Using all citekeys in bib section 0
-[323] Biber.pm:3976> INFO - Processing section 0
-[344] Biber.pm:4136> INFO - Looking for bibtex format file 'Biblio.bib' for section 0
-[356] bibtex.pm:1500> INFO - LaTeX decoding ...
-[389] bibtex.pm:1316> INFO - Found BibTeX data source 'Biblio.bib'
-[540] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[540] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[541] Biber.pm:3804> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-DE'
-[541] Biber.pm:3810> INFO - No sort tailoring available for locale 'de-DE'
-[571] bbl.pm:617> INFO - Writing 'Preambel_main_vorlage.bbl' with encoding 'UTF-8'
-[590] bbl.pm:720> INFO - Output to Preambel_main_vorlage.bbl
+[0] Config.pm:304> INFO - This is Biber 2.14
+[0] Config.pm:307> INFO - Logfile is 'Preambel_main_vorlage.blg'
+[64] biber-MSWIN64:322> INFO - === 
+[82] Biber.pm:415> INFO - Reading 'Preambel_main_vorlage.bcf'
+[182] Biber.pm:940> INFO - Using all citekeys in bib section 0
+[199] Biber.pm:4256> INFO - Processing section 0
+[200] Utils.pm:75> INFO - Globbing data source 'Biblio.bib'
+[210] Utils.pm:91> INFO - Globbed data source 'Biblio.bib' to Biblio.bib
+[224] Biber.pm:4455> INFO - Looking for bibtex format file 'Biblio.bib' for section 0
+[227] bibtex.pm:1653> INFO - LaTeX decoding ...
+[248] bibtex.pm:1471> INFO - Found BibTeX data source 'Biblio.bib'
+[308] Utils.pm:304> WARN - year field 'May / 2012' in entry 'Kolvik.May2012' is not an integer - this will probably not sort properly.
+[336] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[336] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[337] Biber.pm:4084> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-DE'
+[337] Biber.pm:4090> INFO - No sort tailoring available for locale 'de-DE'
+[345] bbl.pm:652> INFO - Writing 'Preambel_main_vorlage.bbl' with encoding 'UTF-8'
+[351] bbl.pm:755> INFO - Output to Preambel_main_vorlage.bbl
+[356] Biber.pm:128> INFO - WARNINGS: 1

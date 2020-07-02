@@ -9,8 +9,8 @@ set output './production/XiEtaKraft.eps'
 
 set title "" 
 
-set xrange [0.49:1]
-set yrange [0.49:1]
+set xrange [0.5:0.99]
+set yrange [0.5:0.99]
 
 set xlabel "" 
 set ylabel "" rotate by 90
@@ -18,12 +18,25 @@ set ylabel "" rotate by 90
 # ---------------------------------------------------------------------------------------
 
 
-unset key
-set view 80,340,1,1
+set palette grey
+set grid
+set size square
+set view map
+set pm3d at b
+set pm3d interpolate 2,2
+set dgrid3d 50,50,2
 
-#set dgrid3d 100,100
-set hidden3d
-splot "xieta.dat" u 1:2:5 pt 7 lw 1 lc rgb "black" 
+set table $DataInterpolated
+    splot "xieta.dat" u 1:2:5 
+unset table
+unset dgrid3d
 
+set format y "%.2f"
+set format x "%.2f"
+
+
+
+splot $DataInterpolated u 1:2:3 w pm3d palette notitle, \
+#      "xieta.txt" u 1:2:5 w p pt 1 lw 2 lc rgb "black" notitle
 
 ### end of code

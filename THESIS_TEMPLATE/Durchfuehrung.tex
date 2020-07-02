@@ -70,7 +70,7 @@ Als Schlag wird hier ein Kraftverlauf bezeichnet, bei dem die Kraft $P_{i}$ zwis
 
 \begin{equation} 
 	\label{form:Schlagauftreten}
-	F_{i-1} > 0 \; \wedge \; F_{i} = 0.0 
+	F_{i-1} > 0 \; \wedge \; F_{i} = 0 
 \end{equation}
 
 Da im zeitlichen Verlauf auch nach dem ersten Auftreffen noch Schläge auftreten können, wird die Schrittanzahl auf $i = 1000$ gesetzt um signifikante Ergebnisse zu erlangen. 
@@ -146,7 +146,7 @@ Als erster Parameter wird die Höhe nach Gleichung~\ref{form:DeltaH} variiert.
 
 Wenn man die Höhe, das Massenverhältnis und die Anzahl der Schläge aufträgt, ergibt sich Abbildung~\ref{fig:Hoehe}. 
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Hoehe/production/Hoehe.eps}
 			\put(45,4){Höhe [cm]}
@@ -160,7 +160,7 @@ Wenn man die Höhe, das Massenverhältnis und die Anzahl der Schläge aufträgt,
 
 Man kann direkt ablesen, dass mehrere Aufschläge vermehrt im unteren Höhenbereich auftreten. Dies ist direkt auf die Steifigkeit der Platte zurückzuführen. Bei größerer Plattendicke ist die Steifigkeit der Platte größer und die Kugel prallt ab, ohne vermehrt aufzutreffen.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Hoehe/production/HoeheAuslenkung.eps}
 			\put(72,11){Höhe [cm]}
@@ -172,7 +172,7 @@ Man kann direkt ablesen, dass mehrere Aufschläge vermehrt im unteren Höhenbere
 	\end{center}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Hoehe/production/HoeheKraft.eps}
 			\put(82,15){Höhe [cm]}
@@ -186,7 +186,7 @@ Man kann direkt ablesen, dass mehrere Aufschläge vermehrt im unteren Höhenbere
 
 \subsection{Geschwindigkeit des Impaktors}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Speed/production/Speed.eps}
 			\put(40,4){Geschwindigkeit [cm/s]}
@@ -198,7 +198,7 @@ Man kann direkt ablesen, dass mehrere Aufschläge vermehrt im unteren Höhenbere
 	\end{center}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Speed/production/SpeedAuslenkung.eps}
 			\put(57,8){Geschwindigkeit [cm/s]}
@@ -210,7 +210,7 @@ Man kann direkt ablesen, dass mehrere Aufschläge vermehrt im unteren Höhenbere
 	\end{center}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Speed/production/SpeedKraft.eps}
 			\put(3,12){\begin{minipage}{\textwidth}Geschwindigkeit\\ in [cm/s]\end{minipage}}
@@ -222,6 +222,56 @@ Man kann direkt ablesen, dass mehrere Aufschläge vermehrt im unteren Höhenbere
 	\end{center}
 \end{figure}
 
+
+\subsection{Variation des Impaktortes}
+Ebenfalls wird der Aufschlagsort des Impaktors verändert. Alle anderen Parameter aus Tabelle \ref{tab:Ausgang} und \ref{tab:Stoff} werden konstant gehalten. Um eine Verallgemeinerung zu gewährleisten, wurde der Aufschlagsort entdimensioniert. Hierfür wird statt $\xi$ und $\eta$, $\frac{\xi}{a}$ und $\frac{\eta}{b}$ verwendet. Da die Durchführung für eine quadratische Platte gemacht wurde, musste lediglich ein Achtel der gesamten Platte berechnet werden mit:
+
+$$\left\lbrace  \left(\frac{\xi}{a},  \frac{\eta}{b}\right) \in \mathbb{R}^2 \vert \ 0.5 \le \frac{\xi}{a} \le 1 \ \land \ 0.5 \le \frac{\eta}{b} \le \frac{\xi}{a}  \right\rbrace $$
+
+
+\begin{figure}[H]
+	\begin{center}
+		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/xieta/production/XiEta.eps}
+			\put(50,3){$\frac{\xi}{a}$ [-]}
+			\put(83,60){Aufschläge [-]}
+			\put(15,35){$\frac{\eta}{b}$ [-]}
+		\end{overpic}
+		\caption{Anzahl der Schläge durch Variation des Auftreffpunktes}
+		\label{fig:xiEta}
+	\end{center}
+\end{figure}
+
+
+Zunächst wird  der Einfluss der Position des Aufschlags auf die Anzahl der Schläge zwischen Platte und Kugel untersucht. 	
+Es ist klar zu erkennen, dass ab einem gewissen Radius die Anzahl der Aufschläge konstant bei 1 ist. Dieser Radius liegt im Fall der quadratischen Platte unter den gegebenen Parametern bei ca. $0.23 \cdot a$. Da die Anzahl der Aufschläge in der Regel eine gewisse Abhängigkeit mit der Steifigkeit der Platte aufweist, ist es ersichtlich, dass die Platte am Rand eine erhöhte Steifigkeit aufweist und somit weniger Aufschläge hier auftreten.
+Interessant ist jedoch die kreisförmige Ausbreiten der Grenze zwischen einem und zwei Aufschlägen. Ebenfalls ist die Unregelmäßigkeit der Anzahl der Aufschläge innerhalb dieses Kreises auffällig. Wenn die Plattensteifigkeit gering genug ist, konnte beobachtet werden, dass der erste Aufschlag die Geschwindigkeit der Kugel nur gering beeinflusst und durch eine höhere Relativgeschwindigkeit zwischen Platte und Kugel eine erhöhte Kraft beim zweiten Aufschlag beobachtet werden konnte.
+
+\begin{figure}[H]
+	\begin{center}
+		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/xieta/production/XiEtaAuslenkung.eps}
+			\put(50,3){$\frac{\xi}{a}$ [-]}
+			\put(86,60){max. Durchbiegung [cm]}
+			\put(15,35){$\frac{\eta}{b}$ [-]}
+		\end{overpic}
+		\caption{maximale Durchbiegung durch Variation des Auftreffpunktes}
+		\label{fig:xiEtaAuslenkung}
+	\end{center}
+\end{figure}
+
+Für die maximale Durchbiegung in Abhängigkeit des Aufschlagortes, ergibt sich ein ähnliches Ergebnis wie für Anzahl der Aufschläge. Zunächst ist ebenfalls eine klare kreisförmige Grenze ersichtlich mit dem gleichen Radius wie in \ref{fig:xiEta}. Außerhalb dieses Kreises ist die maximale Durchbiegung einigermaßen konstant und nimmt kurz vor der Randfaser stark ab. In diesem Bereich befindet sich ebenfalls die maximale Durchbiegung bei $\frac{\xi}{a} = \frac{\eta}{b} = 0.75$. Hingegen ist die Durchbiegung im Plattenmittelpunkt gering im Vergleich zur maximalen Durchbiegung. Ebenfalls ist die maximale Durchbiegung innerhalb des Kreises, wie auch die Anzahl der Schläge, zufällig verteilt.
+
+
+\begin{figure}[H]
+	\begin{center}
+		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/xieta/production/XiEtaKraft.eps}
+			\put(50,3){$\frac{\xi}{a}$ [-]}
+			\put(90,60){max. Kraft [N]}
+			\put(15,35){$\frac{\eta}{b}$ [-]}
+		\end{overpic}
+		\caption{maximale Kraft durch Variation des Auftreffpunktes}
+		\label{fig:xiEtaKraft}
+	\end{center}
+\end{figure}
 %\begin{figure}
 %	\begin{center}
 %		\includegraphics[width=\linewidth,angle=0]{pictures/gnuplot/3d/Hoehe/production/HoeheKraft.eps}
