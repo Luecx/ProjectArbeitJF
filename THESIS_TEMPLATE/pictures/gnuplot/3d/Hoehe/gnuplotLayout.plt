@@ -2,10 +2,10 @@
 ### interpolate data with highlighted datapoints
 reset session
 
-set terminal postscript eps enhanced color font 'Helvetica,10'
+#set terminal postscript eps enhanced color font 'Helvetica,10'
 
 # ---------------------------------------------------------------------------------------
-set output './production/image1.eps'
+#set output './production/image1.eps'
 
 set title "Titel" 
 

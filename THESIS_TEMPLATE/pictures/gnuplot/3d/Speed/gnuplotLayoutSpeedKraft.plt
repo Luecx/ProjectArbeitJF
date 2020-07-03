@@ -2,14 +2,14 @@
 ### interpolate data with highlighted datapoints
 reset session
 
-set terminal postscript eps enhanced color font 'Helvetica,10'
+#set terminal postscript eps enhanced color font 'Helvetica,10'
 
 # ---------------------------------------------------------------------------------------
-set output './production/SpeedKraft.eps'
+#set output './production/SpeedKraft.eps'
 
 set title "" 
 
-set xrange [0.9:10.1]
+set xrange [100:1000]
 set yrange [0.49:2.51]
 
 set xlabel "" 

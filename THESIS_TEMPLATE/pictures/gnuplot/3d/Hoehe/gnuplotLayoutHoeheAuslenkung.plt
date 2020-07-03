@@ -34,7 +34,7 @@ unset key
 #set format y "%.1f"
 #set format x "%.1f"
 
-set view 70,320,1,1
+set view 70,340,1,1
 
 set dgrid3d 30,30
 set hidden3d

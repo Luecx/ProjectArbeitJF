@@ -5,7 +5,7 @@ reset session
 set terminal postscript eps enhanced color font 'Helvetica,10'
 
 # ---------------------------------------------------------------------------------------
-set output './production/HoeheKraft.eps'
+set output './production/HoeheAuslenkung.eps'
 
 set title "" 
 
@@ -35,11 +35,11 @@ set ylabel "" rotate by 90
 #set format x "%.1f"
 
 unset key
-set view 70,285,1,1
+set view 70,340,1,1
 
 #set dgrid3d 100,100
 set hidden3d
-splot "HoeheKraft.dat" u 1:2:3 pt 7 lw 1 lc rgb "black" 
+splot "HoeheAuslenkung.dat" u 1:2:3 pt 7 lw 1 lc rgb "black" 
 
 #splot $DataInterpolated u 1:2:3 w pm3d palette notitle, \
 #      "HoeheKraft.dat" u 1:2:3 w p pt 1 lw 2 lc rgb "black" notitle
