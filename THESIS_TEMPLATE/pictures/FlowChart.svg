@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="FlowChart.svg"
+   id="svg417"
+   content="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"
+   viewBox="-0.5 -0.5 631 407"
+   height="407px"
+   width="631px"
+   version="1.1">
+  <metadata
+     id="metadata421">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     inkscape:current-layer="g407"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-8"
+     inkscape:window-x="54"
+     inkscape:cy="203.37642"
+     inkscape:cx="315.68263"
+     inkscape:zoom="1.6624406"
+     showgrid="false"
+     id="namedview419"
+     inkscape:window-height="1417"
+     inkscape:window-width="2498"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <defs
+     id="defs4">
+    <style
+       id="style2"
+       type="text/css">ul { margin-top: 0px; margin-bottom: 10px } 
+ol { margin-top: 0px; margin-bottom: 10px } 
+ul { margin-top: 0px; margin-bottom: 10px } 
+ol { margin-top: 0px; margin-bottom: 10px } 
+ul { margin-top: 0px; margin-bottom: 10px } 
+ol { margin-top: 0px; margin-bottom: 10px } 
+</style>
+  </defs>
+  <g
+     id="g407">
+    <path
+       id="path6"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 193.43 51.29 L 193.43 71.29 L 193.43 72.63" />
+    <path
+       id="path8"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 193.43 77.88 L 189.93 70.88 L 193.43 72.63 L 196.93 70.88 Z" />
+    <ellipse
+       id="ellipse10"
+       pointer-events="none"
+       stroke-width="2"
+       stroke="#000000"
+       fill="#f8cecc"
+       ry="25"
+       rx="50"
+       cy="26"
+       cx="193.5" />
+    <rect
+       id="rect27"
+       pointer-events="none"
+       stroke-width="2"
+       stroke="#000000"
+       fill="#ffe599"
+       ry="3"
+       rx="3"
+       height="50"
+       width="100"
+       y="79"
+       x="143.5" />
+    <rect
+       id="rect44"
+       pointer-events="none"
+       stroke-width="2"
+       stroke="#000000"
+       fill="#ffe599"
+       ry="3"
+       rx="3"
+       height="50"
+       width="100"
+       y="214"
+       x="1" />
+    <path
+       id="path61"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke-width="2"
+       stroke="#000000"
+       fill="#ffce9f"
+       d="M 193.5 154 L 243.5 184 L 193.5 214 L 143.5 184 Z" />
+    <path
+       id="path78"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 143.71 183.86 L 143.71 183.86" />
+    <path
+       id="path80"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 143.71 183.86 L 143.71 183.86 L 143.71 183.86 L 143.71 183.86 Z" />
+    <ellipse
+       id="ellipse82"
+       pointer-events="none"
+       stroke-width="2"
+       stroke="#000000"
+       fill="#f8cecc"
+       ry="25"
+       rx="50"
+       cy="361.5"
+       cx="424" />
+    <g
+       id="g97"
+       transform="translate(412.5,353.5)" />
+    <path
+       id="path99"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 143.5 183.86 L 61.14 183.86 Q 51.14 183.86 51.14 193.86 L 51.14 207.63" />
+    <path
+       id="path101"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 51.14 212.88 L 47.64 205.88 L 51.14 207.63 L 54.64 205.88 Z" />
+    <g
+       id="g116"
+       transform="translate(66.5,165.5)">
+      <switch
+         id="switch114">
+        <foreignObject
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           height="11"
+           width="21"
+           pointer-events="all"
+           style="overflow:visible;">
+          <xhtml:div
+             style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">Nein</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <svg
+           id="svg112"
+           version="1.1"
+           height="11"
+           width="21"
+           style="width: 21px; height: 11px;">
+          <defs
+             id="defs104">
+            <path
+               d="M0,11.899999999999999 h21"
+               id="ri398M6EEtmarAFb" />
+          </defs>
+        </svg>
+      </switch>
+    </g>
+    <rect
+       id="rect118"
+       pointer-events="none"
+       stroke-width="2"
+       stroke="#000000"
+       fill="#ffe599"
+       ry="3"
+       rx="3"
+       height="50"
+       width="100"
+       y="264"
+       x="143.5" />
+    <path
+       id="path135"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 193.5 214 L 193.5 257.63" />
+    <path
+       id="path137"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 193.5 262.88 L 190 255.88 L 193.5 257.63 L 197 255.88 Z" />
+    <path
+       id="path154"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 101 239.14 L 187.13 239.14" />
+    <path
+       id="path156"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 192.38 239.14 L 185.38 242.64 L 187.13 239.14 L 185.38 235.64 Z" />
+    <path
+       id="path158"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 193.43 386.71 L 193.43 396.43 L 308.86 396.43 L 308.86 179.29 L 367.63 179.29" />
+    <path
+       id="path160"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 372.88 179.29 L 365.88 182.79 L 367.63 179.29 L 365.88 175.79 Z" />
+    <rect
+       id="rect162"
+       pointer-events="none"
+       stroke-width="2"
+       stroke="#000000"
+       fill="#ffe599"
+       ry="3"
+       rx="3"
+       height="50"
+       width="100"
+       y="336.5"
+       x="143.5" />
+    <path
+       id="path179"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 193.5 314 L 193.5 330.13" />
+    <path
+       id="path181"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 193.5 335.38 L 190 328.38 L 193.5 330.13 L 197 328.38 Z" />
+    <path
+       id="path183"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke-width="2"
+       stroke="#000000"
+       fill="#ffce9f"
+       d="M 424 149 L 474 179 L 424 209 L 374 179 Z" />
+    <path
+       id="path215"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 424 209 L 424 330.13" />
+    <path
+       id="path217"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 424 335.38 L 420.5 328.38 L 424 330.13 L 427.5 328.38 Z" />
+    <g
+       id="g232"
+       transform="translate(429.5,246.5)" />
+    <rect
+       id="rect234"
+       pointer-events="none"
+       stroke-width="2"
+       stroke="#000000"
+       fill="#ffe599"
+       ry="3"
+       rx="3"
+       height="50"
+       width="100"
+       y="8"
+       x="528" />
+    <g
+       id="g249"
+       transform="translate(529.5,17.5)" />
+    <rect
+       id="rect251"
+       pointer-events="none"
+       stroke-width="2"
+       stroke="#000000"
+       fill="#ffe599"
+       ry="3"
+       rx="3"
+       height="50"
+       width="100"
+       y="79"
+       x="528" />
+    <g
+       id="g266"
+       transform="translate(529.5,88.5)" />
+    <path
+       id="path268"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 578 58 L 578 72.63" />
+    <path
+       id="path270"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 578 77.88 L 574.5 70.88 L 578 72.63 L 581.5 70.88 Z" />
+    <path
+       id="path272"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 424.29 149 L 424.29 43 Q 424.29 33 434.29 33 L 521.63 33" />
+    <path
+       id="path274"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 526.88 33 L 519.88 36.5 L 521.63 33 L 519.88 29.5 Z" />
+    <g
+       id="g289"
+       transform="translate(429.5,82.5)" />
+    <path
+       id="path291"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 578 129 L 578 169.29 Q 578 179.29 568 179.29 L 480.37 179.29" />
+    <path
+       id="path293"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 475.12 179.29 L 482.12 175.79 L 480.37 179.29 L 482.12 182.79 Z" />
+    <path
+       id="path295"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 193.5 129 L 193.5 147.63" />
+    <path
+       id="path297"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 193.5 152.88 L 190 145.88 L 193.5 147.63 L 197 145.88 Z" />
+    <path
+       id="path299"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 193.43 51.29 L 193.43 71.29 L 193.43 72.63" />
+    <path
+       id="path301"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 193.43 77.88 L 189.93 70.88 L 193.43 72.63 L 196.93 70.88 Z" />
+    <path
+       id="path303"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 143.71 183.86 L 143.71 183.86" />
+    <path
+       id="path305"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 143.71 183.86 L 143.71 183.86 L 143.71 183.86 L 143.71 183.86 Z" />
+    <path
+       id="path307"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 143.5 183.86 L 61.14 183.86 Q 51.14 183.86 51.14 193.86 L 51.14 207.63" />
+    <path
+       id="path309"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 51.14 212.88 L 47.64 205.88 L 51.14 207.63 L 54.64 205.88 Z" />
+    <path
+       id="path326"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 193.5 214 L 193.5 257.63" />
+    <path
+       id="path328"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 193.5 262.88 L 190 255.88 L 193.5 257.63 L 197 255.88 Z" />
+    <path
+       id="path345"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 101 239.14 L 187.13 239.14" />
+    <path
+       id="path347"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 192.38 239.14 L 185.38 242.64 L 187.13 239.14 L 185.38 235.64 Z" />
+    <path
+       id="path349"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 193.43 386.71 L 193.43 396.43 L 308.86 396.43 L 308.86 179.29 L 367.63 179.29" />
+    <path
+       id="path351"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 372.88 179.29 L 365.88 182.79 L 367.63 179.29 L 365.88 175.79 Z" />
+    <path
+       id="path353"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 193.5 314 L 193.5 330.13" />
+    <path
+       id="path355"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 193.5 335.38 L 190 328.38 L 193.5 330.13 L 197 328.38 Z" />
+    <path
+       id="path357"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 424 209 L 424 330.13" />
+    <path
+       id="path359"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 424 335.38 L 420.5 328.38 L 424 330.13 L 427.5 328.38 Z" />
+    <g
+       id="g374"
+       transform="translate(429.5,246.5)" />
+    <path
+       id="path376"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 578 58 L 578 72.63" />
+    <path
+       id="path378"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 578 77.88 L 574.5 70.88 L 578 72.63 L 581.5 70.88 Z" />
+    <path
+       id="path380"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 424.29 149 L 424.29 43 Q 424.29 33 434.29 33 L 521.63 33" />
+    <path
+       id="path382"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 526.88 33 L 519.88 36.5 L 521.63 33 L 519.88 29.5 Z" />
+    <g
+       id="g397"
+       transform="translate(429.5,82.5)">
+      <switch
+         id="switch395">
+        <foreignObject
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           height="12"
+           width="13"
+           pointer-events="all"
+           style="overflow:visible;">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">Ja</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+      </switch>
+    </g>
+    <path
+       id="path399"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 578 129 L 578 169.29 Q 578 179.29 568 179.29 L 480.37 179.29" />
+    <path
+       id="path401"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 475.12 179.29 L 482.12 175.79 L 480.37 179.29 L 482.12 182.79 Z" />
+    <path
+       id="path403"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 193.5 129 L 193.5 147.63" />
+    <path
+       id="path405"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="#000000"
+       d="M 193.5 152.88 L 190 145.88 L 193.5 147.63 L 197 145.88 Z" />
+  </g>
+</svg>
