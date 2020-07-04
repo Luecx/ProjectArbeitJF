@@ -2,10 +2,10 @@
 ### interpolate data with highlighted datapoints
 reset session
 
-#set terminal postscript eps enhanced color font 'Helvetica,10'
+set terminal postscript eps enhanced color font 'Helvetica,10'
 
 # ---------------------------------------------------------------------------------------
-#set output './production/Speed.eps'
+set output './production/Speed.eps'
 
 set title "" 
 
@@ -24,7 +24,7 @@ set size square
 set view map
 set pm3d at b
 # set pm3d interpolate 2,2
-set dgrid3d 1000,1000
+set dgrid3d 100,100,2
 set table $DataInterpolated
     splot "Speed.dat" u 1:2:3 
 unset table

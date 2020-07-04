@@ -2,10 +2,10 @@
 ### interpolate data with highlighted datapoints
 reset session
 
-set terminal postscript eps enhanced color font 'Helvetica,10'
+#set terminal postscript eps enhanced color font 'Helvetica,10'
 
 # ---------------------------------------------------------------------------------------
-set output './production/RadiusKraft.eps'
+#set output './production/RadiusAuslenkung.eps'
 
 set title "" 
 
@@ -35,7 +35,7 @@ set ylabel "" rotate by 90
 #set format x "%.1f"
 
 unset key
-set view 75,255,1,1
+set view 75,330,1,1
 
 #set dgrid3d 100,100
 set hidden3d

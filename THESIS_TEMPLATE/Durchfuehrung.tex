@@ -75,17 +75,15 @@ Als Schlag wird hier ein Kraftverlauf bezeichnet, bei dem die Kraft $P_{i}$ zwis
 
 Da im zeitlichen Verlauf auch nach dem ersten Auftreffen noch Schläge auftreten können, wird die Schrittanzahl auf $i = 1000$ gesetzt um signifikante Ergebnisse zu erlangen. 
 
+\subsubsection{Maximale Auslenkung der Platte}
+
+Die maximale Auslenkung $w_{max}$ wird direkt aus der Versuchsreihe ausgelesen und in Abhängigkeit des Massenverhältnisses und des zu veränderten Parameters dargestellt.
+
 \subsubsection{Maximale Kraft}
 
-Die maximale Kraft $P_{max}$ wird direkt aus der Versuchsreihe ausgelesen und in Abhängigkeit des Massenverhältnisses dargestellt.
+Analog zur maximalen Auslenkung, wird die maximale Kraft $P_{max}$ direkt ausgelesen und in Abhängigkeit von $MR$ und dem Parameter dargestellt.
 
-\subsubsection{Maximale Auslenkung der Platte}
-Analog zur maximalen Kraft, wird die maximale Auslenkung $w_{max}$ direkt ausgelesen und in Abhängigkeit von $MR$ dargestellt.
 
-\subsection{Programmanpassungen}
-
-Um die große Mengen an Daten aus den Versuchsreihen auffassen zu können, werden zwei Schleifen implementiert, die jeweils über den berücksichtigten Parameter und das Massenverhältnis iterieren. Diese geben die Daten dann in der Form von $.txt$ Dateien aus, die über Gnuplot ((ANHANG GNUPLOT Einstellen mit Skripten und ref)) zu 2-D, bzw. 3-D Grafiken verarbeitet werden.\\
-Außerdem wird eine Funktion $compute()$ definiert, mit der man die betrachteten Parameter direkt variieren kann ohne den Quellcode zu verändern. 
 
 \section{Parameterstudie}
 
@@ -198,52 +196,95 @@ Interessant zu betrachten ist auch, wie die Kraft mit größer werdendem $MR$ zu
 
 \subsection{Geschwindigkeit des Impaktors}
 
-Als nächster Parameter wird die Geschwindigkeit betrachtet. Da hier nur der Low-Velocity Bereich betrachtet wird, wird die Geschwindigkeit nach Gleichung variiert. 
+Als nächster Parameter wird die Geschwindigkeit betrachtet. Da hier nur der Low-Velocity Bereich betrachtet wird, wird die Geschwindigkeit nach Gleichung~\ref{form:DeltaV0} variiert. 
 
+\begin{equation}
+	100 [cm/s] \leq v_{0} \leq 1000 [cm/s] \; , \;\; \mbox{Schrittweite:} \; \Delta v_{0} = 10 [cm/s]
+	\label{form:DeltaV0}
+\end{equation}
 
-%\begin{figure}
-%	\begin{center}
-%		\includegraphics[width=\linewidth,angle=0]{pictures/gnuplot/3d/Hoehe/production/HoeheKraft.eps}
-%	\end{center}	
-%\end{figure}
-	
-	
-	\begin{figure}[H]
-		\begin{center}
-			\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/svmr/production/svmr.eps}
-			\put(47,3){$a/b$ [-]}
-				\put(90,60){max. Kraft [N]}
-			\put(15,35){$Mr$ [-]}
-			\end{overpic}
-			\caption{maximale Kraft durch Variation des Seitenverhältnis}
-			\label{fig:svmr}
-		\end{center}
-	\end{figure}
+Analog zur Höhenvariation wird zuerst die Anzahl der Aufschläge aufgetragen. In Abbildung~\ref{fig:Speed} ist zu erkennen, dass %weiter wenn ne bessere Darstellung steht
 
-\begin{figure}[H]
+\begin{figure}[h!]
 	\begin{center}
-		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/svmr/production/svmrAuslenkung.eps}
-			\put(47,3){$a/b$ [-]}
-			\put(90,60){max. Kraft [N]}
-			\put(15,35){$Mr$ [-]}
+		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Speed/production/Speed.eps}
+			\put(40,4){Geschwindigkeit [cm/s]}
+			\put(18,30){\rotatebox{90}{Mr [-]}}
+			\put(83,60){Aufschläge [-]}
 		\end{overpic}
-		\caption{maximale Kraft durch Variation des Seitenverhältnis}
-		\label{fig:svmrDurchbiegung}
+		\caption{Geschwindigkeit, MR und Anzahl der Aufschläge}
+		\label{fig:Speed}
 	\end{center}
 \end{figure}
 
+Die aus den Stößen resultierende Auslenkung wird in Abbildung~\ref{fig:SpeedAuslenkung} dargestellt. Man kann erkennen, dass der Einfluss des Massenverhältnisses mit zunehmender Geschwindigkeit zunimmt. \\
+Die geringste Auslenkung tritt bei $MR = 0.01$ und $v_{0} = 100 [cm/s]$ auf und beträgt $w = 0.008899 [cm]$.
+
 \begin{figure}[H]
 	\begin{center}
-		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/svmr/production/svmrKraft.eps}
-			\put(47,3){$a/b$ [-]}
-			\put(90,60){max. Kraft [N]}
-			\put(15,35){$Mr$ [-]}
+		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Speed/production/SpeedAuslenkung.eps}
+			\put(60,9){Geschwindigkeit [cm/s]}
+			\put(12,14){MR [-]}
+			\put(1,58){Auslenkung [cm]}
 		\end{overpic}
-		\caption{maximale Kraft durch Variation des des Seitenverhältnis}
-		\label{fig:svmrKraft}
+		\caption{Geschwindigkeit, MR und Auslenkung}
+		\label{fig:SpeedAuslenkung}
 	\end{center}
 \end{figure}
-	
- 
+
+\subsection{Impaktorradius}
+
+Im Folgenden wird der Radius des Impaktors betrachtet. Nach Gleichung~\ref{form:Radius} wird der Radius der Kugel erhöht.
+
+\begin{equation}
+	0.5 [cm]\leq r_{g} \leq 10 [cm], \; \; \mbox{Schrittweite:} \; \Delta r_{g} = 0.1 [cm]
+	\label{form:Radius}
+\end{equation}
+
+In Abbildung~\ref{fig:Radius} ist zu erkennen, dass der Radius nur einen geringen Einfluss auf die Anzahl der Aufschläge hat.\\
+Bildet man die Daten in 3D ab, erkennt man leicht, dass die Anzahl der Aufschläge sich nur mit $MR$ verändert. \\
+
+\begin{figure}[h!]
+	\begin{center}
+		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Radius/production/Radius.eps}
+			\put(44,4){Radius [cm]}
+			\put(18,30){\rotatebox{90}{Mr [-]}}
+			\put(83,60){Aufschläge [-]}
+		\end{overpic}
+		\caption{Radius, MR und Anzahl der Aufschläge}
+		\label{fig:Radius}
+	\end{center}
+\end{figure}
+
+Ähnliche Ergebnisse werden auch bei der Auslenkung erreicht. Wie in Abbildung~\ref{fig:RadiusAuslenkung} zu sehen ist, nimmt die Auslenkung nur bei hohen $MR$ auch mit durch Erhöhung des Radius zu. Im niederen $MR$-Bereich sind die Auslenkungen bei $r_{g} = 0.5 [cm]$ und bei $r_{g} = 10.0 [cm]$ fast identisch bei $w = 0.04 [cm]$. Bei $MR_{max} = 2.5$ ist die Auslenkung jedoch nur auf der zweiten Nachkommestelle größer, mit $w(r_{g}=0.5[cm]) = 1.27 [cm]$ und $w(r_{g}=10.0[cm]) = 1.29 [cm]$. 
+
+\begin{figure}[h!]
+	\begin{center}
+		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Radius/production/RadiusAuslenkung.eps}
+			\put(62,10){Radius [cm]}
+			\put(14,13){MR [-]}
+			\put(1,56){Auslenkung [cm]}
+		\end{overpic}
+		\caption{Radius, MR und Auslenkung}
+		\label{fig:RadiusAuslenkung}
+	\end{center}
+\end{figure}
+
+Auch wenn man die Kraft betrachtet, lassen sich ähnliche Trends erkennen. In Abbildung~\ref{fig:RadiusKraft} verändert sich die resultierende maximale Kraft im niederen $MR$-Bereich nur minimal.\\
+Die geringste Kraft tritt bei $r_{g,min} = 0.5 [cm]$ und $MR_{min} = 0.01$ mit $P_{min} = 16.39 [kN]$ auf, während die Kraft bei gleichem $MR$ und $r_{g,max} = 10.0 [cm]$ $P = 22.76 [kN]$ beträgt.\\
+Analog zu der Auslenkung ergibt sich die signifikanteste Kraftänderung bei $MR_{max}$. Die Kraft steigt von $P(r_{g,min}) = 136.50 [kN]$ auf $P(r_{g,max}) = 163.05 [kN]$ um den Faktor $1.194$ an. Verglichen mit der Kraftänderung von $MR_{min}$ zu $MR_{max}$, die bei $r_{g,max}$ mit dem Faktor $7.16$ verbunden ist, ist $\Delta P$ über die Radiusänderung eher gering. 
+
+\begin{figure}[H]
+	\begin{center}
+		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Radius/production/RadiusKraft.eps}
+			\put(45,4){Radius [cm]}
+			\put(18,30){\rotatebox{90}{MR [-]}}
+			\put(80,62){Kraft [N]}
+		\end{overpic}
+		\caption{Radius, MR und Kraft}
+		\label{fig:RadiusKraft}
+	\end{center}
+\end{figure}
+
 
 	%Im zweiten Teil des Hauptteils folgt die Darstellung der eigenen Leistung. Aufbauend auf den im vorigen Kapitel erarbeiteten Grundlagen  wird nun der Lösungsweg aufgezeigt. Dabei wird das prinzipielle Vorgehen zum Erreichen der Zielsetzung unter Einbindung der verwendeten Hilfsmittel (Maschinen, Geräte, Programme etc. inklusive der verwendeten Einstellungen) aufgezeigt. Dabei müssen sämtliche verwendeten Daten ersichtlich sein, sodass es jederzeit möglich ist, die ermittelten Ergebnisse zu reproduzieren. Zum Schluss erfolgt unter Berücksichtigung der Randbedingungen eine kritische Analyse der Ergebnisse mit möglichen Unsicherheiten und Fehlern. Aus der Diskussion der Ergebnisse (z.B. Vergleich von Messwerten und theoretischen Vorhersagen), wird schließlich der Nutzen erörtert und mögliche weiterführende Fragestellungen werden erarbeitet.

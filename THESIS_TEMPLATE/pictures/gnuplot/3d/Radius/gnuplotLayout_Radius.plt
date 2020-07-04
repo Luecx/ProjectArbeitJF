@@ -5,7 +5,7 @@ reset session
 set terminal postscript eps enhanced color font 'Helvetica,10'
 
 # ---------------------------------------------------------------------------------------
-set output './production/Radius.eps'
+set output './production/RadiusKraft.eps'
 
 set title "" 
 
@@ -29,7 +29,7 @@ set dgrid3d 100,100,2
 #set dgrid3d 100,100
 
 set table $DataInterpolated
-    splot "Radius.dat" u 1:2:3 
+    splot "RadiusKraft.dat" u 1:2:3 
 unset table
 unset dgrid3d
 

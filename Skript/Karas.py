@@ -231,18 +231,18 @@ def maxP(Kraft):                                                                
 #----------------------------
 #Geschwindigkeit
 
-# for v_0 in np.arange(100, 1010, 10):
-#
-time, j, tau, w, P, u, cosPre = compute(mass_ratio=2, iterations=1000, printLoadingBar=False)
-#     for mr in np.arange(0.01, 2.51, 0.01):
-#         time, j, tau, w, P, u, cosPre = compute(v_0=v_0, mass_ratio=mr, iterations=1000, cosPreset=cosPre, printLoadingBar=False)
-#         with open("Speed.txt", "a") as myfile:
-#          myfile.write(str.format("%10f %10f %10f \n" % (v_0,mr,countHits(P))))
-#         with open("SpeedAuslenkung.txt", "a") as myfile:
-#          myfile.write(str.format("%10f %10f %10f \n" % (v_0,mr, maxW(w))))
-#         with open("SpeedKraft.txt", "a") as myfile:
-#          myfile.write(str.format("%10f %10f %10f \n" % (v_0,mr, maxP(P))))
-#         print("%10f %10f %10f" % (v_0,mr,countHits(P)))
+for v_0 in np.arange(100, 1010, 10):
+
+    time, j, tau, w, P, u, cosPre = compute(v_0=v_0, mass_ratio=1, iterations=1000, printLoadingBar=False)
+    for mr in np.arange(0.01, 2.51, 0.01):
+        time, j, tau, w, P, u, cosPre = compute(v_0=v_0, mass_ratio=mr, iterations=1000, cosPreset=cosPre, printLoadingBar=False)
+        with open("SpeedNeu.txt", "a") as myfile:
+            myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (v_0,mr,countHits(P),maxW(w),maxP(P))))
+         # with open("SpeedAuslenkung.txt", "a") as myfile:
+         #     myfile.write(str.format("%10f %10f %10f \n" % (v_0,mr, maxW(w))))
+         # with open("SpeedKraft.txt", "a") as myfile:
+         #     myfile.write(str.format("%10f %10f %10f \n" % (v_0,mr, maxP(P))))
+        print("%10f %10f %10f %10f %10f" % (v_0,mr,countHits(P),maxW(w),maxP(P)))
 
 #----------------------------
 #Hoehe
