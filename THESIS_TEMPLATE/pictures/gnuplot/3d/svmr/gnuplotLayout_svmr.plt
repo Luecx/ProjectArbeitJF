@@ -9,8 +9,8 @@ set output './production/svmr.eps'
 
 set title "" 
 
-set xrange [0.95:5]
-set yrange [0.99:3]
+set xrange [1:4.95]
+set yrange [0.05:2.99]
 
 set xlabel "" 
 set ylabel "" rotate by 90

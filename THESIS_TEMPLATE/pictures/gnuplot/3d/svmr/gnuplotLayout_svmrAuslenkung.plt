@@ -5,14 +5,13 @@ reset session
 set terminal postscript eps enhanced color font 'Helvetica,10'
 
 # ---------------------------------------------------------------------------------------
-set output './production/svmrAuslenkungFixed.eps'
+set output './production/svmrAuslenkung.eps'
 
 set title "" 
 
-#set xrange [0.95:5]
-#set yrange [0.99:3]
-#set zrange [0:10]
-#set cbrange [0:10]
+set xrange [1:4.95]
+set yrange [0.05:2.99]
+
 set xlabel "" 
 set ylabel "" rotate by 90
 
@@ -28,7 +27,7 @@ set pm3d at b
 set dgrid3d 50,50,1
 
 set table $DataInterpolated
-    splot "svmrFixed.dat" u 1:2:4 
+    splot "svmr.dat" u 1:2:4 
 unset table
 unset dgrid3d
 
@@ -38,6 +37,6 @@ set format x "%.2f"
 
 
 splot $DataInterpolated u 1:2:3 w pm3d palette notitle, \
-#      "svmrFixed.dat" u 1:2:4 w p pt 1 lw 2 lc rgb "black" notitle
+#      "svmr.dat" u 1:2:4 w p pt 1 lw 2 lc rgb "black" notitle
 
 ### end of code

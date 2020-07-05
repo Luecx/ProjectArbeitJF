@@ -8,9 +8,8 @@ set terminal postscript eps enhanced color font 'Helvetica,10'
 set output './production/XiEtaAuslenkung.eps'
 
 set title "" 
-
-set xrange [0.5:1]
-set yrange [0.5:1]
+set xrange [0.5:0.99]
+set yrange [0.5:0.99]
 
 set xlabel "" 
 set ylabel "" rotate by 90
