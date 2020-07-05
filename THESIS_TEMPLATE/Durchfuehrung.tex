@@ -334,10 +334,10 @@ Interessant ist jedoch die kreisförmige Ausbreiten der Grenze zwischen einem un
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/xieta/production/XiEtaAuslenkung.eps}
 			\put(50,3){$\frac{\xi}{a}$ [-]}
-			\put(86,60){max. Durchbiegung [cm]}
+			\put(86,60){Auslenkung [cm]}
 			\put(15,35){$\frac{\eta}{b}$ [-]}
 		\end{overpic}
-		\caption{maximale Durchbiegung in Abhängigkeit des Auftreffpunktes}
+		\caption{Maximale Durchbiegung in Abhängigkeit des Auftreffpunktes}
 		\label{fig:xiEtaAuslenkung}
 	\end{center}
 \end{figure}
@@ -353,10 +353,10 @@ Für die maximale Durchbiegung in Abhängigkeit des Aufschlagortes, ergibt sich 
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/xieta/production/XiEtaKraft.eps}
 			\put(50,3){$\frac{\xi}{a}$ [-]}
-			\put(90,60){max. Kraft [N]}
+			\put(78,63){Kraft [N]}
 			\put(15,35){$\frac{\eta}{b}$ [-]}
 		\end{overpic}
-		\caption{maximale Kraft in Abhängigkeit des Auftreffpunktes}
+		\caption{Maximale Kraft in Abhängigkeit des Auftreffpunktes}
 		\label{fig:xiEtaKraft}
 	\end{center}
 \end{figure}
@@ -375,10 +375,10 @@ Für die Kraft findet man ebenfalls die 4 Ringe vor, welche eine maximale Kraft 
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/svmr/production/svmr.eps}
 			\put(47,3){$a/b$ [-]}
-			\put(90,60){max. Kraft [N]}
-			\put(15,35){$Mr$ [-]}
+			\put(78,63){Kraft [N]}
+			\put(13,34){$Mr$ [-]}
 		\end{overpic}
-		\caption{maximale Kraft in Abhängigkeit des Seitenverhältnis}
+		\caption{Maximale Kraft in Abhängigkeit des Seitenverhältnis}
 		\label{fig:svmr}
 	\end{center}
 \end{figure}
@@ -390,43 +390,45 @@ $$a = \dfrac{f}{b} $$
 
 
 Es findet sich eine klare Abhängig der Stoßanzahl mit dem Seitenverhältnis. Da mit einem steigenden Seitenverhältnis unter gleicher Fläche, eine der beiden Seitenlänge minimiert wird, dominiert diese Seite die Steifigkeit der Platte. Somit erhält man ab einem Seitenverhältnis von rund 3.5 stehts nur noch einen einzigen Schlag. Ebenfalls steigt die Anzahl der Schläge mit steigenden Massenverhältnis, hat jedoch einen deutlich kleineren Einfluss als das Seitenverhältnis.
-Auffallend ist zudem noch das schnelle Ansteigen der Anzahl der Schläge bei einem Seitenverhältnis zwischen 1 und 1.5. Anschließend fallen die Anzahl der Schläge wieder. Wichtig zu erwähnen ist eine numerische Instabilität des Skriptes welche bei einem Seitenverhältnis zwischen 2 und 2.5 und einem Massenverhältnis $>2$ falsche Ergebnisse erzeugt. Diese numerische Instabilität wird insbesondere Ersichtlich wenn die maximale Durchbiegung geplottet wird.
+Auffallend ist zudem noch das schnelle Ansteigen der Anzahl der Schläge bei einem Seitenverhältnis zwischen 1 und 1.5. Anschließend fallen die Anzahl der Schläge wieder. Wichtig zu erwähnen ist eine numerische Instabilität des Skriptes welche bei einem Seitenverhältnis zwischen 2 und 2.5 und einem Massenverhältnis $>2$ falsche Ergebnisse erzeugt. Diese numerische Instabilität wird insbesondere ersichtlich wenn die maximale Durchbiegung aufgetragen wird.
+
+
 \begin{figure}[H]
 	\begin{center}
-		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/svmr/production/svmrAuslenkung.eps}
+		\begin{overpic}[width=\linewidth,grid]{pictures/gnuplot/3d/svmr/production/svmrAuslenkung.eps}
 			\put(47,3){$a/b$ [-]}
-			\put(90,60){max. Auslenkung [cm]}
-			\put(15,35){$Mr$ [-]}
+			\put(87,60){Auslenkung [cm]}
+			\put(13,34){$Mr$ [-]}
 		\end{overpic}
-		\caption{maximale Durchbiegung in Abhängigkeit des Seitenverhältnis}
+		\caption{Maximale Durchbiegung in Abhängigkeit des Seitenverhältnis}
 		\label{fig:svmrDurchbiegung}
 	\end{center}
 \end{figure}
 
-Für eine bessere Darstellung wurde im folgenden ein Massenverhältnis $> 2$ ignoriert. Für die Durchbiegung ergibt sich folglich:
+Für eine bessere Darstellung wurde im folgenden $Mr > 2$ ignoriert. Für die Durchbiegung ergibt sich folglich:
 
 \begin{figure}[H]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/svmr/production/svmrAuslenkungFixed.eps}
 			\put(47,3){$a/b$ [-]}
-			\put(90,60){max. Auslenkung [cm]}
-			\put(15,35){$Mr$ [-]}
+			\put(87,60){Auslenkung [cm]}
+			\put(13,34){$Mr$ [-]}
 		\end{overpic}
-		\caption{maximale Durchbiegung in Abhängigkeit des Seitenverhältnis}
+		\caption{Maximale Durchbiegung in Abhängigkeit des Seitenverhältnis}
 		\label{fig:svmrDurchbiegungFixed}
 	\end{center}
 \end{figure}
 
-Für die maximale Auslenkung sowie für die maximale Kraft ergibt sich ein ähnliches Bild. Mit steigender Impaktormasse steigt die Kraft und die Durchbiegung. Auffallend ist die eine maximale Durchbiegung für ein Seitenverhältnis von $2.5$. Dies ist insbesondere unerwartet, da die Steifigkeit der Platte für das gegebene Seitenverhältnis deutlich größer ist als für den quadratischen Fall. Es ergibt sich ebenfalls eine maximale Kraft für das soeben genannte Seitenverhältnis von $2.5$. Ab einem Seitenverhältnis $>\ge 3.5$ ist die Durchbiegung und maximale Kraft homogen und weißt keine Abhängigkeit von der Masse auf.   
+Für die maximale Auslenkung sowie für die maximale Kraft ergibt sich ein ähnliches Bild. Mit steigender Impaktormasse steigt die Kraft und die Durchbiegung. Auffallend ist die eine maximale Durchbiegung für ein Seitenverhältnis von $2.5$. Dies ist insbesondere unerwartet, da die Steifigkeit der Platte für das gegebene Seitenverhältnis deutlich größer ist als für den quadratischen Fall. Es ergibt sich ebenfalls eine maximale Kraft für das soeben genannte Seitenverhältnis von $2.5$. Ab einem Seitenverhältnis $ Sv \geq 3.5$ sind die Durchbiegung und maximale Kraft homogen und weisen keine Abhängigkeit von der Masse mehr auf.   
 
 \begin{figure}[H]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/svmr/production/svmrKraftFixed.eps}
 			\put(47,3){$a/b$ [-]}
-			\put(90,60){max. Kraft [N]}
-			\put(15,35){$Mr$ [-]}
+			\put(87,60){Kraft [N]}
+			\put(13,34){$Mr$ [-]}
 		\end{overpic}
-		\caption{maximale Kraft durch in Abhängigkeit des Seitenverhältnis}
+		\caption{Maximale Kraft durch in Abhängigkeit des Seitenverhältnis}
 		\label{fig:svmrKraft}
 	\end{center}
 \end{figure}
