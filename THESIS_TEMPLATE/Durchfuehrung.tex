@@ -164,9 +164,9 @@ Bei Plattendicken von $h \geq 1.3 [cm]$ flacht die Steigung der maximalen Auslen
 \begin{figure}[h!]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Hoehe/production/HoeheAuslenkung.eps}
-			\put(60,9){Höhe [cm]}
-			\put(12,14){Mr [-]}
-			\put(1,58){Auslenkung [cm]}
+			\put(45,4){Höhe [cm]}
+			\put(18,30){\rotatebox{90}{Mr [-]}}
+			\put(83,60){Auslenkung [cm]}
 		\end{overpic}
 	\caption{Höhe, Mr und Auslenkung}
 	\label{fig:HoeheAuslenkung}
@@ -203,7 +203,7 @@ Als nächster Parameter wird die Geschwindigkeit betrachtet. Da hier nur der Low
 	\label{form:DeltaV0}
 \end{equation}
 
-Analog zur Höhenvariation wird zuerst die Anzahl der Aufschläge aufgetragen. In Abbildung~\ref{fig:Speed} ist zu erkennen, dass %weiter wenn ne bessere Darstellung steht
+Analog zur Höhenvariation wird zuerst die Anzahl der Aufschläge aufgetragen. In Abbildung~\ref{fig:Speed} ist zu erkennen, dass die Geschwindigkeit bei gleichbleibendem $Mr$ keinen Einfluss auf die Anzahl der Aufschläge hat. 
 
 \begin{figure}[h!]
 	\begin{center}
@@ -218,17 +218,36 @@ Analog zur Höhenvariation wird zuerst die Anzahl der Aufschläge aufgetragen. I
 \end{figure}
 
 Die aus den Stößen resultierende Auslenkung wird in Abbildung~\ref{fig:SpeedAuslenkung} dargestellt. Man kann erkennen, dass der Einfluss des Massenverhältnisses mit zunehmender Geschwindigkeit zunimmt. \\
-Die geringste Auslenkung tritt bei $Mr = 0.01$ und $v_{0} = 100 [cm/s]$ auf und beträgt $w = 0.008899 [cm]$.
+Die geringste Auslenkung tritt bei $Mr = 0.01$ und $v_{0} = 100 [cm/s]$ auf und beträgt $w = 0.008899 [cm]$, während die größte Auslenkung wie zu erwarten bei $v_{0,max} = 1000 [cm/s]$ und $Mr_{max} = 2.5$ berechnet wird und $w_{max} = 2.57 [cm]$ beträgt. \\
+Auch zu sehen ist, dass im höheren Geschwindigkeitsbereich die Auslenkung stärker mit größer werdendem $Mr$ ansteigt. \\
+Betrachtet man den Faktor der zwischen der $w_{min}(v_{0,min})$ und $w_{max}(v_{0,max})$ bei gegebenem $Mr$ liegt ist zu erkennen, dass die Geschwindigkeit im Zusammenspiel mit $Mr$ einen großen Einfluss auf die Auslenkung hat. Bei $v_{0.min}$ ist der Faktor mit $28.72$ fast gleich wie bei $v_{0,max}$ mit $29.72$.
 
 \begin{figure}[H]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Speed/production/SpeedAuslenkung.eps}
-			\put(60,9){Geschwindigkeit [cm/s]}
-			\put(12,14){Mr [-]}
-			\put(1,58){Auslenkung [cm]}
+			\put(44,4){Geschwindigkeit [cm/s]}
+			\put(18,30){\rotatebox{90}{Mr [-]}}
+			\put(83,60){Auslenkung [cm]}
 		\end{overpic}
 		\caption{Geschwindigkeit, Mr und Auslenkung}
 		\label{fig:SpeedAuslenkung}
+	\end{center}
+\end{figure}
+
+Als letztes wird nun die Kraft aufgetragen. In Abbildung~\ref{fig:SpeedKraft} sind ähnliche Trends wie in Abbildung~\ref{fig:SpeedAuslenkung} zu sehen. \\
+Auch hier nimmt die auftretende Kraft mit $v_{0}$ zu. Je größer $Mr$ hierbei ist, desto steiler die Kraftzunahme. Besonders deutlich wird dies, wenn man wieder die Faktoren zwischen $P_{max}$ und $P_{min}$ bei gegebenem $Mr$ und $v_{0}$ untersucht. \\
+Bei $v_{0,min} = 100 [cm/s]$ ist $P(Mr_{min}) = 2.883 [kN]$ und damit um den Faktor $9.375$ kleiner als $P(Mr_{max}) = 27.063 [kN]$.\\
+Bei $v_{0,max} = 1000 [cm/s]$ ist $P(Mr_{min}) = 38.892 [kN]$ und $P(Mr_{max}) = 282.326 [kN]$. Damit ist der Faktor hier $7.259$, allerdings liegt eine Größenordnung zwischen der Kraft bei $v_{0,min}$ und der Kraft bei $v_{0,max}$.
+
+\begin{figure}[h!]
+	\begin{center}
+		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Speed/production/SpeedKraft.eps}
+			\put(40,4){Geschwindigkeit [cm/s]}
+			\put(18,30){\rotatebox{90}{Mr [-]}}
+			\put(80,62){Kraft [N]}
+		\end{overpic}
+		\caption{Geschwindigkeit, Mr und Kraft}
+		\label{fig:SpeedKraft}
 	\end{center}
 \end{figure}
 
@@ -244,7 +263,7 @@ Im Folgenden wird der Radius des Impaktors betrachtet. Nach Gleichung~\ref{form:
 In Abbildung~\ref{fig:Radius} ist zu erkennen, dass der Radius nur einen geringen Einfluss auf die Anzahl der Aufschläge hat.\\
 Bildet man die Daten in 3D ab, erkennt man leicht, dass die Anzahl der Aufschläge sich nur mit $Mr$ verändert. \\
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Radius/production/Radius.eps}
 			\put(44,4){Radius [cm]}
@@ -258,12 +277,12 @@ Bildet man die Daten in 3D ab, erkennt man leicht, dass die Anzahl der Aufschlä
 
 Ähnliche Ergebnisse werden auch bei der Auslenkung erreicht. Wie in Abbildung~\ref{fig:RadiusAuslenkung} zu sehen ist, nimmt die Auslenkung nur bei hohen $Mr$ auch mit durch Erhöhung des Radius zu. Im niederen $Mr$-Bereich sind die Auslenkungen bei $r_{g} = 0.5 [cm]$ und bei $r_{g} = 10.0 [cm]$ fast identisch bei $w = 0.04 [cm]$. Bei $Mr_{max} = 2.5$ ist die Auslenkung jedoch nur auf der zweiten Nachkommestelle größer, mit $w(r_{g}=0.5[cm]) = 1.27 [cm]$ und $w(r_{g}=10.0[cm]) = 1.29 [cm]$. 
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Radius/production/RadiusAuslenkung.eps}
-			\put(62,10){Radius [cm]}
-			\put(14,13){Mr [-]}
-			\put(1,56){Auslenkung [cm]}
+			\put(44,4){Radius [cm]}
+			\put(18,30){\rotatebox{90}{Mr [-]}}
+			\put(83,60){Auslenkung [cm]}
 		\end{overpic}
 		\caption{Radius, Mr und Auslenkung}
 		\label{fig:RadiusAuslenkung}

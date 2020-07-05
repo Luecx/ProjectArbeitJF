@@ -2,10 +2,10 @@
 ### interpolate data with highlighted datapoints
 reset session
 
-set terminal postscript eps enhanced color font 'Helvetica,10'
+#set terminal postscript eps enhanced color font 'Helvetica,10'
 
 # ---------------------------------------------------------------------------------------
-set output './production/SpeedAuslenkung.eps'
+#set output './production/SpeedAuslenkung.eps'
 
 set title "" 
 
@@ -23,7 +23,7 @@ set view 70,340,1,1
 
 #set dgrid3d 100,100
 set hidden3d
-splot "SpeedAuslenkung.dat" u 1:2:3 pt 7 lw 1 lc rgb "black" 
+splot "SpeedNeu.dat" u 1:2:5 pt 7 lw 1 lc rgb "black" 
 
 
 ### end of code

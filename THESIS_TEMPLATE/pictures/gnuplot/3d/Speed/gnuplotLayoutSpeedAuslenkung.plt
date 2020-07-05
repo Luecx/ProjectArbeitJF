@@ -23,7 +23,7 @@ set view 70,330,1,1
 
 set dgrid3d 30,30
 set hidden3d
-splot "Speed.dat" u 1:2:3 with lines lc rgb "black"
+splot "SpeedNeu.dat" u 1:2:3 with lines lc rgb "black"
 
 
 ### end of code
