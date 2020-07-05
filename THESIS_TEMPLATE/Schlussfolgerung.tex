@@ -2,7 +2,7 @@
 \label{Conclusion}
 %Was wurde in dieser Arbeit gemacht? Was sind die wesentlichen Ergebnisse? Wo ist weiterer Forschungsbedarf? Welche interessanten Forschungsbereiche ergeben sich aus der eigenen Arbeit?
 
-In dieser Arbeit wurde eine Parameterstudie zur Untersuchung von Stößen auf isotropen Platten durchgeführt. Im Rahmen der Studie wurden die Parameter in Tabelle~\ref{tab:VariierteParams} ausgehend vom Ausgangsfall in Tabelle~\ref{tab:Ausgang} variiert.
+In dieser Arbeit wurde eine Parameterstudie zur Untersuchung von Stößen auf isotropen Platten durchgeführt. Zuerst wurde die benötigte Theorie in Kapitel~\ref{chap:Principles} hergeleitet. Anschließend wurden im Rahmen der Studie die Parameter in Tabelle~\ref{tab:VariierteParams} ausgehend vom Ausgangsfall in Tabelle~\ref{tab:Ausgang} variiert. In Kapitel~\ref{chap:Implementation} wurden die Veränderungen im Skript dargestellt und die Funktionsweise des Programmes erklärt. 
 
 \begin{table}[H]
 	\begin{center}
@@ -21,4 +21,23 @@ In dieser Arbeit wurde eine Parameterstudie zur Untersuchung von Stößen auf is
 	\end{center}
 \end{table}
 
-Um Trends zu erkennen wurden unter anderem Faktoren betrachtet, die bei Kraft und Auslenkung bei Maximal- und Minimalwerten der Parameter auftreten.\\
+Wie in Kaptitel~\ref{chap:Durchfuehrung} ausgeführt, lassen sich einige Schlussfolgerungen aus den gewonnenen Ergebnissen ziehen. \\
+
+\section{Anzahl der Aufschläge}
+\label{sec:Aufschlag}
+
+Interessant ist, dass die Anzahl der Aufschläge unter Einfluss der Auftreffgeschwindigkeit $v_{0}$ und des Radius' der Kugel $r_{g}$ nur von dem Massenverhältnis $Mr$ abhängt. Betrachtet man die Aufschläge unter Variation der Höhe, des Aufschlagortes oder des Seitenverhältnisses, haben die genannten Parameter einen messbaren Einfluss auf die Anzahl der Schläge. \\
+Da die größte Kraft nicht immer beim Erstschlag auftritt, liegt es nahe, dass die Anzahl der Aufschläge und die mit ihnen verbundene Kraft für die Schadensbeurteilung wichtig sind.\\
+%@FINN: Vielleciht hier noch was dazu über die Anzahl der Aufschläge bei xi und eta
+
+\section{Auslenkung der Platte}
+\label{sec:Auslenkung}
+
+Bei der Auslenkung spielt die Höhe der Platte eine zentrale Rolle. Vergrößert man $h$ während $Mr$ konstant gehalten wird, fällt die Auslenkung $w$ schnell ab. Allerdings ist $w$ bei geringem $h$ sehr groß, was durch induzierte Spannungen in der Platte Schäden hervorrufen kann.\\
+Betrachtet man die Geschwindigkeit des Impaktors, wird schnell ersichtlich, dass hier $v_{0}$ der dominierende Parameter ist. Zwar steigt die Auslenkung mit größer werdendem $Mr$ an, jedoch ist diese Änderung wesentlich kleiner als der Anstieg bei konstantem $Mr$ und größer werdender Geschwindigkeit.\\
+Der Radius der Kugel hat nur einen verschwindend geringen Einfluss auf die Auslenkung der Platte. Wie in Kapitel~\ref{chap:Durchfuehrung}, Abbildung~\ref{fig:RadiusAuslenkung} zu sehen ist, steigert sich die Auslenkung von $r_{g,min}$ zu $r_{g,max}$ nur in der zweiten Nachkommastelle. \\
+
+
+\section{Maximale Kraft}
+\label{sec:Kraft}
+
