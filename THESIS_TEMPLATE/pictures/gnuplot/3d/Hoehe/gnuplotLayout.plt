@@ -2,41 +2,31 @@
 ### interpolate data with highlighted datapoints
 reset session
 
-#set terminal postscript eps enhanced color font 'Helvetica,10'
+set terminal postscript eps enhanced color font 'Helvetica,10'
 
 # ---------------------------------------------------------------------------------------
-#set output './production/image1.eps'
+set output './production/Auslenkungsfakt.eps'
 
-set title "Titel" 
+#set title "Titel" 
 
-set xrange [0.9:3.1]
-set yrange [0.9:3.1]
+#set xrange [0.9:3.1]
+#set yrange [0.9:3.1]
 
-set xlabel "x-Achse [Einheit]" 
-set ylabel "y-Achse [Einheit]" rotate by 90
+#set xlabel "x-Achse [Einheit]" 
+#set ylabel "y-Achse [Einheit]" rotate by 90
 
 # ---------------------------------------------------------------------------------------
 
+set xtics font "Times New Roman,25" ("Hoehe" 0.25, "Geschwindigkeit" 1.75, "Radius" 3.25,)
+set ytics font ",25"
+set style line 1 lc rgb "black"
+set style line 2 lc rgb "grey"
 
-set palette grey
-set grid
-set size square
-set view map
-set pm3d at b
-set pm3d interpolate 2,2
-set dgrid3d 50,50,2
+set key right font "Times New Roman,40"
+set boxwidth 0.5
+set style fill solid
 
-set table $DataInterpolated
-    splot "inputDatei.dat" u 1:2:3 
-unset table
-unset dgrid3d
-
-set format y "%.1f"
-set format x "%.1f"
-
-
-
-splot $DataInterpolated u 1:2:3 w pm3d palette notitle, \
-      "inputDatei.dat" u 1:2:3 w p pt 1 lw 2 lc rgb "black" notitle
+plot 'Auslenkungsfakt.dat'  every 2    using 1:2 title "" with boxes ls 1,\
+     'Auslenkungsfakt.dat'  every 2::1 using 1:2 title "" with boxes ls 2
 
 ### end of code
