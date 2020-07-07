@@ -231,34 +231,30 @@ def maxP(Kraft):                                                                
 #----------------------------
 #Geschwindigkeit
 
-for v_0 in np.arange(100, 1010, 10):
-
-    time, j, tau, w, P, u, cosPre = compute(v_0=v_0, mass_ratio=1, iterations=1000, printLoadingBar=False)
-    for mr in np.arange(0.01, 2.51, 0.01):
-        time, j, tau, w, P, u, cosPre = compute(v_0=v_0, mass_ratio=mr, iterations=1000, cosPreset=cosPre, printLoadingBar=False)
-        with open("SpeedNeu.txt", "a") as myfile:
-            myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (v_0,mr,countHits(P),maxW(w),maxP(P))))
-         # with open("SpeedAuslenkung.txt", "a") as myfile:
-         #     myfile.write(str.format("%10f %10f %10f \n" % (v_0,mr, maxW(w))))
-         # with open("SpeedKraft.txt", "a") as myfile:
-         #     myfile.write(str.format("%10f %10f %10f \n" % (v_0,mr, maxP(P))))
-        print("%10f %10f %10f %10f %10f" % (v_0,mr,countHits(P),maxW(w),maxP(P)))
+# for v_0 in np.arange(100, 1010, 10):
+#
+#     time, j, tau, w, P, u, cosPre = compute(v_0=v_0, mass_ratio=1, iterations=1000, printLoadingBar=False)
+#     for mr in np.arange(0.01, 2.51, 0.01):
+#         time, j, tau, w, P, u, cosPre = compute(v_0=v_0, mass_ratio=mr, iterations=1000, cosPreset=cosPre, printLoadingBar=False)
+#         with open("SpeedNeu.txt", "a") as myfile:
+#             myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (v_0,mr,countHits(P),maxW(w),maxP(P))))
+#          # with open("SpeedAuslenkung.txt", "a") as myfile:
+#          #     myfile.write(str.format("%10f %10f %10f \n" % (v_0,mr, maxW(w))))
+#          # with open("SpeedKraft.txt", "a") as myfile:
+#          #     myfile.write(str.format("%10f %10f %10f \n" % (v_0,mr, maxP(P))))
+#         print("%10f %10f %10f %10f %10f" % (v_0,mr,countHits(P),maxW(w),maxP(P)))
 
 #----------------------------
 #Hoehe
 
-# for h in np.arange(0.5, 2.6, 0.1):
-#
-#     time, j, tau, w, P, u, cosPre = compute(h=h, mass_ratio=1, iterations=1000, printLoadingBar=False)
-#     for mr in np.arange(0.01, 2.51, 0.01):
-#         time, j, tau, w, P, u, cosPre = compute(h=h, mass_ratio=mr, iterations=1000, cosPreset=cosPre, printLoadingBar=False)
-#         with open("Hoehe.txt", "a") as myfile:
-#          myfile.write(str.format("%10f %10f %10f \n" % (h,mr,countHits(P))))
-#         with open("HoeheAuslenkung.txt", "a") as myfile:
-#          myfile.write(str.format("%10f %10f %10f \n" % (h,mr, maxW(w))))
-#         with open("HoeheKraft.txt", "a") as myfile:
-#          myfile.write(str.format("%10f %10f %10f \n" % (h,mr, maxP(P))))
-#         print("%10f %10f %10f" % (h,mr,countHits(P)))
+for h in np.arange(0.5, 2.52, 0.02):
+
+    time, j, tau, w, P, u, cosPre = compute(h=h, mass_ratio=1, iterations=1000, printLoadingBar=False)
+    for mr in np.arange(0.01, 2.51, 0.01):
+        time, j, tau, w, P, u, cosPre = compute(h=h, mass_ratio=mr, iterations=1000, cosPreset=cosPre, printLoadingBar=False)
+        with open("HoeheNeu.txt", "a") as myfile:
+         myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (h,mr,countHits(P),maxW(w),maxP(P))))
+        print("%10f %10f %10f %10f %10f" % (h,mr,countHits(P),maxW(w),maxP(P)))
 
 #----------------------------
 #Impaktorradius

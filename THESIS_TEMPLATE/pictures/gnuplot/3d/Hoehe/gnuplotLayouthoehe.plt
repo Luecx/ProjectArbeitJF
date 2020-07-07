@@ -2,10 +2,10 @@
 ### interpolate data with highlighted datapoints
 reset session
 
-set terminal postscript eps enhanced color font 'Helvetica,10'
+#set terminal postscript eps enhanced color font 'Helvetica,10'
 
 # ---------------------------------------------------------------------------------------
-set output './production/HoeheAuslenkung.eps'
+#set output './production/HoeheAuslenkung.eps'
 
 set title "" 
 
@@ -29,7 +29,7 @@ set dgrid3d 100,100,2
 #set dgrid3d 100,100
 
 set table $DataInterpolated
-    splot "HoeheAuslenkung.dat" u 1:2:3 
+    splot "Hoehe.dat" u 1:2:3 
 unset table
 unset dgrid3d
 

@@ -1,0 +1,3639 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: ./production/XiEtaAuslenkungAlternativ.eps
+%%Creator: gnuplot 5.2 patchlevel 8
+%%CreationDate: Tue Jul 07 11:24:01 2020
+%%DocumentFonts: (atend)
+%%BoundingBox: 50 50 410 302
+%%EndComments
+%%BeginProlog
+/gnudict 256 dict def
+gnudict begin
+%
+% The following true/false flags may be edited by hand if desired.
+% The unit line width and grayscale image gamma correction may also be changed.
+%
+/Color true def
+/Blacktext false def
+/Solid false def
+/Dashlength 1 def
+/Landscape false def
+/Level1 false def
+/Level3 false def
+/Rounded false def
+/ClipToBoundingBox false def
+/SuppressPDFMark false def
+/TransparentPatterns false def
+/gnulinewidth 5.000 def
+/userlinewidth gnulinewidth def
+/Gamma 1.0 def
+/BackgroundColor {-1.000 -1.000 -1.000} def
+%
+/vshift -33 def
+/dl1 {
+  10.0 Dashlength userlinewidth gnulinewidth div mul mul mul
+  Rounded { currentlinewidth 0.75 mul sub dup 0 le { pop 0.01 } if } if
+} def
+/dl2 {
+  10.0 Dashlength userlinewidth gnulinewidth div mul mul mul
+  Rounded { currentlinewidth 0.75 mul add } if
+} def
+/hpt_ 31.5 def
+/vpt_ 31.5 def
+/hpt hpt_ def
+/vpt vpt_ def
+/doclip {
+  ClipToBoundingBox {
+    newpath 50 50 moveto 410 50 lineto 410 302 lineto 50 302 lineto closepath
+    clip
+  } if
+} def
+%
+% Gnuplot Prolog Version 5.2 (Dec 2017)
+%
+%/SuppressPDFMark true def
+%
+/M {moveto} bind def
+/L {lineto} bind def
+/R {rmoveto} bind def
+/V {rlineto} bind def
+/N {newpath moveto} bind def
+/Z {closepath} bind def
+/C {setrgbcolor} bind def
+/f {rlineto fill} bind def
+/g {setgray} bind def
+/Gshow {show} def   % May be redefined later in the file to support UTF-8
+/vpt2 vpt 2 mul def
+/hpt2 hpt 2 mul def
+/Lshow {currentpoint stroke M 0 vshift R 
+	Blacktext {gsave 0 setgray textshow grestore} {textshow} ifelse} def
+/Rshow {currentpoint stroke M dup stringwidth pop neg vshift R
+	Blacktext {gsave 0 setgray textshow grestore} {textshow} ifelse} def
+/Cshow {currentpoint stroke M dup stringwidth pop -2 div vshift R 
+	Blacktext {gsave 0 setgray textshow grestore} {textshow} ifelse} def
+/UP {dup vpt_ mul /vpt exch def hpt_ mul /hpt exch def
+  /hpt2 hpt 2 mul def /vpt2 vpt 2 mul def} def
+/DL {Color {setrgbcolor Solid {pop []} if 0 setdash}
+ {pop pop pop 0 setgray Solid {pop []} if 0 setdash} ifelse} def
+/BL {stroke userlinewidth 2 mul setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+/AL {stroke userlinewidth 2 div setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+/UL {dup gnulinewidth mul /userlinewidth exch def
+	dup 1 lt {pop 1} if 10 mul /udl exch def} def
+/PL {stroke userlinewidth setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+3.8 setmiterlimit
+% Classic Line colors (version 5.0)
+/LCw {1 1 1} def
+/LCb {0 0 0} def
+/LCa {0 0 0} def
+/LC0 {1 0 0} def
+/LC1 {0 1 0} def
+/LC2 {0 0 1} def
+/LC3 {1 0 1} def
+/LC4 {0 1 1} def
+/LC5 {1 1 0} def
+/LC6 {0 0 0} def
+/LC7 {1 0.3 0} def
+/LC8 {0.5 0.5 0.5} def
+% Default dash patterns (version 5.0)
+/LTB {BL [] LCb DL} def
+/LTw {PL [] 1 setgray} def
+/LTb {PL [] LCb DL} def
+/LTa {AL [1 udl mul 2 udl mul] 0 setdash LCa setrgbcolor} def
+/LT0 {PL [] LC0 DL} def
+/LT1 {PL [2 dl1 3 dl2] LC1 DL} def
+/LT2 {PL [1 dl1 1.5 dl2] LC2 DL} def
+/LT3 {PL [6 dl1 2 dl2 1 dl1 2 dl2] LC3 DL} def
+/LT4 {PL [1 dl1 2 dl2 6 dl1 2 dl2 1 dl1 2 dl2] LC4 DL} def
+/LT5 {PL [4 dl1 2 dl2] LC5 DL} def
+/LT6 {PL [1.5 dl1 1.5 dl2 1.5 dl1 1.5 dl2 1.5 dl1 6 dl2] LC6 DL} def
+/LT7 {PL [3 dl1 3 dl2 1 dl1 3 dl2] LC7 DL} def
+/LT8 {PL [2 dl1 2 dl2 2 dl1 6 dl2] LC8 DL} def
+/SL {[] 0 setdash} def
+/Pnt {stroke [] 0 setdash gsave 1 setlinecap M 0 0 V stroke grestore} def
+/Dia {stroke [] 0 setdash 2 copy vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath stroke
+  Pnt} def
+/Pls {stroke [] 0 setdash vpt sub M 0 vpt2 V
+  currentpoint stroke M
+  hpt neg vpt neg R hpt2 0 V stroke
+ } def
+/Box {stroke [] 0 setdash 2 copy exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath stroke
+  Pnt} def
+/Crs {stroke [] 0 setdash exch hpt sub exch vpt add M
+  hpt2 vpt2 neg V currentpoint stroke M
+  hpt2 neg 0 R hpt2 vpt2 V stroke} def
+/TriU {stroke [] 0 setdash 2 copy vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath stroke
+  Pnt} def
+/Star {2 copy Pls Crs} def
+/BoxF {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath fill} def
+/TriUF {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath fill} def
+/TriD {stroke [] 0 setdash 2 copy vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath stroke
+  Pnt} def
+/TriDF {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath fill} def
+/DiaF {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath fill} def
+/Pent {stroke [] 0 setdash 2 copy gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath stroke grestore Pnt} def
+/PentF {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath fill grestore} def
+/Circle {stroke [] 0 setdash 2 copy
+  hpt 0 360 arc stroke Pnt} def
+/CircleF {stroke [] 0 setdash hpt 0 360 arc fill} def
+/C0 {BL [] 0 setdash 2 copy moveto vpt 90 450 arc} bind def
+/C1 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C2 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C3 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C4 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 180 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C5 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc
+	2 copy moveto
+	2 copy vpt 180 270 arc closepath fill
+	vpt 0 360 arc} bind def
+/C6 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C7 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C8 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 270 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C9 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 270 450 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C10 {BL [] 0 setdash 2 copy 2 copy moveto vpt 270 360 arc closepath fill
+	2 copy moveto
+	2 copy vpt 90 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C11 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 180 arc closepath fill
+	2 copy moveto
+	2 copy vpt 270 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C12 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 180 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C13 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc closepath fill
+	2 copy moveto
+	2 copy vpt 180 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C14 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 360 arc closepath fill
+	vpt 0 360 arc} bind def
+/C15 {BL [] 0 setdash 2 copy vpt 0 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/Rec {newpath 4 2 roll moveto 1 index 0 rlineto 0 exch rlineto
+	neg 0 rlineto closepath} bind def
+/Square {dup Rec} bind def
+/Bsquare {vpt sub exch vpt sub exch vpt2 Square} bind def
+/S0 {BL [] 0 setdash 2 copy moveto 0 vpt rlineto BL Bsquare} bind def
+/S1 {BL [] 0 setdash 2 copy vpt Square fill Bsquare} bind def
+/S2 {BL [] 0 setdash 2 copy exch vpt sub exch vpt Square fill Bsquare} bind def
+/S3 {BL [] 0 setdash 2 copy exch vpt sub exch vpt2 vpt Rec fill Bsquare} bind def
+/S4 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt Square fill Bsquare} bind def
+/S5 {BL [] 0 setdash 2 copy 2 copy vpt Square fill
+	exch vpt sub exch vpt sub vpt Square fill Bsquare} bind def
+/S6 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt vpt2 Rec fill Bsquare} bind def
+/S7 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt vpt2 Rec fill
+	2 copy vpt Square fill Bsquare} bind def
+/S8 {BL [] 0 setdash 2 copy vpt sub vpt Square fill Bsquare} bind def
+/S9 {BL [] 0 setdash 2 copy vpt sub vpt vpt2 Rec fill Bsquare} bind def
+/S10 {BL [] 0 setdash 2 copy vpt sub vpt Square fill 2 copy exch vpt sub exch vpt Square fill
+	Bsquare} bind def
+/S11 {BL [] 0 setdash 2 copy vpt sub vpt Square fill 2 copy exch vpt sub exch vpt2 vpt Rec fill
+	Bsquare} bind def
+/S12 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill Bsquare} bind def
+/S13 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill
+	2 copy vpt Square fill Bsquare} bind def
+/S14 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill
+	2 copy exch vpt sub exch vpt Square fill Bsquare} bind def
+/S15 {BL [] 0 setdash 2 copy Bsquare fill Bsquare} bind def
+/D0 {gsave translate 45 rotate 0 0 S0 stroke grestore} bind def
+/D1 {gsave translate 45 rotate 0 0 S1 stroke grestore} bind def
+/D2 {gsave translate 45 rotate 0 0 S2 stroke grestore} bind def
+/D3 {gsave translate 45 rotate 0 0 S3 stroke grestore} bind def
+/D4 {gsave translate 45 rotate 0 0 S4 stroke grestore} bind def
+/D5 {gsave translate 45 rotate 0 0 S5 stroke grestore} bind def
+/D6 {gsave translate 45 rotate 0 0 S6 stroke grestore} bind def
+/D7 {gsave translate 45 rotate 0 0 S7 stroke grestore} bind def
+/D8 {gsave translate 45 rotate 0 0 S8 stroke grestore} bind def
+/D9 {gsave translate 45 rotate 0 0 S9 stroke grestore} bind def
+/D10 {gsave translate 45 rotate 0 0 S10 stroke grestore} bind def
+/D11 {gsave translate 45 rotate 0 0 S11 stroke grestore} bind def
+/D12 {gsave translate 45 rotate 0 0 S12 stroke grestore} bind def
+/D13 {gsave translate 45 rotate 0 0 S13 stroke grestore} bind def
+/D14 {gsave translate 45 rotate 0 0 S14 stroke grestore} bind def
+/D15 {gsave translate 45 rotate 0 0 S15 stroke grestore} bind def
+/DiaE {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath stroke} def
+/BoxE {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath stroke} def
+/TriUE {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath stroke} def
+/TriDE {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath stroke} def
+/PentE {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath stroke grestore} def
+/CircE {stroke [] 0 setdash 
+  hpt 0 360 arc stroke} def
+/Opaque {gsave closepath 1 setgray fill grestore 0 setgray closepath} def
+/DiaW {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V Opaque stroke} def
+/BoxW {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V Opaque stroke} def
+/TriUW {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V Opaque stroke} def
+/TriDW {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V Opaque stroke} def
+/PentW {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  Opaque stroke grestore} def
+/CircW {stroke [] 0 setdash 
+  hpt 0 360 arc Opaque stroke} def
+/BoxFill {gsave Rec 1 setgray fill grestore} def
+/Density {
+  /Fillden exch def
+  currentrgbcolor
+  /ColB exch def /ColG exch def /ColR exch def
+  /ColR ColR Fillden mul Fillden sub 1 add def
+  /ColG ColG Fillden mul Fillden sub 1 add def
+  /ColB ColB Fillden mul Fillden sub 1 add def
+  ColR ColG ColB setrgbcolor} def
+/BoxColFill {gsave Rec PolyFill} def
+/PolyFill {gsave Density fill grestore grestore} def
+/h {rlineto rlineto rlineto closepath gsave fill grestore stroke} bind def
+%
+% PostScript Level 1 Pattern Fill routine for rectangles
+% Usage: x y w h s a XX PatternFill
+%	x,y = lower left corner of box to be filled
+%	w,h = width and height of box
+%	  a = angle in degrees between lines and x-axis
+%	 XX = 0/1 for no/yes cross-hatch
+%
+/PatternFill {gsave /PFa [ 9 2 roll ] def
+  PFa 0 get PFa 2 get 2 div add PFa 1 get PFa 3 get 2 div add translate
+  PFa 2 get -2 div PFa 3 get -2 div PFa 2 get PFa 3 get Rec
+  TransparentPatterns {} {gsave 1 setgray fill grestore} ifelse
+  clip
+  currentlinewidth 0.5 mul setlinewidth
+  /PFs PFa 2 get dup mul PFa 3 get dup mul add sqrt def
+  0 0 M PFa 5 get rotate PFs -2 div dup translate
+  0 1 PFs PFa 4 get div 1 add floor cvi
+	{PFa 4 get mul 0 M 0 PFs V} for
+  0 PFa 6 get ne {
+	0 1 PFs PFa 4 get div 1 add floor cvi
+	{PFa 4 get mul 0 2 1 roll M PFs 0 V} for
+ } if
+  stroke grestore} def
+%
+/languagelevel where
+ {pop languagelevel} {1} ifelse
+dup 2 lt
+	{/InterpretLevel1 true def
+	 /InterpretLevel3 false def}
+	{/InterpretLevel1 Level1 def
+	 2 gt
+	    {/InterpretLevel3 Level3 def}
+	    {/InterpretLevel3 false def}
+	 ifelse }
+ ifelse
+%
+% PostScript level 2 pattern fill definitions
+%
+/Level2PatternFill {
+/Tile8x8 {/PaintType 2 /PatternType 1 /TilingType 1 /BBox [0 0 8 8] /XStep 8 /YStep 8}
+	bind def
+/KeepColor {currentrgbcolor [/Pattern /DeviceRGB] setcolorspace} bind def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 8 8 L 0 8 M 8 0 L stroke} 
+>> matrix makepattern
+/Pat1 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 8 8 L 0 8 M 8 0 L stroke
+	0 4 M 4 8 L 8 4 L 4 0 L 0 4 L stroke}
+>> matrix makepattern
+/Pat2 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 0 8 L
+	8 8 L 8 0 L 0 0 L fill}
+>> matrix makepattern
+/Pat3 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -4 8 M 8 -4 L
+	0 12 M 12 0 L stroke}
+>> matrix makepattern
+/Pat4 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -4 0 M 8 12 L
+	0 -4 M 12 8 L stroke}
+>> matrix makepattern
+/Pat5 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -2 8 M 4 -4 L
+	0 12 M 8 -4 L 4 12 M 10 0 L stroke}
+>> matrix makepattern
+/Pat6 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -2 0 M 4 12 L
+	0 -4 M 8 12 L 4 -4 M 10 8 L stroke}
+>> matrix makepattern
+/Pat7 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 8 -2 M -4 4 L
+	12 0 M -4 8 L 12 4 M 0 10 L stroke}
+>> matrix makepattern
+/Pat8 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 -2 M 12 4 L
+	-4 0 M 12 8 L -4 4 M 8 10 L stroke}
+>> matrix makepattern
+/Pat9 exch def
+/Pattern1 {PatternBgnd KeepColor Pat1 setpattern} bind def
+/Pattern2 {PatternBgnd KeepColor Pat2 setpattern} bind def
+/Pattern3 {PatternBgnd KeepColor Pat3 setpattern} bind def
+/Pattern4 {PatternBgnd KeepColor Landscape {Pat5} {Pat4} ifelse setpattern} bind def
+/Pattern5 {PatternBgnd KeepColor Landscape {Pat4} {Pat5} ifelse setpattern} bind def
+/Pattern6 {PatternBgnd KeepColor Landscape {Pat9} {Pat6} ifelse setpattern} bind def
+/Pattern7 {PatternBgnd KeepColor Landscape {Pat8} {Pat7} ifelse setpattern} bind def
+} def
+%
+%
+%End of PostScript Level 2 code
+%
+/PatternBgnd {
+  TransparentPatterns {} {gsave 1 setgray fill grestore} ifelse
+} def
+%
+% Substitute for Level 2 pattern fill codes with
+% grayscale if Level 2 support is not selected.
+%
+/Level1PatternFill {
+/Pattern1 {0.250 Density} bind def
+/Pattern2 {0.500 Density} bind def
+/Pattern3 {0.750 Density} bind def
+/Pattern4 {0.125 Density} bind def
+/Pattern5 {0.375 Density} bind def
+/Pattern6 {0.625 Density} bind def
+/Pattern7 {0.875 Density} bind def
+} def
+%
+% Now test for support of Level 2 code
+%
+Level1 {Level1PatternFill} {Level2PatternFill} ifelse
+%
+/Symbol-Oblique /Symbol findfont [1 0 .167 1 0 0] makefont
+dup length dict begin {1 index /FID eq {pop pop} {def} ifelse} forall
+currentdict end definefont pop
+%
+%
+% Encoding for Windows-1252 (Western European)
+%
+/reencodeCP1252 {
+dup dup findfont dup length dict begin
+{ 1 index /FID ne { def }{ pop pop } ifelse } forall
+currentdict /CharStrings known {
+	CharStrings /Idieresis known {
+		/Encoding CP1252Encoding def } if
+} if
+currentdict end definefont
+} def
+/CP1252Encoding [
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/space/exclam/quotedbl/numbersign/dollar/percent/ampersand/quoteright
+/parenleft/parenright/asterisk/plus/comma/minus/period/slash
+/zero/one/two/three/four/five/six/seven/eight/nine/colon/semicolon
+/less/equal/greater/question/at/A/B/C/D/E/F/G/H/I/J/K/L/M/N
+/O/P/Q/R/S/T/U/V/W/X/Y/Z/bracketleft/backslash/bracketright
+/asciicircum/underscore/quoteleft/a/b/c/d/e/f/g/h/i/j/k/l/m
+/n/o/p/q/r/s/t/u/v/w/x/y/z/braceleft/bar/braceright/asciitilde
+/.notdef/Euro/.notdef/quotesinglbase/florin/quotedblbase/ellipsis/dagger
+/daggerdbl/circumflex/perthousand/Scaron/guilsinglleft/OE/.notdef/Zcaron
+/.notdef/.notdef/quoteleft/quoteright/quotedblleft/quotedblright
+/bullet/endash/emdash/tilde/trademark/scaron/guilsinglright/oe/.notdef
+/zcaron/Ydieresis/space/exclamdown/cent/sterling/currency/yen/brokenbar
+/section/dieresis/copyright/ordfeminine/guillemotleft/logicalnot
+/hyphen/registered/macron/degree/plusminus/twosuperior/threesuperior
+/acute/mu/paragraph/periodcentered/cedilla/onesuperior/ordmasculine
+/guillemotright/onequarter/onehalf/threequarters/questiondown
+/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla
+/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex
+/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis
+/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute
+/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis
+/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave
+/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex
+/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis
+/yacute/thorn/ydieresis
+] def
+/Metrics {ExtendTextBox Gswidth} def
+/Lwidth {currentpoint stroke M 0 vshift R Metrics} def
+/Rwidth {currentpoint stroke M dup stringwidth pop neg vshift R Metrics} def
+/Cwidth {currentpoint stroke M dup stringwidth pop -2 div vshift R Metrics} def
+/GLwidth {currentpoint stroke M 0 vshift R {ExtendTextBox} forall} def
+/GRwidth {currentpoint stroke M dup Gwidth vshift R {ExtendTextBox} forall} def
+/GCwidth {currentpoint stroke M dup Gwidth 2 div vshift R {ExtendTextBox} forall} def
+/GLwidth2 {0 Gwidth AddGlyphWidth} def
+/GRwidth2 {Gwidth -1 mul 0 AddGlyphWidth} def
+/GCwidth2 {Gwidth 2 div dup -1 mul AddGlyphWidth} def
+/AddGlyphWidth { dup TBx2 gt {userdict /TBx2 3 -1 roll put} {pop} ifelse
+                 dup TBx1 lt {userdict /TBx1 3 -1 roll put} {pop} ifelse } def
+/MFshow {
+   { dup 5 get 3 ge
+     { 5 get 3 eq {gsave} {grestore} ifelse }
+     {dup dup 0 get findfont exch 1 get scalefont setfont
+     [ currentpoint ] exch dup 2 get 0 exch R dup 5 get 2 ne {dup dup 6
+     get exch 4 get {textshow} {Metrics pop 0 R} ifelse }if dup 5 get 0 eq
+     {dup 3 get {2 get neg 0 exch R pop} {pop aload pop M} ifelse} {dup 5
+     get 1 eq {dup 2 get exch dup 3 get exch 6 get Gswidth pop -2 div
+     dup 0 R} {dup 6 get Gswidth pop -2 div 0 R 6 get
+     textshow 2 index {aload pop M neg 3 -1 roll neg R pop pop} {pop pop pop
+     pop aload pop M} ifelse }ifelse }ifelse }
+     ifelse }
+   forall} def
+/Gswidth {dup type /stringtype eq {stringwidth} {pop (n) stringwidth} ifelse} def
+/MFwidth {0 exch { dup 5 get 3 ge { 5 get 3 eq { 0 } { pop } ifelse }
+ {dup 3 get{dup dup 0 get findfont exch 1 get scalefont setfont
+     6 get Gswidth pop add} {pop} ifelse} ifelse} forall} def
+/MLshow { currentpoint stroke M
+  0 exch R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/MRshow { currentpoint stroke M
+  exch dup MFwidth neg 3 -1 roll R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/MCshow { currentpoint stroke M
+  exch dup MFwidth -2 div 3 -1 roll R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/XYsave    { [( ) 1 2 true false 3 ()] } bind def
+/XYrestore { [( ) 1 2 true false 4 ()] } bind def
+/Helvetica reencodeCP1252 def
+Level1 SuppressPDFMark or 
+{} {
+/SDict 10 dict def
+systemdict /pdfmark known not {
+  userdict /pdfmark systemdict /cleartomark get put
+} if
+SDict begin [
+  /Title (./production/XiEtaAuslenkungAlternativ.eps)
+  /Subject (gnuplot plot)
+  /Creator (gnuplot 5.2 patchlevel 8)
+%  /Producer (gnuplot)
+%  /Keywords ()
+  /CreationDate (Tue Jul 07 11:24:01 2020)
+  /DOCINFO pdfmark
+end
+} ifelse
+%
+% Support for boxed text - Ethan A Merritt Sep 2016
+%
+/InitTextBox { userdict /TBy2 3 -1 roll put userdict /TBx2 3 -1 roll put
+           userdict /TBy1 3 -1 roll put userdict /TBx1 3 -1 roll put
+	   /Boxing true def } def
+/ExtendTextBox { dup type /stringtype eq
+    { Boxing { gsave dup false charpath pathbbox
+      dup TBy2 gt {userdict /TBy2 3 -1 roll put} {pop} ifelse
+      dup TBx2 gt {userdict /TBx2 3 -1 roll put} {pop} ifelse
+      dup TBy1 lt {userdict /TBy1 3 -1 roll put} {pop} ifelse
+      dup TBx1 lt {userdict /TBx1 3 -1 roll put} {pop} ifelse
+      grestore } if }
+    {} ifelse} def
+/PopTextBox { newpath TBx1 TBxmargin sub TBy1 TBymargin sub M
+               TBx1 TBxmargin sub TBy2 TBymargin add L
+	       TBx2 TBxmargin add TBy2 TBymargin add L
+	       TBx2 TBxmargin add TBy1 TBymargin sub L closepath } def
+/DrawTextBox { PopTextBox stroke /Boxing false def} def
+/FillTextBox { gsave PopTextBox fill grestore /Boxing false def} def
+0 0 0 0 InitTextBox
+/TBxmargin 20 def
+/TBymargin 20 def
+/Boxing false def
+/textshow { ExtendTextBox Gshow } def
+%
+end
+%%EndProlog
+%%Page: 1 1
+gnudict begin
+gsave
+doclip
+50 50 translate
+0.050 0.050 scale
+0 setgray
+newpath
+(Helvetica) findfont 100 scalefont setfont
+BackgroundColor 0 lt 3 1 roll 0 lt exch 0 lt or or not {BackgroundColor C 1.000 0 0 7200.00 5040.00 BoxColFill} if
+gsave % colour palette begin
+/maxcolors 0 def
+/HSV2RGB {  exch dup 0.0 eq {pop exch pop dup dup} % achromatic gray
+  { /HSVs exch def /HSVv exch def 6.0 mul dup floor dup 3 1 roll sub
+     /HSVf exch def /HSVi exch cvi def /HSVp HSVv 1.0 HSVs sub mul def
+	 /HSVq HSVv 1.0 HSVs HSVf mul sub mul def 
+	 /HSVt HSVv 1.0 HSVs 1.0 HSVf sub mul sub mul def
+	 /HSVi HSVi 6 mod def 0 HSVi eq {HSVv HSVt HSVp}
+	 {1 HSVi eq {HSVq HSVv HSVp}{2 HSVi eq {HSVp HSVv HSVt}
+	 {3 HSVi eq {HSVp HSVq HSVv}{4 HSVi eq {HSVt HSVp HSVv}
+	 {HSVv HSVp HSVq} ifelse} ifelse} ifelse} ifelse} ifelse
+  } ifelse} def
+/Constrain {
+  dup 0 lt {0 exch pop}{dup 1 gt {1 exch pop} if} ifelse} def
+/CMY2RGB {  1 exch sub exch 1 exch sub 3 2 roll 1 exch sub 3 1 roll exch } def
+/XYZ2RGB {  3 copy -0.9017 mul exch -0.1187 mul add exch 0.0585 mul exch add
+  Constrain 4 1 roll 3 copy -0.0279 mul exch 1.999 mul add exch
+  -0.9844 mul add Constrain 5 1 roll -0.2891 mul exch -0.5338 mul add
+  exch 1.91 mul exch add Constrain 3 1 roll} def
+/SelectSpace {ColorSpace (HSV) eq {HSV2RGB}{ColorSpace (XYZ) eq {
+  XYZ2RGB}{ColorSpace (CMY) eq {CMY2RGB}{ColorSpace (YIQ) eq {YIQ2RGB}
+  if} ifelse} ifelse} ifelse} def
+/InterpolatedColor false def
+/pm3dround {maxcolors 0 gt {dup 1 ge
+	{pop 1} {maxcolors mul floor maxcolors 1 sub div} ifelse} if} def
+/pm3dGamma 1.0 1 Gamma mul div def
+/ColorSpace (RGB) def
+false { % COLOUR vs. GRAY map
+  InterpolatedColor { %% Interpolation vs. RGB-Formula
+    /g {stroke pm3dround /grayv exch def interpolate
+        SelectSpace setrgbcolor} bind def
+  }{
+  /g {stroke pm3dround dup cF7 Constrain exch dup cF5 Constrain exch cF15 Constrain 
+       SelectSpace setrgbcolor} bind def
+  } ifelse
+}{
+  /g {stroke pm3dround pm3dGamma exp setgray} bind def
+} ifelse
+1.000 UL
+LTb
+LCb setrgbcolor
+943 200 M
+63 0 V
+4677 0 R
+-63 0 V
+stroke
+883 200 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.5)]
+] -33.3 MRshow
+/Helvetica findfont 100 scalefont setfont
+/vshift -33 def
+1.000 UL
+LTb
+LCb setrgbcolor
+943 684 M
+63 0 V
+4677 0 R
+-63 0 V
+stroke
+883 684 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.55)]
+] -33.3 MRshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+943 1167 M
+63 0 V
+4677 0 R
+-63 0 V
+stroke
+883 1167 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.6)]
+] -33.3 MRshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+943 1651 M
+63 0 V
+4677 0 R
+-63 0 V
+stroke
+883 1651 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.65)]
+] -33.3 MRshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+943 2134 M
+63 0 V
+4677 0 R
+-63 0 V
+stroke
+883 2134 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.7)]
+] -33.3 MRshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+943 2618 M
+63 0 V
+4677 0 R
+-63 0 V
+stroke
+883 2618 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.75)]
+] -33.3 MRshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+943 3101 M
+63 0 V
+4677 0 R
+-63 0 V
+stroke
+883 3101 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.8)]
+] -33.3 MRshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+943 3585 M
+63 0 V
+4677 0 R
+-63 0 V
+stroke
+883 3585 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.85)]
+] -33.3 MRshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+943 4069 M
+63 0 V
+4677 0 R
+-63 0 V
+stroke
+883 4069 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.9)]
+] -33.3 MRshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+943 4552 M
+63 0 V
+4677 0 R
+-63 0 V
+stroke
+883 4552 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.95)]
+] -33.3 MRshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+943 200 M
+0 63 V
+0 4676 R
+0 -63 V
+stroke
+943 100 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.5)]
+] -33.3 MCshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+1427 200 M
+0 63 V
+0 4676 R
+0 -63 V
+stroke
+1427 100 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.55)]
+] -33.3 MCshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+1910 200 M
+0 63 V
+0 4676 R
+0 -63 V
+stroke
+1910 100 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.6)]
+] -33.3 MCshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+2394 200 M
+0 63 V
+0 4676 R
+0 -63 V
+stroke
+2394 100 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.65)]
+] -33.3 MCshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+2878 200 M
+0 63 V
+0 4676 R
+0 -63 V
+stroke
+2878 100 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.7)]
+] -33.3 MCshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+3361 200 M
+0 63 V
+0 4676 R
+0 -63 V
+stroke
+3361 100 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.75)]
+] -33.3 MCshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+3845 200 M
+0 63 V
+0 4676 R
+0 -63 V
+stroke
+3845 100 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.8)]
+] -33.3 MCshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+4329 200 M
+0 63 V
+0 4676 R
+0 -63 V
+stroke
+4329 100 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.85)]
+] -33.3 MCshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+4812 200 M
+0 63 V
+0 4676 R
+0 -63 V
+stroke
+4812 100 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.9)]
+] -33.3 MCshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+5296 200 M
+0 63 V
+0 4676 R
+0 -63 V
+stroke
+5296 100 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.95)]
+] -33.3 MCshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTB
+LCb setrgbcolor
+943 4939 N
+943 200 L
+4740 0 V
+0 4739 V
+-4740 0 V
+Z stroke
+1.000 UP
+1.000 UL
+LTb
+LCb setrgbcolor
+LCb setrgbcolor
+LTb
+LCb setrgbcolor
+LTb
+LCb setrgbcolor
+LTb
+% Begin plot #1
+1.000 UP
+1.000 UL
+LTb
+0 g .294 g 943 200 BoxF
+.2937 g 1040 200 BoxF
+.2937 g 943 297 BoxF
+.2934 g 1040 297 BoxF
+.2934 g 1040 297 BoxF
+.2934 g 1040 297 BoxF
+.2929 g 1136 200 BoxF
+.2929 g 943 393 BoxF
+.2926 g 1136 297 BoxF
+.2926 g 1040 393 BoxF
+.2919 g 1136 393 BoxF
+.2919 g 1136 393 BoxF
+.2919 g 1136 393 BoxF
+.2917 g 1233 200 BoxF
+.2917 g 943 490 BoxF
+.2915 g 1233 297 BoxF
+.2915 g 1040 490 BoxF
+.2909 g 1233 393 BoxF
+.2909 g 1136 490 BoxF
+.2898 g 1233 490 BoxF
+.2898 g 1233 490 BoxF
+.2898 g 1233 490 BoxF
+.2902 g 1330 200 BoxF
+.2902 g 943 587 BoxF
+.29 g 1330 297 BoxF
+.29 g 1040 587 BoxF
+.2895 g 1330 393 BoxF
+.2895 g 1136 587 BoxF
+.2889 g 1330 490 BoxF
+.2889 g 1233 587 BoxF
+.2882 g 1330 587 BoxF
+.2882 g 1330 587 BoxF
+.2882 g 1330 587 BoxF
+.2889 g 1427 200 BoxF
+.2889 g 943 684 BoxF
+.2888 g 1427 297 BoxF
+.2888 g 1040 684 BoxF
+.2885 g 1427 393 BoxF
+.2885 g 1136 684 BoxF
+.288 g 1427 490 BoxF
+.288 g 1233 684 BoxF
+.2873 g 1427 587 BoxF
+.2873 g 1330 684 BoxF
+.2863 g 1427 684 BoxF
+.2863 g 1427 684 BoxF
+.2863 g 1427 684 BoxF
+.2878 g 1523 200 BoxF
+.2878 g 943 780 BoxF
+.2877 g 1523 297 BoxF
+.2877 g 1040 780 BoxF
+.2874 g 1523 393 BoxF
+.2874 g 1136 780 BoxF
+.2869 g 1523 490 BoxF
+.2869 g 1233 780 BoxF
+.2861 g 1523 587 BoxF
+.2861 g 1330 780 BoxF
+.285 g 1523 684 BoxF
+.285 g 1427 780 BoxF
+.2836 g 1523 780 BoxF
+.2836 g 1523 780 BoxF
+.2836 g 1523 780 BoxF
+.2864 g 1620 200 BoxF
+.2864 g 943 877 BoxF
+.2863 g 1620 297 BoxF
+.2863 g 1040 877 BoxF
+.2859 g 1620 393 BoxF
+.2859 g 1136 877 BoxF
+.2853 g 1620 490 BoxF
+.2853 g 1233 877 BoxF
+.2844 g 1620 587 BoxF
+.2844 g 1330 877 BoxF
+.2833 g 1620 684 BoxF
+.2833 g 1427 877 BoxF
+.2821 g 1620 780 BoxF
+.2821 g 1523 877 BoxF
+.2809 g 1620 877 BoxF
+.2809 g 1620 877 BoxF
+.2809 g 1620 877 BoxF
+.2845 g 1717 200 BoxF
+.2845 g 943 974 BoxF
+.2844 g 1717 297 BoxF
+.2844 g 1040 974 BoxF
+.284 g 1717 393 BoxF
+.284 g 1136 974 BoxF
+.2834 g 1717 490 BoxF
+.2834 g 1233 974 BoxF
+.2825 g 1717 587 BoxF
+.2825 g 1330 974 BoxF
+.2816 g 1717 684 BoxF
+.2816 g 1427 974 BoxF
+.2806 g 1717 780 BoxF
+.2806 g 1523 974 BoxF
+.2795 g 1717 877 BoxF
+.2795 g 1620 974 BoxF
+.2779 g 1717 974 BoxF
+.2779 g 1717 974 BoxF
+.2779 g 1717 974 BoxF
+.2822 g 1814 200 BoxF
+.2822 g 943 1070 BoxF
+.2821 g 1814 297 BoxF
+.2821 g 1040 1070 BoxF
+.2818 g 1814 393 BoxF
+.2818 g 1136 1070 BoxF
+.2814 g 1814 490 BoxF
+.2814 g 1233 1070 BoxF
+.2808 g 1814 587 BoxF
+.2808 g 1330 1070 BoxF
+.2801 g 1814 684 BoxF
+.2801 g 1427 1070 BoxF
+.2791 g 1814 780 BoxF
+.2791 g 1523 1070 BoxF
+.2777 g 1814 877 BoxF
+.2777 g 1620 1070 BoxF
+.2757 g 1814 974 BoxF
+.2757 g 1717 1070 BoxF
+.2727 g 1814 1070 BoxF
+.2727 g 1814 1070 BoxF
+.2727 g 1814 1070 BoxF
+.2804 g 1910 200 BoxF
+.2804 g 943 1167 BoxF
+.2803 g 1910 297 BoxF
+.2803 g 1040 1167 BoxF
+.2801 g 1910 393 BoxF
+.2801 g 1136 1167 BoxF
+.2798 g 1910 490 BoxF
+.2798 g 1233 1167 BoxF
+.2792 g 1910 587 BoxF
+.2792 g 1330 1167 BoxF
+.2785 g 1910 684 BoxF
+.2785 g 1427 1167 BoxF
+.2773 g 1910 780 BoxF
+.2773 g 1523 1167 BoxF
+.2754 g 1910 877 BoxF
+.2754 g 1620 1167 BoxF
+.2726 g 1910 974 BoxF
+.2726 g 1717 1167 BoxF
+.2694 g 1910 1070 BoxF
+.2694 g 1814 1167 BoxF
+.2679 g 1910 1167 BoxF
+.2679 g 1910 1167 BoxF
+.2679 g 1910 1167 BoxF
+.279 g 2007 200 BoxF
+.279 g 943 1264 BoxF
+.279 g 2007 297 BoxF
+.279 g 1040 1264 BoxF
+.2788 g 2007 393 BoxF
+.2788 g 1136 1264 BoxF
+.2784 g 2007 490 BoxF
+.2784 g 1233 1264 BoxF
+.2777 g 2007 587 BoxF
+.2777 g 1330 1264 BoxF
+.2767 g 2007 684 BoxF
+.2767 g 1427 1264 BoxF
+.2749 g 2007 780 BoxF
+.2749 g 1523 1264 BoxF
+.2723 g 2007 877 BoxF
+.2723 g 1620 1264 BoxF
+.2695 g 2007 974 BoxF
+.2695 g 1717 1264 BoxF
+.268 g 2007 1070 BoxF
+.268 g 1814 1264 BoxF
+.2679 g 2007 1167 BoxF
+.2679 g 1910 1264 BoxF
+.2656 g 2007 1264 BoxF
+.2656 g 2007 1264 BoxF
+.2656 g 2007 1264 BoxF
+.2783 g 2104 200 BoxF
+.2783 g 943 1361 BoxF
+.2782 g 2104 297 BoxF
+.2782 g 1040 1361 BoxF
+.2778 g 2104 393 BoxF
+.2778 g 1136 1361 BoxF
+.2772 g 2104 490 BoxF
+.2772 g 1233 1361 BoxF
+.2761 g 2104 587 BoxF
+.2761 g 1330 1361 BoxF
+.2744 g 2104 684 BoxF
+.2744 g 1427 1361 BoxF
+.272 g 2104 780 BoxF
+.272 g 1523 1361 BoxF
+.2697 g 2104 877 BoxF
+.2697 g 1620 1361 BoxF
+.2686 g 2104 974 BoxF
+.2686 g 1717 1361 BoxF
+.2682 g 2104 1070 BoxF
+.2682 g 1814 1361 BoxF
+.2655 g 2104 1167 BoxF
+.2655 g 1910 1361 BoxF
+.2694 g 2104 1264 BoxF
+.2694 g 2007 1361 BoxF
+.3191 g 2104 1361 BoxF
+.3191 g 2104 1361 BoxF
+.3191 g 2104 1361 BoxF
+.2773 g 2201 200 BoxF
+.2773 g 943 1457 BoxF
+.2771 g 2201 297 BoxF
+.2771 g 1040 1457 BoxF
+.2765 g 2201 393 BoxF
+.2765 g 1136 1457 BoxF
+.2755 g 2201 490 BoxF
+.2755 g 1233 1457 BoxF
+.274 g 2201 587 BoxF
+.274 g 1330 1457 BoxF
+.2722 g 2201 684 BoxF
+.2722 g 1427 1457 BoxF
+.2706 g 2201 780 BoxF
+.2706 g 1523 1457 BoxF
+.2701 g 2201 877 BoxF
+.2701 g 1620 1457 BoxF
+.2691 g 2201 974 BoxF
+.2691 g 1717 1457 BoxF
+.2656 g 2201 1070 BoxF
+.2656 g 1814 1457 BoxF
+.2727 g 2201 1167 BoxF
+.2727 g 1910 1457 BoxF
+.3218 g 2201 1264 BoxF
+.3218 g 2007 1457 BoxF
+.3438 g 2201 1361 BoxF
+.3438 g 2104 1457 BoxF
+.2921 g 2201 1457 BoxF
+.2921 g 2201 1457 BoxF
+.2921 g 2201 1457 BoxF
+.2763 g 2297 200 BoxF
+.2763 g 943 1554 BoxF
+.2761 g 2297 297 BoxF
+.2761 g 1040 1554 BoxF
+.2756 g 2297 393 BoxF
+.2756 g 1136 1554 BoxF
+.2748 g 2297 490 BoxF
+.2748 g 1233 1554 BoxF
+.2743 g 2297 587 BoxF
+.2743 g 1330 1554 BoxF
+.2739 g 2297 684 BoxF
+.2739 g 1427 1554 BoxF
+.2732 g 2297 780 BoxF
+.2732 g 1523 1554 BoxF
+.2711 g 2297 877 BoxF
+.2711 g 1620 1554 BoxF
+.2661 g 2297 974 BoxF
+.2661 g 1717 1554 BoxF
+.2814 g 2297 1070 BoxF
+.2814 g 1814 1554 BoxF
+.3309 g 2297 1167 BoxF
+.3309 g 1910 1554 BoxF
+.3371 g 2297 1264 BoxF
+.3371 g 2007 1554 BoxF
+.286 g 2297 1361 BoxF
+.286 g 2104 1554 BoxF
+.2735 g 2297 1457 BoxF
+.2735 g 2201 1554 BoxF
+.2881 g 2297 1554 BoxF
+.2881 g 2297 1554 BoxF
+.2881 g 2297 1554 BoxF
+.2806 g 2394 200 BoxF
+.2806 g 943 1651 BoxF
+.2805 g 2394 297 BoxF
+.2805 g 1040 1651 BoxF
+.2805 g 2394 393 BoxF
+.2805 g 1136 1651 BoxF
+.2802 g 2394 490 BoxF
+.2802 g 1233 1651 BoxF
+.2794 g 2394 587 BoxF
+.2794 g 1330 1651 BoxF
+.2772 g 2394 684 BoxF
+.2772 g 1427 1651 BoxF
+.2728 g 2394 780 BoxF
+.2728 g 1523 1651 BoxF
+.2652 g 2394 877 BoxF
+.2652 g 1620 1651 BoxF
+.3026 g 2394 974 BoxF
+.3026 g 1717 1651 BoxF
+.338 g 2394 1070 BoxF
+.338 g 1814 1651 BoxF
+.3207 g 2394 1167 BoxF
+.3207 g 1910 1651 BoxF
+.2692 g 2394 1264 BoxF
+.2692 g 2007 1651 BoxF
+.2755 g 2394 1361 BoxF
+.2755 g 2104 1651 BoxF
+.2891 g 2394 1457 BoxF
+.2891 g 2201 1651 BoxF
+.3035 g 2394 1554 BoxF
+.3035 g 2297 1651 BoxF
+.5363 g 2394 1651 BoxF
+.5363 g 2394 1651 BoxF
+.5363 g 2394 1651 BoxF
+.2891 g 2491 200 BoxF
+.2891 g 943 1747 BoxF
+.2887 g 2491 297 BoxF
+.2887 g 1040 1747 BoxF
+.2872 g 2491 393 BoxF
+.2872 g 1136 1747 BoxF
+.2843 g 2491 490 BoxF
+.2843 g 1233 1747 BoxF
+.2785 g 2491 587 BoxF
+.2785 g 1330 1747 BoxF
+.269 g 2491 684 BoxF
+.269 g 1427 1747 BoxF
+.2912 g 2491 780 BoxF
+.2912 g 1523 1747 BoxF
+.3282 g 2491 877 BoxF
+.3282 g 1620 1747 BoxF
+.3226 g 2491 974 BoxF
+.3226 g 1717 1747 BoxF
+.2926 g 2491 1070 BoxF
+.2926 g 1814 1747 BoxF
+.2687 g 2491 1167 BoxF
+.2687 g 1910 1747 BoxF
+.2798 g 2491 1264 BoxF
+.2798 g 2007 1747 BoxF
+.2921 g 2491 1361 BoxF
+.2921 g 2104 1747 BoxF
+.3054 g 2491 1457 BoxF
+.3054 g 2201 1747 BoxF
+.5507 g 2491 1554 BoxF
+.5507 g 2297 1747 BoxF
+.4305 g 2491 1651 BoxF
+.4305 g 2394 1747 BoxF
+.3481 g 2491 1747 BoxF
+.3481 g 2491 1747 BoxF
+.3481 g 2491 1747 BoxF
+.2914 g 2587 200 BoxF
+.2914 g 943 1844 BoxF
+.2765 g 2587 297 BoxF
+.2765 g 1040 1844 BoxF
+.2711 g 2587 393 BoxF
+.2711 g 1136 1844 BoxF
+.2848 g 2587 490 BoxF
+.2848 g 1233 1844 BoxF
+.3091 g 2587 587 BoxF
+.3091 g 1330 1844 BoxF
+.3219 g 2587 684 BoxF
+.3219 g 1427 1844 BoxF
+.3115 g 2587 780 BoxF
+.3115 g 1523 1844 BoxF
+.2908 g 2587 877 BoxF
+.2908 g 1620 1844 BoxF
+.2671 g 2587 974 BoxF
+.2671 g 1717 1844 BoxF
+.2758 g 2587 1070 BoxF
+.2758 g 1814 1844 BoxF
+.286 g 2587 1167 BoxF
+.286 g 1910 1844 BoxF
+.2971 g 2587 1264 BoxF
+.2971 g 2007 1844 BoxF
+.3092 g 2587 1361 BoxF
+.3092 g 2104 1844 BoxF
+.55 g 2587 1457 BoxF
+.55 g 2201 1844 BoxF
+.4002 g 2587 1554 BoxF
+.4002 g 2297 1844 BoxF
+.3488 g 2587 1651 BoxF
+.3488 g 2394 1844 BoxF
+.3629 g 2587 1747 BoxF
+.3629 g 2491 1844 BoxF
+.6352 g 2587 1844 BoxF
+.6352 g 2587 1844 BoxF
+.6352 g 2587 1844 BoxF
+.3102 g 2684 200 BoxF
+.3102 g 943 1941 BoxF
+.3092 g 2684 297 BoxF
+.3092 g 1040 1941 BoxF
+.3063 g 2684 393 BoxF
+.3063 g 1136 1941 BoxF
+.3015 g 2684 490 BoxF
+.3015 g 1233 1941 BoxF
+.2941 g 2684 587 BoxF
+.2941 g 1330 1941 BoxF
+.282 g 2684 684 BoxF
+.282 g 1427 1941 BoxF
+.2705 g 2684 780 BoxF
+.2705 g 1523 1941 BoxF
+.2773 g 2684 877 BoxF
+.2773 g 1620 1941 BoxF
+.2853 g 2684 974 BoxF
+.2853 g 1717 1941 BoxF
+.2942 g 2684 1070 BoxF
+.2942 g 1814 1941 BoxF
+.3041 g 2684 1167 BoxF
+.3041 g 1910 1941 BoxF
+.461 g 2684 1264 BoxF
+.461 g 2007 1941 BoxF
+.5112 g 2684 1361 BoxF
+.5112 g 2104 1941 BoxF
+.3387 g 2684 1457 BoxF
+.3387 g 2201 1941 BoxF
+.3512 g 2684 1554 BoxF
+.3512 g 2297 1941 BoxF
+.3643 g 2684 1651 BoxF
+.3643 g 2394 1941 BoxF
+.6201 g 2684 1747 BoxF
+.6201 g 2491 1941 BoxF
+.3897 g 2684 1844 BoxF
+.3897 g 2587 1941 BoxF
+.4013 g 2684 1941 BoxF
+.4013 g 2684 1941 BoxF
+.4013 g 2684 1941 BoxF
+.2997 g 2781 200 BoxF
+.2997 g 943 2038 BoxF
+.2976 g 2781 297 BoxF
+.2976 g 1040 2038 BoxF
+.2914 g 2781 393 BoxF
+.2914 g 1136 2038 BoxF
+.3352 g 2781 490 BoxF
+.3352 g 1233 2038 BoxF
+.2791 g 2781 587 BoxF
+.2791 g 1330 2038 BoxF
+.2839 g 2781 684 BoxF
+.2839 g 1427 2038 BoxF
+.2895 g 2781 780 BoxF
+.2895 g 1523 2038 BoxF
+.2963 g 2781 877 BoxF
+.2963 g 1620 2038 BoxF
+.3041 g 2781 974 BoxF
+.3041 g 1717 2038 BoxF
+.4119 g 2781 1070 BoxF
+.4119 g 1814 2038 BoxF
+.5318 g 2781 1167 BoxF
+.5318 g 1910 2038 BoxF
+.4234 g 2781 1264 BoxF
+.4234 g 2007 2038 BoxF
+.3436 g 2781 1361 BoxF
+.3436 g 2104 2038 BoxF
+.3551 g 2781 1457 BoxF
+.3551 g 2201 2038 BoxF
+.4094 g 2781 1554 BoxF
+.4094 g 2297 2038 BoxF
+.5704 g 2781 1651 BoxF
+.5704 g 2394 2038 BoxF
+.3907 g 2781 1747 BoxF
+.3907 g 2491 2038 BoxF
+.4224 g 2781 1844 BoxF
+.4224 g 2587 2038 BoxF
+.9889 g 2781 1941 BoxF
+.9889 g 2684 2038 BoxF
+.6972 g 2781 2038 BoxF
+.6972 g 2781 2038 BoxF
+.6972 g 2781 2038 BoxF
+.3497 g 2878 200 BoxF
+.3497 g 943 2134 BoxF
+.353 g 2878 297 BoxF
+.353 g 1040 2134 BoxF
+.3454 g 2878 393 BoxF
+.3454 g 1136 2134 BoxF
+.2954 g 2878 490 BoxF
+.2954 g 1233 2134 BoxF
+.2989 g 2878 587 BoxF
+.2989 g 1330 2134 BoxF
+.3034 g 2878 684 BoxF
+.3034 g 1427 2134 BoxF
+.3124 g 2878 780 BoxF
+.3124 g 1523 2134 BoxF
+.4752 g 2878 877 BoxF
+.4752 g 1620 2134 BoxF
+.5176 g 2878 974 BoxF
+.5176 g 1717 2134 BoxF
+.433 g 2878 1070 BoxF
+.433 g 1814 2134 BoxF
+.3405 g 2878 1167 BoxF
+.3405 g 1910 2134 BoxF
+.3502 g 2878 1264 BoxF
+.3502 g 2007 2134 BoxF
+.3606 g 2878 1361 BoxF
+.3606 g 2104 2134 BoxF
+.6138 g 2878 1457 BoxF
+.6138 g 2201 2134 BoxF
+.4762 g 2878 1554 BoxF
+.4762 g 2297 2134 BoxF
+.3928 g 2878 1651 BoxF
+.3928 g 2394 2134 BoxF
+.5506 g 2878 1747 BoxF
+.5506 g 2491 2134 BoxF
+.937 g 2878 1844 BoxF
+.937 g 2587 2134 BoxF
+.6667 g 2878 1941 BoxF
+.6667 g 2684 2134 BoxF
+.4314 g 2878 2038 BoxF
+.4314 g 2781 2134 BoxF
+.4394 g 2878 2134 BoxF
+.4394 g 2878 2134 BoxF
+.4394 g 2878 2134 BoxF
+.3644 g 2974 200 BoxF
+.3644 g 943 2231 BoxF
+.3748 g 2974 297 BoxF
+.3748 g 1040 2231 BoxF
+.4056 g 2974 393 BoxF
+.4056 g 1136 2231 BoxF
+.451 g 2974 490 BoxF
+.451 g 1233 2231 BoxF
+.4946 g 2974 587 BoxF
+.4946 g 1330 2231 BoxF
+.5038 g 2974 684 BoxF
+.5038 g 1427 2231 BoxF
+.4614 g 2974 780 BoxF
+.4614 g 1523 2231 BoxF
+.3719 g 2974 877 BoxF
+.3719 g 1620 2231 BoxF
+.3416 g 2974 974 BoxF
+.3416 g 1717 2231 BoxF
+.3496 g 2974 1070 BoxF
+.3496 g 1814 2231 BoxF
+.3582 g 2974 1167 BoxF
+.3582 g 1910 2231 BoxF
+.4882 g 2974 1264 BoxF
+.4882 g 2007 2231 BoxF
+.5873 g 2974 1361 BoxF
+.5873 g 2104 2231 BoxF
+.3866 g 2974 1457 BoxF
+.3866 g 2201 2231 BoxF
+.3963 g 2974 1554 BoxF
+.3963 g 2297 2231 BoxF
+.711 g 2974 1651 BoxF
+.711 g 2394 2231 BoxF
+.8302 g 2974 1747 BoxF
+.8302 g 2491 2231 BoxF
+.5778 g 2974 1844 BoxF
+.5778 g 2587 2231 BoxF
+.4323 g 2974 1941 BoxF
+.4323 g 2684 2231 BoxF
+.4398 g 2974 2038 BoxF
+.4398 g 2781 2231 BoxF
+.4594 g 2974 2134 BoxF
+.4594 g 2878 2231 BoxF
+.4782 g 2974 2231 BoxF
+.4782 g 2974 2231 BoxF
+.4782 g 2974 2231 BoxF
+.4227 g 3071 200 BoxF
+.4227 g 943 2328 BoxF
+.416 g 3071 297 BoxF
+.416 g 1040 2328 BoxF
+.3941 g 3071 393 BoxF
+.3941 g 1136 2328 BoxF
+.3554 g 3071 490 BoxF
+.3554 g 1233 2328 BoxF
+.3379 g 3071 587 BoxF
+.3379 g 1330 2328 BoxF
+.3418 g 3071 684 BoxF
+.3418 g 1427 2328 BoxF
+.3471 g 3071 780 BoxF
+.3471 g 1523 2328 BoxF
+.3531 g 3071 877 BoxF
+.3531 g 1620 2328 BoxF
+.36 g 3071 974 BoxF
+.36 g 1717 2328 BoxF
+.5261 g 3071 1070 BoxF
+.5261 g 1814 2328 BoxF
+.6022 g 3071 1167 BoxF
+.6022 g 1910 2328 BoxF
+.4232 g 3071 1264 BoxF
+.4232 g 2007 2328 BoxF
+.3922 g 3071 1361 BoxF
+.3922 g 2104 2328 BoxF
+.4012 g 3071 1457 BoxF
+.4012 g 2201 2328 BoxF
+.7638 g 3071 1554 BoxF
+.7638 g 2297 2328 BoxF
+.672 g 3071 1651 BoxF
+.672 g 2394 2328 BoxF
+.439 g 3071 1747 BoxF
+.439 g 2491 2328 BoxF
+.4342 g 3071 1844 BoxF
+.4342 g 2587 2328 BoxF
+.4413 g 3071 1941 BoxF
+.4413 g 2684 2328 BoxF
+.4589 g 3071 2038 BoxF
+.4589 g 2781 2328 BoxF
+.478 g 3071 2134 BoxF
+.478 g 2878 2328 BoxF
+.4961 g 3071 2231 BoxF
+.4961 g 2974 2328 BoxF
+.5129 g 3071 2328 BoxF
+.5129 g 3071 2328 BoxF
+.5129 g 3071 2328 BoxF
+.3498 g 3168 200 BoxF
+.3498 g 943 2424 BoxF
+.3501 g 3168 297 BoxF
+.3501 g 1040 2424 BoxF
+.3513 g 3168 393 BoxF
+.3513 g 1136 2424 BoxF
+.3534 g 3168 490 BoxF
+.3534 g 1233 2424 BoxF
+.3566 g 3168 587 BoxF
+.3566 g 1330 2424 BoxF
+.3606 g 3168 684 BoxF
+.3606 g 1427 2424 BoxF
+.5011 g 3168 780 BoxF
+.5011 g 1523 2424 BoxF
+.6349 g 3168 877 BoxF
+.6349 g 1620 2424 BoxF
+.5581 g 3168 974 BoxF
+.5581 g 1717 2424 BoxF
+.4243 g 3168 1070 BoxF
+.4243 g 1814 2424 BoxF
+.3916 g 3168 1167 BoxF
+.3916 g 1910 2424 BoxF
+.3993 g 3168 1264 BoxF
+.3993 g 2007 2424 BoxF
+.5367 g 3168 1361 BoxF
+.5367 g 2104 2424 BoxF
+.6208 g 3168 1457 BoxF
+.6208 g 2201 2424 BoxF
+.4752 g 3168 1554 BoxF
+.4752 g 2297 2424 BoxF
+.4301 g 3168 1651 BoxF
+.4301 g 2394 2424 BoxF
+.4372 g 3168 1747 BoxF
+.4372 g 2491 2424 BoxF
+.4439 g 3168 1844 BoxF
+.4439 g 2587 2424 BoxF
+.4579 g 3168 1941 BoxF
+.4579 g 2684 2424 BoxF
+.4772 g 3168 2038 BoxF
+.4772 g 2781 2424 BoxF
+.4953 g 3168 2134 BoxF
+.4953 g 2878 2424 BoxF
+.5124 g 3168 2231 BoxF
+.5124 g 2974 2424 BoxF
+.5281 g 3168 2328 BoxF
+.5281 g 3071 2424 BoxF
+.5427 g 3168 2424 BoxF
+.5427 g 3168 2424 BoxF
+.5427 g 3168 2424 BoxF
+.6316 g 3265 200 BoxF
+.6316 g 943 2521 BoxF
+.6351 g 3265 297 BoxF
+.6351 g 1040 2521 BoxF
+.6341 g 3265 393 BoxF
+.6341 g 1136 2521 BoxF
+.623 g 3265 490 BoxF
+.623 g 1233 2521 BoxF
+.5969 g 3265 587 BoxF
+.5969 g 1330 2521 BoxF
+.5502 g 3265 684 BoxF
+.5502 g 1427 2521 BoxF
+.4808 g 3265 780 BoxF
+.4808 g 1523 2521 BoxF
+.3913 g 3265 877 BoxF
+.3913 g 1620 2521 BoxF
+.3947 g 3265 974 BoxF
+.3947 g 1717 2521 BoxF
+.4008 g 3265 1070 BoxF
+.4008 g 1814 2521 BoxF
+.4073 g 3265 1167 BoxF
+.4073 g 1910 2521 BoxF
+.4784 g 3265 1264 BoxF
+.4784 g 2007 2521 BoxF
+.4209 g 3265 1361 BoxF
+.4209 g 2104 2521 BoxF
+.428 g 3265 1457 BoxF
+.428 g 2201 2521 BoxF
+.4349 g 3265 1554 BoxF
+.4349 g 2297 2521 BoxF
+.4413 g 3265 1651 BoxF
+.4413 g 2394 2521 BoxF
+.4474 g 3265 1747 BoxF
+.4474 g 2491 2521 BoxF
+.4572 g 3265 1844 BoxF
+.4572 g 2587 2521 BoxF
+.4759 g 3265 1941 BoxF
+.4759 g 2684 2521 BoxF
+.4939 g 3265 2038 BoxF
+.4939 g 2781 2521 BoxF
+.5113 g 3265 2134 BoxF
+.5113 g 2878 2521 BoxF
+.5271 g 3265 2231 BoxF
+.5271 g 2974 2521 BoxF
+.5421 g 3265 2328 BoxF
+.5421 g 3071 2521 BoxF
+.5553 g 3265 2424 BoxF
+.5553 g 3168 2521 BoxF
+.567 g 3265 2521 BoxF
+.567 g 3265 2521 BoxF
+.567 g 3265 2521 BoxF
+.5104 g 3361 200 BoxF
+.5104 g 943 2618 BoxF
+.5043 g 3361 297 BoxF
+.5043 g 1040 2618 BoxF
+.4843 g 3361 393 BoxF
+.4843 g 1136 2618 BoxF
+.4504 g 3361 490 BoxF
+.4504 g 1233 2618 BoxF
+.4045 g 3361 587 BoxF
+.4045 g 1330 2618 BoxF
+.3968 g 3361 684 BoxF
+.3968 g 1427 2618 BoxF
+.4011 g 3361 780 BoxF
+.4011 g 1523 2618 BoxF
+.4058 g 3361 877 BoxF
+.4058 g 1620 2618 BoxF
+.4113 g 3361 974 BoxF
+.4113 g 1717 2618 BoxF
+.4167 g 3361 1070 BoxF
+.4167 g 1814 2618 BoxF
+.4226 g 3361 1167 BoxF
+.4226 g 1910 2618 BoxF
+.4284 g 3361 1264 BoxF
+.4284 g 2007 2618 BoxF
+.4346 g 3361 1361 BoxF
+.4346 g 2104 2618 BoxF
+.4407 g 3361 1457 BoxF
+.4407 g 2201 2618 BoxF
+.4466 g 3361 1554 BoxF
+.4466 g 2297 2618 BoxF
+.4521 g 3361 1651 BoxF
+.4521 g 2394 2618 BoxF
+.4576 g 3361 1747 BoxF
+.4576 g 2491 2618 BoxF
+.4746 g 3361 1844 BoxF
+.4746 g 2587 2618 BoxF
+.4924 g 3361 1941 BoxF
+.4924 g 2684 2618 BoxF
+.5094 g 3361 2038 BoxF
+.5094 g 2781 2618 BoxF
+.5256 g 3361 2134 BoxF
+.5256 g 2878 2618 BoxF
+.5406 g 3361 2231 BoxF
+.5406 g 2974 2618 BoxF
+.5542 g 3361 2328 BoxF
+.5542 g 3071 2618 BoxF
+.5663 g 3361 2424 BoxF
+.5663 g 3168 2618 BoxF
+.577 g 3361 2521 BoxF
+.577 g 3265 2618 BoxF
+.5854 g 3361 2618 BoxF
+.5854 g 3361 2618 BoxF
+.5854 g 3361 2618 BoxF
+.4055 g 3458 200 BoxF
+.4055 g 943 2715 BoxF
+.4059 g 3458 297 BoxF
+.4059 g 1040 2715 BoxF
+.4069 g 3458 393 BoxF
+.4069 g 1136 2715 BoxF
+.4087 g 3458 490 BoxF
+.4087 g 1233 2715 BoxF
+.4113 g 3458 587 BoxF
+.4113 g 1330 2715 BoxF
+.4147 g 3458 684 BoxF
+.4147 g 1427 2715 BoxF
+.4187 g 3458 780 BoxF
+.4187 g 1523 2715 BoxF
+.4284 g 3458 877 BoxF
+.4284 g 1620 2715 BoxF
+.4277 g 3458 974 BoxF
+.4277 g 1717 2715 BoxF
+.4325 g 3458 1070 BoxF
+.4325 g 1814 2715 BoxF
+.4374 g 3458 1167 BoxF
+.4374 g 1910 2715 BoxF
+.4426 g 3458 1264 BoxF
+.4426 g 2007 2715 BoxF
+.4479 g 3458 1361 BoxF
+.4479 g 2104 2715 BoxF
+.4531 g 3458 1457 BoxF
+.4531 g 2201 2715 BoxF
+.4583 g 3458 1554 BoxF
+.4583 g 2297 2715 BoxF
+.4632 g 3458 1651 BoxF
+.4632 g 2394 2715 BoxF
+.4735 g 3458 1747 BoxF
+.4735 g 2491 2715 BoxF
+.4905 g 3458 1844 BoxF
+.4905 g 2587 2715 BoxF
+.5074 g 3458 1941 BoxF
+.5074 g 2684 2715 BoxF
+.5233 g 3458 2038 BoxF
+.5233 g 2781 2715 BoxF
+.5381 g 3458 2134 BoxF
+.5381 g 2878 2715 BoxF
+.5521 g 3458 2231 BoxF
+.5521 g 2974 2715 BoxF
+.5642 g 3458 2328 BoxF
+.5642 g 3071 2715 BoxF
+.5755 g 3458 2424 BoxF
+.5755 g 3168 2715 BoxF
+.5846 g 3458 2521 BoxF
+.5846 g 3265 2715 BoxF
+.5922 g 3458 2618 BoxF
+.5922 g 3361 2715 BoxF
+.5974 g 3458 2715 BoxF
+.5974 g 3458 2715 BoxF
+.5974 g 3458 2715 BoxF
+.583 g 3555 200 BoxF
+.583 g 943 2811 BoxF
+.5817 g 3555 297 BoxF
+.5817 g 1040 2811 BoxF
+.5693 g 3555 393 BoxF
+.5693 g 1136 2811 BoxF
+.5319 g 3555 490 BoxF
+.5319 g 1233 2811 BoxF
+.4808 g 3555 587 BoxF
+.4808 g 1330 2811 BoxF
+.438 g 3555 684 BoxF
+.438 g 1427 2811 BoxF
+.4376 g 3555 780 BoxF
+.4376 g 1523 2811 BoxF
+.4398 g 3555 877 BoxF
+.4398 g 1620 2811 BoxF
+.4438 g 3555 974 BoxF
+.4438 g 1717 2811 BoxF
+.448 g 3555 1070 BoxF
+.448 g 1814 2811 BoxF
+.4521 g 3555 1167 BoxF
+.4521 g 1910 2811 BoxF
+.4565 g 3555 1264 BoxF
+.4565 g 2007 2811 BoxF
+.4611 g 3555 1361 BoxF
+.4611 g 2104 2811 BoxF
+.4657 g 3555 1457 BoxF
+.4657 g 2201 2811 BoxF
+.4704 g 3555 1554 BoxF
+.4704 g 2297 2811 BoxF
+.4751 g 3555 1651 BoxF
+.4751 g 2394 2811 BoxF
+.489 g 3555 1747 BoxF
+.489 g 2491 2811 BoxF
+.5048 g 3555 1844 BoxF
+.5048 g 2587 2811 BoxF
+.5204 g 3555 1941 BoxF
+.5204 g 2684 2811 BoxF
+.5352 g 3555 2038 BoxF
+.5352 g 2781 2811 BoxF
+.5488 g 3555 2134 BoxF
+.5488 g 2878 2811 BoxF
+.5614 g 3555 2231 BoxF
+.5614 g 2974 2811 BoxF
+.5726 g 3555 2328 BoxF
+.5726 g 3071 2811 BoxF
+.5821 g 3555 2424 BoxF
+.5821 g 3168 2811 BoxF
+.5902 g 3555 2521 BoxF
+.5902 g 3265 2811 BoxF
+.5963 g 3555 2618 BoxF
+.5963 g 3361 2811 BoxF
+.6003 g 3555 2715 BoxF
+.6003 g 3458 2811 BoxF
+.602 g 3555 2811 BoxF
+.602 g 3555 2811 BoxF
+.602 g 3555 2811 BoxF
+.4441 g 3652 200 BoxF
+.4441 g 943 2908 BoxF
+.4443 g 3652 297 BoxF
+.4443 g 1040 2908 BoxF
+.4451 g 3652 393 BoxF
+.4451 g 1136 2908 BoxF
+.4464 g 3652 490 BoxF
+.4464 g 1233 2908 BoxF
+.4482 g 3652 587 BoxF
+.4482 g 1330 2908 BoxF
+.4504 g 3652 684 BoxF
+.4504 g 1427 2908 BoxF
+.4532 g 3652 780 BoxF
+.4532 g 1523 2908 BoxF
+.4563 g 3652 877 BoxF
+.4563 g 1620 2908 BoxF
+.4597 g 3652 974 BoxF
+.4597 g 1717 2908 BoxF
+.4632 g 3652 1070 BoxF
+.4632 g 1814 2908 BoxF
+.4666 g 3652 1167 BoxF
+.4666 g 1910 2908 BoxF
+.4704 g 3652 1264 BoxF
+.4704 g 2007 2908 BoxF
+.4744 g 3652 1361 BoxF
+.4744 g 2104 2908 BoxF
+.4784 g 3652 1457 BoxF
+.4784 g 2201 2908 BoxF
+.4827 g 3652 1554 BoxF
+.4827 g 2297 2908 BoxF
+.4884 g 3652 1651 BoxF
+.4884 g 2394 2908 BoxF
+.5024 g 3652 1747 BoxF
+.5024 g 2491 2908 BoxF
+.5169 g 3652 1844 BoxF
+.5169 g 2587 2908 BoxF
+.5311 g 3652 1941 BoxF
+.5311 g 2684 2908 BoxF
+.5446 g 3652 2038 BoxF
+.5446 g 2781 2908 BoxF
+.5571 g 3652 2134 BoxF
+.5571 g 2878 2908 BoxF
+.5681 g 3652 2231 BoxF
+.5681 g 2974 2908 BoxF
+.5781 g 3652 2328 BoxF
+.5781 g 3071 2908 BoxF
+.5863 g 3652 2424 BoxF
+.5863 g 3168 2908 BoxF
+.5931 g 3652 2521 BoxF
+.5931 g 3265 2908 BoxF
+.5978 g 3652 2618 BoxF
+.5978 g 3361 2908 BoxF
+.6007 g 3652 2715 BoxF
+.6007 g 3458 2908 BoxF
+.6011 g 3652 2811 BoxF
+.6011 g 3555 2908 BoxF
+.5988 g 3652 2908 BoxF
+.5988 g 3652 2908 BoxF
+.5988 g 3652 2908 BoxF
+.4661 g 3748 200 BoxF
+.4661 g 943 3005 BoxF
+.4663 g 3748 297 BoxF
+.4663 g 1040 3005 BoxF
+.4668 g 3748 393 BoxF
+.4668 g 1136 3005 BoxF
+.4677 g 3748 490 BoxF
+.4677 g 1233 3005 BoxF
+.4688 g 3748 587 BoxF
+.4688 g 1330 3005 BoxF
+.4702 g 3748 684 BoxF
+.4702 g 1427 3005 BoxF
+.4717 g 3748 780 BoxF
+.4717 g 1523 3005 BoxF
+.4734 g 3748 877 BoxF
+.4734 g 1620 3005 BoxF
+.4752 g 3748 974 BoxF
+.4752 g 1717 3005 BoxF
+.4778 g 3748 1070 BoxF
+.4778 g 1814 3005 BoxF
+.4806 g 3748 1167 BoxF
+.4806 g 1910 3005 BoxF
+.4836 g 3748 1264 BoxF
+.4836 g 2007 3005 BoxF
+.487 g 3748 1361 BoxF
+.487 g 2104 3005 BoxF
+.4906 g 3748 1457 BoxF
+.4906 g 2201 3005 BoxF
+.4945 g 3748 1554 BoxF
+.4945 g 2297 3005 BoxF
+.5012 g 3748 1651 BoxF
+.5012 g 2394 3005 BoxF
+.5134 g 3748 1747 BoxF
+.5134 g 2491 3005 BoxF
+.5263 g 3748 1844 BoxF
+.5263 g 2587 3005 BoxF
+.539 g 3748 1941 BoxF
+.539 g 2684 3005 BoxF
+.5512 g 3748 2038 BoxF
+.5512 g 2781 3005 BoxF
+.5624 g 3748 2134 BoxF
+.5624 g 2878 3005 BoxF
+.5723 g 3748 2231 BoxF
+.5723 g 2974 3005 BoxF
+.5806 g 3748 2328 BoxF
+.5806 g 3071 3005 BoxF
+.5878 g 3748 2424 BoxF
+.5878 g 3168 3005 BoxF
+.5929 g 3748 2521 BoxF
+.5929 g 3265 3005 BoxF
+.5966 g 3748 2618 BoxF
+.5966 g 3361 3005 BoxF
+.598 g 3748 2715 BoxF
+.598 g 3458 3005 BoxF
+.5971 g 3748 2811 BoxF
+.5971 g 3555 3005 BoxF
+.5937 g 3748 2908 BoxF
+.5937 g 3652 3005 BoxF
+.587 g 3748 3005 BoxF
+.587 g 3748 3005 BoxF
+.587 g 3748 3005 BoxF
+.4854 g 3845 200 BoxF
+.4854 g 943 3101 BoxF
+.4854 g 3845 297 BoxF
+.4854 g 1040 3101 BoxF
+.4856 g 3845 393 BoxF
+.4856 g 1136 3101 BoxF
+.486 g 3845 490 BoxF
+.486 g 1233 3101 BoxF
+.4865 g 3845 587 BoxF
+.4865 g 1330 3101 BoxF
+.4872 g 3845 684 BoxF
+.4872 g 1427 3101 BoxF
+.4878 g 3845 780 BoxF
+.4878 g 1523 3101 BoxF
+.4887 g 3845 877 BoxF
+.4887 g 1620 3101 BoxF
+.4895 g 3845 974 BoxF
+.4895 g 1717 3101 BoxF
+.4907 g 3845 1070 BoxF
+.4907 g 1814 3101 BoxF
+.4929 g 3845 1167 BoxF
+.4929 g 1910 3101 BoxF
+.4953 g 3845 1264 BoxF
+.4953 g 2007 3101 BoxF
+.498 g 3845 1361 BoxF
+.498 g 2104 3101 BoxF
+.5011 g 3845 1457 BoxF
+.5011 g 2201 3101 BoxF
+.5048 g 3845 1554 BoxF
+.5048 g 2297 3101 BoxF
+.511 g 3845 1651 BoxF
+.511 g 2394 3101 BoxF
+.5214 g 3845 1747 BoxF
+.5214 g 2491 3101 BoxF
+.5328 g 3845 1844 BoxF
+.5328 g 2587 3101 BoxF
+.544 g 3845 1941 BoxF
+.544 g 2684 3101 BoxF
+.5547 g 3845 2038 BoxF
+.5547 g 2781 3101 BoxF
+.5643 g 3845 2134 BoxF
+.5643 g 2878 3101 BoxF
+.573 g 3845 2231 BoxF
+.573 g 2974 3101 BoxF
+.5802 g 3845 2328 BoxF
+.5802 g 3071 3101 BoxF
+.5856 g 3845 2424 BoxF
+.5856 g 3168 3101 BoxF
+.5899 g 3845 2521 BoxF
+.5899 g 3265 3101 BoxF
+.5919 g 3845 2618 BoxF
+.5919 g 3361 3101 BoxF
+.5921 g 3845 2715 BoxF
+.5921 g 3458 3101 BoxF
+.59 g 3845 2811 BoxF
+.59 g 3555 3101 BoxF
+.585 g 3845 2908 BoxF
+.585 g 3652 3101 BoxF
+.5775 g 3845 3005 BoxF
+.5775 g 3748 3101 BoxF
+.5669 g 3845 3101 BoxF
+.5669 g 3845 3101 BoxF
+.5669 g 3845 3101 BoxF
+.5007 g 3942 200 BoxF
+.5007 g 943 3198 BoxF
+.5006 g 3942 297 BoxF
+.5006 g 1040 3198 BoxF
+.5006 g 3942 393 BoxF
+.5006 g 1136 3198 BoxF
+.5006 g 3942 490 BoxF
+.5006 g 1233 3198 BoxF
+.5007 g 3942 587 BoxF
+.5007 g 1330 3198 BoxF
+.5007 g 3942 684 BoxF
+.5007 g 1427 3198 BoxF
+.5007 g 3942 780 BoxF
+.5007 g 1523 3198 BoxF
+.5007 g 3942 877 BoxF
+.5007 g 1620 3198 BoxF
+.5005 g 3942 974 BoxF
+.5005 g 1717 3198 BoxF
+.5008 g 3942 1070 BoxF
+.5008 g 1814 3198 BoxF
+.5025 g 3942 1167 BoxF
+.5025 g 1910 3198 BoxF
+.5041 g 3942 1264 BoxF
+.5041 g 2007 3198 BoxF
+.5063 g 3942 1361 BoxF
+.5063 g 2104 3198 BoxF
+.5091 g 3942 1457 BoxF
+.5091 g 2201 3198 BoxF
+.5126 g 3942 1554 BoxF
+.5126 g 2297 3198 BoxF
+.517 g 3942 1651 BoxF
+.517 g 2394 3198 BoxF
+.5258 g 3942 1747 BoxF
+.5258 g 2491 3198 BoxF
+.5356 g 3942 1844 BoxF
+.5356 g 2587 3198 BoxF
+.5454 g 3942 1941 BoxF
+.5454 g 2684 3198 BoxF
+.5546 g 3942 2038 BoxF
+.5546 g 2781 3198 BoxF
+.5628 g 3942 2134 BoxF
+.5628 g 2878 3198 BoxF
+.5699 g 3942 2231 BoxF
+.5699 g 2974 3198 BoxF
+.5758 g 3942 2328 BoxF
+.5758 g 3071 3198 BoxF
+.5803 g 3942 2424 BoxF
+.5803 g 3168 3198 BoxF
+.5828 g 3942 2521 BoxF
+.5828 g 3265 3198 BoxF
+.5837 g 3942 2618 BoxF
+.5837 g 3361 3198 BoxF
+.5826 g 3942 2715 BoxF
+.5826 g 3458 3198 BoxF
+.579 g 3942 2811 BoxF
+.579 g 3555 3198 BoxF
+.5732 g 3942 2908 BoxF
+.5732 g 3652 3198 BoxF
+.5646 g 3942 3005 BoxF
+.5646 g 3748 3198 BoxF
+.5531 g 3942 3101 BoxF
+.5531 g 3845 3198 BoxF
+.5385 g 3942 3198 BoxF
+.5385 g 3942 3198 BoxF
+.5385 g 3942 3198 BoxF
+.5116 g 4039 200 BoxF
+.5116 g 943 3295 BoxF
+.5115 g 4039 297 BoxF
+.5115 g 1040 3295 BoxF
+.5113 g 4039 393 BoxF
+.5113 g 1136 3295 BoxF
+.5109 g 4039 490 BoxF
+.5109 g 1233 3295 BoxF
+.5105 g 4039 587 BoxF
+.5105 g 1330 3295 BoxF
+.51 g 4039 684 BoxF
+.51 g 1427 3295 BoxF
+.5093 g 4039 780 BoxF
+.5093 g 1523 3295 BoxF
+.5084 g 4039 877 BoxF
+.5084 g 1620 3295 BoxF
+.5074 g 4039 974 BoxF
+.5074 g 1717 3295 BoxF
+.5072 g 4039 1070 BoxF
+.5072 g 1814 3295 BoxF
+.5083 g 4039 1167 BoxF
+.5083 g 1910 3295 BoxF
+.5096 g 4039 1264 BoxF
+.5096 g 2007 3295 BoxF
+.5112 g 4039 1361 BoxF
+.5112 g 2104 3295 BoxF
+.5136 g 4039 1457 BoxF
+.5136 g 2201 3295 BoxF
+.5165 g 4039 1554 BoxF
+.5165 g 2297 3295 BoxF
+.5199 g 4039 1651 BoxF
+.5199 g 2394 3295 BoxF
+.526 g 4039 1747 BoxF
+.526 g 2491 3295 BoxF
+.5343 g 4039 1844 BoxF
+.5343 g 2587 3295 BoxF
+.5425 g 4039 1941 BoxF
+.5425 g 2684 3295 BoxF
+.5502 g 4039 2038 BoxF
+.5502 g 2781 3295 BoxF
+.5572 g 4039 2134 BoxF
+.5572 g 2878 3295 BoxF
+.5631 g 4039 2231 BoxF
+.5631 g 2974 3295 BoxF
+.5677 g 4039 2328 BoxF
+.5677 g 3071 3295 BoxF
+.5707 g 4039 2424 BoxF
+.5707 g 3168 3295 BoxF
+.5721 g 4039 2521 BoxF
+.5721 g 3265 3295 BoxF
+.5717 g 4039 2618 BoxF
+.5717 g 3361 3295 BoxF
+.5692 g 4039 2715 BoxF
+.5692 g 3458 3295 BoxF
+.5645 g 4039 2811 BoxF
+.5645 g 3555 3295 BoxF
+.5577 g 4039 2908 BoxF
+.5577 g 3652 3295 BoxF
+.5483 g 4039 3005 BoxF
+.5483 g 3748 3295 BoxF
+.536 g 4039 3101 BoxF
+.536 g 3845 3295 BoxF
+.5209 g 4039 3198 BoxF
+.5209 g 3942 3295 BoxF
+.5032 g 4039 3295 BoxF
+.5032 g 4039 3295 BoxF
+.5032 g 4039 3295 BoxF
+.5168 g 4135 200 BoxF
+.5168 g 943 3392 BoxF
+.5167 g 4135 297 BoxF
+.5167 g 1040 3392 BoxF
+.5163 g 4135 393 BoxF
+.5163 g 1136 3392 BoxF
+.5157 g 4135 490 BoxF
+.5157 g 1233 3392 BoxF
+.5148 g 4135 587 BoxF
+.5148 g 1330 3392 BoxF
+.5138 g 4135 684 BoxF
+.5138 g 1427 3392 BoxF
+.5126 g 4135 780 BoxF
+.5126 g 1523 3392 BoxF
+.5112 g 4135 877 BoxF
+.5112 g 1620 3392 BoxF
+.5095 g 4135 974 BoxF
+.5095 g 1717 3392 BoxF
+.5092 g 4135 1070 BoxF
+.5092 g 1814 3392 BoxF
+.5096 g 4135 1167 BoxF
+.5096 g 1910 3392 BoxF
+.5105 g 4135 1264 BoxF
+.5105 g 2007 3392 BoxF
+.5118 g 4135 1361 BoxF
+.5118 g 2104 3392 BoxF
+.5135 g 4135 1457 BoxF
+.5135 g 2201 3392 BoxF
+.5157 g 4135 1554 BoxF
+.5157 g 2297 3392 BoxF
+.5183 g 4135 1651 BoxF
+.5183 g 2394 3392 BoxF
+.5215 g 4135 1747 BoxF
+.5215 g 2491 3392 BoxF
+.5282 g 4135 1844 BoxF
+.5282 g 2587 3392 BoxF
+.5352 g 4135 1941 BoxF
+.5352 g 2684 3392 BoxF
+.5416 g 4135 2038 BoxF
+.5416 g 2781 3392 BoxF
+.5473 g 4135 2134 BoxF
+.5473 g 2878 3392 BoxF
+.5518 g 4135 2231 BoxF
+.5518 g 2974 3392 BoxF
+.5551 g 4135 2328 BoxF
+.5551 g 3071 3392 BoxF
+.5571 g 4135 2424 BoxF
+.5571 g 3168 3392 BoxF
+.5574 g 4135 2521 BoxF
+.5574 g 3265 3392 BoxF
+.5557 g 4135 2618 BoxF
+.5557 g 3361 3392 BoxF
+.552 g 4135 2715 BoxF
+.552 g 3458 3392 BoxF
+.5465 g 4135 2811 BoxF
+.5465 g 3555 3392 BoxF
+.5388 g 4135 2908 BoxF
+.5388 g 3652 3392 BoxF
+.5285 g 4135 3005 BoxF
+.5285 g 3748 3392 BoxF
+.5158 g 4135 3101 BoxF
+.5158 g 3845 3392 BoxF
+.5005 g 4135 3198 BoxF
+.5005 g 3942 3392 BoxF
+.4829 g 4135 3295 BoxF
+.4829 g 4039 3392 BoxF
+.4666 g 4135 3392 BoxF
+.4666 g 4135 3392 BoxF
+.4666 g 4135 3392 BoxF
+.5168 g 4232 200 BoxF
+.5168 g 943 3488 BoxF
+.5166 g 4232 297 BoxF
+.5166 g 1040 3488 BoxF
+.5161 g 4232 393 BoxF
+.5161 g 1136 3488 BoxF
+.5151 g 4232 490 BoxF
+.5151 g 1233 3488 BoxF
+.5138 g 4232 587 BoxF
+.5138 g 1330 3488 BoxF
+.5122 g 4232 684 BoxF
+.5122 g 1427 3488 BoxF
+.5104 g 4232 780 BoxF
+.5104 g 1523 3488 BoxF
+.5082 g 4232 877 BoxF
+.5082 g 1620 3488 BoxF
+.5061 g 4232 974 BoxF
+.5061 g 1717 3488 BoxF
+.5061 g 4232 1070 BoxF
+.5061 g 1814 3488 BoxF
+.5061 g 4232 1167 BoxF
+.5061 g 1910 3488 BoxF
+.5065 g 4232 1264 BoxF
+.5065 g 2007 3488 BoxF
+.5074 g 4232 1361 BoxF
+.5074 g 2104 3488 BoxF
+.5085 g 4232 1457 BoxF
+.5085 g 2201 3488 BoxF
+.5098 g 4232 1554 BoxF
+.5098 g 2297 3488 BoxF
+.5115 g 4232 1651 BoxF
+.5115 g 2394 3488 BoxF
+.5135 g 4232 1747 BoxF
+.5135 g 2491 3488 BoxF
+.5176 g 4232 1844 BoxF
+.5176 g 2587 3488 BoxF
+.523 g 4232 1941 BoxF
+.523 g 2684 3488 BoxF
+.5281 g 4232 2038 BoxF
+.5281 g 2781 3488 BoxF
+.5326 g 4232 2134 BoxF
+.5326 g 2878 3488 BoxF
+.5361 g 4232 2231 BoxF
+.5361 g 2974 3488 BoxF
+.5385 g 4232 2328 BoxF
+.5385 g 3071 3488 BoxF
+.5394 g 4232 2424 BoxF
+.5394 g 3168 3488 BoxF
+.5385 g 4232 2521 BoxF
+.5385 g 3265 3488 BoxF
+.5358 g 4232 2618 BoxF
+.5358 g 3361 3488 BoxF
+.5312 g 4232 2715 BoxF
+.5312 g 3458 3488 BoxF
+.5249 g 4232 2811 BoxF
+.5249 g 3555 3488 BoxF
+.5164 g 4232 2908 BoxF
+.5164 g 3652 3488 BoxF
+.5057 g 4232 3005 BoxF
+.5057 g 3748 3488 BoxF
+.4926 g 4232 3101 BoxF
+.4926 g 3845 3488 BoxF
+.4774 g 4232 3198 BoxF
+.4774 g 3942 3488 BoxF
+.4637 g 4232 3295 BoxF
+.4637 g 4039 3488 BoxF
+.4476 g 4232 3392 BoxF
+.4476 g 4135 3488 BoxF
+.4295 g 4232 3488 BoxF
+.4295 g 4232 3488 BoxF
+.4295 g 4232 3488 BoxF
+.51 g 4329 200 BoxF
+.51 g 943 3585 BoxF
+.5098 g 4329 297 BoxF
+.5098 g 1040 3585 BoxF
+.509 g 4329 393 BoxF
+.509 g 1136 3585 BoxF
+.5079 g 4329 490 BoxF
+.5079 g 1233 3585 BoxF
+.5064 g 4329 587 BoxF
+.5064 g 1330 3585 BoxF
+.5045 g 4329 684 BoxF
+.5045 g 1427 3585 BoxF
+.5022 g 4329 780 BoxF
+.5022 g 1523 3585 BoxF
+.4996 g 4329 877 BoxF
+.4996 g 1620 3585 BoxF
+.4981 g 4329 974 BoxF
+.4981 g 1717 3585 BoxF
+.4978 g 4329 1070 BoxF
+.4978 g 1814 3585 BoxF
+.4975 g 4329 1167 BoxF
+.4975 g 1910 3585 BoxF
+.4974 g 4329 1264 BoxF
+.4974 g 2007 3585 BoxF
+.4977 g 4329 1361 BoxF
+.4977 g 2104 3585 BoxF
+.4981 g 4329 1457 BoxF
+.4981 g 2201 3585 BoxF
+.4987 g 4329 1554 BoxF
+.4987 g 2297 3585 BoxF
+.4997 g 4329 1651 BoxF
+.4997 g 2394 3585 BoxF
+.5009 g 4329 1747 BoxF
+.5009 g 2491 3585 BoxF
+.5024 g 4329 1844 BoxF
+.5024 g 2587 3585 BoxF
+.5064 g 4329 1941 BoxF
+.5064 g 2684 3585 BoxF
+.5104 g 4329 2038 BoxF
+.5104 g 2781 3585 BoxF
+.5137 g 4329 2134 BoxF
+.5137 g 2878 3585 BoxF
+.5161 g 4329 2231 BoxF
+.5161 g 2974 3585 BoxF
+.5174 g 4329 2328 BoxF
+.5174 g 3071 3585 BoxF
+.5173 g 4329 2424 BoxF
+.5173 g 3168 3585 BoxF
+.5156 g 4329 2521 BoxF
+.5156 g 3265 3585 BoxF
+.5121 g 4329 2618 BoxF
+.5121 g 3361 3585 BoxF
+.5069 g 4329 2715 BoxF
+.5069 g 3458 3585 BoxF
+.5 g 4329 2811 BoxF
+.5 g 3555 3585 BoxF
+.491 g 4329 2908 BoxF
+.491 g 3652 3585 BoxF
+.48 g 4329 3005 BoxF
+.48 g 3748 3585 BoxF
+.467 g 4329 3101 BoxF
+.467 g 3845 3585 BoxF
+.4553 g 4329 3198 BoxF
+.4553 g 3942 3585 BoxF
+.4419 g 4329 3295 BoxF
+.4419 g 4039 3585 BoxF
+.4264 g 4329 3392 BoxF
+.4264 g 4135 3585 BoxF
+.4094 g 4329 3488 BoxF
+.4094 g 4232 3585 BoxF
+.39 g 4329 3585 BoxF
+.39 g 4329 3585 BoxF
+.39 g 4329 3585 BoxF
+.4972 g 4425 200 BoxF
+.4972 g 943 3682 BoxF
+.4969 g 4425 297 BoxF
+.4969 g 1040 3682 BoxF
+.4961 g 4425 393 BoxF
+.4961 g 1136 3682 BoxF
+.4947 g 4425 490 BoxF
+.4947 g 1233 3682 BoxF
+.4928 g 4425 587 BoxF
+.4928 g 1330 3682 BoxF
+.4905 g 4425 684 BoxF
+.4905 g 1427 3682 BoxF
+.488 g 4425 780 BoxF
+.488 g 1523 3682 BoxF
+.4857 g 4425 877 BoxF
+.4857 g 1620 3682 BoxF
+.4848 g 4425 974 BoxF
+.4848 g 1717 3682 BoxF
+.4841 g 4425 1070 BoxF
+.4841 g 1814 3682 BoxF
+.4833 g 4425 1167 BoxF
+.4833 g 1910 3682 BoxF
+.4831 g 4425 1264 BoxF
+.4831 g 2007 3682 BoxF
+.4826 g 4425 1361 BoxF
+.4826 g 2104 3682 BoxF
+.4825 g 4425 1457 BoxF
+.4825 g 2201 3682 BoxF
+.4826 g 4425 1554 BoxF
+.4826 g 2297 3682 BoxF
+.4827 g 4425 1651 BoxF
+.4827 g 2394 3682 BoxF
+.4832 g 4425 1747 BoxF
+.4832 g 2491 3682 BoxF
+.484 g 4425 1844 BoxF
+.484 g 2587 3682 BoxF
+.4851 g 4425 1941 BoxF
+.4851 g 2684 3682 BoxF
+.4881 g 4425 2038 BoxF
+.4881 g 2781 3682 BoxF
+.4904 g 4425 2134 BoxF
+.4904 g 2878 3682 BoxF
+.4919 g 4425 2231 BoxF
+.4919 g 2974 3682 BoxF
+.4923 g 4425 2328 BoxF
+.4923 g 3071 3682 BoxF
+.4914 g 4425 2424 BoxF
+.4914 g 3168 3682 BoxF
+.489 g 4425 2521 BoxF
+.489 g 3265 3682 BoxF
+.485 g 4425 2618 BoxF
+.485 g 3361 3682 BoxF
+.4793 g 4425 2715 BoxF
+.4793 g 3458 3682 BoxF
+.472 g 4425 2811 BoxF
+.472 g 3555 3682 BoxF
+.4628 g 4425 2908 BoxF
+.4628 g 3652 3682 BoxF
+.4521 g 4425 3005 BoxF
+.4521 g 3748 3682 BoxF
+.4418 g 4425 3101 BoxF
+.4418 g 3845 3682 BoxF
+.4307 g 4425 3198 BoxF
+.4307 g 3942 3682 BoxF
+.4177 g 4425 3295 BoxF
+.4177 g 4039 3682 BoxF
+.4033 g 4425 3392 BoxF
+.4033 g 4135 3682 BoxF
+.3869 g 4425 3488 BoxF
+.3869 g 4232 3682 BoxF
+.3684 g 4425 3585 BoxF
+.3684 g 4329 3682 BoxF
+.348 g 4425 3682 BoxF
+.348 g 4425 3682 BoxF
+.348 g 4425 3682 BoxF
+.478 g 4522 200 BoxF
+.478 g 943 3778 BoxF
+.4777 g 4522 297 BoxF
+.4777 g 1040 3778 BoxF
+.4768 g 4522 393 BoxF
+.4768 g 1136 3778 BoxF
+.4754 g 4522 490 BoxF
+.4754 g 1233 3778 BoxF
+.4735 g 4522 587 BoxF
+.4735 g 1330 3778 BoxF
+.471 g 4522 684 BoxF
+.471 g 1427 3778 BoxF
+.4681 g 4522 780 BoxF
+.4681 g 1523 3778 BoxF
+.4673 g 4522 877 BoxF
+.4673 g 1620 3778 BoxF
+.4663 g 4522 974 BoxF
+.4663 g 1717 3778 BoxF
+.4653 g 4522 1070 BoxF
+.4653 g 1814 3778 BoxF
+.4643 g 4522 1167 BoxF
+.4643 g 1910 3778 BoxF
+.4633 g 4522 1264 BoxF
+.4633 g 2007 3778 BoxF
+.4626 g 4522 1361 BoxF
+.4626 g 2104 3778 BoxF
+.462 g 4522 1457 BoxF
+.462 g 2201 3778 BoxF
+.4614 g 4522 1554 BoxF
+.4614 g 2297 3778 BoxF
+.4612 g 4522 1651 BoxF
+.4612 g 2394 3778 BoxF
+.461 g 4522 1747 BoxF
+.461 g 2491 3778 BoxF
+.461 g 4522 1844 BoxF
+.461 g 2587 3778 BoxF
+.4612 g 4522 1941 BoxF
+.4612 g 2684 3778 BoxF
+.4618 g 4522 2038 BoxF
+.4618 g 2781 3778 BoxF
+.4633 g 4522 2134 BoxF
+.4633 g 2878 3778 BoxF
+.4639 g 4522 2231 BoxF
+.4639 g 2974 3778 BoxF
+.4636 g 4522 2328 BoxF
+.4636 g 3071 3778 BoxF
+.4621 g 4522 2424 BoxF
+.4621 g 3168 3778 BoxF
+.4592 g 4522 2521 BoxF
+.4592 g 3265 3778 BoxF
+.4549 g 4522 2618 BoxF
+.4549 g 3361 3778 BoxF
+.449 g 4522 2715 BoxF
+.449 g 3458 3778 BoxF
+.4414 g 4522 2811 BoxF
+.4414 g 3555 3778 BoxF
+.4328 g 4522 2908 BoxF
+.4328 g 3652 3778 BoxF
+.4243 g 4522 3005 BoxF
+.4243 g 3748 3778 BoxF
+.4145 g 4522 3101 BoxF
+.4145 g 3845 3778 BoxF
+.4038 g 4522 3198 BoxF
+.4038 g 3942 3778 BoxF
+.3914 g 4522 3295 BoxF
+.3914 g 4039 3778 BoxF
+.3779 g 4522 3392 BoxF
+.3779 g 4135 3778 BoxF
+.3624 g 4522 3488 BoxF
+.3624 g 4232 3778 BoxF
+.3449 g 4522 3585 BoxF
+.3449 g 4329 3778 BoxF
+.3257 g 4522 3682 BoxF
+.3257 g 4425 3778 BoxF
+.3049 g 4522 3778 BoxF
+.3049 g 4522 3778 BoxF
+.3049 g 4522 3778 BoxF
+.4531 g 4619 200 BoxF
+.4531 g 943 3875 BoxF
+.4528 g 4619 297 BoxF
+.4528 g 1040 3875 BoxF
+.4519 g 4619 393 BoxF
+.4519 g 1136 3875 BoxF
+.4505 g 4619 490 BoxF
+.4505 g 1233 3875 BoxF
+.4485 g 4619 587 BoxF
+.4485 g 1330 3875 BoxF
+.4461 g 4619 684 BoxF
+.4461 g 1427 3875 BoxF
+.4449 g 4619 780 BoxF
+.4449 g 1523 3875 BoxF
+.4437 g 4619 877 BoxF
+.4437 g 1620 3875 BoxF
+.4427 g 4619 974 BoxF
+.4427 g 1717 3875 BoxF
+.4414 g 4619 1070 BoxF
+.4414 g 1814 3875 BoxF
+.4401 g 4619 1167 BoxF
+.4401 g 1910 3875 BoxF
+.439 g 4619 1264 BoxF
+.439 g 2007 3875 BoxF
+.4377 g 4619 1361 BoxF
+.4377 g 2104 3875 BoxF
+.4367 g 4619 1457 BoxF
+.4367 g 2201 3875 BoxF
+.4358 g 4619 1554 BoxF
+.4358 g 2297 3875 BoxF
+.4349 g 4619 1651 BoxF
+.4349 g 2394 3875 BoxF
+.4344 g 4619 1747 BoxF
+.4344 g 2491 3875 BoxF
+.434 g 4619 1844 BoxF
+.434 g 2587 3875 BoxF
+.4335 g 4619 1941 BoxF
+.4335 g 2684 3875 BoxF
+.4333 g 4619 2038 BoxF
+.4333 g 2781 3875 BoxF
+.4329 g 4619 2134 BoxF
+.4329 g 2878 3875 BoxF
+.4328 g 4619 2231 BoxF
+.4328 g 2974 3875 BoxF
+.4319 g 4619 2328 BoxF
+.4319 g 3071 3875 BoxF
+.4299 g 4619 2424 BoxF
+.4299 g 3168 3875 BoxF
+.4267 g 4619 2521 BoxF
+.4267 g 3265 3875 BoxF
+.4222 g 4619 2618 BoxF
+.4222 g 3361 3875 BoxF
+.4162 g 4619 2715 BoxF
+.4162 g 3458 3875 BoxF
+.4099 g 4619 2811 BoxF
+.4099 g 3555 3875 BoxF
+.4023 g 4619 2908 BoxF
+.4023 g 3652 3875 BoxF
+.3943 g 4619 3005 BoxF
+.3943 g 3748 3875 BoxF
+.385 g 4619 3101 BoxF
+.385 g 3845 3875 BoxF
+.3748 g 4619 3198 BoxF
+.3748 g 3942 3875 BoxF
+.3632 g 4619 3295 BoxF
+.3632 g 4039 3875 BoxF
+.3505 g 4619 3392 BoxF
+.3505 g 4135 3875 BoxF
+.336 g 4619 3488 BoxF
+.336 g 4232 3875 BoxF
+.3197 g 4619 3585 BoxF
+.3197 g 4329 3875 BoxF
+.3018 g 4619 3682 BoxF
+.3018 g 4425 3875 BoxF
+.2826 g 4619 3778 BoxF
+.2826 g 4522 3875 BoxF
+.2619 g 4619 3875 BoxF
+.2619 g 4619 3875 BoxF
+.2619 g 4619 3875 BoxF
+.4238 g 4716 200 BoxF
+.4238 g 943 3972 BoxF
+.4234 g 4716 297 BoxF
+.4234 g 1040 3972 BoxF
+.4224 g 4716 393 BoxF
+.4224 g 1136 3972 BoxF
+.4207 g 4716 490 BoxF
+.4207 g 1233 3972 BoxF
+.4187 g 4716 587 BoxF
+.4187 g 1330 3972 BoxF
+.4176 g 4716 684 BoxF
+.4176 g 1427 3972 BoxF
+.4167 g 4716 780 BoxF
+.4167 g 1523 3972 BoxF
+.4157 g 4716 877 BoxF
+.4157 g 1620 3972 BoxF
+.4143 g 4716 974 BoxF
+.4143 g 1717 3972 BoxF
+.4129 g 4716 1070 BoxF
+.4129 g 1814 3972 BoxF
+.4116 g 4716 1167 BoxF
+.4116 g 1910 3972 BoxF
+.4099 g 4716 1264 BoxF
+.4099 g 2007 3972 BoxF
+.4087 g 4716 1361 BoxF
+.4087 g 2104 3972 BoxF
+.4072 g 4716 1457 BoxF
+.4072 g 2201 3972 BoxF
+.4061 g 4716 1554 BoxF
+.4061 g 2297 3972 BoxF
+.4048 g 4716 1651 BoxF
+.4048 g 2394 3972 BoxF
+.4039 g 4716 1747 BoxF
+.4039 g 2491 3972 BoxF
+.4032 g 4716 1844 BoxF
+.4032 g 2587 3972 BoxF
+.4025 g 4716 1941 BoxF
+.4025 g 2684 3972 BoxF
+.4017 g 4716 2038 BoxF
+.4017 g 2781 3972 BoxF
+.4011 g 4716 2134 BoxF
+.4011 g 2878 3972 BoxF
+.3999 g 4716 2231 BoxF
+.3999 g 2974 3972 BoxF
+.3981 g 4716 2328 BoxF
+.3981 g 3071 3972 BoxF
+.3957 g 4716 2424 BoxF
+.3957 g 3168 3972 BoxF
+.3924 g 4716 2521 BoxF
+.3924 g 3265 3972 BoxF
+.3883 g 4716 2618 BoxF
+.3883 g 3361 3972 BoxF
+.3831 g 4716 2715 BoxF
+.3831 g 3458 3972 BoxF
+.3771 g 4716 2811 BoxF
+.3771 g 3555 3972 BoxF
+.3699 g 4716 2908 BoxF
+.3699 g 3652 3972 BoxF
+.3623 g 4716 3005 BoxF
+.3623 g 3748 3972 BoxF
+.3535 g 4716 3101 BoxF
+.3535 g 3845 3972 BoxF
+.344 g 4716 3198 BoxF
+.344 g 3942 3972 BoxF
+.3331 g 4716 3295 BoxF
+.3331 g 4039 3972 BoxF
+.3213 g 4716 3392 BoxF
+.3213 g 4135 3972 BoxF
+.3079 g 4716 3488 BoxF
+.3079 g 4232 3972 BoxF
+.2929 g 4716 3585 BoxF
+.2929 g 4329 3972 BoxF
+.2765 g 4716 3682 BoxF
+.2765 g 4425 3972 BoxF
+.2588 g 4716 3778 BoxF
+.2588 g 4522 3972 BoxF
+.2399 g 4716 3875 BoxF
+.2399 g 4619 3972 BoxF
+.2198 g 4716 3972 BoxF
+.2198 g 4716 3972 BoxF
+.2198 g 4716 3972 BoxF
+.3899 g 4812 200 BoxF
+.3899 g 943 4069 BoxF
+.3896 g 4812 297 BoxF
+.3896 g 1040 4069 BoxF
+.3885 g 4812 393 BoxF
+.3885 g 1136 4069 BoxF
+.387 g 4812 490 BoxF
+.387 g 1233 4069 BoxF
+.3863 g 4812 587 BoxF
+.3863 g 1330 4069 BoxF
+.3854 g 4812 684 BoxF
+.3854 g 1427 4069 BoxF
+.3844 g 4812 780 BoxF
+.3844 g 1523 4069 BoxF
+.3832 g 4812 877 BoxF
+.3832 g 1620 4069 BoxF
+.3819 g 4812 974 BoxF
+.3819 g 1717 4069 BoxF
+.3806 g 4812 1070 BoxF
+.3806 g 1814 4069 BoxF
+.3789 g 4812 1167 BoxF
+.3789 g 1910 4069 BoxF
+.3774 g 4812 1264 BoxF
+.3774 g 2007 4069 BoxF
+.3758 g 4812 1361 BoxF
+.3758 g 2104 4069 BoxF
+.3743 g 4812 1457 BoxF
+.3743 g 2201 4069 BoxF
+.3728 g 4812 1554 BoxF
+.3728 g 2297 4069 BoxF
+.3715 g 4812 1651 BoxF
+.3715 g 2394 4069 BoxF
+.3701 g 4812 1747 BoxF
+.3701 g 2491 4069 BoxF
+.3693 g 4812 1844 BoxF
+.3693 g 2587 4069 BoxF
+.3685 g 4812 1941 BoxF
+.3685 g 2684 4069 BoxF
+.3675 g 4812 2038 BoxF
+.3675 g 2781 4069 BoxF
+.3666 g 4812 2134 BoxF
+.3666 g 2878 4069 BoxF
+.3653 g 4812 2231 BoxF
+.3653 g 2974 4069 BoxF
+.3633 g 4812 2328 BoxF
+.3633 g 3071 4069 BoxF
+.3608 g 4812 2424 BoxF
+.3608 g 3168 4069 BoxF
+.3574 g 4812 2521 BoxF
+.3574 g 3265 4069 BoxF
+.3533 g 4812 2618 BoxF
+.3533 g 3361 4069 BoxF
+.3483 g 4812 2715 BoxF
+.3483 g 3458 4069 BoxF
+.3426 g 4812 2811 BoxF
+.3426 g 3555 4069 BoxF
+.3358 g 4812 2908 BoxF
+.3358 g 3652 4069 BoxF
+.3286 g 4812 3005 BoxF
+.3286 g 3748 4069 BoxF
+.3204 g 4812 3101 BoxF
+.3204 g 3845 4069 BoxF
+.3116 g 4812 3198 BoxF
+.3116 g 3942 4069 BoxF
+.3014 g 4812 3295 BoxF
+.3014 g 4039 4069 BoxF
+.2907 g 4812 3392 BoxF
+.2907 g 4135 4069 BoxF
+.2785 g 4812 3488 BoxF
+.2785 g 4232 4069 BoxF
+.2649 g 4812 3585 BoxF
+.2649 g 4329 4069 BoxF
+.25 g 4812 3682 BoxF
+.25 g 4425 4069 BoxF
+.2339 g 4812 3778 BoxF
+.2339 g 4522 4069 BoxF
+.2168 g 4812 3875 BoxF
+.2168 g 4619 4069 BoxF
+.1988 g 4812 3972 BoxF
+.1988 g 4716 4069 BoxF
+.18 g 4812 4069 BoxF
+.18 g 4812 4069 BoxF
+.18 g 4812 4069 BoxF
+.3524 g 4909 200 BoxF
+.3524 g 943 4165 BoxF
+.3522 g 4909 297 BoxF
+.3522 g 1040 4165 BoxF
+.3518 g 4909 393 BoxF
+.3518 g 1136 4165 BoxF
+.3512 g 4909 490 BoxF
+.3512 g 1233 4165 BoxF
+.3504 g 4909 587 BoxF
+.3504 g 1330 4165 BoxF
+.3495 g 4909 684 BoxF
+.3495 g 1427 4165 BoxF
+.3484 g 4909 780 BoxF
+.3484 g 1523 4165 BoxF
+.3473 g 4909 877 BoxF
+.3473 g 1620 4165 BoxF
+.3461 g 4909 974 BoxF
+.3461 g 1717 4165 BoxF
+.3447 g 4909 1070 BoxF
+.3447 g 1814 4165 BoxF
+.3431 g 4909 1167 BoxF
+.3431 g 1910 4165 BoxF
+.3416 g 4909 1264 BoxF
+.3416 g 2007 4165 BoxF
+.3399 g 4909 1361 BoxF
+.3399 g 2104 4165 BoxF
+.3384 g 4909 1457 BoxF
+.3384 g 2201 4165 BoxF
+.3368 g 4909 1554 BoxF
+.3368 g 2297 4165 BoxF
+.3355 g 4909 1651 BoxF
+.3355 g 2394 4165 BoxF
+.3341 g 4909 1747 BoxF
+.3341 g 2491 4165 BoxF
+.3331 g 4909 1844 BoxF
+.3331 g 2587 4165 BoxF
+.3322 g 4909 1941 BoxF
+.3322 g 2684 4165 BoxF
+.3311 g 4909 2038 BoxF
+.3311 g 2781 4165 BoxF
+.3301 g 4909 2134 BoxF
+.3301 g 2878 4165 BoxF
+.3287 g 4909 2231 BoxF
+.3287 g 2974 4165 BoxF
+.3267 g 4909 2328 BoxF
+.3267 g 3071 4165 BoxF
+.3241 g 4909 2424 BoxF
+.3241 g 3168 4165 BoxF
+.3209 g 4909 2521 BoxF
+.3209 g 3265 4165 BoxF
+.3169 g 4909 2618 BoxF
+.3169 g 3361 4165 BoxF
+.3122 g 4909 2715 BoxF
+.3122 g 3458 4165 BoxF
+.3068 g 4909 2811 BoxF
+.3068 g 3555 4165 BoxF
+.3006 g 4909 2908 BoxF
+.3006 g 3652 4165 BoxF
+.2938 g 4909 3005 BoxF
+.2938 g 3748 4165 BoxF
+.2861 g 4909 3101 BoxF
+.2861 g 3845 4165 BoxF
+.2781 g 4909 3198 BoxF
+.2781 g 3942 4165 BoxF
+.2689 g 4909 3295 BoxF
+.2689 g 4039 4165 BoxF
+.259 g 4909 3392 BoxF
+.259 g 4135 4165 BoxF
+.2481 g 4909 3488 BoxF
+.2481 g 4232 4165 BoxF
+.236 g 4909 3585 BoxF
+.236 g 4329 4165 BoxF
+.2228 g 4909 3682 BoxF
+.2228 g 4425 4165 BoxF
+.2085 g 4909 3778 BoxF
+.2085 g 4522 4165 BoxF
+.1933 g 4909 3875 BoxF
+.1933 g 4619 4165 BoxF
+.1773 g 4909 3972 BoxF
+.1773 g 4716 4165 BoxF
+.1608 g 4909 4069 BoxF
+.1608 g 4812 4165 BoxF
+.1437 g 4909 4165 BoxF
+.1437 g 4909 4165 BoxF
+.1437 g 4909 4165 BoxF
+.3135 g 5006 200 BoxF
+.3135 g 943 4262 BoxF
+.3134 g 5006 297 BoxF
+.3134 g 1040 4262 BoxF
+.313 g 5006 393 BoxF
+.313 g 1136 4262 BoxF
+.3124 g 5006 490 BoxF
+.3124 g 1233 4262 BoxF
+.3116 g 5006 587 BoxF
+.3116 g 1330 4262 BoxF
+.3107 g 5006 684 BoxF
+.3107 g 1427 4262 BoxF
+.3097 g 5006 780 BoxF
+.3097 g 1523 4262 BoxF
+.3088 g 5006 877 BoxF
+.3088 g 1620 4262 BoxF
+.3077 g 5006 974 BoxF
+.3077 g 1717 4262 BoxF
+.3063 g 5006 1070 BoxF
+.3063 g 1814 4262 BoxF
+.3049 g 5006 1167 BoxF
+.3049 g 1910 4262 BoxF
+.3034 g 5006 1264 BoxF
+.3034 g 2007 4262 BoxF
+.3018 g 5006 1361 BoxF
+.3018 g 2104 4262 BoxF
+.3005 g 5006 1457 BoxF
+.3005 g 2201 4262 BoxF
+.2989 g 5006 1554 BoxF
+.2989 g 2297 4262 BoxF
+.2976 g 5006 1651 BoxF
+.2976 g 2394 4262 BoxF
+.2963 g 5006 1747 BoxF
+.2963 g 2491 4262 BoxF
+.2952 g 5006 1844 BoxF
+.2952 g 2587 4262 BoxF
+.2942 g 5006 1941 BoxF
+.2942 g 2684 4262 BoxF
+.2932 g 5006 2038 BoxF
+.2932 g 2781 4262 BoxF
+.2921 g 5006 2134 BoxF
+.2921 g 2878 4262 BoxF
+.2907 g 5006 2231 BoxF
+.2907 g 2974 4262 BoxF
+.2888 g 5006 2328 BoxF
+.2888 g 3071 4262 BoxF
+.2863 g 5006 2424 BoxF
+.2863 g 3168 4262 BoxF
+.2833 g 5006 2521 BoxF
+.2833 g 3265 4262 BoxF
+.2795 g 5006 2618 BoxF
+.2795 g 3361 4262 BoxF
+.2753 g 5006 2715 BoxF
+.2753 g 3458 4262 BoxF
+.2702 g 5006 2811 BoxF
+.2702 g 3555 4262 BoxF
+.2646 g 5006 2908 BoxF
+.2646 g 3652 4262 BoxF
+.2583 g 5006 3005 BoxF
+.2583 g 3748 4262 BoxF
+.2514 g 5006 3101 BoxF
+.2514 g 3845 4262 BoxF
+.2439 g 5006 3198 BoxF
+.2439 g 3942 4262 BoxF
+.2358 g 5006 3295 BoxF
+.2358 g 4039 4262 BoxF
+.2267 g 5006 3392 BoxF
+.2267 g 4135 4262 BoxF
+.2172 g 5006 3488 BoxF
+.2172 g 4232 4262 BoxF
+.2066 g 5006 3585 BoxF
+.2066 g 4329 4262 BoxF
+.1951 g 5006 3682 BoxF
+.1951 g 4425 4262 BoxF
+.1827 g 5006 3778 BoxF
+.1827 g 4522 4262 BoxF
+.1695 g 5006 3875 BoxF
+.1695 g 4619 4262 BoxF
+.1556 g 5006 3972 BoxF
+.1556 g 4716 4262 BoxF
+.1412 g 5006 4069 BoxF
+.1412 g 4812 4262 BoxF
+.1268 g 5006 4165 BoxF
+.1268 g 4909 4262 BoxF
+.1125 g 5006 4262 BoxF
+.1125 g 5006 4262 BoxF
+.1125 g 5006 4262 BoxF
+.2727 g 5103 200 BoxF
+.2727 g 943 4359 BoxF
+.2726 g 5103 297 BoxF
+.2726 g 1040 4359 BoxF
+.2722 g 5103 393 BoxF
+.2722 g 1136 4359 BoxF
+.2717 g 5103 490 BoxF
+.2717 g 1233 4359 BoxF
+.271 g 5103 587 BoxF
+.271 g 1330 4359 BoxF
+.2702 g 5103 684 BoxF
+.2702 g 1427 4359 BoxF
+.2694 g 5103 780 BoxF
+.2694 g 1523 4359 BoxF
+.2685 g 5103 877 BoxF
+.2685 g 1620 4359 BoxF
+.2674 g 5103 974 BoxF
+.2674 g 1717 4359 BoxF
+.2661 g 5103 1070 BoxF
+.2661 g 1814 4359 BoxF
+.265 g 5103 1167 BoxF
+.265 g 1910 4359 BoxF
+.2637 g 5103 1264 BoxF
+.2637 g 2007 4359 BoxF
+.2623 g 5103 1361 BoxF
+.2623 g 2104 4359 BoxF
+.2611 g 5103 1457 BoxF
+.2611 g 2201 4359 BoxF
+.2597 g 5103 1554 BoxF
+.2597 g 2297 4359 BoxF
+.2585 g 5103 1651 BoxF
+.2585 g 2394 4359 BoxF
+.2573 g 5103 1747 BoxF
+.2573 g 2491 4359 BoxF
+.2562 g 5103 1844 BoxF
+.2562 g 2587 4359 BoxF
+.2553 g 5103 1941 BoxF
+.2553 g 2684 4359 BoxF
+.2543 g 5103 2038 BoxF
+.2543 g 2781 4359 BoxF
+.2533 g 5103 2134 BoxF
+.2533 g 2878 4359 BoxF
+.2519 g 5103 2231 BoxF
+.2519 g 2974 4359 BoxF
+.2501 g 5103 2328 BoxF
+.2501 g 3071 4359 BoxF
+.2478 g 5103 2424 BoxF
+.2478 g 3168 4359 BoxF
+.2451 g 5103 2521 BoxF
+.2451 g 3265 4359 BoxF
+.2416 g 5103 2618 BoxF
+.2416 g 3361 4359 BoxF
+.2378 g 5103 2715 BoxF
+.2378 g 3458 4359 BoxF
+.2333 g 5103 2811 BoxF
+.2333 g 3555 4359 BoxF
+.2283 g 5103 2908 BoxF
+.2283 g 3652 4359 BoxF
+.2225 g 5103 3005 BoxF
+.2225 g 3748 4359 BoxF
+.2165 g 5103 3101 BoxF
+.2165 g 3845 4359 BoxF
+.2097 g 5103 3198 BoxF
+.2097 g 3942 4359 BoxF
+.2027 g 5103 3295 BoxF
+.2027 g 4039 4359 BoxF
+.1949 g 5103 3392 BoxF
+.1949 g 4135 4359 BoxF
+.1863 g 5103 3488 BoxF
+.1863 g 4232 4359 BoxF
+.1772 g 5103 3585 BoxF
+.1772 g 4329 4359 BoxF
+.1674 g 5103 3682 BoxF
+.1674 g 4425 4359 BoxF
+.1569 g 5103 3778 BoxF
+.1569 g 4522 4359 BoxF
+.1456 g 5103 3875 BoxF
+.1456 g 4619 4359 BoxF
+.134 g 5103 3972 BoxF
+.134 g 4716 4359 BoxF
+.1223 g 5103 4069 BoxF
+.1223 g 4812 4359 BoxF
+.1103 g 5103 4165 BoxF
+.1103 g 4909 4359 BoxF
+.0981 g 5103 4262 BoxF
+.0981 g 5006 4359 BoxF
+.0857 g 5103 4359 BoxF
+.0857 g 5103 4359 BoxF
+.0857 g 5103 4359 BoxF
+.2308 g 5199 200 BoxF
+.2308 g 943 4455 BoxF
+.2307 g 5199 297 BoxF
+.2307 g 1040 4455 BoxF
+.2305 g 5199 393 BoxF
+.2305 g 1136 4455 BoxF
+.23 g 5199 490 BoxF
+.23 g 1233 4455 BoxF
+.2294 g 5199 587 BoxF
+.2294 g 1330 4455 BoxF
+.2288 g 5199 684 BoxF
+.2288 g 1427 4455 BoxF
+.2281 g 5199 780 BoxF
+.2281 g 1523 4455 BoxF
+.2273 g 5199 877 BoxF
+.2273 g 1620 4455 BoxF
+.2263 g 5199 974 BoxF
+.2263 g 1717 4455 BoxF
+.2252 g 5199 1070 BoxF
+.2252 g 1814 4455 BoxF
+.2243 g 5199 1167 BoxF
+.2243 g 1910 4455 BoxF
+.2232 g 5199 1264 BoxF
+.2232 g 2007 4455 BoxF
+.2221 g 5199 1361 BoxF
+.2221 g 2104 4455 BoxF
+.221 g 5199 1457 BoxF
+.221 g 2201 4455 BoxF
+.2199 g 5199 1554 BoxF
+.2199 g 2297 4455 BoxF
+.2189 g 5199 1651 BoxF
+.2189 g 2394 4455 BoxF
+.2178 g 5199 1747 BoxF
+.2178 g 2491 4455 BoxF
+.2169 g 5199 1844 BoxF
+.2169 g 2587 4455 BoxF
+.216 g 5199 1941 BoxF
+.216 g 2684 4455 BoxF
+.215 g 5199 2038 BoxF
+.215 g 2781 4455 BoxF
+.2141 g 5199 2134 BoxF
+.2141 g 2878 4455 BoxF
+.2128 g 5199 2231 BoxF
+.2128 g 2974 4455 BoxF
+.2113 g 5199 2328 BoxF
+.2113 g 3071 4455 BoxF
+.2092 g 5199 2424 BoxF
+.2092 g 3168 4455 BoxF
+.2069 g 5199 2521 BoxF
+.2069 g 3265 4455 BoxF
+.2039 g 5199 2618 BoxF
+.2039 g 3361 4455 BoxF
+.2004 g 5199 2715 BoxF
+.2004 g 3458 4455 BoxF
+.1966 g 5199 2811 BoxF
+.1966 g 3555 4455 BoxF
+.1921 g 5199 2908 BoxF
+.1921 g 3652 4455 BoxF
+.1873 g 5199 3005 BoxF
+.1873 g 3748 4455 BoxF
+.1819 g 5199 3101 BoxF
+.1819 g 3845 4455 BoxF
+.1763 g 5199 3198 BoxF
+.1763 g 3942 4455 BoxF
+.17 g 5199 3295 BoxF
+.17 g 4039 4455 BoxF
+.1634 g 5199 3392 BoxF
+.1634 g 4135 4455 BoxF
+.1563 g 5199 3488 BoxF
+.1563 g 4232 4455 BoxF
+.1486 g 5199 3585 BoxF
+.1486 g 4329 4455 BoxF
+.1404 g 5199 3682 BoxF
+.1404 g 4425 4455 BoxF
+.1319 g 5199 3778 BoxF
+.1319 g 4522 4455 BoxF
+.123 g 5199 3875 BoxF
+.123 g 4619 4455 BoxF
+.1136 g 5199 3972 BoxF
+.1136 g 4716 4455 BoxF
+.1039 g 5199 4069 BoxF
+.1039 g 4812 4455 BoxF
+.0939 g 5199 4165 BoxF
+.0939 g 4909 4455 BoxF
+.0836 g 5199 4262 BoxF
+.0836 g 5006 4455 BoxF
+.0732 g 5199 4359 BoxF
+.0732 g 5103 4455 BoxF
+.0626 g 5199 4455 BoxF
+.0626 g 5199 4455 BoxF
+.0626 g 5199 4455 BoxF
+.1888 g 5296 200 BoxF
+.1888 g 943 4552 BoxF
+.1888 g 5296 297 BoxF
+.1888 g 1040 4552 BoxF
+.1886 g 5296 393 BoxF
+.1886 g 1136 4552 BoxF
+.1882 g 5296 490 BoxF
+.1882 g 1233 4552 BoxF
+.1878 g 5296 587 BoxF
+.1878 g 1330 4552 BoxF
+.1873 g 5296 684 BoxF
+.1873 g 1427 4552 BoxF
+.1867 g 5296 780 BoxF
+.1867 g 1523 4552 BoxF
+.186 g 5296 877 BoxF
+.186 g 1620 4552 BoxF
+.1852 g 5296 974 BoxF
+.1852 g 1717 4552 BoxF
+.1842 g 5296 1070 BoxF
+.1842 g 1814 4552 BoxF
+.1835 g 5296 1167 BoxF
+.1835 g 1910 4552 BoxF
+.1826 g 5296 1264 BoxF
+.1826 g 2007 4552 BoxF
+.1818 g 5296 1361 BoxF
+.1818 g 2104 4552 BoxF
+.181 g 5296 1457 BoxF
+.181 g 2201 4552 BoxF
+.1801 g 5296 1554 BoxF
+.1801 g 2297 4552 BoxF
+.1793 g 5296 1651 BoxF
+.1793 g 2394 4552 BoxF
+.1784 g 5296 1747 BoxF
+.1784 g 2491 4552 BoxF
+.1777 g 5296 1844 BoxF
+.1777 g 2587 4552 BoxF
+.177 g 5296 1941 BoxF
+.177 g 2684 4552 BoxF
+.1761 g 5296 2038 BoxF
+.1761 g 2781 4552 BoxF
+.1753 g 5296 2134 BoxF
+.1753 g 2878 4552 BoxF
+.1741 g 5296 2231 BoxF
+.1741 g 2974 4552 BoxF
+.1728 g 5296 2328 BoxF
+.1728 g 3071 4552 BoxF
+.1712 g 5296 2424 BoxF
+.1712 g 3168 4552 BoxF
+.169 g 5296 2521 BoxF
+.169 g 3265 4552 BoxF
+.1667 g 5296 2618 BoxF
+.1667 g 3361 4552 BoxF
+.1637 g 5296 2715 BoxF
+.1637 g 3458 4552 BoxF
+.1605 g 5296 2811 BoxF
+.1605 g 3555 4552 BoxF
+.1569 g 5296 2908 BoxF
+.1569 g 3652 4552 BoxF
+.1528 g 5296 3005 BoxF
+.1528 g 3748 4552 BoxF
+.1484 g 5296 3101 BoxF
+.1484 g 3845 4552 BoxF
+.1435 g 5296 3198 BoxF
+.1435 g 3942 4552 BoxF
+.1387 g 5296 3295 BoxF
+.1387 g 4039 4552 BoxF
+.1335 g 5296 3392 BoxF
+.1335 g 4135 4552 BoxF
+.1279 g 5296 3488 BoxF
+.1279 g 4232 4552 BoxF
+.1218 g 5296 3585 BoxF
+.1218 g 4329 4552 BoxF
+.1153 g 5296 3682 BoxF
+.1153 g 4425 4552 BoxF
+.1084 g 5296 3778 BoxF
+.1084 g 4522 4552 BoxF
+.1011 g 5296 3875 BoxF
+.1011 g 4619 4552 BoxF
+.0935 g 5296 3972 BoxF
+.0935 g 4716 4552 BoxF
+.0857 g 5296 4069 BoxF
+.0857 g 4812 4552 BoxF
+.0776 g 5296 4165 BoxF
+.0776 g 4909 4552 BoxF
+.0692 g 5296 4262 BoxF
+.0692 g 5006 4552 BoxF
+.0607 g 5296 4359 BoxF
+.0607 g 5103 4552 BoxF
+.052 g 5296 4455 BoxF
+.052 g 5199 4552 BoxF
+.0433 g 5296 4552 BoxF
+.0433 g 5296 4552 BoxF
+.0433 g 5296 4552 BoxF
+.1475 g 5393 200 BoxF
+.1475 g 943 4649 BoxF
+.1474 g 5393 297 BoxF
+.1474 g 1040 4649 BoxF
+.1473 g 5393 393 BoxF
+.1473 g 1136 4649 BoxF
+.1471 g 5393 490 BoxF
+.1471 g 1233 4649 BoxF
+.1468 g 5393 587 BoxF
+.1468 g 1330 4649 BoxF
+.1463 g 5393 684 BoxF
+.1463 g 1427 4649 BoxF
+.1459 g 5393 780 BoxF
+.1459 g 1523 4649 BoxF
+.1453 g 5393 877 BoxF
+.1453 g 1620 4649 BoxF
+.1447 g 5393 974 BoxF
+.1447 g 1717 4649 BoxF
+.1439 g 5393 1070 BoxF
+.1439 g 1814 4649 BoxF
+.1434 g 5393 1167 BoxF
+.1434 g 1910 4649 BoxF
+.1427 g 5393 1264 BoxF
+.1427 g 2007 4649 BoxF
+.1421 g 5393 1361 BoxF
+.1421 g 2104 4649 BoxF
+.1416 g 5393 1457 BoxF
+.1416 g 2201 4649 BoxF
+.1409 g 5393 1554 BoxF
+.1409 g 2297 4649 BoxF
+.1404 g 5393 1651 BoxF
+.1404 g 2394 4649 BoxF
+.1397 g 5393 1747 BoxF
+.1397 g 2491 4649 BoxF
+.1392 g 5393 1844 BoxF
+.1392 g 2587 4649 BoxF
+.1386 g 5393 1941 BoxF
+.1386 g 2684 4649 BoxF
+.1379 g 5393 2038 BoxF
+.1379 g 2781 4649 BoxF
+.1371 g 5393 2134 BoxF
+.1371 g 2878 4649 BoxF
+.1363 g 5393 2231 BoxF
+.1363 g 2974 4649 BoxF
+.1351 g 5393 2328 BoxF
+.1351 g 3071 4649 BoxF
+.1339 g 5393 2424 BoxF
+.1339 g 3168 4649 BoxF
+.1322 g 5393 2521 BoxF
+.1322 g 3265 4649 BoxF
+.1303 g 5393 2618 BoxF
+.1303 g 3361 4649 BoxF
+.1281 g 5393 2715 BoxF
+.1281 g 3458 4649 BoxF
+.1255 g 5393 2811 BoxF
+.1255 g 3555 4649 BoxF
+.1226 g 5393 2908 BoxF
+.1226 g 3652 4649 BoxF
+.1195 g 5393 3005 BoxF
+.1195 g 3748 4649 BoxF
+.1162 g 5393 3101 BoxF
+.1162 g 3845 4649 BoxF
+.1128 g 5393 3198 BoxF
+.1128 g 3942 4649 BoxF
+.109 g 5393 3295 BoxF
+.109 g 4039 4649 BoxF
+.1049 g 5393 3392 BoxF
+.1049 g 4135 4649 BoxF
+.1005 g 5393 3488 BoxF
+.1005 g 4232 4649 BoxF
+.0958 g 5393 3585 BoxF
+.0958 g 4329 4649 BoxF
+.0907 g 5393 3682 BoxF
+.0907 g 4425 4649 BoxF
+.0853 g 5393 3778 BoxF
+.0853 g 4522 4649 BoxF
+.0797 g 5393 3875 BoxF
+.0797 g 4619 4649 BoxF
+.0739 g 5393 3972 BoxF
+.0739 g 4716 4649 BoxF
+.0678 g 5393 4069 BoxF
+.0678 g 4812 4649 BoxF
+.0615 g 5393 4165 BoxF
+.0615 g 4909 4649 BoxF
+.0549 g 5393 4262 BoxF
+.0549 g 5006 4649 BoxF
+.0482 g 5393 4359 BoxF
+.0482 g 5103 4649 BoxF
+.0414 g 5393 4455 BoxF
+.0414 g 5199 4649 BoxF
+.0346 g 5393 4552 BoxF
+.0346 g 5296 4649 BoxF
+.0276 g 5393 4649 BoxF
+.0276 g 5393 4649 BoxF
+.0276 g 5393 4649 BoxF
+.1074 g 5490 200 BoxF
+.1074 g 943 4746 BoxF
+.1074 g 5490 297 BoxF
+.1074 g 1040 4746 BoxF
+.1073 g 5490 393 BoxF
+.1073 g 1136 4746 BoxF
+.1072 g 5490 490 BoxF
+.1072 g 1233 4746 BoxF
+.107 g 5490 587 BoxF
+.107 g 1330 4746 BoxF
+.1067 g 5490 684 BoxF
+.1067 g 1427 4746 BoxF
+.1063 g 5490 780 BoxF
+.1063 g 1523 4746 BoxF
+.1059 g 5490 877 BoxF
+.1059 g 1620 4746 BoxF
+.1054 g 5490 974 BoxF
+.1054 g 1717 4746 BoxF
+.1049 g 5490 1070 BoxF
+.1049 g 1814 4746 BoxF
+.1045 g 5490 1167 BoxF
+.1045 g 1910 4746 BoxF
+.1041 g 5490 1264 BoxF
+.1041 g 2007 4746 BoxF
+.1037 g 5490 1361 BoxF
+.1037 g 2104 4746 BoxF
+.1033 g 5490 1457 BoxF
+.1033 g 2201 4746 BoxF
+.1029 g 5490 1554 BoxF
+.1029 g 2297 4746 BoxF
+.1026 g 5490 1651 BoxF
+.1026 g 2394 4746 BoxF
+.1022 g 5490 1747 BoxF
+.1022 g 2491 4746 BoxF
+.1018 g 5490 1844 BoxF
+.1018 g 2587 4746 BoxF
+.1013 g 5490 1941 BoxF
+.1013 g 2684 4746 BoxF
+.1009 g 5490 2038 BoxF
+.1009 g 2781 4746 BoxF
+.1002 g 5490 2134 BoxF
+.1002 g 2878 4746 BoxF
+.0996 g 5490 2231 BoxF
+.0996 g 2974 4746 BoxF
+.0988 g 5490 2328 BoxF
+.0988 g 3071 4746 BoxF
+.0978 g 5490 2424 BoxF
+.0978 g 3168 4746 BoxF
+.0967 g 5490 2521 BoxF
+.0967 g 3265 4746 BoxF
+.0953 g 5490 2618 BoxF
+.0953 g 3361 4746 BoxF
+.0936 g 5490 2715 BoxF
+.0936 g 3458 4746 BoxF
+.0919 g 5490 2811 BoxF
+.0919 g 3555 4746 BoxF
+.0898 g 5490 2908 BoxF
+.0898 g 3652 4746 BoxF
+.0877 g 5490 3005 BoxF
+.0877 g 3748 4746 BoxF
+.0855 g 5490 3101 BoxF
+.0855 g 3845 4746 BoxF
+.0829 g 5490 3198 BoxF
+.0829 g 3942 4746 BoxF
+.0802 g 5490 3295 BoxF
+.0802 g 4039 4746 BoxF
+.0772 g 5490 3392 BoxF
+.0772 g 4135 4746 BoxF
+.074 g 5490 3488 BoxF
+.074 g 4232 4746 BoxF
+.0706 g 5490 3585 BoxF
+.0706 g 4329 4746 BoxF
+.0669 g 5490 3682 BoxF
+.0669 g 4425 4746 BoxF
+.063 g 5490 3778 BoxF
+.063 g 4522 4746 BoxF
+.0589 g 5490 3875 BoxF
+.0589 g 4619 4746 BoxF
+.0547 g 5490 3972 BoxF
+.0547 g 4716 4746 BoxF
+.0502 g 5490 4069 BoxF
+.0502 g 4812 4746 BoxF
+.0456 g 5490 4165 BoxF
+.0456 g 4909 4746 BoxF
+.0408 g 5490 4262 BoxF
+.0408 g 5006 4746 BoxF
+.0359 g 5490 4359 BoxF
+.0359 g 5103 4746 BoxF
+.0309 g 5490 4455 BoxF
+.0309 g 5199 4746 BoxF
+.0258 g 5490 4552 BoxF
+.0258 g 5296 4746 BoxF
+.0207 g 5490 4649 BoxF
+.0207 g 5393 4746 BoxF
+.0155 g 5490 4746 BoxF
+.0155 g 5490 4746 BoxF
+.0155 g 5490 4746 BoxF
+.0693 g 5586 200 BoxF
+.0693 g 943 4842 BoxF
+.0693 g 5586 297 BoxF
+.0693 g 1040 4842 BoxF
+.0692 g 5586 393 BoxF
+.0692 g 1136 4842 BoxF
+.0691 g 5586 490 BoxF
+.0691 g 1233 4842 BoxF
+.069 g 5586 587 BoxF
+.069 g 1330 4842 BoxF
+.0688 g 5586 684 BoxF
+.0688 g 1427 4842 BoxF
+.0686 g 5586 780 BoxF
+.0686 g 1523 4842 BoxF
+.0683 g 5586 877 BoxF
+.0683 g 1620 4842 BoxF
+.068 g 5586 974 BoxF
+.068 g 1717 4842 BoxF
+.0677 g 5586 1070 BoxF
+.0677 g 1814 4842 BoxF
+.0674 g 5586 1167 BoxF
+.0674 g 1910 4842 BoxF
+.0671 g 5586 1264 BoxF
+.0671 g 2007 4842 BoxF
+.0669 g 5586 1361 BoxF
+.0669 g 2104 4842 BoxF
+.0667 g 5586 1457 BoxF
+.0667 g 2201 4842 BoxF
+.0665 g 5586 1554 BoxF
+.0665 g 2297 4842 BoxF
+.0664 g 5586 1651 BoxF
+.0664 g 2394 4842 BoxF
+.0661 g 5586 1747 BoxF
+.0661 g 2491 4842 BoxF
+.0659 g 5586 1844 BoxF
+.0659 g 2587 4842 BoxF
+.0656 g 5586 1941 BoxF
+.0656 g 2684 4842 BoxF
+.0653 g 5586 2038 BoxF
+.0653 g 2781 4842 BoxF
+.0649 g 5586 2134 BoxF
+.0649 g 2878 4842 BoxF
+.0645 g 5586 2231 BoxF
+.0645 g 2974 4842 BoxF
+.064 g 5586 2328 BoxF
+.064 g 3071 4842 BoxF
+.0634 g 5586 2424 BoxF
+.0634 g 3168 4842 BoxF
+.0627 g 5586 2521 BoxF
+.0627 g 3265 4842 BoxF
+.0619 g 5586 2618 BoxF
+.0619 g 3361 4842 BoxF
+.0609 g 5586 2715 BoxF
+.0609 g 3458 4842 BoxF
+.0597 g 5586 2811 BoxF
+.0597 g 3555 4842 BoxF
+.0586 g 5586 2908 BoxF
+.0586 g 3652 4842 BoxF
+.0572 g 5586 3005 BoxF
+.0572 g 3748 4842 BoxF
+.0558 g 5586 3101 BoxF
+.0558 g 3845 4842 BoxF
+.0541 g 5586 3198 BoxF
+.0541 g 3942 4842 BoxF
+.0524 g 5586 3295 BoxF
+.0524 g 4039 4842 BoxF
+.0504 g 5586 3392 BoxF
+.0504 g 4135 4842 BoxF
+.0484 g 5586 3488 BoxF
+.0484 g 4232 4842 BoxF
+.0462 g 5586 3585 BoxF
+.0462 g 4329 4842 BoxF
+.0438 g 5586 3682 BoxF
+.0438 g 4425 4842 BoxF
+.0413 g 5586 3778 BoxF
+.0413 g 4522 4842 BoxF
+.0387 g 5586 3875 BoxF
+.0387 g 4619 4842 BoxF
+.0359 g 5586 3972 BoxF
+.0359 g 4716 4842 BoxF
+.0331 g 5586 4069 BoxF
+.0331 g 4812 4842 BoxF
+.0301 g 5586 4165 BoxF
+.0301 g 4909 4842 BoxF
+.027 g 5586 4262 BoxF
+.027 g 5006 4842 BoxF
+.0238 g 5586 4359 BoxF
+.0238 g 5103 4842 BoxF
+.0205 g 5586 4455 BoxF
+.0205 g 5199 4842 BoxF
+.0171 g 5586 4552 BoxF
+.0171 g 5296 4842 BoxF
+.0137 g 5586 4649 BoxF
+.0137 g 5393 4842 BoxF
+.0103 g 5586 4746 BoxF
+.0103 g 5490 4842 BoxF
+.0069 g 5586 4842 BoxF
+.0069 g 5586 4842 BoxF
+.0069 g 5586 4842 BoxF
+.0335 g 5683 200 BoxF
+.0335 g 943 4939 BoxF
+.0335 g 5683 297 BoxF
+.0335 g 1040 4939 BoxF
+.0335 g 5683 393 BoxF
+.0335 g 1136 4939 BoxF
+.0334 g 5683 490 BoxF
+.0334 g 1233 4939 BoxF
+.0333 g 5683 587 BoxF
+.0333 g 1330 4939 BoxF
+.0333 g 5683 684 BoxF
+.0333 g 1427 4939 BoxF
+.0331 g 5683 780 BoxF
+.0331 g 1523 4939 BoxF
+.033 g 5683 877 BoxF
+.033 g 1620 4939 BoxF
+.0328 g 5683 974 BoxF
+.0328 g 1717 4939 BoxF
+.0326 g 5683 1070 BoxF
+.0326 g 1814 4939 BoxF
+.0325 g 5683 1167 BoxF
+.0325 g 1910 4939 BoxF
+.0324 g 5683 1264 BoxF
+.0324 g 2007 4939 BoxF
+.0323 g 5683 1361 BoxF
+.0323 g 2104 4939 BoxF
+.0322 g 5683 1457 BoxF
+.0322 g 2201 4939 BoxF
+.0321 g 5683 1554 BoxF
+.0321 g 2297 4939 BoxF
+.0321 g 5683 1651 BoxF
+.0321 g 2394 4939 BoxF
+.032 g 5683 1747 BoxF
+.032 g 2491 4939 BoxF
+.0319 g 5683 1844 BoxF
+.0319 g 2587 4939 BoxF
+.0318 g 5683 1941 BoxF
+.0318 g 2684 4939 BoxF
+.0316 g 5683 2038 BoxF
+.0316 g 2781 4939 BoxF
+.0315 g 5683 2134 BoxF
+.0315 g 2878 4939 BoxF
+.0313 g 5683 2231 BoxF
+.0313 g 2974 4939 BoxF
+.031 g 5683 2328 BoxF
+.031 g 3071 4939 BoxF
+.0308 g 5683 2424 BoxF
+.0308 g 3168 4939 BoxF
+.0305 g 5683 2521 BoxF
+.0305 g 3265 4939 BoxF
+.0301 g 5683 2618 BoxF
+.0301 g 3361 4939 BoxF
+.0296 g 5683 2715 BoxF
+.0296 g 3458 4939 BoxF
+.0292 g 5683 2811 BoxF
+.0292 g 3555 4939 BoxF
+.0286 g 5683 2908 BoxF
+.0286 g 3652 4939 BoxF
+.028 g 5683 3005 BoxF
+.028 g 3748 4939 BoxF
+.0273 g 5683 3101 BoxF
+.0273 g 3845 4939 BoxF
+.0265 g 5683 3198 BoxF
+.0265 g 3942 4939 BoxF
+.0256 g 5683 3295 BoxF
+.0256 g 4039 4939 BoxF
+.0247 g 5683 3392 BoxF
+.0247 g 4135 4939 BoxF
+.0237 g 5683 3488 BoxF
+.0237 g 4232 4939 BoxF
+.0227 g 5683 3585 BoxF
+.0227 g 4329 4939 BoxF
+.0215 g 5683 3682 BoxF
+.0215 g 4425 4939 BoxF
+.0203 g 5683 3778 BoxF
+.0203 g 4522 4939 BoxF
+.019 g 5683 3875 BoxF
+.019 g 4619 4939 BoxF
+.0177 g 5683 3972 BoxF
+.0177 g 4716 4939 BoxF
+.0163 g 5683 4069 BoxF
+.0163 g 4812 4939 BoxF
+.0149 g 5683 4165 BoxF
+.0149 g 4909 4939 BoxF
+.0133 g 5683 4262 BoxF
+.0133 g 5006 4939 BoxF
+.0118 g 5683 4359 BoxF
+.0118 g 5103 4939 BoxF
+.0102 g 5683 4455 BoxF
+.0102 g 5199 4939 BoxF
+.0085 g 5683 4552 BoxF
+.0085 g 5296 4939 BoxF
+.0068 g 5683 4649 BoxF
+.0068 g 5393 4939 BoxF
+.0051 g 5683 4746 BoxF
+.0051 g 5490 4939 BoxF
+.0034 g 5683 4842 BoxF
+.0034 g 5586 4939 BoxF
+.0017 g 5683 4939 BoxF
+.0017 g 5683 4939 BoxF
+.0017 g 5683 4939 BoxF
+% End plot #1
+2.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTB
+LCb setrgbcolor
+943 4939 N
+943 200 L
+4740 0 V
+0 4739 V
+-4740 0 V
+Z stroke
+stroke gsave	%% draw gray scale smooth box
+maxcolors 0 gt {/imax maxcolors def} {/imax 1024 def} ifelse
+5802 200 translate 237 4739 scale 0 setlinewidth
+/ystep 1 imax div def /y0 0 def /ii 0 def
+{ y0 g 0 y0 N 1 0 V 0 ystep V -1 0 f
+/y0 y0 ystep add def /ii ii 1 add def
+ii imax ge {exit} if } loop
+grestore 0 setgray
+1.000 UL
+LTb
+LCb setrgbcolor
+5802 200 N
+237 0 V
+0 4739 V
+-237 0 V
+0 -4739 V
+Z stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+6039 200 M
+-63 0 V
+stroke
+6099 200 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0)]
+] -33.3 MLshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+5802 200 M
+63 0 V
+174 526 R
+-63 0 V
+stroke
+6099 726 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.2)]
+] -33.3 MLshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+5802 726 M
+63 0 V
+174 527 R
+-63 0 V
+stroke
+6099 1253 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.4)]
+] -33.3 MLshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+5802 1253 M
+63 0 V
+174 526 R
+-63 0 V
+stroke
+6099 1779 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.6)]
+] -33.3 MLshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+5802 1779 M
+63 0 V
+174 527 R
+-63 0 V
+stroke
+6099 2306 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 0.8)]
+] -33.3 MLshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+5802 2306 M
+63 0 V
+174 526 R
+-63 0 V
+stroke
+6099 2832 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 1)]
+] -33.3 MLshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+5802 2832 M
+63 0 V
+174 527 R
+-63 0 V
+stroke
+6099 3359 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 1.2)]
+] -33.3 MLshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+5802 3359 M
+63 0 V
+174 526 R
+-63 0 V
+stroke
+6099 3885 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 1.4)]
+] -33.3 MLshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+5802 3885 M
+63 0 V
+174 527 R
+-63 0 V
+stroke
+6099 4412 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 1.6)]
+] -33.3 MLshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+5802 4412 M
+63 0 V
+174 526 R
+-63 0 V
+stroke
+6099 4938 M
+[ [(Helvetica) 100.0 0.0 true true 0 ( 1.8)]
+] -33.3 MLshow
+/Helvetica findfont 100 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+5802 4938 M
+63 0 V
+1.000 UP
+stroke
+LTb
+LCb setrgbcolor
+grestore % colour palette end
+stroke
+grestore
+end
+showpage
+%%Trailer
+%%DocumentFonts: Helvetica

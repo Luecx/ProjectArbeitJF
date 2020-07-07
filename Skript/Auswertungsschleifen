@@ -21,7 +21,7 @@ for v_0 in np.arange(100, 1010, 10):
 #----------------------------
 #Hoehe
 
-for h in np.arange(0.5, 2.6, 0.1):
+for h in np.arange(0.5, 2.51, 0.1):
 
     time, j, tau, w, P, u, cosPre = compute(h=h, mass_ratio=1, iterations=1000, printLoadingBar=False)
     for mr in np.arange(0.01, 2.51, 0.01):
@@ -37,30 +37,30 @@ for h in np.arange(0.5, 2.6, 0.1):
 #----------------------------
 #Impaktorradius
 
-for r in np.arange(0.5, 10.1, 0.1):
-
-    time, j, tau, w, P, u, cosPre = compute(r=r, mass_ratio=1, iterations=1000, printLoadingBar=False)
-    for mr in np.arange(0.01, 2.51, 0.01):
-        time, j, tau, w, P, u, cosPre = compute(r=r, mass_ratio=mr, iterations=1000, cosPreset=cosPre, printLoadingBar=False)
-        with open("Radius.txt", "a") as myfile:
-         myfile.write(str.format("%10f %10f %10f \n" % (r,mr,countHits(P))))
-        with open("RadiusAuslenkung.txt", "a") as myfile:
-         myfile.write(str.format("%10f %10f %10f \n" % (r,mr, maxW(w))))
-        with open("RadiusKraft.txt", "a") as myfile:
-         myfile.write(str.format("%10f %10f %10f \n" % (r,mr, maxP(P))))
-        print("%10f %10f %10f" % (r,mr,countHits(P)))
+# for r in np.arange(0.5, 10.1, 0.1):
+#
+#     time, j, tau, w, P, u, cosPre = compute(r=r, mass_ratio=1, iterations=1000, printLoadingBar=False)
+#     for mr in np.arange(0.01, 2.51, 0.01):
+#         time, j, tau, w, P, u, cosPre = compute(r=r, mass_ratio=mr, iterations=1000, cosPreset=cosPre, printLoadingBar=False)
+#         with open("Radius.txt", "a") as myfile:
+#          myfile.write(str.format("%10f %10f %10f \n" % (r,mr,countHits(P))))
+#         with open("RadiusAuslenkung.txt", "a") as myfile:
+#          myfile.write(str.format("%10f %10f %10f \n" % (r,mr, maxW(w))))
+#         with open("RadiusKraft.txt", "a") as myfile:
+#          myfile.write(str.format("%10f %10f %10f \n" % (r,mr, maxP(P))))
+#         print("%10f %10f %10f" % (r,mr,countHits(P)))
 
 #----------------------------
 #Seitenverhaeltnis
 
-for sv in np.arange(2.3, 2.31, 0.05):
-
-    time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=1, iterations=1000, xi=a / 2, eta=b / 2, printLoadingBar=True)
-    for mr in np.arange(2.5, 2.51, 0.01):
-        time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=mr, iterations=1000, xi=a / 2, eta=b / 2, cosPreset=cosPre, printLoadingBar=True)
-        # with open("svmr.txt", "a") as myfile:
-        #     myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (sv, mr, countHits(P), maxW(w), maxP(P))))
-    print(str((sv-1) / 4 * 100) + "%")
+# for sv in np.arange(2.3, 2.31, 0.05):
+#
+#     time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=1, iterations=1000, xi=a / 2, eta=b / 2, printLoadingBar=True)
+#     for mr in np.arange(2.5, 2.51, 0.01):
+#         time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=mr, iterations=1000, xi=a / 2, eta=b / 2, cosPreset=cosPre, printLoadingBar=True)
+#         # with open("svmr.txt", "a") as myfile:
+#         #     myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (sv, mr, countHits(P), maxW(w), maxP(P))))
+#     print(str((sv-1) / 4 * 100) + "%")
 
 # sv = 2.3
 
