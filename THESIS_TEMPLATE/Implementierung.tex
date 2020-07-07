@@ -51,11 +51,14 @@
 \end{figure}
 
 
-Das Python-Skript folgt dem dargestellen Schema in \ref{fig:flowchart}. Zunächst werden Parameter der Funktion \texttt{compute()} übergeben. Wenn keine Parameter übergeben werden, wird direkt der Basisfall berechnet. Da die Größe $S(k)$ die meiste Zeit zum Berechnen benötigt, sie jedoch nur von der Geometrie der Platte abhängt, kann für viele aufeinanderfolgenden Rechnungen das $S(k)$ aus vorherigen Rechnungen übernommen werden. 
-Im Anschluss wird der erste Zeitschritt berechnet seperat von den darauffolgenden Zeitschritten berechnet. Da eine numerische Integration durchgeführt wird, wird zunächst eine Annäherung berechnet welche ebenfalls für eine zweite Näherung genutzt wird.
+Das Python-Skript folgt dem dargestellen Schema in \ref{fig:flowchart}. Zunächst werden Parameter der Funktion \texttt{compute()} übergeben. Wenn keine Parameter übergeben werden, wird direkt der Basisfall berechnet. Da die Größe $S(k)$ die meiste Zeit zum Berechnen benötigt, sie jedoch nur von der Geometrie der Platte abhängt, kann für viele aufeinanderfolgenden Rechnungen das $S(k)$ aus vorherigen Rechnungen übernommen werden.\\ 
+Im Anschluss wird der erste Zeitschritt berechnet seperat von den darauffolgenden Zeitschritten berechnet. Da eine numerische Integration durchgeführt wird, wird zunächst eine Annäherung berechnet welche ebenfalls für eine zweite Näherung genutzt wird.\\
 Es ist theoretisch möglich weitere Annäherungen durchzuführen jedoch hat sich gezeigt, dass die Fehler bereits nach der zweiten Annäherung im wesentlichen Verschwinden.
 
-Anschließend wird eine äquivalente Rechnung für alle weiteren Zeitschritte durchgeführt und im Anschluss gegebenenfalls geplottet sowie die maximale Kraft und Durchbiegung bestimmt. Die Funktion  \texttt{compute()} gibt ein Touple \texttt{time, j, tau, w, P, u, cos} zurück.  \texttt{time} ist eine Liste mit den zugehörigen Zeitpunkten zu den Durchbiegungen \texttt{w} und den Kräften \texttt{P}. \texttt{u} stellt zusätzlich die Position des Impaktors dar. Da es möglich ist, die Berechnung durch \texttt{stop\_computation\_after\_first\_impact = True} vorzeitig zu beenden, nachdem der erste Schlag beendet wurde, ist die Anzahl der Zeitschritte als \texttt{j} wiedergegeben. Die verwendete Schrittweite wird ebenfalls als \texttt{tau} zurückgegeben. Für eine Wiederverwendung von $S(k)$ wird dieses ebenfalls als Liste zurückgegeben mit dem Namen \texttt{cos}. Da $k$ nur ganzzahlige Werte annimmt, wird eine Liste verwendet. 
+Anschließend wird eine äquivalente Rechnung für alle weiteren Zeitschritte durchgeführt und im Anschluss gegebenenfalls geplottet sowie die maximale Kraft und Durchbiegung bestimmt.\\
+Die Funktion  \texttt{compute()} gibt ein Touple \texttt{time, j, tau, w, P, u, cos} zurück.  \texttt{time} ist eine Liste mit den zugehörigen Zeitpunkten zu den Durchbiegungen \texttt{w} und den Kräften \texttt{P}. \texttt{u} stellt zusätzlich die Position des Impaktors dar. Da es möglich ist, die Berechnung durch \texttt{stop\_computation\_after\_first\_impact = True} vorzeitig zu beenden, nachdem der erste Schlag beendet wurde, ist die Anzahl der Zeitschritte als \texttt{j} wiedergegeben. Die verwendete Schrittweite wird ebenfalls als \texttt{tau} zurückgegeben.\\
+Für eine Wiederverwendung von $S(k)$ wird dieses ebenfalls als Liste zurückgegeben mit dem Namen \texttt{cos}. Da $k$ nur ganzzahlige Werte annimmt, wird eine Liste verwendet.\\
+Der verwendete Code ist im Anhang~\ref{chap:Anhang_Skript} zu finden.
 
 
 

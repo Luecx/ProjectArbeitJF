@@ -2,41 +2,26 @@
 ### interpolate data with highlighted datapoints
 reset session
 
-#set terminal postscript eps enhanced color font 'Helvetica,10'
+set terminal postscript eps enhanced color font 'Helvetica,10'
 
 # ---------------------------------------------------------------------------------------
-#set output './production/image1.eps'
+set output './production/svmrKraftFixedAlternativ.eps'
 
-set title "Titel" 
+set title "" 
 
-set xrange [0.95:5]
-set yrange [0:2.5]
+set xrange [1:4.95]
+set yrange [0.05:1.99]
 
-set xlabel "x-Achse [Einheit]" 
-set ylabel "y-Achse [Einheit]" rotate by 90
+set xlabel "" 
+set ylabel "" rotate by 90
 
 # ---------------------------------------------------------------------------------------
 
 
-set palette grey
-set grid
-set size square
-set view map
-set pm3d at b
-set pm3d interpolate 2,2
-set dgrid3d 50,50,2
+unset key
+set palette grey positive gamma 1.5
 
-set table $DataInterpolated
-    splot "svmr.txt" u 1:2:4 
-unset table
-unset dgrid3d
-
-set format y "%.1f"
-set format x "%.1f"
-
-
-
-splot $DataInterpolated u 1:2:3 w pm3d palette notitle, \
-#      "svmr.txt" u 1:2:3 w p pt 1 lw 2 lc rgb "black" notitle
+#plot "SpeedNeu.dat" using 1:2:5 with image
+plot "svmrFixed.dat" using 1:2:5 with points pt 5 lc palette
 
 ### end of code

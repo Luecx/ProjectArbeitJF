@@ -196,7 +196,7 @@ Interessant zu betrachten ist auch, wie die Kraft mit größer werdendem $Mr$ zu
 
 \subsection{Geschwindigkeit des Impaktors}
 
-Als nächster Parameter wird die Geschwindigkeit betrachtet. Da hier nur der Low-Velocity Bereich betrachtet wird, wird die Geschwindigkeit nach Gleichung~\ref{form:DeltaV0} variiert. 
+Als nächster Parameter wird die Geschwindigkeit betrachtet. Da hier nur der Low-Velocity Bereich betrachtet wird, wird die Geschwindigkeit nach Gleichung~\ref{form:DeltaV0} variiert. Da sich bei der Geschwindigkeit beim Erstellen der Abbildungen signifikante Interpolationsfehler ergeben, wird hier bewusst eine andere Darstellungsweise verwendet, welche die Daten genauer wiedergibt. 
 
 \begin{equation}
 	100 [cm/s] \leq v_{0} \leq 1000 [cm/s] \; , \;\; \mbox{Schrittweite:} \; \Delta v_{0} = 10 [cm/s]
@@ -208,9 +208,9 @@ Analog zur Höhenvariation wird zuerst die Anzahl der Aufschläge aufgetragen. I
 \begin{figure}[h!]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Speed/production/Speed.eps}
-			\put(40,4){Geschwindigkeit [cm/s]}
-			\put(18,30){\rotatebox{90}{Mr [-]}}
-			\put(83,60){Aufschläge [-]}
+			\put(35,-1){Geschwindigkeit [cm/s]}
+			\put(1,33){\rotatebox{90}{Mr [-]}}
+			\put(90,70){Aufschläge [-]}
 		\end{overpic}
 		\caption{Geschwindigkeit, Mr und Anzahl der Aufschläge}
 		\label{fig:Speed}
@@ -225,9 +225,9 @@ Betrachtet man den Faktor der zwischen der $w_{min}(v_{0,min})$ und $w_{max}(v_{
 \begin{figure}[H]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Speed/production/SpeedAuslenkung.eps}
-			\put(44,4){Geschwindigkeit [cm/s]}
-			\put(18,30){\rotatebox{90}{Mr [-]}}
-			\put(83,60){Auslenkung [cm]}
+			\put(35,-1){Geschwindigkeit [cm/s]}
+			\put(1,33){\rotatebox{90}{Mr [-]}}
+			\put(90,70){Auslenkung [cm]}
 		\end{overpic}
 		\caption{Geschwindigkeit, Mr und Auslenkung}
 		\label{fig:SpeedAuslenkung}
@@ -242,9 +242,9 @@ Bei $v_{0,max} = 1000 [cm/s]$ ist $P(Mr_{min}) = 38.892 [kN]$ und $P(Mr_{max}) =
 \begin{figure}[H]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Speed/production/SpeedKraft.eps}
-			\put(40,4){Geschwindigkeit [cm/s]}
-			\put(18,30){\rotatebox{90}{Mr [-]}}
-			\put(80,62){Kraft [N]}
+			\put(35,-1){Geschwindigkeit [cm/s]}
+			\put(1,33){\rotatebox{90}{Mr [-]}}
+			\put(90,70){Kraft [N]}
 		\end{overpic}
 		\caption{Geschwindigkeit, Mr und Kraft}
 		\label{fig:SpeedKraft}
