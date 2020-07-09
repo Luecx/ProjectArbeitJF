@@ -19,10 +19,11 @@ set ylabel "" rotate by 90
 
 
 unset key
+set view 70,330,1,1
 set size square
 set palette grey positive gamma 1.5
 
 #plot "SpeedNeu.dat" using 1:2:5 with image
-plot "svmr.dat" using 1:2:4 with points pt 5 lc palette
+splot "svmrFixed.dat" using 1:2:4 with points pt 5 lc palette
 
 ### end of code

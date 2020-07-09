@@ -19,7 +19,6 @@ set ylabel "" rotate by 90
 
 
 set palette grey
-set grid
 set size square
 set view map
 set pm3d at b
