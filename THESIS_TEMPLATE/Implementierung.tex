@@ -63,7 +63,11 @@ Für jeden Zeitschritt wird werden 2 Näherungen durchgeführt. Theoretisch kön
 
 Zunächst wird hierfür im ersten Zeitschritt angenommen, dass die Kraft in jenem Zeitschritt ungefähr der Kraft im vorherigen Zeitschritt entspricht. Hieraus lässt sich direkt die neue Geschwindigkeit und Durchbiegung der Platte annähern. Ebenfalls folgt aus den zuvor genannten Größen die Durchdringung in die Platte welche genutzt wird um im zweiten Zeitschritt eine bessere Näherung für die Kraft zu finden. Hierfür wird das Stoßgesetz verwendet.
 
-\section{Numerische Instabilität}
+Um die Rechnungen auszuwerten, wird für jede Variable eine Schleifenstruktur implementiert. 
+
+%HIER MORGEN WEITERSCHREIBEN
+
+\section*{Numerische Instabilität}
 
 Das Skript weist gewisse numerische Instabilitäten auf. Einerseits führt eine zu geringe Plattendicke zu einer geringen Steifigkeit. Dies führt dazu, dass bereits im ersten Zeitschritt die Durchbiegung der Platte größer als die zurückgelegte Strecke des stoßenden Körpers ist. Dies führt zu einer negativen Durchdringung und ist somit nicht plausibel. Dieses Problem kann jedoch durch eine deutlich feinere Schrittweite behoben werden.
 
