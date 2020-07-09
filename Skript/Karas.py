@@ -223,6 +223,15 @@ def maxW(W):                                                                    
 def maxP(Kraft):                                                                                                        #Methode zur Berechnung der maximalen Kraft
     return max(Kraft)
 
+f = 2500
+sv = 2.5
+b = (f / sv) ** 0.5
+a = f / b
+
+time, j, tau, w, P, u, cosPre = compute(a=a, b=b, xi=a/2, eta=b/2, mass_ratio=2)
+
+
+
 #-----------------------------------------------------------------------------------------------------------
 #P A R A M E T E R S T U D I E
 #
@@ -275,7 +284,14 @@ for h in np.arange(0.5, 2.52, 0.02):
 #----------------------------
 #Seitenverhaeltnis
 
-# for sv in np.arange(2.3, 2.31, 0.05):
+# for sv in np.arange(1, 2.5, 0.05):
+#
+#     f = 2500
+#     # sv = 2.5
+#     b = (f / sv) ** 0.5
+#     a = f / b
+#
+#     # time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=2)
 #
 #     time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=1, iterations=1000, xi=a / 2, eta=b / 2, printLoadingBar=True)
 #     for mr in np.arange(2.5, 2.51, 0.01):
@@ -283,7 +299,7 @@ for h in np.arange(0.5, 2.52, 0.02):
 #         # with open("svmr.txt", "a") as myfile:
 #         #     myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (sv, mr, countHits(P), maxW(w), maxP(P))))
 #     print(str((sv-1) / 4 * 100) + "%")
-
+#
 # sv = 2.3
 
 #

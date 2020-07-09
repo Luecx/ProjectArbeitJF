@@ -1,4 +1,4 @@
-\chapter{Theorieherleitung}
+\chapter{Theoretischer Lösungsansatz}
 \label{chap:Principles}
 
 Der Stoßvorgang besteht im Wesentlichen aus einer Kugel mit einem vorgeschriebenen Gewicht $m_g$ welche auf eine reckteckige Platte stößt. Hierbei ist die Auftreffgeschwindigkeit bekannt so wie alle Größen in Tabelle~\ref{tab:TheorieVariablen}. Der Indize "g" bei der Masse der Kugel kommt aus der Literatur nach Karas~\cite{Karas.1939}, wo "g" für Gewicht steht. 
@@ -35,7 +35,6 @@ Zusätzlich wird davon ausgegangen, dass der Geschwindigkeitsvektor der Kugel se
 %Desweiteren wird angenommen, dass der dynamische Biegungspfeil an der Stoßstelle %genau so groß ist, wie der statische Biegungspfeil also wenn die Masse $m_g$ %genau an jener Stelle auf die Platte gelegt wird.
 
 Die Annahme, dass Schubspannungen vernachlässigt werden können erlaubt eine geschlossene analytische Lösung des Problems unter der Bedingung, dass die Ränder frei gelagert sind. Somit treten lediglich Biegemomente und keine Schubkräfte auf.
-
 
 Im folgenden wird die Durchbiegung der Platte als $w(x,y)$ bezeichnet. Die Last $q(x,y)$ wird ebenfalls als ortsabhängige Funktion ausgedrückt. 
 Es gilt die allgemeine Differentialgleichung für die Biegung einer Platte unter einer Last $q$, die im Folgenden als bekannt angenommen wird mit $ \nabla = \left(\frac{\partial}{\partial x} \ \frac{\partial}{\partial y} \right)^T$
@@ -238,7 +237,11 @@ Angewendet auf Gleichung \ref{eq:T_general}, erhält man für die quadratischen 
 \dfrac{1}{2}\rho h \sum_m\sum_n \dot{A}^2_{mn}\int_0^a\sin^2\left(\dfrac{m\pi x}{a}\right)\int_0^b\sin^2\left(\dfrac{n\pi y}{b}\right) dy \ dx=\dfrac{1}{8}\rho h a b\sum_m\sum_n \dot{A}^2_{mn}
 \end{equation}
 
-Die doppelte Summe über $(p,q)$ wird als vierfache Summe wie folgt ausgedrückt
+\newpage
+
+Die doppelte Summe über $(p,q)$ wird als vierfache Summe wie folgt ausgedrückt:
+
+
 
 \begin{equation}
 \dfrac{1}{2}\rho h \sum_m\sum_n\sum_i\sum_j \dot{A}_{mn}\dot{A}_{ij}\int_0^a\sin\left(\dfrac{m\pi x}{a}\right)\sin\left(\dfrac{i\pi x}{a}\right)\int_0^b\sin\left(\dfrac{n\pi y}{b}\right)\sin\left(\dfrac{j\pi y}{b}\right) dy \ dx
@@ -354,12 +357,16 @@ Durch einsetzen von \ref{eq:U} und \ref{eq:T} folgt direkt:
 \label{eq:lagrangeDGL}
 \end{equation}
 
-mit 
+\newpage
 
-$$\overline{a} = \sqrt{\dfrac{D}{\rho h}} = \sqrt{\dfrac{E h^2}{12 \rho (1-\nu^2)}}$$
+mit dem Faktor $\overline{a}$ gegeben durch \ref{eq:aquer}.
 
 
-Durch Integration von \ref{eq:lagrangeDGL} und unter Berücksichtigung der zeitlichen Randbeding $A_{mn} = \dot{A}_{mn} = 0 \text{ für } t = 0$ fallen nach [Karas] die Integrationskonstanten weg, so dass $A_{mn}$ wie folgt ausgerechnet werden kann:
+\begin{equation}\overline{a} = \sqrt{\dfrac{D}{\rho h}} = \sqrt{\dfrac{E h^2}{12 \rho (1-\nu^2)}}
+\label{eq:aquer}
+\end{equation}
+
+Durch Integration von \ref{eq:lagrangeDGL} und unter Berücksichtigung der zeitlichen Randbeding $A_{mn} = \dot{A}_{mn} = 0 \text{ für } t = 0$ fallen nach Karas~\cite{Karas.1939} die Integrationskonstanten weg, so dass $A_{mn}$ wie folgt ausgerechnet werden kann:
 
 \begin{equation}
 A_{mn} = \dfrac{1}{\pi^2 \overline{a}  \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right)} \dfrac{4}{\rho h a b} \int_0^t	Q_{mn}(\tau) \sin \left[ \left(\frac{m^2}{a^2} + \frac{n^2}{b^2} \right) \pi^2 \overline{a} (t-\tau)\right] d\tau
@@ -374,7 +381,7 @@ Da angenommen wird, dass die Kraft punktuell an der Stelle $(\xi, \eta)$ angreif
 \delta E = P \delta A_{mn} \cdot \sin \left( \frac{m \pi \xi}{a} \right) \sin \left( \frac{n \pi \eta}{b} \right) = Q_{mn} \cdot \delta A_{mn}
 \end{equation} 
 
-es folgt
+es folgt:
 
 \begin{equation}
 Q_{mn}(\tau) = P(\tau) \sin \left( \frac{m \pi \xi}{a} \right) \sin \left( \frac{n \pi \eta}{b} \right)
@@ -393,7 +400,9 @@ w(x,y,\xi, \eta, t) = \sum_m \sum_n
 \cdot \sin\left(\frac{m \pi x}{a}\right) \cdot \sin\left(\frac{n \pi y}{b}\right)
 \end{multline}
 
-Umgeschrieben ergibt sich
+\newpage
+
+Umgeschrieben ergibt sich:
 
 \begin{multline}
 	w(x,y,\xi, \eta, t) = \dfrac{4}{\rho h a b \pi^2 \overline{a}} \cdot \sum_m \sum_n 
@@ -415,6 +424,7 @@ Durch Integration des zweiten Newton'schen Axioms, mit der Masse $m_g$ des stoß
 
 \begin{equation}
 	v = v_0 - \frac{1}{m_g} \int_0^t P(\tau) d\tau
+	\label{eq:speedEq}
 \end{equation}
 
 Durch Integration ergibt sich folglich für den Ort des stoßendes Körpers:
@@ -426,6 +436,8 @@ Durch Integration ergibt sich folglich für den Ort des stoßendes Körpers:
 
 
 Da jedoch im Allgemeinen die Kraft in Abhängigkeit vom Eindringungsweg und umgekehrt bekannt ist, wird $z(P)$ im folgenden genutzt:
+
+\newpage
 
 Wenn man nun Gleichung \ref{eq:mpos} mit \ref{eq:wxyxietat} und $z(P)$ zusammenführt, ergibt sich folgender Ausdruck:
 
@@ -454,6 +466,8 @@ Mit:
 
 $$\cos\left(\overline{\theta - i}\right) \coloneqq \cos \left[ \left( \frac{m^2}{a^2}+\frac{n^2}{b^2} \right) \pi^2\overline{a}(\theta - i)\tau\right] $$
 
+\newpage
+
 folgt für die Lösung:
 
 \begin{equation}
@@ -463,7 +477,6 @@ folgt für die Lösung:
 \end{multlined}
 \end{equation}
 
-\newpage
 
 beziehungsweise mit $(i=1,2 ... \theta)$: 
 
@@ -485,6 +498,7 @@ Mit einem genügend groß gewähltem $\kappa$, hier $\kappa=180$, kommt man für
 	\label{eq:tau}
 \end{equation}
 
+\newpage
 
 Da in \ref{eq:numericalSolution} die doppelten Summe über $m,n$ häufig vorkommen, kann man um Rechenzeit zu sparen, $\overline{S(k)}$ als den Summenausdruck definieren. Mit \ref{eq:tau} und $k=\theta - i$:
 
@@ -496,7 +510,6 @@ Da in \ref{eq:numericalSolution} die doppelten Summe über $m,n$ häufig vorkomm
 \end{split}
 \end{equation}
 
-\newpage
 
 Anschließend vereinfachert sich \ref{eq:numericalSolution} zu:
 

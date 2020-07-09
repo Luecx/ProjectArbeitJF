@@ -2,11 +2,12 @@
 \label{chap:Implementation}
 
 
+Das Python-Skript folgt dem dargestellen Schema in \ref{fig:flowchart}. Zunächst werden Parameter der Funktion \texttt{compute()} übergeben. Wenn keine Parameter übergeben werden, wird direkt der Basisfall berechnet. Da die Größe $S(k)$ die meiste Zeit zum Berechnen benötigt, sie jedoch nur von der Geometrie der Platte abhängt, kann für viele aufeinanderfolgenden Rechnungen das $S(k)$ aus vorherigen Rechnungen übernommen werden.\\ 
+Im Anschluss wird der erste Zeitschritt berechnet seperat von den darauffolgenden Zeitschritten berechnet. Da eine numerische Integration durchgeführt wird, wird zunächst eine Annäherung berechnet welche ebenfalls für eine zweite Näherung genutzt wird.\\
+Es ist theoretisch möglich weitere Annäherungen durchzuführen jedoch hat sich gezeigt, dass die Fehler bereits nach der zweiten Annäherung im wesentlichen Verschwinden.
 
 
-
-
-\begin{figure}[H]
+\begin{figure}[!h]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/FlowChart.eps}
 			\put(29,59){\scriptsize{Start}}
@@ -27,23 +28,23 @@
 			\put(-19,5.2){\begin{minipage}{\textwidth}\centering{\scriptsize{1. Zeitschritt:}} \\ \scriptsize{2. Näherung für} \\ \scriptsize{$u,v,w,P,z$} \end{minipage}}
 			%\put(23.5,16.6){\begin{minipage}{\textwidth}1. Näherung \\ für $u,v,w,P,z$\end{minipage}}
 			%\put(23.5,5){\begin{minipage}{\textwidth}2. Näherung \\ für $u,v,w,P,z$\end{minipage}}
-
+			
 			%\put(-19,34){\begin{minipage}{\textwidth}\centering{$S(k)$} \\ gegeben?\end{minipage}}
 			\put(17.5,33.5){\begin{minipage}{\textwidth}\centering{\scriptsize{Zeitschritte}} \\ \scriptsize{übrig?}\end{minipage}}
 			\put(-19,33.5){\begin{minipage}{\textwidth}\centering{\scriptsize{$S(k)$}} \\ \scriptsize{gegeben?}\end{minipage}}
-	
-	
+			
+			
 			\put(-42,25){\begin{minipage}{\textwidth}\centering{\scriptsize{$S(k)$}} \\ \scriptsize{bestimmen}\end{minipage}}
 			
-					
+			
 			\put(42,57.5){\begin{minipage}{\textwidth}\centering{\scriptsize{n. Zeitschritt:}} \\ \scriptsize{1. Näherung für} \\ \scriptsize{$u,v,w,P,z$} \end{minipage}}
 			\put(42,46){\begin{minipage}{\textwidth}\centering{\scriptsize{n. Zeitschritt:}} \\ \scriptsize{2. Näherung für} \\ \scriptsize{$u,v,w,P,z$} \end{minipage}}
 			
 			%\put(84.5,57.5){\begin{minipage}{\textwidth}\small{1. Näherung} \\ \small{für $u,v,w,P,z$}\end{minipage}}
 			%\put(84.5,46){\begin{minipage}{\textwidth}2. Näherung \\ für $u,v,w,P,z$\end{minipage}}
-
+			
 			\put(17,5){\begin{minipage}{\textwidth}\centering{\scriptsize{Ergebnisse}} \\ \scriptsize{auswerten}\end{minipage}}
-
+			
 		\end{overpic}
 		\caption{Flowchart des Python-Skriptes}
 		\label{fig:flowchart}
@@ -51,14 +52,23 @@
 \end{figure}
 
 
-Das Python-Skript folgt dem dargestellen Schema in \ref{fig:flowchart}. Zunächst werden Parameter der Funktion \texttt{compute()} übergeben. Wenn keine Parameter übergeben werden, wird direkt der Basisfall berechnet. Da die Größe $S(k)$ die meiste Zeit zum Berechnen benötigt, sie jedoch nur von der Geometrie der Platte abhängt, kann für viele aufeinanderfolgenden Rechnungen das $S(k)$ aus vorherigen Rechnungen übernommen werden.\\ 
-Im Anschluss wird der erste Zeitschritt berechnet seperat von den darauffolgenden Zeitschritten berechnet. Da eine numerische Integration durchgeführt wird, wird zunächst eine Annäherung berechnet welche ebenfalls für eine zweite Näherung genutzt wird.\\
-Es ist theoretisch möglich weitere Annäherungen durchzuführen jedoch hat sich gezeigt, dass die Fehler bereits nach der zweiten Annäherung im wesentlichen Verschwinden.
+\newpage
 
 Anschließend wird eine äquivalente Rechnung für alle weiteren Zeitschritte durchgeführt und im Anschluss gegebenenfalls geplottet sowie die maximale Kraft und Durchbiegung bestimmt.\\
 Die Funktion  \texttt{compute()} gibt ein Touple \texttt{time, j, tau, w, P, u, cos} zurück.  \texttt{time} ist eine Liste mit den zugehörigen Zeitpunkten zu den Durchbiegungen \texttt{w} und den Kräften \texttt{P}. \texttt{u} stellt zusätzlich die Position des Impaktors dar. Da es möglich ist, die Berechnung durch \texttt{stop\_computation\_after\_first\_impact = True} vorzeitig zu beenden, nachdem der erste Schlag beendet wurde, ist die Anzahl der Zeitschritte als \texttt{j} wiedergegeben. Die verwendete Schrittweite wird ebenfalls als \texttt{tau} zurückgegeben.\\
 Für eine Wiederverwendung von $S(k)$ wird dieses ebenfalls als Liste zurückgegeben mit dem Namen \texttt{cos}. Da $k$ nur ganzzahlige Werte annimmt, wird eine Liste verwendet.\\
 Der verwendete Code ist im Anhang~\ref{chap:Anhang_Skript} zu finden.
+
+Für jeden Zeitschritt wird werden 2 Näherungen durchgeführt. Theoretisch können auch mehr als zwei Iteration pro Zeitschritt durchgeführt werden, jedoch hat diese keine wesentliche Änderung im Ergebnis gezeigt.
+
+Zunächst wird hierfür im ersten Zeitschritt angenommen, dass die Kraft in jenem Zeitschritt ungefähr der Kraft im vorherigen Zeitschritt entspricht. Hieraus lässt sich direkt die neue Geschwindigkeit und Durchbiegung der Platte annähern. Ebenfalls folgt aus den zuvor genannten Größen die Durchdringung in die Platte welche genutzt wird um im zweiten Zeitschritt eine bessere Näherung für die Kraft zu finden. Hierfür wird das Stoßgesetz verwendet.
+
+\section{Numerische Instabilität}
+
+Das Skript weist gewisse numerische Instabilitäten auf. Einerseits führt eine zu geringe Plattendicke zu einer geringen Steifigkeit. Dies führt dazu, dass bereits im ersten Zeitschritt die Durchbiegung der Platte größer als die zurückgelegte Strecke des stoßenden Körpers ist. Dies führt zu einer negativen Durchdringung und ist somit nicht plausibel. Dieses Problem kann jedoch durch eine deutlich feinere Schrittweite behoben werden.
+
+
+
 
 
 
