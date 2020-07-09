@@ -1,8 +1,11 @@
 \chapter{Durchführung}
 \label{chap:Durchfuehrung}
 
-In der bereits hergeleiteten Theorie wird der Lösungsweg für das beschrieben Problem vorgestellt. Mit dem zur Verfügung gestelltem Skript, das auf dieser Theorie basiert, wird nun die Parameterstudie durchgeführt. Um relevante Ergebnisse zu erlangen, müssen zuerst weitere Gleichungen in das Skript eingearbeitet werden.\\
-In dem Skript wird eine Konstante $c$ als Vorfaktor für die Kraftberechnung aus dem Punktkontakt verwendet. Um die Berechnungsmöglichkeiten zu erweitern, wird $c$ nun durch eine Gleichung der Hertz'schen Pressung ersetzt, die wie folgt Hergeleitet wird:\\
+In diesem Kapitel wird die Durchführung der Parameterstudie erläutert. Zuerst werden neue Gleichungen in das Skript eingearbeitet. Dann wird das Vorgehen vorgestellt und die Auswertungskriterien und Annahmen festgelegt.\\
+Für die Parameterstudie werden die Höhe, die Geschwindigkeit, der Kugelradius, die Auftreffstelle und das Seitenverhältnis variiert.
+
+In der bereits hergeleiteten Theorie wird der Lösungsweg für den Stoßvorgang vorgestellt. Mit dem zur Verfügung gestelltem Skript, das auf dieser Theorie basiert, wird nun die Para-meterstudie durchgeführt. Um relevante Ergebnisse zu erlangen, müssen zuerst weitere Gleichungen in das Skript eingearbeitet werden.\\
+In dem Skript wird eine Konstante $c$ als Vorfaktor für die Kraftberechnung aus dem Punkt-kontakt verwendet. Um die Berechnungsmöglichkeiten zu erweitern, wird $c$ nun durch eine Gleichung der Hertz'schen Pressung ersetzt, die wie folgt Hergeleitet wird:\\
 Die Gleichung für die Hertz'sche Pressung eines Kugel-Kugel-Punktkontaktes lautet wie in Gleichung~\ref{form:ZvonP}.
 
 \begin{equation}
@@ -10,7 +13,7 @@ Die Gleichung für die Hertz'sche Pressung eines Kugel-Kugel-Punktkontaktes laut
 	z(P) = \left[ \frac{9 P^{2} (1 - \nu^{2})^{2}}{2 E^{2}} \cdot \left( \frac{1}{2 r_{1}} + \frac{1}{2 r_{2}} \right) \right]^{\frac{1}{3}}
 \end{equation}
 
-Da einer der beiden Körper eine Platte mit dem Radius $r_{p} = \infty$ ist, folgt durch einsetzen von $r_{p}$ und umstellen nach P:
+Hier ist wieder "g" kurz für Gewicht nach Karas~\cite{Karas.1939}. Da einer der beiden Körper eine Platte mit dem Radius $r_{p} = \infty$ ist, folgt durch einsetzen von $r_{p}$ und umstellen nach P:
 
 \begin{equation}
 	\label{form:PvonZ}
@@ -35,7 +38,7 @@ Im Skript wurden Gleichungen~\ref{form:redE} und~\ref{form:c} unter den Konstant
 
 \section{Vorgehen und Vorbereitung}
 
-Insgesamt wird das Problem durch die einstellbaren Parameter in Tabelle~\ref{tab:VariablenderStudie} beschrieben. In Anlehnung an \cite{Olsson.2000} wird das Massenverhältnis $Mr$ als einer der signifikanten Parameter gewählt. Davon ausgehend werden dann die anderen Parameter einzeln variiert und die Ergebnisse grafisch ausgewertet. 
+Insgesamt wird der Stoßvorgang durch die einstellbaren Parameter in Tabelle~\ref{tab:VariablenderStudie} beschrieben. In Anlehnung an \cite{Olsson.2000} wird das Massenverhältnis $MR$ als einer der signifikanten Parameter gewählt. Davon ausgehend werden dann die anderen Parameter einzeln variiert und die Ergebnisse grafisch ausgewertet. 
 
 \begin{table}[H]
 	\begin{center}
@@ -47,7 +50,7 @@ Insgesamt wird das Problem durch die einstellbaren Parameter in Tabelle~\ref{tab
 			$a,b,h$ & Plattenmaße in [cm]\\
 			$r_{g}$ & Impaktorradius in [cm]\\
 			$v_{0}$ & Auftreffgeschwindigkeit [cm/s]\\
-			$Mr$ & Massenverhältnis $\hat{=}$ $\frac{Impaktormasse}{Plattenmasse}$\\
+			5 & Massenverhältnis $\hat{=}$ $\frac{Impaktormasse}{Plattenmasse}$\\
 			$\xi,\eta$ & Auftreffstelle des Impaktors\\
 			$x,y$ & Auswertungsstelle\\		
 		\end{tabular}
@@ -73,7 +76,9 @@ Als Schlag wird hier ein Kraftverlauf bezeichnet, bei dem die Kraft $P_{i}$ zwis
 	F_{i-1} > 0 \; \wedge \; F_{i} = 0.0 
 \end{equation}
 
-Da im zeitlichen Verlauf auch nach dem ersten Auftreffen noch Schläge auftreten können, wird die Schrittanzahl auf $i = 1000$ gesetzt um signifikante Ergebnisse zu erlangen. 
+Die Schrittanzahl $i$ wird hier durch empirische Beobachtungen festgelegt. Zuerst wurde überprüft, ab wann der Stoßvorgang sich periodisch wiederholt. Ab $i = 500$ bilden sich bei einer signifikanten Anzahl von Parametervariationen periodische Wiederholungen aus. Um sicherzustellen, dass die Ergebnisse nicht verfälscht werden, wurde nun $i = 1000$ gesetzt.\\
+Da $\tau$ aus Gleichung~\ref{eq:tau} von den geometrischen Parametern der Platte abhängt, wird $\tau$ bei jeder Geometrieänderung neu berechnet.
+
 
 \subsubsection*{Maximale Auslenkung der Platte}
 
@@ -81,7 +86,7 @@ Die maximale Auslenkung $w_{max}$ wird direkt aus der Versuchsreihe ausgelesen u
 
 \subsubsection*{Maximale Kraft}
 
-Analog zur maximalen Auslenkung, wird die maximale Kraft $P_{max}$ direkt ausgelesen und in Abhängigkeit von $Mr$ und dem Parameter dargestellt.
+Analog zur maximalen Auslenkung, wird die maximale Kraft $P_{max}$ direkt ausgelesen und in Abhängigkeit von $MR$ und dem Parameter dargestellt.
 
 
 
@@ -107,14 +112,30 @@ Für die Parameterstudie wurde folgender Fall als Ausgangspunkt gewählt:
 	\end{center}
 \end{table}
 
-$Mr$ wird hier bewusst ausgelassen, da bei jedem Parameter außer der Auftreffstelle über das Massenverhältnis iteriert wird und dadurch kein Anfangswert, sondern eine Menge benötigt wird. Die Menge der $Mr$ ist nach Gleichung~\ref{form:Mr}:
+Der Radius muss gesondert erwähnt werden, da er für die Studie konstant gehalten wird. Wenn die Impaktormasse bei konstantem Radius erhöht wird, ändert sich die Geometrie nach Abbildung~\ref{fig:konstRad}. Dadurch ergibt sich bei kleinen Massenverhältnissen ein schalenförmiger Impaktkörper. Die Berechnung kann numerisch bei solchen $MR$ durchgeführt werden, ergibt jedoch physikalisch nur bedingt Sinn. Für die Kontinuität wurden diese $MR$ in der Studie berücksichtigt, es besteht jedoch Bedarf für weitere Recherche in diesem Bereich. 
+
+\begin{figure}[H]
+	\begin{center}
+		\begin{overpic}[width=\linewidth]{pictures/durchfuehrung/Radius.eps}
+			\put(57,23){$r_{g}$}
+			\put(47,2){Platte}
+			\put(48,19){$m_{g,i}$}
+			\put(47,29.7){$\Delta m_{g,i+1}$}
+			\put(47,39.6){$\Delta m_{g,i+2}$}
+		\end{overpic}
+	\caption{Impaktormassenänderung bei konstantem Radius}
+	\label{fig:konstRad}	
+	\end{center}
+\end{figure}
+
+$MR$ wird in Tabelle~\ref{tab:Ausgang} bewusst ausgelassen, da bei jedem Parameter außer der Auftreffstelle über das Massenverhältnis iteriert wird und dadurch kein Anfangswert, sondern eine Menge benötigt wird. Die Menge der $MR$ ist nach Gleichung~\ref{form:MR}:
 
 \begin{equation}
-	\label{form:Mr}
-	0.01 \leq Mr \leq 2.50 \; , \;\; \mbox{Schrittweite:} \; \Delta Mr = 0.01
+	\label{form:MR}
+	0.01 \leq MR \leq 2.50 \; , \;\; \mbox{Schrittweite:} \; \Delta MR = 0.01
 \end{equation}
 
-Die Stoffparameter sind im Rahmen der Studie konstant und in Tabelle~\ref{tab:Stoff} definiert.
+Die Stoffparameter bleiben konstant und entsprechen in Tabelle~\ref{tab:Stoff} den Werten von Stahl.
 
 \begin{table}[H]
 	\begin{center}
@@ -148,51 +169,51 @@ Wenn man die Höhe, das Massenverhältnis und die Anzahl der Schläge aufträgt,
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Hoehe/production/Hoehe.eps}
 			\put(40,-1){Höhe [cm]}
-			\put(8,33){\rotatebox{90}{Mr [-]}}
+			\put(8,33){\rotatebox{90}{MR [-]}}
 			\put(83,70){Aufschläge [-]}
 		\end{overpic}
-	\caption{Höhe, Mr und Anzahl der Aufschläge}
+	\caption{Höhe, MR und Anzahl der Aufschläge}
 	\label{fig:Hoehe}
 	\end{center}
 \end{figure}
 
-Man kann direkt ablesen, dass mehrere Aufschläge vermehrt im unteren Höhenbereich auftreten. Dies ist auf die Steifigkeit der Platte zurückzuführen. Bei größerer Plattendicke ist die Platte steifer und die Kugel prallt ab, ohne vermehrt aufzutreffen. Bei $h = 0.6 [cm]$ treten bis zu 10 Schlägen auf. Interessant ist auch, dass sich drei Bereiche in Abhängigkeit des Massenverhältnisses ausbilden. \\
-Es ist offensichtlich, dass bei einem Massenverhältnis $Mr \geq 1.7$ und einer Plattendicke von $h \geq 1.6 [cm]$ nur noch einzelne Stöße auftreten. Hier ist anzunehmen, dass der elastische Stoßvorgang der Kugel ausreichend kinetische Energie entgegen der Stoßrichtung überträgt, dass sie sich schneller entfernt, als die Platte auslenken kann. \\
-Auch bei der Auslenkung stimmen die Ergebnisse mit den Erwartungen überein. In Abbildung~\ref{fig:HoeheAuslenkung} ist zu erkennen, dass mit zunehmender Höhe die Auslenkung abfällt, da die Steifigkeit der Platte zunimmt. Die Steigung der Auslenkungskurve flacht mit zunehmendem $Mr$ ab. Am signifikantestem ist die Steigung im Bereich $0.01 \leq Mr \leq 1$. Ergo ist der Einfluss des Massenverhältnisses in diesem Bereich am größten.\\
-Bei Plattendicken von $h \geq 1.3 [cm]$ flacht die Steigung der maximalen Auslenkung in einen annähernd linearen Bereich ab. Daher liegt nahe, dass die Höhe im Bereich bis $h = 1.3 [cm]$ den stärksten Einfluss hat.\\
+Man kann direkt ablesen, dass mehrere Aufschläge vermehrt im unteren Höhenbereich auftreten. Dies ist auf die Steifigkeit der Platte zurückzuführen. Bei größerer Plattendicke ist die Platte steifer und die Kugel prallt ab, ohne vermehrt aufzutreffen. Bei $h = 0.6 [cm]$ treten bis zu 10 Schlägen auf.\\
+Es ist offensichtlich, dass bei einem Massenverhältnis $MR \geq 1.7$ und einer Plattendicke von $h \geq 1.6 cm$ nur noch einzelne Stöße auftreten. Hier ist anzunehmen, dass der elastische Stoßvorgang der Kugel ausreichend kinetische Energie entgegen der Stoßrichtung überträgt, dass sie sich schneller entfernt, als die Platte auslenken kann. \\
+Auch bei der Auslenkung stimmen die Ergebnisse mit den Erwartungen überein. In Abbildung~\ref{fig:HoeheAuslenkung} ist zu erkennen, dass mit zunehmender Höhe die Auslenkung abfällt, da die Steifigkeit der Platte zunimmt. Die Steigung der Auslenkungskurve flacht mit zunehmendem $MR$ ab. Am signifikantestem ist die Steigung im Bereich $0.01 \leq MR \leq 1$. Ergo ist der Einfluss des Massenverhältnisses in diesem Bereich am größten.\\
+Bei Plattendicken von $h \geq 1.3 cm$ flacht die Steigung der maximalen Auslenkung in einen annähernd linearen Bereich ab. Daher liegt nahe, dass die Höhe im Bereich bis $h = 1.3 cm$ den stärksten Einfluss hat.\\
 
 \begin{figure}[h!]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Hoehe/production/HoeheAuslenkung.eps}
 			\put(40,-1){Höhe [cm]}
-			\put(8,33){\rotatebox{90}{Mr [-]}}
+			\put(8,33){\rotatebox{90}{MR [-]}}
 			\put(83,70){Auslenkung [cm]}
 		\end{overpic}
-	\caption{Höhe, Mr und Auslenkung}
+	\caption{Höhe, MR und Auslenkung}
 	\label{fig:HoeheAuslenkung}
 	\end{center}
 \end{figure}
 
-Die größte Auslenkung wird bei einem Massenverhältnis von $Mr = 2.5$ und einer Höhe von $h = 0.5 [cm]$ berechnet und beträgt $w(0.5,2.5) = 2.265 [cm]$, während die geringste Auslenkung bei $Mr = 0.01$ und $h = 2.5 [cm]$ mit $w = 0.0165 [cm]$ auftritt.\\
+Die größte Auslenkung wird bei einem Massenverhältnis von $MR = 2.5$ und einer Höhe von $h = 0.5 [cm]$ berechnet und beträgt $w(0.5,2.5) = 2.265 [cm]$, während die geringste Auslenkung bei $MR = 0.01$ und $h = 2.5 [cm]$ mit $w = 0.0165 [cm]$ auftritt.\\
 \\
 Wenn man die maximal auftretende Kraft betrachtet, ergibt sich Abbildung~\ref{fig:HoeheKraft}.\\
 Aus der maximalen Auslenkung kann man für die Höhe schlussfolgern, dass die maximale Kraft dort auftritt, wo die Auslenkung am geringsten ist, da hier am wenigsten Energie in die Deformation der Platte übergeht.\\
-Bei $Mr = 2.5$ und $h = 2.5 [cm]$ tritt daher eine Kraft von $P = 598.36 [kN]$ auf. Die hier auftretende Kraft ist etwa um den Faktor $50$ größer als die geringste Kraft, die wie zu erwarten bei $Mr = 0.01$ und $h = 0.5 [cm]$ auftritt und $P = 10.88 [kN]$ beträgt. \\
-Interessant zu betrachten ist auch, wie die Kraft mit größer werdendem $Mr$ zunimmt. Bei $h_{min} = 0.5 [cm]$ ist die Kraft bei $Mr_{max} = 2.5$ nur um den Faktor 2 größer als bei $Mr_{min} = 0.01$. Betrachtet man allerdings $h_{max} = 2.5 [cm]$, ist die Kraft bei $Mr_{max} = 2.5$ um den Faktor $14.4$ größer als bei $Mr_{min} = 0.01$, bzw. betragen die Kräfte $P_{max}(h_{max}) = 598.36[kN]$ und $P_{min}(h_{max}) = 41.4[kN]$.
+Bei $MR = 2.5$ und $h = 2.5 [cm]$ tritt daher eine Kraft von $P = 598.36 [kN]$ auf. Die hier auftretende Kraft ist etwa um den Faktor $50$ größer als die geringste Kraft, die wie zu erwarten bei $MR = 0.01$ und $h = 0.5 [cm]$ auftritt und $P = 10.88 [kN]$ beträgt. \\
+Interessant zu betrachten ist auch, wie die Kraft mit größer werdendem $MR$ zunimmt. Bei $h_{min} = 0.5 [cm]$ ist die Kraft bei $MR_{max} = 2.5$ nur um den Faktor 2 größer als bei $MR_{min} = 0.01$. Betrachtet man allerdings $h_{max} = 2.5 [cm]$, ist die Kraft bei $MR_{max} = 2.5$ um den Faktor $14.4$ größer als bei $MR_{min} = 0.01$, bzw. betragen die Kräfte $P_{max}(h_{max}) = 598.36[kN]$ und $P_{min}(h_{max}) = 41.4[kN]$.
 
 \begin{figure}[H]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Hoehe/production/HoeheKraft.eps}
 			\put(40,-1){Höhe[cm]}
-			\put(8,33){\rotatebox{90}{Mr [-]}}
+			\put(8,33){\rotatebox{90}{MR [-]}}
 			\put(83,70){Kraft [N]}
 		\end{overpic}
-	\caption{Höhe, Mr und Kraft}
+	\caption{Höhe, MR und Kraft}
 	\label{fig:HoeheKraft}
 	\end{center}
 \end{figure}
 
-
+\newpage
 
 \subsection{Geschwindigkeit des Impaktors}
 
@@ -203,53 +224,55 @@ Als nächster Parameter wird die Geschwindigkeit betrachtet. Da hier nur der Low
 	\label{form:DeltaV0}
 \end{equation}
 
-Analog zur Höhenvariation wird zuerst die Anzahl der Aufschläge aufgetragen. In Abbildung~\ref{fig:Speed} ist zu erkennen, dass die Geschwindigkeit bei gleichbleibendem $Mr$ nur einen verschwindet geringen Einfluss auf die Anzahl der Aufschläge hat. 
+Analog zur Höhenvariation wird zuerst die Anzahl der Aufschläge aufgetragen. In Abbildung~\ref{fig:Speed} ist zu erkennen, dass die Geschwindigkeit bei gleichbleibendem $MR$ nur einen verschwindet geringen Einfluss auf die Anzahl der Aufschläge hat. 
 
 \begin{figure}[h!]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Speed/production/Speed.eps}
 			\put(35,-1){Geschwindigkeit [cm/s]}
-			\put(8,33){\rotatebox{90}{Mr [-]}}
+			\put(8,33){\rotatebox{90}{MR [-]}}
 			\put(83,70){Aufschläge [-]}
 		\end{overpic}
-		\caption{Geschwindigkeit, Mr und Anzahl der Aufschläge}
+		\caption{Geschwindigkeit, MR und Anzahl der Aufschläge}
 		\label{fig:Speed}
 	\end{center}
 \end{figure}
 
 Die aus den Stößen resultierende Auslenkung wird in Abbildung~\ref{fig:SpeedAuslenkung} dargestellt. Man kann erkennen, dass der Einfluss des Massenverhältnisses mit zunehmender Geschwindigkeit zu-nimmt. \\
-Die geringste Auslenkung tritt bei $Mr = 0.01$ und $v_{0} = 100 [cm/s]$ auf und beträgt $w = 0.008899 [cm]$, während die größte Auslenkung wie zu erwarten bei $v_{0,max} = 1000 [cm/s]$ und $Mr_{max} = 2.5$ berechnet wird und $w_{max} = 2.57 [cm]$ beträgt. \\
-Auch zu sehen ist, dass im höheren Geschwindigkeitsbereich die Auslenkung stärker mit größer werdendem $Mr$ ansteigt. \\
-Betrachtet man den Faktor der zwischen der $w_{min}(v_{0,min})$ und $w_{max}(v_{0,max})$ bei gegebenem $Mr$ liegt ist zu erkennen, dass die Geschwindigkeit im Zusammenspiel mit $Mr$ einen großen Einfluss auf die Auslenkung hat. Bei $v_{0,min}$ ist der Faktor mit $28.72$ fast gleich wie bei $v_{0,max}$ mit $29.72$.
+Die geringste Auslenkung tritt bei $MR = 0.01$ und $v_{0} = 100 [cm/s]$ auf und beträgt $w = 0.008899 [cm]$, während die größte Auslenkung wie zu erwarten bei $v_{0,max} = 1000 [cm/s]$ und $MR_{max} = 2.5$ berechnet wird und $w_{max} = 2.57 [cm]$ beträgt. \\
+Auch zu sehen ist, dass im höheren Geschwindigkeitsbereich die Auslenkung stärker mit größer werdendem $MR$ ansteigt. \\
+Betrachtet man den Faktor der zwischen der $w_{min}(v_{0,min})$ und $w_{max}(v_{0,max})$ bei gegebenem $MR$ liegt ist zu erkennen, dass die Geschwindigkeit im Zusammenspiel mit $MR$ einen großen Einfluss auf die Auslenkung hat. Bei $v_{0,min}$ ist der Faktor mit $28.72$ fast gleich wie bei $v_{0,max}$ mit $29.72$.
 
 \begin{figure}[H]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Speed/production/SpeedAuslenkung.eps}
 			\put(35,-1){Geschwindigkeit [cm/s]}
-			\put(8,33){\rotatebox{90}{Mr [-]}}
+			\put(8,33){\rotatebox{90}{MR [-]}}
 			\put(83,70){Auslenkung [cm]}
 		\end{overpic}
-		\caption{Geschwindigkeit, Mr und Auslenkung}
+		\caption{Geschwindigkeit, MR und Auslenkung}
 		\label{fig:SpeedAuslenkung}
 	\end{center}
 \end{figure}
 
 Als letztes wird nun die Kraft aufgetragen. In Abbildung~\ref{fig:SpeedKraft} sind ähnliche Trends wie in Abbildung~\ref{fig:SpeedAuslenkung} zu sehen. \\
-Auch hier nimmt die auftretende Kraft mit $v_{0}$ zu. Je größer $Mr$ hierbei ist, desto steiler die Kraftzunahme. Besonders deutlich wird dies, wenn man wieder die Faktoren zwischen $P_{max}$ und $P_{min}$ bei gegebenem $Mr$ und $v_{0}$ untersucht. \\
-Bei $v_{0,min} = 100 [cm/s]$ ist $P(Mr_{min}) = 2.883 [kN]$ und damit um den Faktor $9.375$ kleiner als $P(Mr_{max}) = 27.063 [kN]$.\\
-Bei $v_{0,max} = 1000 [cm/s]$ ist $P(Mr_{min}) = 38.892 [kN]$ und $P(Mr_{max}) = 282.326 [kN]$. Damit ist der Faktor hier $7.259$, allerdings liegt eine Größenordnung zwischen der Kraft bei $v_{0,min}$ und der Kraft bei $v_{0,max}$.
+Auch hier nimmt die auftretende Kraft mit $v_{0}$ zu. Je größer $MR$ hierbei ist, desto steiler die Kraftzunahme. Besonders deutlich wird dies, wenn man wieder die Faktoren zwischen $P_{max}$ und $P_{min}$ bei gegebenem $MR$ und $v_{0}$ untersucht. \\
+Bei $v_{0,min} = 100 [cm/s]$ ist $P(MR_{min}) = 2.883 [kN]$ und damit um den Faktor $9.375$ kleiner als $P(MR_{max}) = 27.063 [kN]$.\\
+Bei $v_{0,max} = 1000 [cm/s]$ ist $P(MR_{min}) = 38.892 [kN]$ und $P(MR_{max}) = 282.326 [kN]$. Damit ist der Faktor hier $7.259$, allerdings liegt eine Größenordnung zwischen der Kraft bei $v_{0,min}$ und der Kraft bei $v_{0,max}$.
 
 \begin{figure}[H]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Speed/production/SpeedKraft.eps}
 			\put(35,-1){Geschwindigkeit [cm/s]}
-			\put(8,33){\rotatebox{90}{Mr [-]}}
+			\put(8,33){\rotatebox{90}{MR [-]}}
 			\put(83,70){Kraft [N]}
 		\end{overpic}
-		\caption{Geschwindigkeit, Mr und Kraft}
+		\caption{Geschwindigkeit, MR und Kraft}
 		\label{fig:SpeedKraft}
 	\end{center}
 \end{figure}
+
+\newpage
 
 \subsection{Impaktorradius}
 
@@ -261,51 +284,51 @@ Im Folgenden wird der Radius des Impaktors betrachtet. Nach Gleichung~\ref{form:
 \end{equation}
 
 In Abbildung~\ref{fig:Radius} ist zu erkennen, dass der Radius nur einen geringen Einfluss auf die Anzahl der Aufschläge hat.\\
-Bildet man die Daten in 3D ab, erkennt man leicht, dass die Anzahl der Aufschläge sich signifikant nur mit $Mr$ verändert. \\
+Bildet man die Daten in 3D ab, erkennt man leicht, dass die Anzahl der Aufschläge sich signifikant nur mit $MR$ verändert. \\
 
 \begin{figure}[H]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Radius/production/Radius.eps}
 			\put(35,-1){Radius [cm]}
-			\put(8,33){\rotatebox{90}{Mr [-]}}
+			\put(8,33){\rotatebox{90}{MR [-]}}
 			\put(83,70){Aufschläge [-]}
 		\end{overpic}
-		\caption{Radius, Mr und Anzahl der Aufschläge}
+		\caption{Radius, MR und Anzahl der Aufschläge}
 		\label{fig:Radius}
 	\end{center}
 \end{figure}
 
-Ähnliche Ergebnisse werden auch bei der Auslenkung erreicht. Wie in Abbildung~\ref{fig:RadiusAuslenkung} zu sehen ist, nimmt die Auslenkung nur bei hohen $Mr$ auch mit durch Erhöhung des Radius zu. Im niederen $Mr$-Bereich sind die Auslenkungen bei $r_{g} = 0.5 [cm]$ und bei $r_{g} = 10.0 [cm]$ fast identisch bei $w = 0.04 [cm]$. Bei $Mr_{max} = 2.5$ ist die Auslenkung jedoch nur auf der zweiten Nachkommestelle größer, mit $w(r_{g}=0.5[cm]) = 1.27 [cm]$ und $w(r_{g}=10.0[cm]) = 1.29 [cm]$. 
+Ähnliche Ergebnisse werden auch bei der Auslenkung erreicht. Wie in Abbildung~\ref{fig:RadiusAuslenkung} zu sehen ist, nimmt die Auslenkung nur bei hohen $MR$ auch mit durch Erhöhung des Radius zu. Im niederen $MR$-Bereich sind die Auslenkungen bei $r_{g} = 0.5 [cm]$ und bei $r_{g} = 10.0 [cm]$ fast identisch bei $w = 0.04 [cm]$. Bei $MR_{max} = 2.5$ ist die Auslenkung jedoch nur auf der zweiten Nachkommestelle größer, mit $w(r_{g}=0.5[cm]) = 1.27 [cm]$ und $w(r_{g}=10.0[cm]) = 1.29 [cm]$. 
 
 \begin{figure}[H]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Radius/production/RadiusAuslenkung.eps}
 			\put(35,-1){Radius [cm]}
-			\put(8,33){\rotatebox{90}{Mr [-]}}
+			\put(8,33){\rotatebox{90}{MR [-]}}
 			\put(83,70){Auslenkung [cm]}
 		\end{overpic}
-		\caption{Radius, Mr und Auslenkung}
+		\caption{Radius, MR und Auslenkung}
 		\label{fig:RadiusAuslenkung}
 	\end{center}
 \end{figure}
 
-Auch wenn man die Kraft betrachtet, lassen sich ähnliche Trends erkennen. In Abbildung~\ref{fig:RadiusKraft} verändert sich die resultierende maximale Kraft im niederen $Mr$-Bereich nur minimal.\\
-Die geringste Kraft tritt bei $r_{g,min} = 0.5 [cm]$ und $Mr_{min} = 0.01$ mit $P_{min} = 16.39 [kN]$ auf, während die Kraft bei gleichem $Mr$ und $r_{g,max} = 10.0 [cm]$ $P = 22.76 [kN]$ beträgt.\\
-Analog zu der Auslenkung ergibt sich die signifikanteste Kraftänderung bei $Mr_{max}$. Die Kraft steigt von $P(r_{g,min}) = 136.50 [kN]$ auf $P(r_{g,max}) = 163.05 [kN]$ um den Faktor $1.194$ an. Verglichen mit der Kraftänderung von $Mr_{min}$ zu $Mr_{max}$, die bei $r_{g,max}$ mit dem Faktor $7.16$ verbunden ist, ist $\Delta P$ über die Radiusänderung eher gering. 
+Auch wenn man die Kraft betrachtet, lassen sich ähnliche Trends erkennen. In Abbildung~\ref{fig:RadiusKraft} verändert sich die resultierende maximale Kraft im niederen $MR$-Bereich nur minimal.\\
+Die geringste Kraft tritt bei $r_{g,min} = 0.5 [cm]$ und $MR_{min} = 0.01$ mit $P_{min} = 16.39 [kN]$ auf, während die Kraft bei gleichem $MR$ und $r_{g,max} = 10.0 [cm]$ $P = 22.76 [kN]$ beträgt.\\
+Analog zu der Auslenkung ergibt sich die signifikanteste Kraftänderung bei $MR_{max}$. Die Kraft steigt von $P(r_{g,min}) = 136.50 [kN]$ auf $P(r_{g,max}) = 163.05 [kN]$ um den Faktor $1.194$ an. Verglichen mit der Kraftänderung von $MR_{min}$ zu $MR_{max}$, die bei $r_{g,max}$ mit dem Faktor $7.16$ verbunden ist, ist $\Delta P$ über die Radiusänderung eher gering. 
 
 \begin{figure}[H]
 	\begin{center}
 		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/Radius/production/RadiusKraft.eps}
 			\put(35,-1){Radius [cm]}
-			\put(8,33){\rotatebox{90}{Mr [-]}}
+			\put(8,33){\rotatebox{90}{MR [-]}}
 			\put(83,70){Kraft [N]}
 		\end{overpic}
-		\caption{Radius, Mr und Kraft}
+		\caption{Radius, MR und Kraft}
 		\label{fig:RadiusKraft}
 	\end{center}
 \end{figure}
 
-
+\newpage
 
 \subsection{Variation des Impaktortes}
 Im Folgenden wird der Aufschlagsort des Impaktors verändert. Alle anderen Parameter aus Tabelle \ref{tab:Ausgang} und \ref{tab:Stoff} werden konstant gehalten. Um eine Verallgemeinerung zu gewährleisten, wurde der Aufschlagsort entdimensioniert. Hierfür werden $\xi$ und $\eta$ durch $a$, bzw. $b$ geteilt. Man erhält $\frac{\xi}{a}$ und $\frac{\eta}{b}$. Da die Durchführung für eine quadratische Platte gemacht wurde, musste aufgrund der Symmetrie lediglich ein Achtel der gesamten Platte berechnet werden mit:
@@ -369,67 +392,67 @@ Für die Kraft findet man ebenfalls die 4 Ringe vor, welche eine maximale Kraft 
 %	\end{center}	
 %\end{figure}
 
-\subsection{Variation des Seitenverhältnisses}
+\newpage
 
-\begin{figure}[H]
-	\begin{center}
-		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/svmr/production/svmrAlternativ.eps}
-			\put(43,-1){$a/b$ [-]}
-			\put(83,70){Aufschläge [-]}
-			\put(8,33){\rotatebox{90}{Mr [-]}}
-		\end{overpic}
-		\caption{Maximale Kraft in Abhängigkeit des Seitenverhältnis}
-		\label{fig:svmr}
-	\end{center}
-\end{figure}
+\subsection{Variation des Seitenverhältnisses}
 
 Die Variation des Seitenverhältnisses wurde unter konstanter Fläche untersucht. Für eine gegebene Fläche $f$ und ein Seitenverhältnis $Sv$, können $a$ und $b$ wie folgt berechnet werden:
 
 $$b = \left(\dfrac{f}{Sv}\right)^\frac{1}{2}$$
 $$a = \dfrac{f}{b} $$
 
-In Abbildung~\ref{fig:svmr} bildet sich eine klare Abhängig der Stoßanzahl von dem Seitenverhältnis aus. Da mit einem steigenden Seitenverhältnis unter gleicher Fläche, eine der beiden Seitenlänge minimiert wird, dominiert diese Seite die Steifigkeit der Platte. Somit erhält man ab einem Seitenverhältnis von rund 3.5 stets nur noch einen einzigen Schlag. Ebenfalls steigt die Anzahl der Schläge mit steigenden Massenverhältnis, jedoch hat $Mr$ einen deutlich kleineren Einfluss als das Seitenverhältnis.\\
-Auffallend ist zudem noch das schnelle Ansteigen der Anzahl der Schläge bei einem Seitenverhältnis zwischen 1 und 1.5. Anschließend fällt die Anzahl der Schläge wieder. Wichtig zu erwähnen ist eine numerische Instabilität des Skriptes, welche bei Seitenverhältnissen zwischen $2 \leq Sv \leq 2.5$ und einem Massenverhältnis $>2$ falsche Ergebnisse erzeugt. Diese numerische Instabilität wird insbesondere ersichtlich wenn die maximale Durchbiegung aufgetragen wird, siehe Abbildung~\ref{fig:svmrDurchbiegung}.
-
+In Abbildung~\ref{fig:svMR} bildet sich eine klare Abhängig der Stoßanzahl von dem Seitenverhältnis aus. Da mit einem steigenden Seitenverhältnis unter gleicher Fläche, eine der beiden Seitenlänge minimiert wird, dominiert diese Seite die Steifigkeit der Platte. Somit erhält man ab einem Seitenverhältnis von rund 3.5 stets nur noch einen einzigen Schlag. Ebenfalls steigt die Anzahl der Schläge mit steigenden Massenverhältnis, jedoch hat $MR$ einen deutlich kleineren Einfluss als das Seitenverhältnis.\\
 
 \begin{figure}[H]
 	\begin{center}
-		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/svmr/production/svmrAuslenkung.eps}
+		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/svMR/production/svMRAlternativ.eps}
+			\put(43,-1){$a/b$ [-]}
+			\put(83,70){Aufschläge [-]}
+			\put(8,33){\rotatebox{90}{MR [-]}}
+		\end{overpic}
+		\caption{Maximale Kraft in Abhängigkeit des Seitenverhältnis}
+		\label{fig:svMR}
+	\end{center}
+\end{figure}
+
+Auffallend ist zudem noch das schnelle Ansteigen der Anzahl der Schläge bei einem Seitenverhältnis zwischen 1 und 1.5. Anschließend fällt die Anzahl der Schläge wieder. Wichtig zu erwähnen ist eine numerische Instabilität des Skriptes, welche bei Seitenverhältnissen zwischen $2 \leq Sv \leq 2.5$ und einem Massenverhältnis $>2$ falsche Ergebnisse erzeugt. Diese numerische Instabilität wird insbesondere ersichtlich wenn die maximale Durchbiegung aufgetragen wird, siehe Abbildung~\ref{fig:svMRDurchbiegung}.\\
+Für eine bessere Darstellung wurde im folgenden $MR > 2$ ignoriert. Für die Durchbiegung ergibt sich dann Abbildung~\ref{fig:svMRDurchbiegungFixed}.\\
+Für die maximale Auslenkung sowie für die maximale Kraft ergibt sich ein ähnliches Bild, siehe Abbildung~\ref{fig:svMRKraft}. Mit steigender Impaktormasse steigt die Kraft und die Durchbiegung. Auffallend ist die eine maximale Durchbiegung für ein Seitenverhältnis von $2.5$. Dies ist insbesondere unerwartet, da die Steifigkeit der Platte für das gegebene Seitenverhältnis deutlich größer ist als für den quadratischen Fall. Es ergibt sich ebenfalls eine maximale Kraft für das soeben genannte Seitenverhältnis von $2.5$. \\
+Ab einem Seitenverhältnis $ Sv \geq 3.5$ sind die Durchbiegung und maximale Kraft homogen und weisen keine Abhängigkeit von der Masse mehr auf.
+
+\begin{figure}[H]
+	\begin{center}
+		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/svMR/production/svMRAuslenkung.eps}
 			\put(47,3){$a/b$ [-]}
 			\put(78,62){Auslenkung [cm]}
-			\put(18,32){\rotatebox{90}{$Mr$ [-]}}
+			\put(18,32){\rotatebox{90}{$MR$ [-]}}
 		\end{overpic}
 		\caption{Maximale Durchbiegung in Abhängigkeit des Seitenverhältnis}
-		\label{fig:svmrDurchbiegung}
+		\label{fig:svMRDurchbiegung}
 	\end{center}
 \end{figure}
 
-Für eine bessere Darstellung wurde im folgenden $Mr > 2$ ignoriert. Für die Durchbiegung ergibt sich dann Abbildung~\ref{fig:svmrDurchbiegungFixed}.
-
 \begin{figure}[H]
 	\begin{center}
-		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/svmr/production/svmrAuslenkungFixedAlternativ.eps}
+		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/svMR/production/svMRAuslenkungFixedAlternativ.eps}
 			\put(41,-1){$a/b$ [-]}
 			\put(83,70){Auslenkung [cm]}
-			\put(8,33){\rotatebox{90}{$Mr$ [-]}}
+			\put(8,33){\rotatebox{90}{$MR$ [-]}}
 		\end{overpic}
 		\caption{Maximale Durchbiegung in Abhängigkeit des Seitenverhältnis}
-		\label{fig:svmrDurchbiegungFixed}
+		\label{fig:svMRDurchbiegungFixed}
 	\end{center}
 \end{figure}
 
-Für die maximale Auslenkung sowie für die maximale Kraft ergibt sich ein ähnliches Bild, siehe Abbildung~\ref{fig:svmrKraft}. Mit steigender Impaktormasse steigt die Kraft und die Durchbiegung. Auffallend ist die eine maximale Durchbiegung für ein Seitenverhältnis von $2.5$. Dies ist insbesondere unerwartet, da die Steifigkeit der Platte für das gegebene Seitenverhältnis deutlich größer ist als für den quadratischen Fall. Es ergibt sich ebenfalls eine maximale Kraft für das soeben genannte Seitenverhältnis von $2.5$. \\
-Ab einem Seitenverhältnis $ Sv \geq 3.5$ sind die Durchbiegung und maximale Kraft homogen und weisen keine Abhängigkeit von der Masse mehr auf.   
-
 \begin{figure}[H]
 	\begin{center}
-		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/svmr/production/svmrKraftFixedAlternativ.eps}
+		\begin{overpic}[width=\linewidth]{pictures/gnuplot/3d/svMR/production/svMRKraftFixedAlternativ.eps}
 			\put(41,-1){$a/b$ [-]}
 			\put(83,70){Kraft [N]}
-			\put(8,33){\rotatebox{90}{$Mr$ [-]}}
+			\put(8,33){\rotatebox{90}{$MR$ [-]}}
 		\end{overpic}
 		\caption{Maximale Kraft durch in Abhängigkeit des Seitenverhältnis}
-		\label{fig:svmrKraft}
+		\label{fig:svMRKraft}
 	\end{center}
 \end{figure}
 

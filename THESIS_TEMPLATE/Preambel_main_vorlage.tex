@@ -130,6 +130,8 @@
  			{caption}			% captions (Bildunterschriften) formatieren
 	\captionsetup[figure]{		%
 	  		name 		= Abb.} %
+  	\captionsetup[table]{		%
+  			name = Tabelle }	%
 \usepackage{epstopdf} 			% Konvertiert eps zu pdf, wenn erkannt
 \usepackage{fixmath}  			% 
 \usepackage{dcolumn}  			% Ausrichtung an Komma oder Punkt
@@ -409,9 +411,9 @@
 \pagestyle{scrheadings}														% Koma-script Kopf-/Fusszeile , Definition s.o.
 %\pagenumbering{arabic}														% Seitennummerierung in arabische Zahlen
 	\include{Einleitung}		\cleardoublepage
-		\include{Theorie}			\cleardoublepage
-	\include{Durchfuehrung}		\cleardoublepage
+	\include{Theorie}		\cleardoublepage
 	\include{Implementierung}	\cleardoublepage
+	\include{Durchfuehrung}		\cleardoublepage
 	\include{Schlussfolgerung} 	\cleardoublepage
 %
 % 			BIBLIOGRAPHY

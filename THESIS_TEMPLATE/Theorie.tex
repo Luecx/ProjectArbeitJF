@@ -1,7 +1,7 @@
-\chapter{Theorie (Reproduktion)}
+\chapter{Theorieherleitung}
 \label{chap:Principles}
 
-Der Stoßvorgang besteht im Wesentlichen aus einer Kugel mit einem vorgeschriebenen Gewicht $m_g$ welche auf eine reckteckige Platte stößt. Hierbei ist die Auftrittsgeschwindigkeit bekannt so wie alle Größen in der nachfolgenden Tabelle
+Der Stoßvorgang besteht im Wesentlichen aus einer Kugel mit einem vorgeschriebenen Gewicht $m_g$ welche auf eine reckteckige Platte stößt. Hierbei ist die Auftreffgeschwindigkeit bekannt so wie alle Größen in Tabelle~\ref{tab:TheorieVariablen}. Der Indize "g" bei der Masse der Kugel kommt aus der Literatur nach Karas~\cite{Karas.1939}, wo "g" für Gewicht steht. 
 
 \begin{table}[h!]
 	\begin{center}
@@ -35,8 +35,6 @@ Zusätzlich wird davon ausgegangen, dass der Geschwindigkeitsvektor der Kugel se
 %Desweiteren wird angenommen, dass der dynamische Biegungspfeil an der Stoßstelle %genau so groß ist, wie der statische Biegungspfeil also wenn die Masse $m_g$ %genau an jener Stelle auf die Platte gelegt wird.
 
 Die Annahme, dass Schubspannungen vernachlässigt werden können erlaubt eine geschlossene analytische Lösung des Problems unter der Bedingung, dass die Ränder frei gelagert sind. Somit treten lediglich Biegemomente und keine Schubkräfte auf.
-
-Eine analytische Lösung für ein Balkenelement wurde ausführlich durch Karas[..] gelöst und ist nicht Bestandteil dieser Arbeit.
 
 
 Im folgenden wird die Durchbiegung der Platte als $w(x,y)$ bezeichnet. Die Last $q(x,y)$ wird ebenfalls als ortsabhängige Funktion ausgedrückt. 
@@ -97,7 +95,7 @@ q(x,y) = \sum_m \sum_n B_{mn} \cdot \sin\left(\dfrac{m \pi x}{a}\right) \cdot \s
 
 Man sieht leicht, dass für $x=0,a$ und $y=0,b$ die Randbedingungen direkt erfüllt sind.
 
-Um $B_{mn}$ zu bestimmen, wird nach Timoshenko[...] Mingyu[...] Gleichung \ref{eq:qxy} zunächst mit $\sin{\left( \frac{i \pi x}{a}\right)}$ erweitert und anschließend von $0$ bis $a$ integriert. Da:
+Um $B_{mn}$ zu bestimmen, wird nach Timoshenko~\cite{Timoshenko.1922} und Mingyu~\cite{Mingyu.2019} Gleichung \ref{eq:qxy} zunächst mit $\sin{\left( \frac{i \pi x}{a}\right)}$ erweitert und anschließend von $0$ bis $a$ integriert. Da:
 
 \begin{equation}
 	\int_0^a \sin{\left( \frac{m \pi x}{a}\right)} \sin{\left( \frac{i \pi x}{a}\right)} dx = 
@@ -465,6 +463,7 @@ folgt für die Lösung:
 \end{multlined}
 \end{equation}
 
+\newpage
 
 beziehungsweise mit $(i=1,2 ... \theta)$: 
 
@@ -496,6 +495,8 @@ Da in \ref{eq:numericalSolution} die doppelten Summe über $m,n$ häufig vorkomm
 &= \sum_m \sum_n \frac{\sin\left(\frac{m \pi x}{a}\right) \cdot \sin\left(\frac{n \pi y}{b}\right) \sin\left(\frac{m \pi \xi}{a}\right) \cdot \sin\left(\frac{n \pi \eta}{b}\right)	}{ \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} \right)^2} \cdot \cos \left[ \left( \frac{m^2}{a^2}+\frac{n^2}{b^2} \right) \frac{\pi k}{90} \cdot \frac{a^{2}b^{2}}{a^{2}+b^{2}} \right] \\
 \end{split}
 \end{equation}
+
+\newpage
 
 Anschließend vereinfachert sich \ref{eq:numericalSolution} zu:
 

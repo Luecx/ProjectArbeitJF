@@ -23,6 +23,6 @@ set size square
 set palette grey positive gamma 1
 
 #plot "SpeedNeu.dat" using 1:2:5 with image
-splot "SpeedNeu.dat" using 1:2:5 with points pt 5 lc palette
+plot "SpeedNeu.dat" using 1:2:3 with points pt 5 lc palette
 
 ### end of code

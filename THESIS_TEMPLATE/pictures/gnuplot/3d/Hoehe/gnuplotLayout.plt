@@ -2,10 +2,10 @@
 ### interpolate data with highlighted datapoints
 reset session
 
-set terminal postscript eps enhanced color font 'Helvetica,10'
+#set terminal postscript eps enhanced color font 'Helvetica,10'
 
 # ---------------------------------------------------------------------------------------
-set output './production/HoeheKraft.eps'
+#set output './production/HoeheKraft.eps'
 
 set title "" 
 
@@ -23,6 +23,6 @@ set size square
 set palette grey positive gamma 1
 
 #plot "Hoehe.dat" using 1:2:3 with image
-plot "HoeheNeu.dat" using 1:2:5 with points pt 5 lc palette
+splot "HoeheNeu.dat" using 1:2:3 with points pt 5 lc palette
 
 ### end of code
