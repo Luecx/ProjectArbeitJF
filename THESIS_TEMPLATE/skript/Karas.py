@@ -2,9 +2,13 @@
 """
 Stephan Kalapis - 03.04.2020
 
+edited by:
+Callard, Eggers - 10.07.2020
+
 Skript zur analytischen Berechnung eines Impakts auf eine Kirchhoffsche Platte
 
 Dieses Skript funktioniert mit folgenden Einheiten [cm,sek,kg], kein [N]!!
+Der Output hingegen wird in [cm,sek,N] gegeben!!
 Dort wo [N] benötigt wird, muss [kg] mit gewichtskonstante [cm/sek**2] verrechnet werden
 """
 
@@ -18,7 +22,7 @@ from sklearn.metrics import r2_score
 
 # ------------------------------------------------------------------------------
 # T O O L S
-def printProgressBar(iteration, total, label, length=100, fill='#'):                #Progress Bar
+def printProgressBar(iteration, total, label, length=100, fill='#'):  # Progress Bar
     percent = ("{0:." + str(3) + "f}").format(100 * (iteration / float(total)))
     filledLength = int(length * iteration // total)
     bar = fill * filledLength + '-' * (length - filledLength)
@@ -38,10 +42,10 @@ def compute(
         E_p=2.2 * 1e06,  # [kg/cm^2]                #E-Modul
         nue_p=0.3,  # [-]                           #Poissonzahl
 
-        #Kugelmaterial
-        #rho_g=0.00796, # [kg/cm^3]
-        E_g = 2.2 * 1e06, # [kg/cm^2]               #E-Modul
-        nue_g = 0.3, # [-]                          #Poissonzahl
+        # Kugelmaterial
+        # rho_g=0.00796, # [kg/cm^3]
+        E_g=2.2 * 1e06,  # [kg/cm^2]                #E-Modul
+        nue_g=0.3,  # [-]                           #Poissonzahl
 
         # Platte
         a=50.0,  # [cm]                             #Laenge der Platte
@@ -52,10 +56,10 @@ def compute(
         r=1.0,  # [cm]                              #Radius des Impaktors
         # m_g = 0.1, # [kg]
 
-        mass_ratio=0.5,  # [-]                      #Massenverhältnis [Impaktormasse/Plattenmasse]
-        v_0=500.0,  # [cm/sek]                      #Auftreffgeschwindigkeit
+        mass_ratio=2,  # [-]                        #Massenverhältnis [Impaktormasse/Plattenmasse]
+        v_0=440.0,  # [cm/sek]                      #Auftreffgeschwindigkeit
 
-        #Impakt
+        # Impakt
         xi=25.0,  # [cm]                            #Auftreffstelle
         eta=25.0,  # [cm]                           #Auftreffstelle
         c=1.6 * 1e06,  # [kg/cm^3/2]                #Konstante aus der Hertz'schen Pressung
@@ -64,27 +68,42 @@ def compute(
         x=25.0,  # [cm]                             #Auswertungsstelle
         y=25.0,  # [cm]                             #Auswertungsstelle
 
-        stop_computation_after_first_impact=False,  #Berechnung nach dem ersten Aufschlag abbrechen
-        iterations=1000,                            #Anzahl der Zeitschritte
-        cosPreset = None,                           #Cosinusberechnung
-        printLoadingBar = True
+        stop_computation_after_first_impact=False,  # Berechnung nach dem ersten Aufschlag abbrechen
+        iterations=1000,                            # Anzahl der Zeitschritte
+        cosPreset=None,                             # Cosinusberechnung
+        printLoadingBar=True                        # Anzeigen des Fortschritts
 
 ):
+
     # Konstanten
-    m_g = mass_ratio * a * b * h * rho                                                                                  #Masse des Impaktors ausgerechnet durch das Massenverhaeltnis und die Masse der Platte
-    mat = ( ((1 - nue_g ** 2) / E_g) + ((1 - nue_p ** 2) / E_p)) ** (-1)                                                #Material Konstante aus der Hertz'schen Pressung
-    c = np.sqrt((4 * r) / 9) * mat                                                                                      #Pressungskonstante
-    g = 981  # [cm/sek^2]                                                                                               #Gravitationskonstante
-    a_quer = np.sqrt((E_p * h ** 2 * g) / (12 * rho * (1 - nue_p ** 2)))                                                #Vorfaktor nach Karas
-    w_pre = 4 / ((np.pi ** 4) * (a_quer ** 2) * rho * h * a * b)                                                        #Faktor für die Berechnung der Auslenkung
+
+    # Masse des Impaktors ausgerechnet durch das Massenverhaeltnis und die Masse der Platte
+    m_g = mass_ratio * a * b * h * rho
+
+    # Material Konstante aus der Hertz'schen Pressung
+    mat = (((1 - nue_g ** 2) / E_g) + ((1 - nue_p ** 2) / E_p)) ** (-1)
+
+    # Pressungskonstante
+    c = np.sqrt((4 * r) / 9) * mat
+
+    # Gravitationskonstante
+    g = 981  # [cm/sek^2]
+
+    # Vorfaktor nach Karas
+    a_quer = np.sqrt((E_p * h ** 2 * g) / (12 * rho * (1 - nue_p ** 2)))
+
+    # Faktor für die Berechnung der Auslenkung
+    w_pre = 4 / ((np.pi ** 4) * (a_quer ** 2) * rho * h * a * b)
+
 
     # Zeitkonstanten
 
-    num_inter = iterations  # Anzahl der Intervalle
-    Tg = 2 * np.pi / (np.pi ** 2 * a_quer * (1 / a ** 2 + 1 / b ** 2))                                                  #Schwingungsdauer der Platte
-    tau = Tg / (2 * 180)  # [sek]                                                                                       #Teilintervalllänge
-
-
+    # Anzahl der Intervalle
+    num_inter = iterations
+    # Schwingungsdauer der Platte
+    Tg = 2 * np.pi / (np.pi ** 2 * a_quer * (1 / a ** 2 + 1 / b ** 2))
+    # Schrittweite
+    tau = Tg / (2 * 180)  # [sek]
 
     # ------------------------------------------------------------------------------
     # A N L E G E N   V O N   A R R A Y S
@@ -101,7 +120,7 @@ def compute(
     cos = np.zeros(num_inter + 1)
     if cosPreset is None:
         for j in range(0, num_inter + 1):
-            if(printLoadingBar):
+            if (printLoadingBar):
                 printProgressBar(j, num_inter + 1, "generating S(k)")
             for m in range(1, 45, 1):
                 for n in range(1, 45, 1):
@@ -131,7 +150,6 @@ def compute(
     z[1] = u_P1 - w_P1
     v[1] = v_0 - (P[1] / 2 / m_g) * tau
 
-
     # 2. Naeherung
     P[1] = c * z[1] ** (3 / 2) * g
     # P1 hier in [kg*cm/sek^2] einsetzen
@@ -139,13 +157,11 @@ def compute(
 
     w[1] = 0
     # P1 hier in [kg] einsetzen:
-    w[1] += w_pre * P[1] / 2 * (cos[0]-cos[1])
-
+    w[1] += w_pre * P[1] / 2 * (cos[0] - cos[1])
 
     z[1] = u[1] - w[1]
     P[1] = c * z[1] ** (3 / 2) * g
     time[1] = tau
-
 
     # ------------------------------------------------------------------------------
     # A U S R E C H N E N   V O N   P_i
@@ -186,7 +202,7 @@ def compute(
         if z[j] < 0:
             z[j] = 0
 
-            if(stop_computation_after_first_impact):
+            if (stop_computation_after_first_impact):
                 P = P[:j]
                 w = w[:j]
                 z = z[:j]
@@ -199,151 +215,150 @@ def compute(
         v[j] = v[j - 1] - (P_hilf[j] / m_g) * tau
         time[j] = j * tau
 
-        # if np.isnan(z[j]):
-
-    #     z[j]=0
-    #   P[j]=0
-
     P /= 100
     return time, j, tau, w, P, u, cos
 
-#-----------------------------------------------------------------------------------------------------------
-#A U S W E R T U N G S H I L F S M I T T E L
 
-def countHits(F):                                                                                                       #Methode zur Berechnung der Aufschlaege
+# -----------------------------------------------------------------------------------------------------------
+# A U S W E R T U N G S H I L F S M I T T E L
+
+# Methode zur Berechnung der Aufschlaege
+def countHits(F):
     c = 0
-    for i in range(1,len(F)):
-        if F[i] == 0.0 and F[i-1] > 0:
+    for i in range(1, len(F)):
+        if F[i] == 0.0 and F[i - 1] > 0:
             c += 1
     return c
 
-def maxW(W):                                                                                                            #Methode zur Berechnung der maximalen Auslenkung
+
+# Methode zur Berechnung der maximalen Auslenkung
+def maxW(W):
     return max(W)
 
-def maxP(Kraft):                                                                                                        #Methode zur Berechnung der maximalen Kraft
+
+# Methode zur Berechnung der maximalen Kraft
+def maxP(Kraft):
     return max(Kraft)
 
-#-----------------------------------------------------------------------------------------------------------
-#P A R A M E T E R S T U D I E
-#
-#Schleifen der verschiedenen Parameter
 
-#----------------------------
-#Geschwindigkeit
+# -----------------------------------------------------------------------------------------------------------
+# P A R A M E T E R S T U D I E
+#
+# Schleifen der verschiedenen Parameter
+
+# ----------------------------
+# Geschwindigkeit
 
 # for v_0 in np.arange(100, 1010, 10):
 #
 #     time, j, tau, w, P, u, cosPre = compute(v_0=v_0, mass_ratio=1, iterations=1000, printLoadingBar=False)
 #     for mr in np.arange(0.01, 2.51, 0.01):
 #         time, j, tau, w, P, u, cosPre = compute(v_0=v_0, mass_ratio=mr, iterations=1000, cosPreset=cosPre, printLoadingBar=False)
-#         with open("Speed.txt", "a") as myfile:
-#          myfile.write(str.format("%10f %10f %10f \n" % (v_0,mr,countHits(P))))
-#         with open("SpeedAuslenkung.txt", "a") as myfile:
-#          myfile.write(str.format("%10f %10f %10f \n" % (v_0,mr, maxW(w))))
-#         with open("SpeedKraft.txt", "a") as myfile:
-#          myfile.write(str.format("%10f %10f %10f \n" % (v_0,mr, maxP(P))))
-#         print("%10f %10f %10f" % (v_0,mr,countHits(P)))
+#         with open("SpeedNeu.txt", "a") as myfile:
+#             myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (v_0,mr,countHits(P),maxW(w),maxP(P))))
+#          # with open("SpeedAuslenkung.txt", "a") as myfile:
+#          #     myfile.write(str.format("%10f %10f %10f \n" % (v_0,mr, maxW(w))))
+#          # with open("SpeedKraft.txt", "a") as myfile:
+#          #     myfile.write(str.format("%10f %10f %10f \n" % (v_0,mr, maxP(P))))
+#         print("%10f %10f %10f %10f %10f" % (v_0,mr,countHits(P),maxW(w),maxP(P)))
 
-#----------------------------
-#Hoehe
+# ----------------------------
+# Hoehe
 
-# for h in np.arange(0.5, 2.6, 0.1):
+# for h in np.arange(0.5, 2.52, 0.02):
 #
 #     time, j, tau, w, P, u, cosPre = compute(h=h, mass_ratio=1, iterations=1000, printLoadingBar=False)
 #     for mr in np.arange(0.01, 2.51, 0.01):
 #         time, j, tau, w, P, u, cosPre = compute(h=h, mass_ratio=mr, iterations=1000, cosPreset=cosPre, printLoadingBar=False)
-#         with open("Hoehe.txt", "a") as myfile:
-#          myfile.write(str.format("%10f %10f %10f \n" % (h,mr,countHits(P))))
-#         with open("HoeheAuslenkung.txt", "a") as myfile:
-#          myfile.write(str.format("%10f %10f %10f \n" % (h,mr, maxW(w))))
-#         with open("HoeheKraft.txt", "a") as myfile:
-#          myfile.write(str.format("%10f %10f %10f \n" % (h,mr, maxP(P))))
-#         print("%10f %10f %10f" % (h,mr,countHits(P)))
+#         with open("HoeheNeu.dat", "a") as myfile:
+#          myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (h,mr,countHits(P),maxW(w),maxP(P))))
+#         print("%10f %10f %10f %10f %10f" % (h,mr,countHits(P),maxW(w),maxP(P)))
 
-#----------------------------
-#Impaktorradius
+# ----------------------------
+# Impaktorradius
 
-for r in np.arange(0.5, 10.1, 0.1):
+# for r in np.arange(0.5, 10.1, 0.1):
+#
+#     time, j, tau, w, P, u, cosPre = compute(r=r, mass_ratio=1, iterations=1000, printLoadingBar=False)
+#     for mr in np.arange(0.01, 2.51, 0.01):
+#         time, j, tau, w, P, u, cosPre = compute(r=r, mass_ratio=mr, iterations=1000, cosPreset=cosPre, printLoadingBar=False)
+#         with open("Radius.txt", "a") as myfile:
+#          myfile.write(str.format("%10f %10f %10f \n" % (r,mr,countHits(P))))
+#         with open("RadiusAuslenkung.dat", "a") as myfile:
+#          myfile.write(str.format("%10f %10f %10f \n" % (r,mr, maxW(w))))
+#         with open("RadiusKraft.dat", "a") as myfile:
+#          myfile.write(str.format("%10f %10f %10f \n" % (r,mr, maxP(P))))
+#         print("%10f %10f %10f" % (r,mr,countHits(P)))
 
-    time, j, tau, w, P, u, cosPre = compute(r=r, mass_ratio=1, iterations=1000, printLoadingBar=False)
-    for mr in np.arange(0.01, 2.51, 0.01):
-        time, j, tau, w, P, u, cosPre = compute(r=r, mass_ratio=mr, iterations=1000, cosPreset=cosPre, printLoadingBar=False)
-        with open("Radius.txt", "a") as myfile:
-         myfile.write(str.format("%10f %10f %10f \n" % (r,mr,countHits(P))))
-        with open("RadiusAuslenkung.txt", "a") as myfile:
-         myfile.write(str.format("%10f %10f %10f \n" % (r,mr, maxW(w))))
-        with open("RadiusKraft.txt", "a") as myfile:
-         myfile.write(str.format("%10f %10f %10f \n" % (r,mr, maxP(P))))
-        print("%10f %10f %10f" % (r,mr,countHits(P)))
+# ----------------------------
+# Seitenverhaeltnis
 
-#----------------------------
-#Seitenverhaeltnis
-
-# for sv in np.arange(2.3, 2.31, 0.05):
+# for sv in np.arange(1, 2.5, 0.05):
+#
+#     f = 2500
+#     # sv = 2.5
+#     b = (f / sv) ** 0.5
+#     a = f / b
+#
+#     # time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=2)
 #
 #     time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=1, iterations=1000, xi=a / 2, eta=b / 2, printLoadingBar=True)
 #     for mr in np.arange(2.5, 2.51, 0.01):
 #         time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=mr, iterations=1000, xi=a / 2, eta=b / 2, cosPreset=cosPre, printLoadingBar=True)
-#         # with open("svmr.txt", "a") as myfile:
+#         # with open("svmr.dat", "a") as myfile:
 #         #     myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (sv, mr, countHits(P), maxW(w), maxP(P))))
 #     print(str((sv-1) / 4 * 100) + "%")
-
+#
 # sv = 2.3
-# f = 2500
-# b = (f / sv) ** 0.5
-# a = f / b
+
 #
 # time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=2.7, iterations=1000, xi=a / 2, eta=b / 2, printLoadingBar=True)
 
 
-  #      with open("Speed.txt", "a") as myfile:
- #           myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (sv, mr, countHits(P), maxW(w), maxP(P))))
+#      with open("Speed.txt", "a") as myfile:
+#           myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (sv, mr, countHits(P), maxW(w), maxP(P))))
 #    print(str((sv-1) / 4 * 100) + "%")
 
 
-#----------------------------
-#Auftreffstelle
+# ----------------------------
+# Auftreffstelle
 
 # for xi_rel in np.arange(0.5,1,0.01):
 #     for eta_rel in np.arange(0.5,xi_rel, 0.01):
 #         time, j, tau, w, P, u, cosPre = compute(xi=xi_rel * 50, eta=eta_rel * 50, iterations=1000,
 #                                                 printLoadingBar=False)
 #         with open("xieta.txt", "a") as myfile:
-#             myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (xi_rel, eta_rel, countHits(P), maxW(w), maxP(P))))
-#             myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (eta_rel, xi_rel, countHits(P), maxW(w), maxP(P))))
+#             myfile.write(str.format("%-10f %10f %10f %10f %10f \n" % (xi_rel, eta_rel, countHits(P), maxW(w), maxP(P))))
+#             myfile.write(str.format("%-10f %10f %10f %10f %10f \n" % (eta_rel, xi_rel, countHits(P), maxW(w), maxP(P))))
 #
-#         print("%10f %10f %10f %10f %10f \n" % (xi_rel, eta_rel, countHits(P), maxW(w), maxP(P)))
+#         print("%-10f %10f %10f %10f %10f \n" % (xi_rel, eta_rel, countHits(P), maxW(w), maxP(P)))
 #
 #
-#     eta_rel = xi_rel
-#     time, j, tau, w, P, u, cosPre = compute(xi=xi_rel * 50, eta=eta_rel * 50, iterations=1000,
+#     time, j, tau, w, P, u, cosPre = compute(xi=xi_rel * 50, eta=xi_rel * 50, iterations=1000,
 #                                             printLoadingBar=False)
 #     with open("xieta.txt", "a") as myfile:
-#         myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (xi_rel, eta_rel, countHits(P), maxW(w), maxP(P))))
+#         myfile.write(str.format("%-10f %10f %10f %10f %10f \n" % (xi_rel, xi_rel, countHits(P), maxW(w), maxP(P))))
 #
-#     print("%10f %10f %10f %10f %10f \n" % (xi_rel, eta_rel, countHits(P), maxW(w), maxP(P)))
-
+#     print("%-10f %10f %10f %10f %10f \n" % (xi_rel, xi_rel, countHits(P), maxW(w), maxP(P)))
 
 
 # ------------------------------------------------------------------------------
 # P L O T T E N   D E R   E R G E B N I S S E
 
-fig, ax1 = plt.subplots()
-ax1.set_xlabel('time[s]')
-ax1.set_ylabel('Force [N]')
-l1, = ax1.plot(time, P, 'r.', label='P')
-ax1.tick_params(axis='y', colors='r')
-
-ax2 = ax1.twinx()
-ax2.set_ylabel('w,z [cm]')
-l3, = ax2.plot(time, w, 'b.', label='w')
-ax2.tick_params(axis='y', colors='b')
-
-l4, = ax2.plot(time, u, "g.", label="u")
-
-lines = [l1, l3]
-plt.legend(lines, ["P", "w", "u"])
-fig.tight_layout()
-plt.show()
-
-
+# fig, ax1 = plt.subplots()
+# ax1.set_xlabel('time[s]')
+# ax1.set_ylabel('Force [N]')
+# l1, = ax1.plot(time, P, 'r.', label='P')
+# ax1.tick_params(axis='y', colors='r')
+#
+# ax2 = ax1.twinx()
+# ax2.set_ylabel('w,z [cm]')
+# l3, = ax2.plot(time, w, 'b.', label='w')
+# ax2.tick_params(axis='y', colors='b')
+#
+# l4, = ax2.plot(time, u, "g.", label="u")
+#
+# lines = [l1, l3]
+# plt.legend(lines, ["P", "w", "u"])
+# fig.tight_layout()
+# plt.show()
