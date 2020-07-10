@@ -63,9 +63,9 @@ Für jeden Zeitschritt wird werden 2 Näherungen durchgeführt. Theoretisch kön
 
 Zunächst wird hierfür im ersten Zeitschritt angenommen, dass die Kraft in jenem Zeitschritt ungefähr der Kraft im vorherigen Zeitschritt entspricht. Hieraus lässt sich direkt die neue Geschwindigkeit und Durchbiegung der Platte annähern. Ebenfalls folgt aus den zuvor genannten Größen die Durchdringung in die Platte welche genutzt wird um im zweiten Zeitschritt eine bessere Näherung für die Kraft zu finden. Hierfür wird das Stoßgesetz verwendet.
 
-Um die Rechnungen auszuwerten, wird für jede Variable eine Schleifenstruktur implementiert. 
+Um die Rechnungen auszuwerten, wird für jede Variable eine Schleifenstruktur implementiert. Der $S(k)$-Term muss nur neu berechnet werden, wenn sich die Geometrie der Platte ändert. Also wird mit zwei \texttt{for}-Schleifen iteriert. Die erste Schleife iteriert über den zu ändernden Parameter und errechnet $S(k)$, dann iteriert die zweite Schleife innerhalb der ersten mit konstantem Parameter über die Menge der $MR$.  Daraus ergibt sich eine wesentlich kürzere Rechenzeit, da das erstellen von $S(k)$ mit Abstand am meisten Zeit in Anspruch nimmt. \\
+Die Ergebnisse werden dann in eine \texttt{.dat}-Datei geschrieben. 
 
-%HIER MORGEN WEITERSCHREIBEN
 
 \section*{Numerische Instabilität}
 
