@@ -1,7 +1,7 @@
 \chapter{Theoretischer Lösungsansatz}
 \label{chap:Principles}
 
-Der Stoßvorgang besteht im Wesentlichen aus einer Kugel mit einem vorgeschriebenen Gewicht $m_g$ welche auf eine rechteckige Platte stößt. Hierbei ist die Auftreffgeschwindigkeit bekannt, sowie alle Größen in Tabelle~\ref{tab:TheorieVariablen}. Der Index "g" bei der Masse der Kugel kommt aus der Literatur nach Karas~\cite{Karas.1939}, wo "g" für Gewicht steht. 
+Der Stoßvorgang besteht im Wesentlichen aus einer Kugel mit einem vorgeschriebenen Gewicht $m_g$, welche auf eine rechteckige Platte stößt. Hierbei ist die Auftreffgeschwindigkeit bekannt so wie alle Größen in Tabelle~\ref{tab:TheorieVariablen}. Der Index "g" der Masse der Kugel kommt aus der Literatur nach Karas~\cite{Karas.1939}, in welcherw"g" für Gewicht steht. 
 
 \begin{table}[h!]
 	\begin{center}
@@ -29,14 +29,14 @@ Der Stoßvorgang besteht im Wesentlichen aus einer Kugel mit einem vorgeschriebe
 \end{table}
 
 
-Es wird angenommen, dass der Stoß völlig elastisch verläuft sowie, dass weder die Masse der Kugel noch die Masse der Platte sich während des Stoßes verändern.
-Zusätzlich wird davon ausgegangen, dass der Geschwindigkeitsvektor der Kugel senkrecht zur Platte, beziehungsweise  parallel zur Normalen liegt. Im Gegensatz zu vielen wissenschaftlichen Arbeiten wird von einem isotropen Material ausgegangen. Somit gelten die im Folgenden beschriebenen Ergebnisse nur bedingt für Laminate, Faserverbundstoffe oder ähnliche nicht-isotrope Materialien. 
+Es wird angenommen, dass der Stoß völlig elastisch verläuft, sowie, dass weder die Masse der Kugel, noch die Masse der Platte sich während des Stoßes ändertn.
+Zusätzlich wird davon ausgegangen, dass der Geschwindigkeitsvektor der Kugel senkrecht zur Platte, bzw.eziehungsweise  parallel zur Normalen liegt. Im Gegensatz zu vielen wissenschaftlichen Arbeiten wird von einem isotropen Material ausgegangen. Somit gelten die im fFolgenden beschriebenen Ergebnisse nur bedingt für Laminate, Faserverbundstoffe oder ähnliche nicht-isotrope Materialien. 
 
 %Desweiteren wird angenommen, dass der dynamische Biegungspfeil an der Stoßstelle %genau so groß ist, wie der statische Biegungspfeil also wenn die Masse $m_g$ %genau an jener Stelle auf die Platte gelegt wird.
 
-Die Annahme, dass Schubspannungen vernachlässigt werden können erlaubt eine geschlossene analytische Lösung des Problems unter der Bedingung, dass die Ränder frei gelagert sind. Somit treten lediglich Biegemomente und keine Schubkräfte auf.
+Die Annahme, dass Schubspannungen vernachlässigt werden können, erlaubt eine geschlossene analytische Lösung des Problems unter der Bedingung, dass die Ränder frei gelagert sind. Somit treten lediglich Biegemomente und keine Schubkräfte auf.
 
-Im Folgenden wird die Durchbiegung der Platte als $w(x,y)$ bezeichnet. Die Last $q(x,y)$ wird ebenfalls als ortsabhängige Funktion ausgedrückt. 
+Im fFolgenden wird die Durchbiegung der Platte als $w(x,y)$ bezeichnet. Die Last $q(x,y)$ wird ebenfalls als ortsabhängige Funktion ausgedrückt. 
 Es gilt die allgemeine Differentialgleichung für die Biegung einer Platte unter einer Last $q$, die im Folgenden als bekannt angenommen wird mit $ \nabla = \left(\frac{\partial}{\partial x} \ \frac{\partial}{\partial y} \right)^T$
 \begin{equation}
 	D \nabla^4 w = q
@@ -80,7 +80,7 @@ Navier hat eine Lösung für Gleichung \ref{eq:dgl} unter der Bedingung einer fr
  \tag{x = 0,a \quad y = 0,b}w(x,y) = \Delta w(x,y) = 0	
 \end{align}
 
-Er drückt hierfür die unbekannte Durchbiegung der Platte $w(x,y)$ sowie die Last $q(x,y)$ als Reihenausdrücke aus mit $m,n = 1,2,3,4...$:
+Er drückt hierfür die unbekannte Durchbiegung der Platte $w(x,y)$ so wie die Last $q(x,y)$ als Reihenausdrücke aus mit $m,n = 1,2,3,4,...$:
 
 \begin{equation} 
 w(x,y) = \sum_m \sum_n A_{mn} \cdot \sin\left(\dfrac{m \pi x}{a}\right) \cdot \sin\left(\dfrac{n \pi y}{b}\right)
@@ -127,14 +127,14 @@ B_{mn} = \dfrac{4}{ab} \cdot \left( \int_0^a \int_0^b q(x,y)
 \label{eq:Bmn_allgemein}
 \end{equation}
 
-$A_{mn}$ ergibt sich durch Einsetzen von \ref{eq:wxy} und der bekannten Last in Gleichung \ref{eq:dgl} zu:
+$A_{mn}$ ergibt sich durch eEinsetzen von \ref{eq:wxy} und der bekannten Last in Gleichung \ref{eq:dgl} zu:
 
 \begin{equation}
 A_{mn} = \dfrac{B_{mn}}{\pi^4 D \left(\dfrac{m^2}{a^2} + \dfrac{n^2}{b^2} \right)^2}
 \label{eq:Amn_aus_Bmn}
 \end{equation}
 
-In der Regel wird hier jedoch nicht der Fall betrachtet, dass die Kraft gleichmäßig über die gesamte Fläche angreift, sondern nur in einem kleinen Bereich $(u,v)$ an der Stelle $(\xi, \eta)$. Der Last-Koeffizient $B_{mn}$ vereinfacht sich zu:
+In der Regel wird hier jedoch nicht der Fall betrachtet, dass die Kraft gleichmäßig über die gesamte Fläche angreift, sondern nur in einem kleinemn Bereich $(u,v)$ an der Stelle $(\xi, \eta)$. Der Last-Koeffizient $B_{mn}$ vereinfacht sich zu:
 
 \begin{align}
 B_{mn} &= \dfrac{4}{ab} \cdot \left( \int_{\xi-u/2}^{\xi+u/2} \int_{\eta - v/2}^{\eta + v/2} \dfrac{P}{u v}
@@ -147,7 +147,7 @@ B_{mn} &= \dfrac{4}{ab} \cdot \left( \int_{\xi-u/2}^{\xi+u/2} \int_{\eta - v/2}^
 \label{eq:Bmn_stelle}
 \end{align}
 
-Da im Folgenden lediglich die Verformung unter einer Kraft $P$ an der Stelle $(\xi, \eta)$ relevant ist, wird der Grenzfall betrachtet in welchem die Fläche $(u,v)$ gegen 0 strebt. Es ergibt sich unter einer Grenzwertbetrachtung von \ref{eq:Bmn_stelle} direkt:
+Da im Folgenden lediglich die Verformung unter einer Kraft $P$ an der Stelle $(\xi, \eta)$ relevant ist, wird der Grenzfall betrachtet, in welchem die Fläche $(u,v)$ gegen 0 strebt. Es ergibt sich unter einer Grenzwertbetrachtung von \ref{eq:Bmn_stelle} direkt:
 
 \begin{equation}
 B_{mn} = \dfrac{4P}{a b} 
@@ -156,7 +156,7 @@ B_{mn} = \dfrac{4P}{a b}
 \label{eq:Bmn_singular}
 \end{equation}
 
-Als statische Durchbiegung der Platte unter der Kraft $P$ an der Stelle $(\xi, \eta)$ ergibt sich folglich durch einsetzen von \ref{eq:Bmn_singular} in \ref{eq:Amn_aus_Bmn}:
+Als statische Durchbiegung der Platte unter der Kraft $P$ an der Stelle $(\xi, \eta)$ ergibt sich folglich durch Einsetzen von \ref{eq:Bmn_singular} in \ref{eq:Amn_aus_Bmn}:
  
 \begin{equation}
  \mathlarger{
@@ -176,7 +176,7 @@ Als statische Durchbiegung der Platte unter der Kraft $P$ an der Stelle $(\xi, \
  }
  \end{equation}
  
-Die Absenkung unter dem Druckpunkt ergibt sich somit zu:
+Die Absenkung unter dem Druckpunkt vereinfacht sich somit zu:
 
 \begin{equation}
  \mathlarger{
@@ -208,7 +208,7 @@ Die kinetische Energie ergibt sich durch Verallgemeinerung von $T = \frac{1}{2} 
 T = \dfrac{\rho h}{2} \int_{0}^{a} \int_{0}^{b} \left(\dfrac{d}{dt} w(x)\right)^2 dy \ dx
 \end{equation}
 
-Da im dynamischen Fall die Durchbiegung der Platte $w(x,y,t)$ eine Zeitabhängigkeit aufweist, wird direkt ersichtlich, dass $A_{mn}$ ebenfalls eine Zeitabhängigkeit aufweisen muss. Somit vereinfachert sich der Differentialausdruck wie folgt:
+Da im dynamischen Fall die Durchbiegung der Platte $w(x,y,t)$ eine Zeitabhängigkeit aufweist, wird direkt ersichtlich, dass $A_{mn}$ ebenfalls eine Zeitabhängigkeit aufweisen muss. Somit vereinfacht sich der Differentialausdruck zu:
 
 %Wenn man (2.3) in (2.12) unter Voraussetzung des dynamischen Falls, in dem $A_{mn} = f(Zeit)$ gilt, einsetzt, erhält man direkt: 
 
@@ -221,7 +221,7 @@ T &= \dfrac{1}{2}\rho h \int_0^a \int_0^b  \left[\dfrac{d}{dt} \sum_m \sum_n A_{
 \label{eq:T_general}
 \end{align}
 
-Zum Lösen des Integrals muss zunächst das Quadrat aufgelöst werden. Zur Vereinfachung wird einer ganzen Zahl $q$ ein Zahlenpaar $(m,n)$ zugewiesen.
+Zum Lösen des Integrals, muss zunächst das Quadrat aufgelöst werden. Zur Vereinfacherung wird einer ganzen Zahl $q$ ein Zahlenpaar $(m,n)$ zugewiesen.
 Somit lässt sich die doppelte Summe wie folgt ausdrücken:
 
 $$\sum_m\sum_n K_{mn}=\sum_q K_q$$
@@ -239,7 +239,7 @@ Angewendet auf Gleichung \ref{eq:T_general}, erhält man für die quadratischen 
 
 \newpage
 
-Die doppelte Summe über $(p,q)$ wird als vierfache Summe wie folgt ausgedrückt:
+Die doppelte Summe über $(p,q)$ wird als vierfache Summe ausgedrückt:
 
 
 
@@ -247,7 +247,7 @@ Die doppelte Summe über $(p,q)$ wird als vierfache Summe wie folgt ausgedrückt
 \dfrac{1}{2}\rho h \sum_m\sum_n\sum_i\sum_j \dot{A}_{mn}\dot{A}_{ij}\int_0^a\sin\left(\dfrac{m\pi x}{a}\right)\sin\left(\dfrac{i\pi x}{a}\right)\int_0^b\sin\left(\dfrac{n\pi y}{b}\right)\sin\left(\dfrac{j\pi y}{b}\right) dy \ dx
 \end{equation}
 
-Unter genauer Betrachtung fällt auf, dass $m\neq i$ oder $n\neq j$ da $q\neq p$. Dies führt dazu, dass stets mindestens eines der beiden Integrale null ergibt. Somit folgt für die kinetische Energie:
+Unter genauer Betrachtung fällt auf, dass $m\neq i$ oder $n\neq j$, da $q\neq p$. Dies führt dazu, dass stehts mindestens eines der beiden Integrale null ist. Somit folgt für die kinetische Energie:
 
 \begin{equation}
 T = \dfrac{1}{8}\rho h a b\sum_m\sum_n \dot{A}^2_{mn}
@@ -267,7 +267,7 @@ T = \dfrac{1}{8}\rho h a b\sum_m\sum_n \dot{A}^2_{mn}
 
 \subsection{Verzerrungsenergie durch Dehnung aufgrund von Biegung und Torsion}
 
-Unter der Annahme, dass die Platte nur durch ein Moment $M_y \cdot \Delta y$ um einen Winkel $\theta$ um die y-Achse verbogen wird, berechnet sich die Verzerrungsenergie zunächst durch: $$\Delta U = \frac{1}{2} (M_y \cdot \Delta y) \cdot \theta$$. 
+Unter der Annahme, dass die Platte nur durch ein Moment $M_y \cdot \Delta y$ um einen Winkel $\theta$ um die y-Achse verbogen wird , berechnet sich die Verzerrungsenergie $\Delta U$ zunächst durch: $$\Delta U = \frac{1}{2} (M_y \cdot \Delta y) \cdot \theta$$. 
 
 \begin{center}
 	\begin{overpic}[scale=0.3]{pictures/theory/theory2.eps}
@@ -291,7 +291,7 @@ Wenn ebenfalls $M_{xy}$ und $M_x$ mit einbezogen werden, ergibt sich Gleichung \
 \Delta U = \dfrac{1}{2}\left( M_y  \dfrac{\partial^2 w}{\partial x^2} + M_x  \dfrac{\partial^2 w}{\partial y^2} - 2 \cdot M_{xy}\dfrac{\partial^2 w}{\partial x \partial y} \right) \Delta x \Delta y
 \end{equation}
 
-Die unbekannten Momente können wiederum durch die Plattensteifigkeit und Krümmung der Platte ausgedrückt werden. Somit ergibt sich:
+Die unbekannten Momente können wiederum durch die Plattensteifigkeit und Krümmung der Platte ausgedrückt werden. Somit folgt:
 
 \begin{align}
 \begin{split}
@@ -344,13 +344,13 @@ U = \dfrac{D \cdot a b \cdot \pi^4}{8} \sum_{m=1}^{\infty}  \sum_{n=1}^{\infty} 
 
 \subsection{Einsetzen in die Lagrange Gleichung}
 
-Da in \ref{eq:U} nicht die verrichtete Arbeit der angreifenden Kraft $P$ berücksichtigt wurde, ergibt sich in der Lagrange Gleichung eine Konstante $Q_{mn}$ welche zu einem späteren Zeitpunkt bestimmt wird.
+Da in \ref{eq:U} nicht die verrichtete Arbeit der angreifenden Kraft $P$ berücksichtigt wurde, entsteht in der Lagrangeg Gleichung eine Konstante $Q_{mn}$ welche zu einem späteren Zeitpunkt bestimmt wird.
 
 \begin{equation}
 \dfrac{d}{dt} \dfrac{\partial T}{\partial \dot{A}_{mn}} - \dfrac{\partial T}{\partial A_{mn}} + \dfrac{\partial U}{\partial A_{mn}} = Q_{mn}
 \end{equation}
 
-Durch Einsetzen von \ref{eq:U} und \ref{eq:T} folgt direkt:
+Durch eEinsetzen von \ref{eq:U} und \ref{eq:T} folgt direkt:
 
 \begin{equation}
 \ddot{A}_{mn} + \left(\dfrac{m^2}{a^2} + \dfrac{n^2}{b^2}\right)^2 \pi^4 \overline{a}^2 A_{mn} = \dfrac{4}{\rho h a b} Q_{mn}
@@ -381,7 +381,7 @@ Da angenommen wird, dass die Kraft punktuell an der Stelle $(\xi, \eta)$ angreif
 \delta E = P \delta A_{mn} \cdot \sin \left( \frac{m \pi \xi}{a} \right) \sin \left( \frac{n \pi \eta}{b} \right) = Q_{mn} \cdot \delta A_{mn}
 \end{equation} 
 
-es folgt:
+Somit:
 
 \begin{equation}
 Q_{mn}(\tau) = P(\tau) \sin \left( \frac{m \pi \xi}{a} \right) \sin \left( \frac{n \pi \eta}{b} \right)
@@ -390,7 +390,7 @@ Q_{mn}(\tau) = P(\tau) \sin \left( \frac{m \pi \xi}{a} \right) \sin \left( \frac
 
 
 
-Wenn nun schließlich Gleichung \ref{eq_Qmntau} in Gleichung \ref{eq:Amn_full} eingesetzt wird, welche wiederum in Gleichung \ref{eq:wxy} eingesetzt wird, ergibt sich die Durchbiegung als Abhängigkeit des Stoßgewichtes $P(\tau)$ und der Zeit.
+Wenn nun schließlich Gleichung \ref{eq_Qmntau} in Gleichung \ref{eq:Amn_full} eingesetzt wird, welche wiederum in Gleichung \ref{eq:wxy} eingesetzt wird, ergibt sich die Durchbiegung als Abhängigkeit des Stoßgewichtes $P(\tau)$ und der Zeit zu:
 
 \begin{multline}
 w(x,y,\xi, \eta, t) = \sum_m \sum_n 
@@ -402,7 +402,7 @@ w(x,y,\xi, \eta, t) = \sum_m \sum_n
 
 \newpage
 
-Umgeschrieben ergibt sich:
+Oder auch:
 
 \begin{multline}
 	w(x,y,\xi, \eta, t) = \dfrac{4}{\rho h a b \pi^2 \overline{a}} \cdot \sum_m \sum_n 
@@ -413,7 +413,7 @@ Umgeschrieben ergibt sich:
 \end{multline}
 
 
-Die einzige Unbekannte in der Gleichung ist nun die Stoßkraft $P(\tau)$. Da im Allgemeinen die Stoßkraft in Abhängigkeit von der Zeit nicht gegeben ist, wird im Folgenden die Stoßkraft in Abhängigkeit des Eindringungsweges des stoßendes Körpers in die Platte verwendet. Wenn nun der Eindringungsweg als $z$ bezeichnet wird sowie die Position des stoßenden Körpers gegen den ruhenden Raum als $u$, ergibt sich direkt:
+Die einzige Unbekannte in der Gleichung ist nun die Stoßkraft $P(\tau)$. Da im Allgemeinen die Stoßkraft in Abhängigkeit von der Zeit nicht gegeben ist, wird im Folgenden die Stoßkraft in Abhängigkeit des Eindringungsweges des stoßendes Körpers in die Platte verwendet. Wenn nun der Eindringungsweg als $z$ bezeichnet wird, sowie die Position des stoßenden Körpers gegen den ruhenden Raum als $u$, resultiert daraus:
 
 \begin{equation}
 	u = z + w
@@ -427,7 +427,7 @@ Durch Integration des zweiten Newton'schen Axioms, mit der Masse $m_g$ des stoß
 	\label{eq:speedEq}
 \end{equation}
 
-Durch Integration ergibt sich folglich für den Ort des stoßenden Körpers:
+Durch Integration berechnet sich der Ort des stoßenden Körpers:
 
 \begin{equation}
 	u = v_0 \cdot t - \frac{1}{m_g} \int_0^t P(\tau) (t-\tau) d\tau
@@ -456,7 +456,7 @@ Im Allgemeinen ist Gleichung \ref{eq:long_solution} nicht oder nur kaum analytis
  	\tau = \dfrac{\mbox{t}}{\theta}=\dfrac{T}{\kappa}
  \end{equation}
  
- unterteilt, worin $T$ die Schwingungsdauer der Platte beschreibt. $\kappa$ muss groß genug gewählt werden, um numerische Ungenauigkeiten zu minimieren. In der Literatur wurde hier entweder $180$ oder $360$ gewählt. Falls die Teilintervalle klein genug sind, kann die Kraft $P(\tau	)$ in jedem Intervall $i$ als zeitlich konstant angenähert werden. Im Intervall $(i-1) \rightarrow i$ ist dann $P_{i}$ der konstante Wert von $P(\tau)$. Des Weiteren ergibt sich mit dieser Vereinfachung das Integral in \ref{eq:long_solution} zu:
+ unterteilt, wobei $T$ die Schwingungsdauer der Platte beschreibt. $\kappa$ muss groß genug gewählt werden, um numerische Ungenauigkeiten zu minimieren. In der Literatur wurde hier entweder $180$ oder $360$ gewählt. Falls die Teilintervalle klein genug sind, kann die Kraft $P(\tau	)$ in jedem Intervall $i$ als zeitlich konstant angenähert werden. Im Intervall $(i-1) \rightarrow i$ ist dann $P_{i}$ der konstante Wert von $P(\tau)$. Des Weiteren vereinfacht sich das Integral somit in \ref{eq:long_solution} zu:
  
  \begin{equation}
  	\frac{1}{\pi^2\overline{a}} \cdot \frac{1}{\frac{m^2}{a^2}+\frac{n^2}{b^2}} \cos \left[ \left( \frac{m^2}{a^2}+\frac{n^2}{b^2} \right) \pi^2\overline{a}(\theta - i)\tau\right]
@@ -485,13 +485,13 @@ beziehungsweise mit $(i=1,2 ... \theta)$:
 \label{eq:numericalSolution}
 \end{multline}
 
-welcher dann statt dem letzten Term in \ref{eq:wxyxietat} eingesetzt wird. $T$ und die Kreisfrequenz $\omega = \frac{2 \pi}{T}$ können direkt aus \ref{eq:lagrangeDGL} abgelesen werden: 
+was dann statt des letzten Terms in \ref{eq:wxyxietat} eingesetzt wird. $T$ und die Kreisfrequenz $\omega = \frac{2 \pi}{T}$ können direkt aus \ref{eq:lagrangeDGL} abgelesen werden: 
 
 \begin{equation}
 	T = \frac{2 \pi}{\pi^2 \overline{a} \left( \frac{1}{a^2} + \frac{1}{b^2} \right) }, \qquad \omega=\pi^2 \overline{a} \left( \frac{1}{a^2}+\frac{1}{b^2} \right)
 \end{equation}
 
-Mit einem genügend groß gewähltem $\kappa$, hier $\kappa=180$, kommt man für die Intervalllänge auf
+Mit einem genügend groß gewähltem $\kappa$, hier $\kappa=180$, kommt man für die Intervalllänge auf:
 
 \begin{equation}
 	\tau = \frac{\pi}{90} \cdot \frac{1}{\pi^2 \overline{a} \left( \frac{1}{a^2} + \frac{1}{b^2} \right) }
@@ -500,7 +500,7 @@ Mit einem genügend groß gewähltem $\kappa$, hier $\kappa=180$, kommt man für
 
 \newpage
 
-Da in \ref{eq:numericalSolution} die doppelte Summe über $m,n$ häufig vorkommt, kann man um Rechenzeit zu sparen, $\overline{S(k)}$ als den Summenausdruck definieren. Mit \ref{eq:tau} und $k=\theta - i$:
+Da in \ref{eq:numericalSolution} die doppelten Summe über $m,n$ häufig vorkommt, kann man um Rechenzeit zu sparen, $\overline{S(k)}$ als den Summenausdruck definieren. Mit \ref{eq:tau} und $k=\theta - i$:
 
 \begin{equation}
 \begin{split}

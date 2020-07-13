@@ -3,8 +3,8 @@
 
 
 Das Python-Skript folgt dem dargestellten Schema in \ref{fig:flowchart}. Zunächst werden Parameter der Funktion \texttt{compute()} übergeben. Wenn keine Parameter übergeben werden, wird direkt der Basisfall berechnet. Da die Größe $S(k)$ die meiste Zeit zum Berechnen benötigt, sie jedoch nur von der Geometrie der Platte abhängt, kann für viele aufeinanderfolgenden Rechnungen das $S(k)$ aus vorherigen Rechnungen übernommen werden.\\ 
-Im Anschluss wird der erste Zeitschritt separat von den darauffolgenden Zeitschritten berechnet. Da eine numerische Integration durchgeführt wird, wird zunächst eine Annäherung berechnet welche ebenfalls für eine zweite Näherung genutzt wird.\\
-Es ist theoretisch möglich weitere Annäherungen durchzuführen. Es hat sich jedoch gezeigt, dass die Fehler bereits nach der zweiten Annäherung im wesentlichen verschwinden.
+Im Anschluss wird der erste Zeitschritt separat von den darauffolgenden Zeitschritten berechnet. Da eine numerische Integration durchgeführt wird, wird zunächst eine Annäherung berechnet, welche ebenfalls für eine zweite Näherung genutzt wird.\\
+Es ist theoretisch möglich weitere Annäherungen durchzuführen. Es hat sich jedoch gezeigt, dass die Fehler bereits nach der zweiten Annäherung verschwinden.
 
 
 \begin{figure}[!h]
@@ -54,22 +54,22 @@ Es ist theoretisch möglich weitere Annäherungen durchzuführen. Es hat sich je
 
 \newpage
 
-Anschließend wird eine äquivalente Rechnung für alle weiteren Zeitschritte durchgeführt und im Anschluss gegebenenfalls geplottet sowie die maximale Kraft und Durchbiegung bestimmt.\\
-Die Funktion  \texttt{compute()} gibt ein Touple \texttt{time, j, tau, w, P, u, cos} zurück.  \texttt{time} ist eine Liste mit den zugehörigen Zeitpunkten zu den Durchbiegungen \texttt{w} und den Kräften \texttt{P}. \texttt{u} stellt zusätzlich die Position des Impaktors dar. Da es möglich ist, die Berechnung durch \texttt{stop\_computation\_after\_first\_impact = True} vorzeitig zu beenden, nachdem der erste Schlag beendet wurde, ist die Anzahl der Zeitschritte als \texttt{j} wiedergegeben. Die verwendete Schrittweite wird ebenfalls als \texttt{tau} zurückgegeben.\\
-Für eine Wiederverwendung von $S(k)$ wird dieses ebenfalls als Liste zurückgegeben mit dem Namen \texttt{cos}. Da $k$ nur ganzzahlige Werte annimmt, wird eine Liste verwendet.\\
+Anschließend wird eine äquivalente Rechnung für alle weiteren Zeitschritte durchgeführt und im Anschluss gegebenenfalls eine graphische Darstellung der Durchbiegung und Kraft angezeigt sowie die maximale Kraft und Durchbiegung bestimmt.\\
+Die Funktion  \texttt{compute()} gibt ein Touple \texttt{time, j, tau, w, P, u, cos} zurück.  \texttt{time} ist eine Liste mit den zugehörigen Zeitpunkten zu den Durchbiegungen \texttt{w} und den Kräften \texttt{P}. \texttt{u} stellt zusätzlich die Position des Impaktors dar. Da es möglich ist, die Berechnung durch \texttt{stop\_computation\_after\_first\_impact = True} vorzeitig zu beenden, nachdem der erste Schlag beendet wurde, ist die Anzahl der Zeitschritte als \texttt{j} wiedergegeben. Die verwendete Schrittweite wird als \texttt{tau} zurückgegeben.\\
+Für eine Wiederverwendung von $S(k)$ wird dieses als Liste zurückgegeben, mit dem Namen \texttt{cos}.
 Der verwendete Code ist im Anhang~\ref{chap:Anhang_Skript} zu finden.
 
-Für jeden Zeitschritt werden 2 Näherungen durchgeführt. Theoretisch können auch mehr als zwei Iteration pro Zeitschritt durchgeführt werden, jedoch hat diese keine wesentliche Änderung im Ergebnis gezeigt.
+Für jeden Zeitschritt werden 2 Näherungen durchgeführt. Theoretisch können auch mehr als zwei Iteration pro Zeitschritt durchgeführt werden, jedoch hat dies keine wesentliche Änderung im Ergebnis gezeigt.
 
-Zunächst wird hierfür im ersten Zeitschritt angenommen, dass die Kraft in jenem Zeitschritt ungefähr der Kraft im vorherigen Zeitschritt entspricht. Hieraus lässt sich direkt die neue Geschwindigkeit und Durchbiegung der Platte annähern. Ebenfalls folgt aus den zuvor genannten Größen die Durchdringung in die Platte, welche genutzt wird um im zweiten Zeitschritt eine bessere Näherung für die Kraft zu finden. Hierfür wird das Stoßgesetz verwendet.
+Im ersten Zeitschritt wird angenommen, dass die Kraft in jenem Zeitschritt ungefähr der Kraft im vorherigen Zeitschritt entspricht. Hieraus lässt sich direkt die neue Geschwindigkeit und Durchbiegung der Platte annähern. Ebenfalls folgt aus den zuvor genannten Größen die Durchdringung in die Platte, welche genutzt wird, um im zweiten Zeitschritt eine bessere Näherung für die Kraft zu finden. Hierfür wird das Stoßgesetz verwendet.
 
-Um die Rechnungen auszuwerten wird für jede Variable eine Schleifenstruktur implementiert. Der $S(k)$-Term muss nur neu berechnet werden, wenn sich die Geometrie der Platte ändert. Also wird mit zwei \texttt{for}-Schleifen iteriert. Die erste Schleife iteriert über den zu ändernden Parameter und errechnet $S(k)$, dann iteriert die zweite Schleife innerhalb der ersten mit konstantem Parameter über die Menge der $MR$.  Daraus ergibt sich eine wesentlich kürzere Rechenzeit, da das Erstellen von $S(k)$ mit Abstand am meisten Zeit in Anspruch nimmt. \\
-Die Ergebnisse werden dann in eine \texttt{.dat}-Datei geschrieben. 
+Um die Rechnungen auszuwerten, wird für jede Variable eine Schleifenstruktur implementiert. Der $S(k)$-Term muss nur neu berechnet werden, wenn sich die Geometrie der Platte ändert. Also wird mit zwei \texttt{for}-Schleifen iteriert. Die erste Schleife iteriert über den zu ändernden Parameter und errechnet $S(k)$, dann iteriert die zweite Schleife innerhalb der ersten mit konstantem Parameter über die Menge der $MR$.  Daraus ergibt sich eine wesentlich kürzere Rechenzeit, da das Erstellen von $S(k)$ mit Abstand am meisten Zeit in Anspruch nimmt. \\
+Die Ergebnisse werden letztendlich in eine \texttt{.dat}-Datei geschrieben. 
 
 
 \section*{Numerische Instabilität}
 
-Das Skript weist gewisse numerische Instabilitäten auf. Einerseits führt eine zu geringe Plattendicke zu einer geringen Steifigkeit. Dies führt dazu, dass bereits im ersten Zeitschritt die Durchbiegung der Platte größer als die zurückgelegte Strecke des stoßenden Körpers ist. Dies führt zu einer negativen Durchdringung und ist somit nicht plausibel. Dieses Problem kann jedoch durch eine deutlich feinere Schrittweite behoben werden.
+Das Skript weist gewisse numerische Instabilitäten auf. Einerseits führt eine zu geringe Plattendicke zu einer geringen Steifigkeit. Dadurch ist bereits im ersten Zeitschritt die Durchbiegung der Platte größer als die zurückgelegte Strecke des stoßenden Körpers. Dies führt zu einer negativen Durchdringung und ist somit nicht plausibel. Dieses Problem kann jedoch durch eine deutlich feinere Schrittweite behoben werden.
 
 
 
