@@ -4,8 +4,9 @@
 In diesem Kapitel wird die Durchführung der Parameterstudie erläutert. Zuerst werden neue Gleichungen in das Skript eingearbeitet. Dann wird das Vorgehen vorgestellt und die Auswertungskriterien und Annahmen festgelegt.\\
 Für die Parameterstudie werden die Höhe, die Geschwindigkeit, der Kugelradius, die Auftreffstelle und das Seitenverhältnis variiert.
 
-In der bereits hergeleiteten Theorie wird der Lösungsweg für den Stoßvorgang vorgestellt. Mit dem zur Verfügung gestelltem Skript, das auf dieser Theorie basiert, wird nun die Para-meterstudie durchgeführt. Um relevante Ergebnisse zu erlangen, müssen zuerst weitere Gleichungen in das Skript eingearbeitet werden.\\
+In der bereits hergeleiteten Theorie wird der Lösungsweg für den Stoßvorgang vorgestellt. Mit dem zur Verfügung gestellten Skript, das auf dieser Theorie basiert, wird nun die Para-meterstudie durchgeführt. Um relevante Ergebnisse zu erlangen, müssen zuerst weitere Gleichungen in das Skript eingearbeitet werden.\\
 In dem Skript wird eine Konstante $c$ als Vorfaktor für die Kraftberechnung aus dem Punkt-kontakt verwendet. Um die Berechnungsmöglichkeiten zu erweitern, wird $c$ nun durch eine Gleichung der Hertz'schen Pressung ersetzt, die wie folgt hergeleitet wird:\\
+
 Die Gleichung für die Hertz'sche Pressung eines Kugel-Kugel-Punktkontaktes lautet wie in Gleichung~\ref{form:ZvonP}.
 
 \begin{equation}
@@ -13,7 +14,7 @@ Die Gleichung für die Hertz'sche Pressung eines Kugel-Kugel-Punktkontaktes laut
 	z(P) = \left[ \frac{9 P^{2} (1 - \nu^{2})^{2}}{2 E^{2}} \cdot \left( \frac{1}{2 r_{1}} + \frac{1}{2 r_{2}} \right) \right]^{\frac{1}{3}}
 \end{equation}
 
-Hier ist wieder "g" kurz für Gewicht nach Karas~\cite{Karas.1939}. Da einer der beiden Körper eine Platte mit dem Radius $r_{p} = \infty$ ist, folgt durch einsetzen von $r_{p}$ und umstellen nach P:
+Hier ist wieder "g" kurz für Gewicht nach Karas~\cite{Karas.1939}. Da einer der beiden Körper eine Platte mit dem Radius $r_{p} = \infty$ ist, folgt durch Einsetzen von $r_{p}$ und Umstellen nach P:
 
 \begin{equation}
 	\label{form:PvonZ}
@@ -27,7 +28,7 @@ Hier ist $\frac{E}{(1 - \nu^{2})}$ der reduzierte E-Modul, welcher durch Gleichu
 	\frac{E}{(1 - \nu^{2})} = \left( \frac{(1 - \nu_{p}^{2})}{E_{p}} + \frac{(1 - \nu_{g}^{2})}{E_{g}} \right)^{-1}
 \end{equation} 
 
-Nun wird $c$ als Vorfaktor von $z^{\frac{3}{2}}$ in Gleichung~\ref{form:PvonZ} definiert, sodass folgt:
+Nun wird $c$ als Vorfaktor von $z^{\frac{3}{2}}$ in Gleichung~\ref{form:PvonZ} definiert, so dass folgt:
 
 \begin{equation}
 	\label{form:c}
@@ -38,7 +39,7 @@ Im Skript wurden Gleichungen~\ref{form:redE} und~\ref{form:c} unter den Konstant
 
 \section{Vorgehen und Vorbereitung}
 
-Insgesamt wird der Stoßvorgang durch die einstellbaren Parameter in Tabelle~\ref{tab:VariablenderStudie} beschrieben. In Anlehnung an \cite{Olsson.2000} wird das Massenverhältnis $MR$ als einer der signifikanten Parameter gewählt. Davon ausgehend werden dann die anderen Parameter einzeln variiert und die Ergebnisse grafisch ausgewertet. 
+Insgesamt wird der Stoßvorgang durch die einstellbaren Parameter in Tabelle~\ref{tab:VariablenderStudie} beschrieben. In Anlehnung an \cite{Olsson.2000} wird das Massenverhältnis $MR$ als einer der signifikanten Parameter gewählt. Davon ausgehend werden dann die anderen Parameter individuell variiert und die Ergebnisse grafisch ausgewertet. 
 
 \begin{table}[H]
 	\begin{center}
@@ -59,12 +60,12 @@ Insgesamt wird der Stoßvorgang durch die einstellbaren Parameter in Tabelle~\re
 
 \subsection*{Auswertungskriterien und Annahmen}
 
-Als Auswertungskriterien werden die Anzahl der einzelnen Schläge und der maximal auftretenden Kraft zusammen mit der Auslenkung der Platte gewählt. \\
+Als Auswertungskriterien werden die Anzahl der einzelnen Schläge, die maximal auftretenden Kraft und die Auslenkung der Platte gewählt. \\
 Für die Studie werden folgende übergreifende Annahmen getroffen: 
 
 \begin{enumerate}
-	\item{Die Platte und der Impaktor sind isotrop mit konstanten Stoffwerten}
-	\item{Die Platte und der Impaktor sind aus identischem Material, mit gleichem E-Modul und Poissonzahl $\nu$}
+	\item{Die Platte und der Impaktor sind isotrop mit konstanten Stoffwerten.}
+	\item{Die Platte und der Impaktor sind aus identischem Material, mit gleichem E-Modul und Poissonzahl $\nu$.}
 \end{enumerate}
 
 \newpage
@@ -165,8 +166,8 @@ Als erster Parameter wird die Höhe nach Gleichung~\ref{form:DeltaH} variiert. A
 \end{equation}
 
 Wenn man die Höhe, das Massenverhältnis und die Anzahl der Schläge aufträgt, ergibt sich Abbildung~\ref{fig:Hoehe}.\\
-Man kann direkt ablesen, dass mehrere Aufschläge vermehrt im unteren Höhenbereich auftreten. Dies ist auf die Steifigkeit der Platte zurückzuführen. Bei größerer Plattendicke ist die Platte steifer und die Kugel prallt ab, ohne vermehrt aufzutreffen. Bei $h = 0.6 cm$ treten bis zu 10 Schläge auf.\\
-Es ist offensichtlich, dass bei einem Massenverhältnis $MR \geq 1.7$ und einer Plattendicke von $h \geq 1.6 cm$ nur noch einzelne Stöße auftreten. Hier ist anzunehmen, dass der elastische Stoßvorgang der Kugel ausreichend kinetische Energie entgegen der Stoßrichtung überträgt, sodass sie sich schneller entfernt als die Platte auslenken kann. \\
+Man kann direkt ablesen, dass mehrere Aufschläge vermehrt im unteren Höhenbereich auftreten. Dies ist auf die Steifigkeit der Platte zurückzuführen. Bei größerer Plattendicke ist die Platte steifer und die Kugel prallt ab, ohne häufiger aufzutreffen. Bei $h = 0.6 cm$ treten bis zu 10 Schläge auf.\\
+Es ist offensichtlich, dass bei einem Massenverhältnis $MR \geq 1.7$ und einer Plattendicke von $h \geq 1.6 cm$ nur noch einzelne Stöße auftreten. Hier ist anzunehmen, dass der elastische Stoßvorgang der Kugel ausreichend kinetische Energie entgegen der Stoßrichtung überträgt, sodass die Kugel sich schneller entfernt als die Platte auslenken kann. \\
 
 \begin{figure}[H]
 	\begin{center}
@@ -182,8 +183,8 @@ Es ist offensichtlich, dass bei einem Massenverhältnis $MR \geq 1.7$ und einer 
 
 Auch bei der Auslenkung stimmen die Ergebnisse mit den Erwartungen überein. In Abbildung~\ref{fig:HoeheAuslenkung} ist zu erkennen, dass mit zunehmender Höhe die Auslenkung abfällt, da die Steifigkeit der Platte zunimmt. Die Steigung der Auslenkungskurve flacht mit zunehmendem $MR$ ab. Am größten ist die Steigung im Bereich $0.01 \leq MR \leq 1$. Daher ist der Einfluss des Massenverhältnisses in diesem Bereich am signifkantesten.\\
 Bei Plattendicken von $h \geq 1.3 cm$ flacht die Steigung der maximalen Auslenkung in einen annähernd linearen Bereich ab. Daher liegt nahe, dass die Höhe im Bereich bis $h = 1.3 cm$ den stärksten Einfluss hat.\\
-In Tabelle~\ref{tab:WKHoehe} sind die minimalen und maximalen Werte der Auslenkung und Kraft sowie die Faktoren, die zwischen diesen Werten liegen aufgeführt.
-Wenn man die maximal auftretende Kraft betrachtet ergibt sich Abbildung~\ref{fig:HoeheKraft}.\\
+In Tabelle~\ref{tab:WKHoehe} sind die minimalen und maximalen Werte der Auslenkung und Kraft sowie die Faktoren, die zwischen diesen Werten liegen, aufgeführt.
+Wenn man die maximal auftretende Kraft betrachtet, ergibt sich Abbildung~\ref{fig:HoeheKraft}.\\
 Aus der maximalen Auslenkung kann man für die Höhe schlussfolgern, dass die maximale Kraft dort auftritt, wo die Auslenkung am geringsten ist, da hier am wenigsten Energie in die Deformation der Platte übergeht.\\
 
 \begin{table}[H]
@@ -215,7 +216,7 @@ Aus der maximalen Auslenkung kann man für die Höhe schlussfolgern, dass die ma
 			\put(75,12){MR [-]}
 			\put(83,55){Auslenkung [cm]}
 		\end{overpic}
-	\caption{Höhe, MR und Auslenkung}
+	\caption{Auslenkung in Abhängigkeit der Höhe und MR}
 	\label{fig:HoeheAuslenkung}
 	\end{center}
 \end{figure}
@@ -227,7 +228,7 @@ Aus der maximalen Auslenkung kann man für die Höhe schlussfolgern, dass die ma
 			\put(75,12){MR [-]}
 			\put(87,55){Kraft [N]}
 		\end{overpic}
-	\caption{Höhe, MR und Kraft}
+	\caption{Kraft in Abhängigkeit der Höhe und MR}
 	\label{fig:HoeheKraft}
 	\end{center}
 \end{figure}
@@ -243,7 +244,7 @@ Als nächster Parameter wird die Geschwindigkeit betrachtet. Da hier nur der Low
 	\label{form:DeltaV0}
 \end{equation}
 
-Analog zur Höhenvariation wird zuerst die Anzahl der Aufschläge aufgetragen. In Abbildung~\ref{fig:Speed} ist zu erkennen, dass die Geschwindigkeit bei gleichbleibendem $MR$ nur einen verschwindend geringen Einfluss auf die Anzahl der Aufschläge hat. 
+Analog zur Höhenvariation wird zunächst die Anzahl der Aufschläge aufgetragen. In Abbildung~\ref{fig:Speed} ist zu erkennen, dass die Geschwindigkeit bei gleichbleibendem $MR$ nur einen verschwindend geringen Einfluss auf die Anzahl der Aufschläge hat. 
 
 \begin{figure}[h!]
 	\begin{center}
@@ -257,9 +258,9 @@ Analog zur Höhenvariation wird zuerst die Anzahl der Aufschläge aufgetragen. I
 	\end{center}
 \end{figure}
 
-Die aus den Stößen resultierende Auslenkung wird in Abbildung~\ref{fig:SpeedAuslenkung} dargestellt. Man kann erkennen, dass der Einfluss des Massenverhältnisses mit zunehmender Geschwindigkeit zu-nimmt. \\
-Auch zu sehen ist, dass im höheren Geschwindigkeitsbereich die Auslenkung stärker mit größer werdendem $MR$ ansteigt. \\
-Als letztes wird die Kraft aufgetragen. In Abbildung~\ref{fig:SpeedKraft} sind ähnliche Trends wie in Abbildung~\ref{fig:SpeedAuslenkung} zu sehen. \\
+Die aus den Stößen resultierende Auslenkung wird in Abbildung~\ref{fig:SpeedAuslenkung} dargestellt. Man kann erkennen, dass der Einfluss des Massenverhältnisses mit steigender Geschwindigkeit zu-nimmt. \\
+Auch deutlich ist, dass im höheren Geschwindigkeitsbereich die Auslenkung stärker mit größer werdendem $MR$ ansteigt. \\
+Zuletzt wird die Kraft aufgetragen. In Abbildung~\ref{fig:SpeedKraft} sind ähnliche Trends wie in Abbildung~\ref{fig:SpeedAuslenkung} zu sehen. \\
 Auch hier nimmt die auftretende Kraft mit $v_{0}$ zu. Je größer $MR$ hierbei ist, desto steiler die Kraftzunahme. Besonders deutlich wird dies, wenn man wieder die Faktoren zwischen $P_{max}$ und $P_{min}$ bei gegebenem $MR$ und $v_{0}$ untersucht. \\
 Analog zur Höhe werden hier auch die Werte in Tabelle~\ref{tab:WKSpeed} dargestellt. 
 
@@ -292,7 +293,7 @@ Analog zur Höhe werden hier auch die Werte in Tabelle~\ref{tab:WKSpeed} dargest
 			\put(14,12){MR [-]}
 			\put(83,55){Auslenkung [cm]}
 		\end{overpic}
-		\caption{Geschwindigkeit, MR und Auslenkung}
+		\caption{Auslenkung in Abhängigkeit der Geschwindigkeit und MR}
 		\label{fig:SpeedAuslenkung}
 	\end{center}
 \end{figure}
@@ -304,7 +305,7 @@ Analog zur Höhe werden hier auch die Werte in Tabelle~\ref{tab:WKSpeed} dargest
 			\put(14,12){MR [-]}
 			\put(85,55){Kraft [N]}
 		\end{overpic}
-		\caption{Geschwindigkeit, MR und Kraft}
+		\caption{Kraft in Abhängigkeit der Geschwindigkeit und MR}
 		\label{fig:SpeedKraft}
 	\end{center}
 \end{figure}
@@ -336,9 +337,9 @@ Bildet man die Daten in 3D ab, erkennt man leicht, dass die Anzahl der Aufschlä
 \end{figure}
 
 Ähnliche Ergebnisse werden auch bei der Auslenkung erreicht. Wie in Abbildung~\ref{fig:RadiusAuslenkung} zu sehen ist, nimmt die Auslenkung nur bei hohen $MR$ auch durch Erhöhung des Radius zu.\\
-In Tabelle~\ref{tab:WKSpeed} sind wieder die maximalen und minimalen Werte aufgetragen.\\
+In Tabelle~\ref{tab:WKSpeed} sind die maximalen und minimalen Werte aufgetragen.\\
 Im niederen $MR$-Bereich sind die Auslenkungen bei $r_{g} = 0.5 cm$ und bei $r_{g} = 10.0 cm$ fast identisch.  Bei $MR_{max} = 2.5$ ist die Auslenkung jedoch nur auf der zweiten Nachkommastelle größer.\\
-Auch wenn man die Kraft betrachtet lassen sich ähnliche Trends erkennen. In Abbildung~\ref{fig:RadiusKraft} verändert sich die resultierende maximale Kraft im niederen $MR$-Bereich nur minimal.\\
+Auch wenn man die Kraft betrachtet, lassen sich ähnliche Trends erkennen. In Abbildung~\ref{fig:RadiusKraft} verändert sich die resultierende maximale Kraft im niederen $MR$-Bereich nur minimal.\\
 Analog zu der Auslenkung ergibt sich die signifikanteste Kraftänderung bei $MR_{max}$. Die Kraft steigt von $P(r_{g,min})$ auf $P(r_{g,max})$ um den Faktor $1.194$ an. Verglichen mit der Kraftänderung von $MR_{min}$ zu $MR_{max}$, die bei $r_{g,max}$ mit dem Faktor $7.16$ verbunden ist, ist $\Delta P$ über die Radius-änderung eher gering. 
 
 \begin{table}[H]
@@ -370,7 +371,7 @@ Analog zu der Auslenkung ergibt sich die signifikanteste Kraftänderung bei $MR_
 			\put(14,12){MR [-]}
 			\put(83,55){Auslenkung [cm]}
 		\end{overpic}
-		\caption{Radius, MR und Auslenkung}
+		\caption{Auslenkung in Abhängigkeit des Radius und MR}
 		\label{fig:RadiusAuslenkung}
 	\end{center}
 \end{figure}
@@ -382,7 +383,7 @@ Analog zu der Auslenkung ergibt sich die signifikanteste Kraftänderung bei $MR_
 			\put(14,12){MR [-]}
 			\put(85,55){Kraft [N]}
 		\end{overpic}
-		\caption{Radius, MR und Kraft}
+		\caption{Kraft in Abhängigkeit des Radius und MR}
 		\label{fig:RadiusKraft}
 	\end{center}
 \end{figure}
@@ -409,8 +410,8 @@ $$\left\lbrace  \left(\frac{\xi}{a},  \frac{\eta}{b}\right) \in \mathbb{R}^2 \ve
 
 
 Zunächst wird  der Einfluss der Position des Aufschlags auf die Anzahl der Schläge zwischen Platte und Kugel in Abbildung~\ref{fig:xiEta} untersucht. 	
-Es ist klar zu erkennen, dass ab einem gewissen Radius die Anzahl der Aufschläge konstant bei 1 ist. Dieser Radius liegt im Fall der quadratischen Platte unter den gegebenen Parametern bei ca. $0.27 \cdot a$. Da die Anzahl der Aufschläge in der Regel eine gewisse Abhängigkeit mit der Steifigkeit der Platte aufweist, ist es ersichtlich, dass die Platte am Rand eine erhöhte Steifigkeit aufweist und somit weniger Aufschläge hier auftreten.\\
-Interessant ist jedoch das kreisförmige Ausbreiten der Grenze zwischen einem und zwei Aufschlägen. Ebenfalls ist die Unregelmäßigkeit der Anzahl der Aufschläge innerhalb dieses Kreises auffällig. Wenn die Plattensteifigkeit gering genug ist, kann beobachtet werden, dass der erste Aufschlag gelegentlich die Geschwindigkeit der Kugel nur gering beeinflusst und durch eine höhere Relativgeschwindigkeit zwischen Platte und Kugel eine erhöhte Kraft beim zweiten Aufschlag beobachtet werden kann.
+Es ist klar zu erkennen, dass ab einem gewissen Radius die Anzahl der Aufschläge konstant bei eins liegt. Dieser Radius liegt im Fall der quadratischen Platte unter den gegebenen Parametern bei ca. $0.27 \cdot a$. Da die Anzahl der Aufschläge in der Regel eine gewisse Abhängigkeit mit der Steifigkeit der Platte aufweist, ist ersichtlich, dass die Platte am Rand eine erhöhte Steifigkeit aufweist und somit weniger Aufschläge hier stattfinden.\\
+Interessant ist jedoch das kreisförmige Ausbreiten der Grenze zwischen einem und zwei Aufschlägen. Ebenfalls ist die Unregelmäßigkeit der Anzahl der Aufschläge innerhalb dieses Kreises auffällig. Wenn die Plattensteifigkeit gering genug ist, kann beobachtet werden, dass der erste Aufschlag teilweise die Geschwindigkeit der Kugel nur gering beeinflusst und durch eine höhere Relativgeschwindigkeit zwischen Platte und Kugel eine erhöhte Kraft beim zweiten Aufschlag beobachtet werden kann.
 
 \begin{figure}[H]
 	\begin{center}
@@ -426,9 +427,9 @@ Interessant ist jedoch das kreisförmige Ausbreiten der Grenze zwischen einem un
 
 
 Im Allgemeinen ist in den Abbildungen~\ref{fig:xiEtaAuslenkung} und ~\ref{fig:xiEtaKraft} ein Zusammenhang zwischen maximaler Durchbiegung und maximaler Kraft festzustellen.
-Dieser Zusammenhang gilt jedoch nicht in Randnähe, da aufgrund der gegebenen Randbedingungen ein Absinken am Rand stark behindert ist.\\
-Für die maximale Durchbiegung in Abhängigkeit des Aufschlagortes ergibt sich ein ähnliches Ergebnis wie für die Anzahl der Aufschläge. Zunächst ist ebenfalls eine klare, kreisförmige Grenze ersichtlich mit dem gleichen Radius wie in \ref{fig:xiEta}. Außerhalb dieses Kreises ist die maximale Durchbiegung einigermaßen konstant und nimmt kurz vor der Randfaser stark ab. Im Randgebiet des Kreises sind die maximalen Durchbiegungen vorzufinden, wobei diese eine ringartige Struktur aufweisen. Unter genauer Betrachtung fallen vier Ringe mit erhöhter Durchbiegung auf, wobei der äußerste Ring die größte Durchbiegung darstellt, jedoch in acht Segmente aufgeteilt. Im Gegensatz dazu weisen sich die drei weiteren Ringe durch eine relative Kontinuität aus. \\
-In dem Mittelpunkt der Platte findet man, neben dem Rand der Platte, die geringste Durchbiegung. Die Durchbiegung außerhalb des Randes befindet sich quantitativ zwischen der Durchbiegung in den Ringen und der Durchbiegung der Mitte.
+Dieser Zusammenhang gilt jedoch nicht in Randnähe, da aufgrund der gegebenen Randbedingungen ein Absinken der Platte am Rand stark behindert ist.\\
+Für die maximale Durchbiegung in Abhängigkeit des Aufschlagortes ergibt sich ein ähnliches Ergebnis wie für die Anzahl der Aufschläge. Zunächst ist ebenfalls eine klare, kreisförmige Grenze ersichtlich, mit dem gleichen Radius wie in \ref{fig:xiEta}. Außerhalb dieses Kreises ist die maximale Durchbiegung konstant und nimmt kurz vor der Randfaser stark ab. Im Randgebiet des Kreises sind die maximalen Durchbiegungen vorzufinden, wobei diese eine ringartige Struktur aufweisen. Unter genauer Betrachtung fallen vier Ringe mit erhöhter Durchbiegung auf, wobei der äußerste Ring die größte Durchbiegung darstellt, jedoch in acht Segmente aufgeteilt ist. Im Gegensatz dazu weisen sich die drei weiteren Ringe durch eine relative Kontinuität aus. \\
+In dem Mittelpunkt der Platte findet man, neben dem Rand der Platte, die geringste Durchbiegung vor. Die Durchbiegung außerhalb des Randes befindet sich quantitativ zwischen der Durchbiegung in den Ringen und der Durchbiegung der Mitte.
 
 
 \begin{figure}[H]
@@ -443,7 +444,7 @@ In dem Mittelpunkt der Platte findet man, neben dem Rand der Platte, die gerings
 	\end{center}
 \end{figure}
 
-Für die Kraft findet man ebenfalls die vier Ringe vor, welche eine maximale Kraft aufweisen. Jedoch ist die Kraft außerhalb des Kreises bis hin zum Rand der Platte konstant. Die minimale Kraft findet sich in der Mitte der Platte bis zum ersten Ring.
+Für die Kraft findet man ebenfalls die vier Ringe vor, welche eine maximale Kraft aufweisen. Jedoch ist die Kraft außerhalb des Kreises bis hin zum Rand der Platte konstant. Die minimale Kraft findet sich in dem Bereich von der Mitte der Platte bis zum ersten Ring.
 
 %\begin{figure}
 %	\begin{center}
@@ -460,7 +461,7 @@ Die Variation des Seitenverhältnisses wurde unter konstanter Fläche untersucht
 $$b = \left(\dfrac{f}{Sv}\right)^\frac{1}{2}$$
 $$a = \dfrac{f}{b} $$
 
-In Abbildung~\ref{fig:svMR} bildet sich eine klare Abhängigkeit der Stoßanzahl von dem Seitenverhältnis aus. Da mit einem steigenden Seitenverhältnis unter gleicher Fläche, eine der beiden Seitenlänge minimiert wird, dominiert diese Seite die Steifigkeit der Platte. Somit erhält man ab einem Seitenverhältnis von rund 3.5 stets nur noch einen einzigen Schlag. Ebenfalls steigt die Anzahl der Schläge mit steigenden Massenverhältnis. Jedoch hat $MR$ einen deutlich kleineren Einfluss als das Seitenverhältnis.\\
+In Abbildung~\ref{fig:svMR} bildet sich eine klare Abhängigkeit der Stoßanzahl von dem Seitenverhältnis aus. Da mit einem steigendem Seitenverhältnis unter gleicher Fläche, eine der beiden Seitenlänge minimiert wird, dominiert diese Seite die Steifigkeit der Platte. Somit erhält man ab einem Seitenverhältnis von rund 3.5 stets nur noch einen einzigen Schlag. Ebenfalls steigt die Anzahl der Schläge mit steigenden Massenverhältnis. Jedoch hat $MR$ einen deutlich kleineren Einfluss als das Seitenverhältnis.\\
 
 \begin{figure}[H]
 	\begin{center}
@@ -474,11 +475,11 @@ In Abbildung~\ref{fig:svMR} bildet sich eine klare Abhängigkeit der Stoßanzahl
 	\end{center}
 \end{figure}
 
-Auffallend ist zudem noch das schnelle Ansteigen der Anzahl der Schläge bei einem Seitenverhältnis zwischen 1 und 1.5. Anschließend fällt die Anzahl der Schläge wieder. Wichtig zu erwähnen ist eine numerische Instabilität des Skriptes, welche bei Seitenverhältnissen zwischen $2 \leq Sv \leq 2.5$ und einem Massenverhältnis $>2$ falsche Ergebnisse erzeugt. Diese numerische Instabilität wird insbesondere ersichtlich wenn die maximale Durchbiegung aufgetragen wird, siehe Abbildung~\ref{fig:svMRDurchbiegung}.\\
-Für eine bessere Darstellung wurde im folgenden $MR > 2$ ignoriert. Für die Durchbiegung ergibt sich dann Abbildung~\ref{fig:svMRDurchbiegungFixed}.\\
+Auffallend ist zudem noch das schnelle Ansteigen der Anzahl der Schläge bei einem Seitenverhältnis zwischen eins und ein-einhalb. Über diesem Intervall fällt die Anzahl der Schläge wieder. Wichtig zu erwähnen ist eine numerische Instabilität des Skriptes, welche bei Seitenverhältnissen zwischen $2 \leq Sv \leq 2.5$ und einem Massenverhältnis $>2$ falsche Ergebnisse erzeugt. Diese numerische Instabilität wird insbesondere ersichtlich, wenn die maximale Durchbiegung aufgetragen wird, siehe Abbildung~\ref{fig:svMRDurchbiegung}.\\
+Für eine bessere Darstellung wurde im Folgenden $MR > 2$ ignoriert. Für die Durchbiegung ergibt sich dann Abbildung~\ref{fig:svMRDurchbiegungFixed}.\\
 Jedoch fallen auch hier sehr hohe Durchbiegungen auf. Da die Vernachlässigung von Membrankräften in der Platte nur für kleine Durchbiegungen gültig ist, wird die tatsächliche Durchbiegung deutlich geringer sein.
-Für die maximale Auslenkung sowie für die maximale Kraft ergibt sich ein ähnliches Bild, siehe Abbildung~\ref{fig:svMRKraft}. Mit steigender Impaktormasse steigt die Kraft und die Durchbiegung. Auffallend ist die eine maximale Durchbiegung für ein Seitenverhältnis von $2.5$. Dies ist insbesondere unerwartet, da die Steifigkeit der Platte für das gegebene Seitenverhältnis deutlich größer ist als für den quadratischen Fall. Es ergibt sich ebenfalls eine maximale Kraft für das soeben genannte Seitenverhältnis von $2.5$. \\
-Ab einem Seitenverhältnis $ Sv \geq 3.5$ sind die Durchbiegung und maximale Kraft homogen und weisen keine Abhängigkeit von der Masse mehr auf.
+Für die maximale Auslenkung sowie für die maximale Kraft ergibt sich ein ähnliches Bild, siehe Abbildung~\ref{fig:svMRKraft}. Mit steigender Impaktormasse steigen die Kraft und die Durchbiegung. Auffallend ist die eine maximale Durchbiegung für ein Seitenverhältnis von $2.5$. Dies ist insbesondere unerwartet, da die Steifigkeit der Platte für das gegebene Seitenverhältnis deutlich größer ist, als für den quadratischen Fall. Es ergibt sich ebenfalls eine maximale Kraft für das soeben genannte Seitenverhältnis von $2.5$. \\
+Ab einem Seitenverhältnis $ Sv \geq 3.5$ sind die Durchbiegung und die maximale Kraft homogen und weisen keine Abhängigkeit von der Masse mehr auf.
 
 \begin{figure}[H]
 	\begin{center}
