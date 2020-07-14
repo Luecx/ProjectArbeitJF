@@ -247,7 +247,7 @@ def maxP(Kraft):
 
 # for v_0 in np.arange(100, 1010, 10):
 #
-#     time, j, tau, w, P, u, cosPre = compute(v_0=v_0, mass_ratio=1, iterations=1000, printLoadingBar=False)
+    time, j, tau, w, P, u, cosPre = compute(v_0=v_0, mass_ratio=1, iterations=1000, printLoadingBar=False)
 #     for mr in np.arange(0.01, 2.51, 0.01):
 #         time, j, tau, w, P, u, cosPre = compute(v_0=v_0, mass_ratio=mr, iterations=1000, cosPreset=cosPre, printLoadingBar=False)
 #         with open("SpeedNeu.txt", "a") as myfile:
@@ -341,20 +341,20 @@ def maxP(Kraft):
 # ------------------------------------------------------------------------------
 # P L O T T E N   D E R   E R G E B N I S S E
 
-# fig, ax1 = plt.subplots()
-# ax1.set_xlabel('time[s]')
-# ax1.set_ylabel('Force [N]')
-# l1, = ax1.plot(time, P, 'r.', label='P')
-# ax1.tick_params(axis='y', colors='r')
-#
-# ax2 = ax1.twinx()
-# ax2.set_ylabel('w,z [cm]')
-# l3, = ax2.plot(time, w, 'b.', label='w')
-# ax2.tick_params(axis='y', colors='b')
-#
-# l4, = ax2.plot(time, u, "g.", label="u")
-#
-# lines = [l1, l3]
-# plt.legend(lines, ["P", "w", "u"])
-# fig.tight_layout()
-# plt.show()
+fig, ax1 = plt.subplots()
+ax1.set_xlabel('time[s]')
+ax1.set_ylabel('Force [N]')
+l1, = ax1.plot(time, P, 'r.', label='P')
+ax1.tick_params(axis='y', colors='r')
+
+ax2 = ax1.twinx()
+ax2.set_ylabel('w,z [cm]')
+l3, = ax2.plot(time, w, 'b.', label='w')
+ax2.tick_params(axis='y', colors='b')
+
+l4, = ax2.plot(time, u, "g.", label="u")
+
+lines = [l1, l3]
+plt.legend(lines, ["P", "w", "u"])
+fig.tight_layout()
+plt.show()
