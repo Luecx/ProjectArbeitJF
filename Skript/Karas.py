@@ -338,23 +338,64 @@ def maxP(Kraft):
 #     print("%-10f %10f %10f %10f %10f \n" % (xi_rel, xi_rel, countHits(P), maxW(w), maxP(P)))
 
 
+
 # ------------------------------------------------------------------------------
 # P L O T T E N   D E R   E R G E B N I S S E
+#
+# fig, ax1 = plt.subplots()
+# ax1.set_xlabel('time[s]')
+# ax1.set_ylabel('Force [N]')
+# l1, = ax1.plot(time, P, 'r.', label='P')
+# ax1.tick_params(axis='y', colors='r')
+#
+# ax2 = ax1.twinx()
+# ax2.set_ylabel('w,z [cm]')
+# l3, = ax2.plot(time, w, 'b.', label='w')
+# ax2.tick_params(axis='y', colors='b')
+#
+# l4, = ax2.plot(time, u, "g.", label="u")
+#
+# lines = [l1, l3]
+# plt.legend(lines, ["P", "w", "u"])
+# fig.tight_layout()
+# plt.show()
 
-fig, ax1 = plt.subplots()
-ax1.set_xlabel('time[s]')
-ax1.set_ylabel('Force [N]')
-l1, = ax1.plot(time, P, 'r.', label='P')
-ax1.tick_params(axis='y', colors='r')
 
-ax2 = ax1.twinx()
-ax2.set_ylabel('w,z [cm]')
-l3, = ax2.plot(time, w, 'b.', label='w')
-ax2.tick_params(axis='y', colors='b')
+# ---------------------------------------------------------------------------------
+# G I F    D A T A    C R E A T I O N
 
-l4, = ax2.plot(time, u, "g.", label="u")
 
-lines = [l1, l3]
-plt.legend(lines, ["P", "w", "u"])
-fig.tight_layout()
-plt.show()
+
+dx = 2
+timesteps = 500
+a = 50
+b = 50
+
+
+dataCount = 0
+for x in range(int(a/2),a+dx,dx):
+    dataCount += 1
+
+
+data = np.zeros((dataCount, dataCount, timesteps))
+
+xIndex = 0
+for x in range(50,a +1,dx):
+    yIndex = 0
+    for y in range(int(b/2),b+1,dx):
+        time, j, tau, w, P, u, cosPre = compute(x=x,y=y,a=a,b=b,xi=a/2,eta=b/2,mass_ratio=0.1, iterations=timesteps, printLoadingBar=False)
+        # data[xIndex][yIndex] = np.asarray(w)
+        print(x,y)
+
+        with open("gifdata.dat", "a") as myfile:
+             myfile.write(str.format("%-10f %10f %10s\n" % (x, y, ' '.join(np.char.mod('%f', w)))))
+             myfile.write(str.format("%-10f %10f %10s\n" % (a-x, y, ' '.join(np.char.mod('%f', w)))))
+             myfile.write(str.format("%-10f %10f %10s\n" % (x, b-y, ' '.join(np.char.mod('%f', w)))))
+             myfile.write(str.format("%-10f %10f %10s\n" % (a-x, b-y, ' '.join(np.char.mod('%f', w)))))
+        yIndex += 1
+    xIndex += 1
+
+
+
+
+# print(data)
