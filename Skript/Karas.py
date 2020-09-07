@@ -77,7 +77,7 @@ def compute(
     m_g = mass_ratio * a * b * h * rho
 
     # Material Konstante aus der Hertz'schen Pressung
-    mat = (((1 - nue_g ** 2) / E_g) + ((1 - nue_p ** 2) / E_p)) ** (-1)
+    mat = 2 * ((((1 - nue_g ** 2) / E_g) + ((1 - nue_p ** 2) / E_p)) ** (-1))
 
     # Pressungskonstante
     c = np.sqrt((4 * r) / 9) * mat
@@ -245,18 +245,19 @@ def maxP(Kraft):
 # ----------------------------
 # Geschwindigkeit
 
-# for v_0 in np.arange(100, 1010, 10):
-#
-    time, j, tau, w, P, u, cosPre = compute(v_0=v_0, mass_ratio=1, iterations=1000, printLoadingBar=False)
-#     for mr in np.arange(0.01, 2.51, 0.01):
-#         time, j, tau, w, P, u, cosPre = compute(v_0=v_0, mass_ratio=mr, iterations=1000, cosPreset=cosPre, printLoadingBar=False)
-#         with open("SpeedNeu.txt", "a") as myfile:
-#             myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (v_0,mr,countHits(P),maxW(w),maxP(P))))
-#          # with open("SpeedAuslenkung.txt", "a") as myfile:
-#          #     myfile.write(str.format("%10f %10f %10f \n" % (v_0,mr, maxW(w))))
-#          # with open("SpeedKraft.txt", "a") as myfile:
-#          #     myfile.write(str.format("%10f %10f %10f \n" % (v_0,mr, maxP(P))))
-#         print("%10f %10f %10f %10f %10f" % (v_0,mr,countHits(P),maxW(w),maxP(P)))
+for v_0 in np.arange(100, 1010, 10):
+
+    time, j, tau, w, P, u, cosPre = compute(mass_ratio=1, iterations=1000, printLoadingBar=False)
+    for mr in np.arange(0.01, 2.51, 0.01):
+        time, j, tau, w, P, u, cosPre = compute(v_0=v_0, mass_ratio=mr, iterations=1000, cosPreset=cosPre,
+                                                printLoadingBar=False)
+        with open("SpeedNeu.txt", "a") as myfile:
+            myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (v_0, mr, countHits(P), maxW(w), maxP(P))))
+        with open("SpeedAuslenkung.txt", "a") as myfile:
+            myfile.write(str.format("%10f %10f %10f \n" % (v_0, mr, maxW(w))))
+        with open("SpeedKraft.txt", "a") as myfile:
+            myfile.write(str.format("%10f %10f %10f \n" % (v_0, mr, maxP(P))))
+        print("%10f %10f %10f %10f %10f" % (v_0, mr, countHits(P), maxW(w), maxP(P)))
 
 # ----------------------------
 # Hoehe
@@ -342,58 +343,58 @@ def maxP(Kraft):
 # ------------------------------------------------------------------------------
 # P L O T T E N   D E R   E R G E B N I S S E
 #
-# fig, ax1 = plt.subplots()
-# ax1.set_xlabel('time[s]')
-# ax1.set_ylabel('Force [N]')
-# l1, = ax1.plot(time, P, 'r.', label='P')
-# ax1.tick_params(axis='y', colors='r')
-#
-# ax2 = ax1.twinx()
-# ax2.set_ylabel('w,z [cm]')
-# l3, = ax2.plot(time, w, 'b.', label='w')
-# ax2.tick_params(axis='y', colors='b')
-#
-# l4, = ax2.plot(time, u, "g.", label="u")
-#
-# lines = [l1, l3]
-# plt.legend(lines, ["P", "w", "u"])
-# fig.tight_layout()
-# plt.show()
+fig, ax1 = plt.subplots()
+ax1.set_xlabel('time[s]')
+ax1.set_ylabel('Force [N]')
+l1, = ax1.plot(time, P, 'r.', label='P')
+ax1.tick_params(axis='y', colors='r')
+
+ax2 = ax1.twinx()
+ax2.set_ylabel('w,z [cm]')
+l3, = ax2.plot(time, w, 'b.', label='w')
+ax2.tick_params(axis='y', colors='b')
+
+l4, = ax2.plot(time, u, "g.", label="u")
+
+lines = [l1, l3]
+plt.legend(lines, ["P", "w", "u"])
+fig.tight_layout()
+plt.show()
 
 
 # ---------------------------------------------------------------------------------
 # G I F    D A T A    C R E A T I O N
-
-
-
-dx = 2
-timesteps = 500
-a = 50
-b = 50
-
-
-dataCount = 0
-for x in range(int(a/2),a+dx,dx):
-    dataCount += 1
-
-
-data = np.zeros((dataCount, dataCount, timesteps))
-
-xIndex = 0
-for x in range(50,a +1,dx):
-    yIndex = 0
-    for y in range(int(b/2),b+1,dx):
-        time, j, tau, w, P, u, cosPre = compute(x=x,y=y,a=a,b=b,xi=a/2,eta=b/2,mass_ratio=0.1, iterations=timesteps, printLoadingBar=False)
-        # data[xIndex][yIndex] = np.asarray(w)
-        print(x,y)
-
-        with open("gifdata.dat", "a") as myfile:
-             myfile.write(str.format("%-10f %10f %10s\n" % (x, y, ' '.join(np.char.mod('%f', w)))))
-             myfile.write(str.format("%-10f %10f %10s\n" % (a-x, y, ' '.join(np.char.mod('%f', w)))))
-             myfile.write(str.format("%-10f %10f %10s\n" % (x, b-y, ' '.join(np.char.mod('%f', w)))))
-             myfile.write(str.format("%-10f %10f %10s\n" % (a-x, b-y, ' '.join(np.char.mod('%f', w)))))
-        yIndex += 1
-    xIndex += 1
+#
+#
+#
+# dx = 2
+# timesteps = 500
+# a = 50
+# b = 50
+#
+#
+# dataCount = 0
+# for x in range(int(a/2),a+dx,dx):
+#     dataCount += 1
+#
+#
+# data = np.zeros((dataCount, dataCount, timesteps))
+#
+# xIndex = 0
+# for x in range(50,a +1,dx):
+#     yIndex = 0
+#     for y in range(int(b/2),b+1,dx):
+#         time, j, tau, w, P, u, cosPre = compute(x=x,y=y,a=a,b=b,xi=a/2,eta=b/2,mass_ratio=0.1, iterations=timesteps, printLoadingBar=False)
+#         # data[xIndex][yIndex] = np.asarray(w)
+#         print(x,y)
+#
+#         with open("gifdata.dat", "a") as myfile:
+#              myfile.write(str.format("%-10f %10f %10s\n" % (x, y, ' '.join(np.char.mod('%f', w)))))
+#              myfile.write(str.format("%-10f %10f %10s\n" % (a-x, y, ' '.join(np.char.mod('%f', w)))))
+#              myfile.write(str.format("%-10f %10f %10s\n" % (x, b-y, ' '.join(np.char.mod('%f', w)))))
+#              myfile.write(str.format("%-10f %10f %10s\n" % (a-x, b-y, ' '.join(np.char.mod('%f', w)))))
+#         yIndex += 1
+#     xIndex += 1
 
 
 
