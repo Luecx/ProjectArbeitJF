@@ -10,7 +10,7 @@ reset session
 set title "" 
 
 set xrange [0.5:2.5]
-set yrange [0.01:2.50]
+set yrange [0.1:2.50]
 
 set xlabel "" 
 set ylabel "" rotate by 90
