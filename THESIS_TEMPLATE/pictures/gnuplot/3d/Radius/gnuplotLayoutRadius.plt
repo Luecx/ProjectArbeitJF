@@ -10,7 +10,7 @@ set output './production/RadiusKraft3D.eps'
 set title "" 
 
 set xrange [0.5:10]
-set yrange [0.01:2.50]
+set yrange [0.1:2.50]
 
 set xlabel "" 
 set ylabel "" rotate by 90

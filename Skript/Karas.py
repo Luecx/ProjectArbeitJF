@@ -260,32 +260,34 @@ def maxP(Kraft):
 #         print("%10f %10f %10f %10f %10f" % (v_0, mr, countHits(P), maxW(w), maxP(P)))
 
 # ----------------------------
-# Hoehe
+#Hoehe
 
 # for h in np.arange(0.5, 2.52, 0.02):
 #
 #     time, j, tau, w, P, u, cosPre = compute(h=h, mass_ratio=1, iterations=1000, printLoadingBar=False)
-#     for mr in np.arange(0.01, 2.51, 0.01):
-#         time, j, tau, w, P, u, cosPre = compute(h=h, mass_ratio=mr, iterations=1000, cosPreset=cosPre, printLoadingBar=False)
+#     for mr in np.arange(0.1, 2.51, 0.01):
+#         time, j, tau, w, P, u, cosPre = compute(h=h, mass_ratio=mr, iterations=1000, cosPreset=cosPre,
+#                                                 printLoadingBar=False)
 #         with open("HoeheNeu.dat", "a") as myfile:
-#          myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (h,mr,countHits(P),maxW(w),maxP(P))))
-#         print("%10f %10f %10f %10f %10f" % (h,mr,countHits(P),maxW(w),maxP(P)))
+#             myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (h, mr, countHits(P), maxW(w), maxP(P))))
+#         print("%10f %10f %10f %10f %10f" % (h, mr, countHits(P), maxW(w), maxP(P)))
 
 # ----------------------------
 # Impaktorradius
-
-# for r in np.arange(0.5, 10.1, 0.1):
 #
-#     time, j, tau, w, P, u, cosPre = compute(r=r, mass_ratio=1, iterations=1000, printLoadingBar=False)
-#     for mr in np.arange(0.01, 2.51, 0.01):
-#         time, j, tau, w, P, u, cosPre = compute(r=r, mass_ratio=mr, iterations=1000, cosPreset=cosPre, printLoadingBar=False)
-#         with open("Radius.txt", "a") as myfile:
-#          myfile.write(str.format("%10f %10f %10f \n" % (r,mr,countHits(P))))
-#         with open("RadiusAuslenkung.dat", "a") as myfile:
-#          myfile.write(str.format("%10f %10f %10f \n" % (r,mr, maxW(w))))
-#         with open("RadiusKraft.dat", "a") as myfile:
-#          myfile.write(str.format("%10f %10f %10f \n" % (r,mr, maxP(P))))
-#         print("%10f %10f %10f" % (r,mr,countHits(P)))
+for r in np.arange(0.5, 10.1, 0.1):
+
+    time, j, tau, w, P, u, cosPre = compute(r=r, mass_ratio=1, iterations=1000, printLoadingBar=False)
+    for mr in np.arange(0.1, 2.51, 0.01):
+        time, j, tau, w, P, u, cosPre = compute(r=r, mass_ratio=mr, iterations=1000, cosPreset=cosPre,
+                                                printLoadingBar=False)
+        with open("Radius.txt", "a") as myfile:
+            myfile.write(str.format("%10f %10f %10f \n" % (r, mr, countHits(P))))
+        with open("RadiusAuslenkung.dat", "a") as myfile:
+            myfile.write(str.format("%10f %10f %10f \n" % (r, mr, maxW(w))))
+        with open("RadiusKraft.dat", "a") as myfile:
+            myfile.write(str.format("%10f %10f %10f \n" % (r, mr, maxP(P))))
+        print("%10f %10f %10f" % (r, mr, countHits(P)))
 
 # ----------------------------
 # Seitenverhaeltnis

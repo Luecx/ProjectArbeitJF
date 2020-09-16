@@ -25,7 +25,7 @@ Hier ist $\frac{E}{(1 - \nu^{2})}$ der reduzierte E-Modul, welcher durch Gleichu
 
 \begin{equation}
 	\label{form:redE}
-	\frac{E}{(1 - \nu^{2})} = \left( \frac{(1 - \nu_{p}^{2})}{E_{p}} + \frac{(1 - \nu_{g}^{2})}{E_{g}} \right)^{-1}
+	\frac{E}{(1 - \nu^{2})} = 2 \cdot \left( \frac{(1 - \nu_{p}^{2})}{E_{p}} + \frac{(1 - \nu_{g}^{2})}{E_{g}} \right)^{-1}
 \end{equation} 
 
 Nun wird $c$ als Vorfaktor von $z^{\frac{3}{2}}$ in Gleichung~\ref{form:PvonZ} definiert, so dass folgt:
@@ -107,7 +107,7 @@ Für die Parameterstudie wurde folgender Fall als Ausgangspunkt gewählt:
 			$b$ & 50.0 [cm]\\
 			$h$ & 1.0 [cm]\\
 			$r_{g}$ & 1.0 [cm]\\
-			$v_{0}$ & 500.0 [cm/s]\\
+			$v_{0}$ & 440.0 [cm/s]\\
 			$\xi,\eta$ & 25.0 [cm]\\
 			$x,y$ & 25.0 [cm]\\ 		
 		\end{tabular}
@@ -134,7 +134,7 @@ $MR$ wird in Tabelle~\ref{tab:Ausgang} bewusst ausgelassen, da bei jedem Paramet
 
 \begin{equation}
 	\label{form:MR}
-	0.01 \leq MR \leq 2.50 \; , \;\; \mbox{Schrittweite:} \; \Delta MR = 0.01
+	0.1 \leq MR \leq 2.50 \; , \;\; \mbox{Schrittweite:} \; \Delta MR = 0.01
 \end{equation}
 
 Die Stoffparameter bleiben konstant und entsprechen in Tabelle~\ref{tab:Stoff} den Werten von Stahl.
@@ -181,7 +181,7 @@ Es ist offensichtlich, dass bei einem Massenverhältnis $MR \geq 1.7$ und einer 
 	\end{center}
 \end{figure}
 
-Auch bei der Auslenkung stimmen die Ergebnisse mit den Erwartungen überein. In Abbildung~\ref{fig:HoeheAuslenkung} ist zu erkennen, dass mit zunehmender Höhe die Auslenkung abfällt, da die Steifigkeit der Platte zunimmt. Die Steigung der Auslenkungskurve flacht mit zunehmendem $MR$ ab. Am größten ist die Steigung im Bereich $0.01 \leq MR \leq 1$. Daher ist der Einfluss des Massenverhältnisses in diesem Bereich am signifkantesten.\\
+Auch bei der Auslenkung stimmen die Ergebnisse mit den Erwartungen überein. In Abbildung~\ref{fig:HoeheAuslenkung} ist zu erkennen, dass mit zunehmender Höhe die Auslenkung abfällt, da die Steifigkeit der Platte zunimmt. Die Steigung der Auslenkungskurve flacht mit zunehmendem $MR$ ab. Am größten ist die Steigung im Bereich $0.1 \leq MR \leq 1$. Daher ist der Einfluss des Massenverhältnisses in diesem Bereich am signifkantesten.\\
 Bei Plattendicken von $h \geq 1.3 cm$ flacht die Steigung der maximalen Auslenkung in einen annähernd linearen Bereich ab. Daher liegt nahe, dass die Höhe im Bereich bis $h = 1.3 cm$ den stärksten Einfluss hat.\\
 In Tabelle~\ref{tab:WKHoehe} sind die minimalen und maximalen Werte der Auslenkung und Kraft sowie die Faktoren, die zwischen diesen Werten liegen, aufgeführt.
 Wenn man die maximal auftretende Kraft betrachtet, ergibt sich Abbildung~\ref{fig:HoeheKraft}.\\
@@ -194,17 +194,17 @@ Aus der maximalen Auslenkung kann man für die Höhe schlussfolgern, dass die ma
 		\begin{tabular}{l|c|c|r}
 			\textbf{Auslenkung/Kraft} & \textbf{Höhe [cm]} & \textbf{MR} & \textbf{Wert}\\
 			\hline
-			$w_{max}$ & 0.5  & 2.5 & 2.265 cm\\
-			$w_{min}$ & 2.5  & 0.01 & 0.0165 cm\\
+			$w_{max}$ & 0.64  & 2.42 & 2.112 cm\\
+			$w_{min}$ & 2.5  & 0.1 & 0.0846 cm\\
 			\hline
-			$P_{max}$ & 2.5  & 2.5 & 598.36 kN\\
-			$P_{min}$ & 0.5  & 0.01 & 10.88 kN\\
+			$P_{max}$ & 2.5  & 2.5 & 619.77 kN\\
+			$P_{min}$ & 0.64  & 0.1 & 158.62 kN\\
 			\hline
-			Faktor : $\frac{w(MR_{max})}{w(MR_{min})}$ & $h_{min}=0.5$ & & 26.5\\
-			Faktor : $\frac{w(MR_{max})}{w(MR_{min})}$ & $h_{max}=0.5$ & & 30.8\\
+			Faktor : $\frac{w(MR_{max})}{w(MR_{min})}$ & $h_{min}=0.5$ & & 4.72\\
+			Faktor : $\frac{w(MR_{max})}{w(MR_{min})}$ & $h_{max}=2.5$ & & 5.33\\
 			\hline
-			Faktor : $\frac{P(MR_{max})}{P(MR_{min})}$ & $h_{min}=0.5$ & & 2\\
-			Faktor : $\frac{P(MR_{max})}{P(MR_{min})}$ & $h_{max}=2.5$ & & 14.4\\
+			Faktor : $\frac{P(MR_{max})}{P(MR_{min})}$ & $h_{min}=0.5$ & & 0.98\\
+			Faktor : $\frac{P(MR_{max})}{P(MR_{min})}$ & $h_{max}=2.5$ & & 4.96\\
 		\end{tabular}
 	\end{center}
 \end{table}
@@ -258,10 +258,10 @@ Analog zur Höhenvariation wird zunächst die Anzahl der Aufschläge aufgetragen
 	\end{center}
 \end{figure}
 
-Die aus den Stößen resultierende Auslenkung wird in Abbildung~\ref{fig:SpeedAuslenkung} dargestellt. Man kann erkennen, dass der Einfluss des Massenverhältnisses mit steigender Geschwindigkeit zu-nimmt. \\
+Die aus den Stößen resultierende Auslenkung wird in Abbildung~\ref{fig:SpeedAuslenkung} dargestellt. Man kann erkennen, dass der Einfluss des Massenverhältnisses mit steigender Geschwindigkeit zunimmt. \\
 Auch deutlich ist, dass im höheren Geschwindigkeitsbereich die Auslenkung stärker mit größer werdendem $MR$ ansteigt. \\
 Zuletzt wird die Kraft aufgetragen. In Abbildung~\ref{fig:SpeedKraft} sind ähnliche Trends wie in Abbildung~\ref{fig:SpeedAuslenkung} zu sehen. \\
-Auch hier nimmt die auftretende Kraft mit $v_{0}$ zu. Je größer $MR$ hierbei ist, desto steiler die Kraftzunahme. Besonders deutlich wird dies, wenn man wieder die Faktoren zwischen $P_{max}$ und $P_{min}$ bei gegebenem $MR$ und $v_{0}$ untersucht. \\
+Auch hier nimmt die auftretende Kraft mit $v_{0}$ zu.  Je größer $MR$ hierbei ist, desto steiler die Kraftzunahme.\\
 Analog zur Höhe werden hier auch die Werte in Tabelle~\ref{tab:WKSpeed} dargestellt. 
 
 \begin{table}[H]
@@ -271,17 +271,17 @@ Analog zur Höhe werden hier auch die Werte in Tabelle~\ref{tab:WKSpeed} dargest
 		\begin{tabular}{l|c|c|r}
 			\textbf{Auslenkung/Kraft} & \textbf{Geschwindigkeit [cm/s]} & \textbf{MR} & \textbf{Wert}\\
 			\hline
-			$w_{max}$ & 1000  & 2.5 & 2.57 cm\\
-			$w_{min}$ & 100  & 0.01 & 0.008899 cm\\
+			$w_{max}$ & 1000  & 2.5 & 2.58 cm\\
+			$w_{min}$ & 100  & 0.1 & 0.046 cm\\
 			\hline
-			$P_{max}$ & 1000  & 2.5 & 598.36 kN\\
-			$P_{min}$ & 100 & 0.01 & 10.88 kN\\
+			$P_{max}$ & 1000  & 2.5 & 318.58 kN\\
+			$P_{min}$ & 100 & 0.1 & 7.094 kN\\
 			\hline
-			Faktor : $\frac{w(MR_{max})}{w(MR_{min})}$ & $v_{0,min}=100 $ & & 28.4\\
-			Faktor : $\frac{w(MR_{max})}{w(MR_{min})}$ & $v_{0,max}=1000 $ & & 29.7\\
+			Faktor : $\frac{w(MR_{max})}{w(MR_{min})}$ & $v_{0,min}=100 $ & & 5.55\\
+			Faktor : $\frac{w(MR_{max})}{w(MR_{min})}$ & $v_{0,max}=1000 $ & & 5.77\\
 			\hline
-			Faktor : $\frac{P(MR_{max})}{P(MR_{min})}$ & $v_{0,min}=100$ & & 9.4\\
-			Faktor : $\frac{P(MR_{max})}{P(MR_{min})}$ & $v_{0,max}=1000$ & & 7.3\\
+			Faktor : $\frac{P(MR_{max})}{P(MR_{min})}$ & $v_{0,min}=100$ & & 3.90\\
+			Faktor : $\frac{P(MR_{max})}{P(MR_{min})}$ & $v_{0,max}=1000$ & & 3.92\\
 		\end{tabular}
 	\end{center}
 \end{table}
@@ -340,7 +340,7 @@ Bildet man die Daten in 3D ab, erkennt man leicht, dass die Anzahl der Aufschlä
 In Tabelle~\ref{tab:WKSpeed} sind die maximalen und minimalen Werte aufgetragen.\\
 Im niederen $MR$-Bereich sind die Auslenkungen bei $r_{g} = 0.5 cm$ und bei $r_{g} = 10.0 cm$ fast identisch.  Bei $MR_{max} = 2.5$ ist die Auslenkung jedoch nur auf der zweiten Nachkommastelle größer.\\
 Auch wenn man die Kraft betrachtet, lassen sich ähnliche Trends erkennen. In Abbildung~\ref{fig:RadiusKraft} verändert sich die resultierende maximale Kraft im niederen $MR$-Bereich nur minimal.\\
-Analog zu der Auslenkung ergibt sich die signifikanteste Kraftänderung bei $MR_{max}$. Die Kraft steigt von $P(r_{g,min})$ auf $P(r_{g,max})$ um den Faktor $1.194$ an. Verglichen mit der Kraftänderung von $MR_{min}$ zu $MR_{max}$, die bei $r_{g,max}$ mit dem Faktor $7.16$ verbunden ist, ist $\Delta P$ über die Radius-änderung eher gering. 
+Analog zu der Auslenkung ergibt sich die signifikanteste Kraftänderung bei $MR_{max}$. 
 
 \begin{table}[H]
 	\begin{center}
@@ -349,17 +349,17 @@ Analog zu der Auslenkung ergibt sich die signifikanteste Kraftänderung bei $MR_
 		\begin{tabular}{l|c|c|r}
 			\textbf{Auslenkung/Kraft} & \textbf{Radius [cm]} & \textbf{MR} & \textbf{Wert}\\
 			\hline
-			$w_{max}$ & 10 & 2.5 & 1.29 cm\\
-			$w_{min}$ & 0.5 & 0.01 & 0.0442 cm\\
+			$w_{max}$ & 10 & 2.5 & 1.14 cm\\
+			$w_{min}$ & 0.5 & 0.01 & 0.201 cm\\
 			\hline
-			$P_{max}$ & 10 & 2.5 & 163.05 kN\\
-			$P_{min}$ & 0.5 & 0.01 & 16.395 kN\\
+			$P_{max}$ & 10 & 2.5 & 162.953 kN\\
+			$P_{min}$ & 0.5 & 0.01 & 32.788 kN\\
 			\hline
-			Faktor : $\frac{w(MR_{max})}{w(MR_{min})}$ & $r_{min}=0.5 cm$ & & 28.7\\
-			Faktor : $\frac{w(MR_{max})}{w(MR_{min})}$ & $r_{max}=10 cm$ & & 31.6\\
+			Faktor : $\frac{w(MR_{max})}{w(MR_{min})}$ & $r_{min}=0.5 cm$ & & 5.63\\
+			Faktor : $\frac{w(MR_{max})}{w(MR_{min})}$ & $r_{max}=10 cm$ & & 5.86\\
 			\hline
-			Faktor : $\frac{P(MR_{max})}{P(MR_{min})}$ & $r_{min}=0.5 cm$ & & 8.3\\
-			Faktor : $\frac{P(MR_{max})}{P(MR_{min})}$ & $r_{max}=10 cm$ & & 7.2\\
+			Faktor : $\frac{P(MR_{max})}{P(MR_{min})}$ & $r_{min}=0.5 cm$ & & 3.78\\
+			Faktor : $\frac{P(MR_{max})}{P(MR_{min})}$ & $r_{max}=10 cm$ & & 4.20\\
 		\end{tabular}
 	\end{center}
 \end{table}
