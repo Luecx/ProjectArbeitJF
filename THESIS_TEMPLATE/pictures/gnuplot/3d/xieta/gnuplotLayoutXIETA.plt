@@ -5,7 +5,7 @@ reset session
 #set terminal postscript eps enhanced color font 'Helvetica,10'
 
 # ---------------------------------------------------------------------------------------
-#set output './production/XiEtaKraftAlternativ.eps'
+#set output './productionNew/XiEtaKraftAlternativ.eps'
 
 set title "" 
 

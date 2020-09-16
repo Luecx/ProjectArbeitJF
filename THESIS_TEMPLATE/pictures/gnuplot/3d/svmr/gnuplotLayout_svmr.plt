@@ -5,12 +5,12 @@ reset session
 set terminal postscript eps enhanced color font 'Helvetica,10'
 
 # ---------------------------------------------------------------------------------------
-set output './production/svmr.eps'
+set output './productionNew/svmr.eps'
 
 set title "" 
 
-set xrange [1:4.95]
-set yrange [0.05:2.99]
+set xrange [1:2.45]
+set yrange [0.05:2.45]
 
 set xlabel "" 
 set ylabel "" rotate by 90
@@ -23,7 +23,7 @@ set grid
 set size square
 set view map
 set pm3d at b
-set pm3d interpolate 2,2
+set pm3d interpolate 1,1
 set dgrid3d 50,50,2
 
 set table $DataInterpolated

@@ -99,7 +99,7 @@ def compute(
     # Schwingungsdauer der Platte
     Tg = 2 * np.pi / (np.pi ** 2 * a_quer * (1 / a ** 2 + 1 / b ** 2))
     # Schrittweite
-    tau = Tg / (2 * 180)  # [sek]
+    tau = Tg / (2 * 2 * 720)  # [sek]
 
     # ------------------------------------------------------------------------------
     # A N L E G E N   V O N   A R R A Y S
@@ -245,19 +245,19 @@ def maxP(Kraft):
 # ----------------------------
 # Geschwindigkeit
 
-for v_0 in np.arange(100, 1010, 10):
-
-    time, j, tau, w, P, u, cosPre = compute(mass_ratio=1, iterations=1000, printLoadingBar=False)
-    for mr in np.arange(0.01, 2.51, 0.01):
-        time, j, tau, w, P, u, cosPre = compute(v_0=v_0, mass_ratio=mr, iterations=1000, cosPreset=cosPre,
-                                                printLoadingBar=False)
-        with open("SpeedNeu.txt", "a") as myfile:
-            myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (v_0, mr, countHits(P), maxW(w), maxP(P))))
-        with open("SpeedAuslenkung.txt", "a") as myfile:
-            myfile.write(str.format("%10f %10f %10f \n" % (v_0, mr, maxW(w))))
-        with open("SpeedKraft.txt", "a") as myfile:
-            myfile.write(str.format("%10f %10f %10f \n" % (v_0, mr, maxP(P))))
-        print("%10f %10f %10f %10f %10f" % (v_0, mr, countHits(P), maxW(w), maxP(P)))
+# for v_0 in np.arange(100, 1010, 10):
+#
+#     time, j, tau, w, P, u, cosPre = compute(mass_ratio=1, iterations=1000, printLoadingBar=False)
+#     for mr in np.arange(0.01, 2.51, 0.01):
+#         time, j, tau, w, P, u, cosPre = compute(v_0=v_0, mass_ratio=mr, iterations=1000, cosPreset=cosPre,
+#                                                 printLoadingBar=False)
+#         with open("SpeedNeu.txt", "a") as myfile:
+#             myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (v_0, mr, countHits(P), maxW(w), maxP(P))))
+#         with open("SpeedAuslenkung.txt", "a") as myfile:
+#             myfile.write(str.format("%10f %10f %10f \n" % (v_0, mr, maxW(w))))
+#         with open("SpeedKraft.txt", "a") as myfile:
+#             myfile.write(str.format("%10f %10f %10f \n" % (v_0, mr, maxP(P))))
+#         print("%10f %10f %10f %10f %10f" % (v_0, mr, countHits(P), maxW(w), maxP(P)))
 
 # ----------------------------
 # Hoehe
@@ -289,7 +289,7 @@ for v_0 in np.arange(100, 1010, 10):
 
 # ----------------------------
 # Seitenverhaeltnis
-
+#
 # for sv in np.arange(1, 2.5, 0.05):
 #
 #     f = 2500
@@ -299,13 +299,13 @@ for v_0 in np.arange(100, 1010, 10):
 #
 #     # time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=2)
 #
-#     time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=1, iterations=1000, xi=a / 2, eta=b / 2, printLoadingBar=True)
-#     for mr in np.arange(2.5, 2.51, 0.01):
-#         time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=mr, iterations=1000, xi=a / 2, eta=b / 2, cosPreset=cosPre, printLoadingBar=True)
-#         # with open("svmr.dat", "a") as myfile:
-#         #     myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (sv, mr, countHits(P), maxW(w), maxP(P))))
+#     time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=1, iterations=3000, xi=a / 2, eta=b / 2, printLoadingBar=True)
+#     for mr in np.arange(0.01, 2.51, 0.01):
+#         time, j, tau, w, P, u, cosPre = compute(a=a, b=b, mass_ratio=mr, iterations=3000, xi=a / 2, eta=b / 2, cosPreset=cosPre, printLoadingBar=True)
+#         with open("svmr.dat", "a") as myfile:
+#             myfile.write(str.format("%10f %10f %10f %10f %10f \n" % (sv, mr, countHits(P), maxW(w), maxP(P))))
 #     print(str((sv-1) / 4 * 100) + "%")
-#
+
 # sv = 2.3
 
 #
@@ -319,24 +319,28 @@ for v_0 in np.arange(100, 1010, 10):
 
 # ----------------------------
 # Auftreffstelle
+time, j, tau, w, P, u, cosPre = compute(xi=0.68 * 50, eta=0.65 * 50, iterations=4000,printLoadingBar=True, mass_ratio=0.3)
+print(maxW(w))
+print(maxP(P))
+print(countHits(P))
 
-# for xi_rel in np.arange(0.5,1,0.01):
-#     for eta_rel in np.arange(0.5,xi_rel, 0.01):
-#         time, j, tau, w, P, u, cosPre = compute(xi=xi_rel * 50, eta=eta_rel * 50, iterations=1000,
-#                                                 printLoadingBar=False)
-#         with open("xieta.txt", "a") as myfile:
-#             myfile.write(str.format("%-10f %10f %10f %10f %10f \n" % (xi_rel, eta_rel, countHits(P), maxW(w), maxP(P))))
-#             myfile.write(str.format("%-10f %10f %10f %10f %10f \n" % (eta_rel, xi_rel, countHits(P), maxW(w), maxP(P))))
-#
-#         print("%-10f %10f %10f %10f %10f \n" % (xi_rel, eta_rel, countHits(P), maxW(w), maxP(P)))
-#
-#
-#     time, j, tau, w, P, u, cosPre = compute(xi=xi_rel * 50, eta=xi_rel * 50, iterations=1000,
-#                                             printLoadingBar=False)
-#     with open("xieta.txt", "a") as myfile:
-#         myfile.write(str.format("%-10f %10f %10f %10f %10f \n" % (xi_rel, xi_rel, countHits(P), maxW(w), maxP(P))))
-#
-#     print("%-10f %10f %10f %10f %10f \n" % (xi_rel, xi_rel, countHits(P), maxW(w), maxP(P)))
+for xi_rel in np.arange(0.5,1,0.01):
+    for eta_rel in np.arange(0.5,xi_rel, 0.01):
+        time, j, tau, w, P, u, cosPre = compute(xi=xi_rel * 50, eta=eta_rel * 50, iterations=4000,
+                                                printLoadingBar=False, mass_ratio=0.3)
+        with open("xieta3.txt", "a") as myfile:
+            myfile.write(str.format("%-10f %10f %10f %10f %10f \n" % (xi_rel, eta_rel, countHits(P), maxW(w), maxP(P))))
+            myfile.write(str.format("%-10f %10f %10f %10f %10f \n" % (eta_rel, xi_rel, countHits(P), maxW(w), maxP(P))))
+
+        print("%-10f %10f %10f %10f %10f \n" % (xi_rel, eta_rel, countHits(P), maxW(w), maxP(P)))
+
+
+    time, j, tau, w, P, u, cosPre = compute(xi=xi_rel * 50, eta=xi_rel * 50, iterations=4000,
+                                            printLoadingBar=False, mass_ratio=0.3)
+    with open("xieta3.txt", "a") as myfile:
+        myfile.write(str.format("%-10f %10f %10f %10f %10f \n" % (xi_rel, xi_rel, countHits(P), maxW(w), maxP(P))))
+
+    print("%-10f %10f %10f %10f %10f \n" % (xi_rel, xi_rel, countHits(P), maxW(w), maxP(P)))
 
 
 

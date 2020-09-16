@@ -5,7 +5,7 @@ reset session
 #set terminal postscript eps enhanced color font 'Helvetica,10'
 
 # ---------------------------------------------------------------------------------------
-#set output './production/svmrAuslenkungAlternativ.eps'
+#set output './productionNew/svmrAuslenkungAlternativ.eps'
 
 set title "" 
 

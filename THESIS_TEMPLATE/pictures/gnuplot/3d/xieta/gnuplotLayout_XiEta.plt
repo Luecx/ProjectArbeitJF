@@ -5,7 +5,7 @@ reset session
 set terminal postscript eps enhanced color font 'Helvetica,10'
 
 # ---------------------------------------------------------------------------------------
-set output './production/XiEta.eps'
+set output './productionNew/XiEta.eps'
 
 set title "" 
 
@@ -22,8 +22,8 @@ set palette grey
 set size square
 set view map
 set pm3d at b
-set pm3d interpolate 2,2
-set dgrid3d 50,50,2
+set pm3d interpolate 1,1
+set dgrid3d 100,100,2
 
 set table $DataInterpolated
     splot "xieta.dat" u 1:2:3 
