@@ -5,7 +5,7 @@ reset session
 set terminal postscript eps enhanced color font 'Helvetica,10'
 
 # ---------------------------------------------------------------------------------------
-set output './production/Kraftfakt.eps'
+set output './production/Auslenkungsfakt.eps'
 
 set title "" 
 
@@ -22,12 +22,13 @@ set xtics ("Hoehe" 0.25, "Geschwindigkeit" 1.75, "Radius" 3.25,) font "TimesNewR
 set ytics font ",25"
 
 set palette grey
-set key font "TimesNewRoman,45"
+unset key
+#set key font "TimesNewRoman,45"
 set boxwidth 0.5
 set style fill solid
 
-plot 'Kraftfakt.dat' every 2    using 1:2 title "Mr_m_i_n" with boxes ls 1 lc rgb "black",\
-     'Kraftfakt.dat' every 2::1 using 1:2 title "Mr_m_a_x" with boxes ls 2 lc rgb "grey"
+plot 'Auslenkungsfakt.dat' every 2    using 1:2 title "Mr_m_i_n" with boxes ls 1 lc rgb "black",\
+     'Auslenkungsfakt.dat' every 2::1 using 1:2 title "Mr_m_a_x" with boxes ls 2 lc rgb "grey"
 
 #set palette grey
 #set grid

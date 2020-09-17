@@ -298,9 +298,77 @@
       \endverb
       \keyw{Journal}
     \endentry
-    \entry{.}{book}{}
+    \entry{Mingyu.2019}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=33a0fe7f78bbc2a823b556bbd25fa701}{%
+           family={Mingyu},
+           familyi={M\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {RWTH Aachen}%
+      }
+      \list{location}{1}{%
+        {Aachen}%
+      }
+      \list{publisher}{1}{%
+        {SLA}%
+      }
+      \strng{namehash}{33a0fe7f78bbc2a823b556bbd25fa701}
+      \strng{fullhash}{33a0fe7f78bbc2a823b556bbd25fa701}
+      \strng{bibnamehash}{33a0fe7f78bbc2a823b556bbd25fa701}
+      \strng{authorbibnamehash}{33a0fe7f78bbc2a823b556bbd25fa701}
+      \strng{authornamehash}{33a0fe7f78bbc2a823b556bbd25fa701}
+      \strng{authorfullhash}{33a0fe7f78bbc2a823b556bbd25fa701}
       \field{sortinit}{1}
       \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Development of a semi-analytical approach for the application of large deflection plate theory on arbitrary load positions}
+      \field{type}{Mini-Thesis}
+      \field{year}{2019}
+      \verb{file}
+      \verb 976ae10e-89ec-4d9f-8c86-21b43e52d6dd:C\:\\Users\\julia\\AppData\\Local\\Swiss Academic Software\\Citavi 6\\ProjectCache\\d1nhxc5w5h587qggi4ntypvyws0x1h5oyt40sniazkci5m2o\\Citavi Attachments\\976ae10e-89ec-4d9f-8c86-21b43e52d6dd.PDF:PDF
+      \endverb
+    \endentry
+    \entry{Jacobs.2019}{book}{}
+      \name{author}{1}{}{%
+        {{hash=26bdc630599303994dd656e334b83391}{%
+           family={Jacobs},
+           familyi={J\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Systementwicklung der RWTH Aachen}%
+      }
+      \list{location}{1}{%
+        {Aachen}%
+      }
+      \list{publisher}{1}{%
+        {Druck {\&} Verlagshaus Mainz}%
+      }
+      \strng{namehash}{26bdc630599303994dd656e334b83391}
+      \strng{fullhash}{26bdc630599303994dd656e334b83391}
+      \strng{bibnamehash}{26bdc630599303994dd656e334b83391}
+      \strng{authorbibnamehash}{26bdc630599303994dd656e334b83391}
+      \strng{authornamehash}{26bdc630599303994dd656e334b83391}
+      \strng{authorfullhash}{26bdc630599303994dd656e334b83391}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{04/2019}
+      \field{title}{Maschinengestaltung III}
+      \field{year}{2019}
+      \verb{file}
+      \verb b3a9748a-c631-458c-8e4c-d08ce061d0b6:C\:\\Users\\julia\\AppData\\Local\\Swiss Academic Software\\Citavi 6\\ProjectCache\\d1nhxc5w5h587qggi4ntypvyws0x1h5oyt40sniazkci5m2o\\Citavi Attachments\\b3a9748a-c631-458c-8e4c-d08ce061d0b6.pdf:pdf
+      \endverb
+    \endentry
+    \entry{.}{book}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
       \field{labeltitlesource}{title}
       \field{title}{Structural Analysis with the Finite Element Method}
       \true{nocite}
@@ -330,8 +398,8 @@
       \strng{authorbibnamehash}{a129708979d278d84d1000c291a6a162}
       \strng{authornamehash}{a129708979d278d84d1000c291a6a162}
       \strng{authorfullhash}{a129708979d278d84d1000c291a6a162}
-      \field{sortinit}{1}
-      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{5}
@@ -361,8 +429,8 @@
       \strng{authorbibnamehash}{bb8be32b557b3ade64ebcae1568ccb56}
       \strng{authornamehash}{bb8be32b557b3ade64ebcae1568ccb56}
       \strng{authorfullhash}{bb8be32b557b3ade64ebcae1568ccb56}
-      \field{sortinit}{1}
-      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Mechanics Lecture Notes: An Introduction to Solid Mechanics}
@@ -370,38 +438,6 @@
       \true{nocite}
       \verb{file}
       \verb 7e497087-fd7a-4192-b655-31b05a9ce0ef:C\:\\Users\\julia\\AppData\\Local\\Swiss Academic Software\\Citavi 6\\ProjectCache\\d1nhxc5w5h587qggi4ntypvyws0x1h5oyt40sniazkci5m2o\\Citavi Attachments\\7e497087-fd7a-4192-b655-31b05a9ce0ef.pdf:pdf
-      \endverb
-    \endentry
-    \entry{Mingyu.2019}{thesis}{}
-      \name{author}{1}{}{%
-        {{hash=33a0fe7f78bbc2a823b556bbd25fa701}{%
-           family={Mingyu},
-           familyi={M\bibinitperiod},
-           given={W.},
-           giveni={W\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {RWTH Aachen}%
-      }
-      \list{location}{1}{%
-        {Aachen}%
-      }
-      \strng{namehash}{33a0fe7f78bbc2a823b556bbd25fa701}
-      \strng{fullhash}{33a0fe7f78bbc2a823b556bbd25fa701}
-      \strng{bibnamehash}{33a0fe7f78bbc2a823b556bbd25fa701}
-      \strng{authorbibnamehash}{33a0fe7f78bbc2a823b556bbd25fa701}
-      \strng{authornamehash}{33a0fe7f78bbc2a823b556bbd25fa701}
-      \strng{authorfullhash}{33a0fe7f78bbc2a823b556bbd25fa701}
-      \field{sortinit}{2}
-      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Development of a semi-analytical approach for the application of large deflection plate theory on arbitrary load positions}
-      \field{type}{Mini-Thesis}
-      \field{year}{2019}
-      \true{nocite}
-      \verb{file}
-      \verb 976ae10e-89ec-4d9f-8c86-21b43e52d6dd:C\:\\Users\\julia\\AppData\\Local\\Swiss Academic Software\\Citavi 6\\ProjectCache\\d1nhxc5w5h587qggi4ntypvyws0x1h5oyt40sniazkci5m2o\\Citavi Attachments\\976ae10e-89ec-4d9f-8c86-21b43e52d6dd.PDF:PDF
       \endverb
     \endentry
   \enddatalist
